@@ -1,7 +1,8 @@
 import {
 db,
 doc,
-setDoc
+setDoc,
+onSnapshot
 } from "./firebase.js";
 
 
