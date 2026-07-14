@@ -100,7 +100,7 @@ p {
 
 button {
 
-    background:#3c9195;
+    background:#00d3dd;
 
     border:none;
 
@@ -140,7 +140,7 @@ hr {
 
     background:#061536;
 
-    border:2px solid #263a66;
+    border:2px solid #00d3dd;
 
     border-radius:15px;
 
@@ -152,12 +152,14 @@ hr {
 
     overflow:hidden;
 
+    box-shadow:
+    0 0 20px rgba(60,145,149,0.3);
 }
 
 
 .chroma-card {
 
-    border-color:#3c9195;
+    border-color:#00d3dd;
 
     box-shadow:
     0 0 20px rgba(60,145,149,0.3);
@@ -183,7 +185,7 @@ hr {
 
     font-weight:900;
 
-    color:#3c9195;
+    color:ffffff;
 
     min-width:100px;
 
