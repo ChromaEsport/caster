@@ -1,52 +1,39 @@
 body {
-
     margin:0;
     background:transparent;
     font-family:Arial, sans-serif;
-
 }
 
 
 .overlay {
-
-    width:700px;
-
+    width:800px;
     text-align:center;
-
     color:white;
-
 }
 
 
 .title {
-
     font-size:40px;
     font-weight:bold;
-
     margin-bottom:20px;
-
 }
 
 
 .scoreboard {
 
     display:flex;
-
+    flex-direction:row;
     justify-content:center;
-
     align-items:center;
-
-    gap:30px;
-
-    font-size:35px;
-
-    font-weight:bold;
+    gap:40px;
 
 }
 
 
 .team {
 
+    font-size:40px;
+    font-weight:bold;
     width:200px;
 
 }
@@ -54,8 +41,8 @@ body {
 
 .score {
 
-    font-size:55px;
-
+    font-size:60px;
+    font-weight:bold;
     color:#c89c4d;
 
 }
@@ -63,10 +50,7 @@ body {
 
 .info {
 
-    margin-top:25px;
-
-    font-size:28px;
-
-    line-height:45px;
+    margin-top:30px;
+    font-size:30px;
 
 }
