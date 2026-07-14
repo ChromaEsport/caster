@@ -89,3 +89,30 @@ body {
     line-height:45px;
 
 }
+
+.chroma-team {
+
+    color:#3c9195;
+
+    text-shadow:
+    0 0 10px rgba(60,145,149,0.8);
+
+}
+
+.chroma-team::after {
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:4px;
+
+    background:#3c9195;
+
+    margin:10px auto 0;
+
+    border-radius:5px;
+
+}
