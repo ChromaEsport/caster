@@ -9,9 +9,9 @@ body {
 
     width:900px;
 
-    background:rgba(1,12,44,0.95);
+    background:rgba(1,12,44,0.90);
 
-    border:3px solid #3c9195;
+    border:3px solid #00d3dd;
 
     border-radius:15px;
 
@@ -30,7 +30,7 @@ body {
 
     font-weight:900;
 
-    color:#3c9195;
+    color: #d1a918;
 
     letter-spacing:3px;
 
@@ -56,7 +56,7 @@ body {
 
     width:250px;
 
-    font-size:42px;
+    font-size:50px;
 
     font-weight:bold;
 
@@ -71,7 +71,7 @@ body {
 
     font-weight:900;
 
-    color:#3c9195;
+    color:#ffffff;
 
 }
 
@@ -84,7 +84,7 @@ body {
 
     border-top:1px solid rgba(255,255,255,0.3);
 
-    font-size:30px;
+    font-size:40px;
 
     line-height:45px;
 
@@ -92,27 +92,10 @@ body {
 
 .chroma-team {
 
-    color:#3c9195;
+    color:#00d3dd;
 
     text-shadow:
-    0 0 10px rgba(60,145,149,0.8);
+    0 0 10px #00d3dd;
 
 }
 
-.chroma-team::after {
-
-    content:"";
-
-    display:block;
-
-    width:80px;
-
-    height:4px;
-
-    background:#3c9195;
-
-    margin:10px auto 0;
-
-    border-radius:5px;
-
-}
