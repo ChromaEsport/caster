@@ -58,6 +58,8 @@ h2 {
 
     padding-bottom:10px;
 
+     text-align:center;
+
 }
 
 
@@ -124,7 +126,36 @@ button:hover {
     transform:scale(1.1);
 
 }
+.send-button {
 
+    width:250px;
+
+    height:60px;
+
+    border-radius:12px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-top:30px;
+
+    background:#3c9195;
+
+    color:white;
+
+}
+
+
+.send-button:hover {
+
+    background:white;
+
+    color:#010c2c;
+
+    transform:scale(1.03);
+
+}
 hr {
 
     border:0;
