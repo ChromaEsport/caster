@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Chroma Control</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>CHROMA CONTROL PANEL</h1>
+
+
+<h2>Equipe 1</h2>
+
+<input id="team1" value="Team Alpha">
+
+<p>
+Score :
+<span id="score1">0</span>
+</p>
+
+<button onclick="removeScore1()">-</button>
+<button onclick="addScore1()">+</button>
+
+
+<hr>
+
+
+<h2>Equipe 2</h2>
+
+<input id="team2" value="Team Beta">
+
+<p>
+Score :
+<span id="score2">0</span>
+</p>
+
+<button onclick="removeScore2()">-</button>
+<button onclick="addScore2()">+</button>
+
+
+<hr>
+
+
+<h2>Carte</h2>
+
+<input id="map" value="King's Row">
+
+
+<h2>Manche</h2>
+
+<input id="mapCurrent" type="number" value="1">
+/
+<input id="mapTotal" type="number" value="6">
+
+
+<br><br>
+
+<button onclick="sendMatch()">
+ENVOYER
+</button>
+
+
+<script type="module" src="control.js"></script>
+
+</body>
+
+</html>
