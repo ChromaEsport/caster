@@ -70,19 +70,21 @@ input {
 
     margin:10px 0 20px;
 
-    background:#061536;
+    background:#ffffff;
 
     border:2px solid #00d3dd;
 
     border-radius:10px;
 
-    color:white;
+    color:black;
 
     font-size:22px;
 
     text-align:center;
 
     text-transform:uppercase;
+
+    box-sizing:border-box;
 
 }
 
@@ -147,6 +149,8 @@ hr {
     margin-bottom:25px;
 
     text-align:center;
+
+    overflow:hidden;
 
 }
 
