@@ -60,14 +60,17 @@ if (
     previousScore2 = data.score2;
 
     // Mise à jour de l'overlay
-    document.getElementById("team1").textContent = data.team1;
+    document.getElementById("team1").textContent =
+    data.team1.toUpperCase();
 
-    document.getElementById("team2").textContent = data.team2;
+    document.getElementById("team2").textContent =
+    data.team2.toUpperCase();
 
     document.getElementById("score1").textContent = data.score1;
 
     document.getElementById("score2").textContent = data.score2;
 
-    document.getElementById("map").textContent = data.map;
+    document.getElementById("map").textContent =
+    data.map.toUpperCase();
 
 });
