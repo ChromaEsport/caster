@@ -24,21 +24,6 @@ body {
 }
 
 
-.title {
-
-    font-size:42px;
-
-    font-weight:900;
-
-    color: #d1a918;
-
-    letter-spacing:3px;
-
-    margin-bottom:25px;
-
-}
-
-
 .scoreboard {
 
     display:flex;
@@ -109,7 +94,9 @@ body {
 
     background:#010c2c;
 
-    border-bottom:2px solid #00d3dd;
+    border:3px solid #00d3dd;
+
+    border-radius:15px;
 
     padding:10px 20px;
 
