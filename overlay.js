@@ -118,8 +118,10 @@ onSnapshot(matchRef, (doc) => {
 
     // Mise à jour carte
 
-    document.getElementById("map").textContent =
-    data.map.toUpperCase();
+    document.getElementById("mapDisplay").textContent =
+data.mapType.toUpperCase()
++ " • "
++ data.map.toUpperCase();
 
 
 
