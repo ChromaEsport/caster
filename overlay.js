@@ -5,54 +5,57 @@ onSnapshot
 }
 from "./firebase.js";
 
-
-
 const matchRef = doc(
 db,
 "matches",
 "current"
 );
 
+let previousScore1 = null;
+let previousScore2 = null;
 
+onSnapshot(matchRef, (doc) => {
 
-onSnapshot(matchRef,(doc)=>{
+    const data = doc.data();
 
+    if (!data) return;
 
-const data = doc.data();
+    // Détection d'un changement de score
+    if (
+        previousScore1 !== null &&
+        (
+            data.score1 !== previousScore1 ||
+            data.score2 !== previousScore2
+        )
+    ) {
 
+        const score = document.querySelector(".score");
 
-if(data){
+        score.classList.remove("animate");
 
+        // Force le navigateur à rejouer l'animation
+        void score.offsetWidth;
 
-document.getElementById("team1").innerHTML =
-data.team1;
+        score.classList.add("animate");
+    }
 
+    // Mise à jour des anciennes valeurs
+    previousScore1 = data.score1;
+    previousScore2 = data.score2;
 
-document.getElementById("team2").innerHTML =
-data.team2;
+    // Mise à jour de l'overlay
+    document.getElementById("team1").textContent = data.team1;
 
+    document.getElementById("team2").textContent = data.team2;
 
-document.getElementById("score1").innerHTML =
-data.score1;
+    document.getElementById("score1").textContent = data.score1;
 
+    document.getElementById("score2").textContent = data.score2;
 
-document.getElementById("score2").innerHTML =
-data.score2;
+    document.getElementById("map").textContent = data.map;
 
+    document.getElementById("mapCurrent").textContent = data.mapCurrent;
 
-document.getElementById("map").innerHTML =
-data.map;
-
-
-document.getElementById("mapCurrent").innerHTML =
-data.mapCurrent;
-
-
-document.getElementById("mapTotal").innerHTML =
-data.mapTotal;
-
-
-}
-
+    document.getElementById("mapTotal").textContent = data.mapTotal;
 
 });
