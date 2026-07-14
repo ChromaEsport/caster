@@ -10,7 +10,49 @@ onSnapshot
 let score1 = 0;
 let score2 = 0;
 
+const matchRef = doc(
+db,
+"matches",
+"current"
+);
 
+
+onSnapshot(matchRef,(doc)=>{
+
+const data = doc.data();
+
+
+if(data){
+
+
+score1 = data.score1;
+score2 = data.score2;
+
+
+document.getElementById("team1").value =
+data.team1;
+
+
+document.getElementById("team2").value =
+data.team2;
+
+
+document.getElementById("score1").innerHTML =
+data.score1;
+
+
+document.getElementById("score2").innerHTML =
+data.score2;
+
+
+document.getElementById("map").value =
+data.map;
+
+
+}
+
+
+});
 
 function addScore1(){
 
