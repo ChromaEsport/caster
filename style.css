@@ -127,3 +127,31 @@ body {
     color:white;
 
 }
+
+@keyframes scorePulse {
+
+    0%{
+        transform:scale(1);
+        text-shadow:none;
+    }
+
+    40%{
+        transform:scale(1.35);
+        text-shadow:
+        0 0 10px #3c9195,
+        0 0 20px #3c9195,
+        0 0 35px #3c9195;
+    }
+
+    100%{
+        transform:scale(1);
+        text-shadow:none;
+    }
+
+}
+
+.score.animate{
+
+    animation:scorePulse .6s ease;
+
+}
