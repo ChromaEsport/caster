@@ -70,8 +70,4 @@ if (
 
     document.getElementById("map").textContent = data.map;
 
-    document.getElementById("mapCurrent").textContent = data.mapCurrent;
-
-    document.getElementById("mapTotal").textContent = data.mapTotal;
-
 });
