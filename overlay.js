@@ -29,14 +29,30 @@ onSnapshot(matchRef, (doc) => {
         )
     ) {
 
-        const score = document.querySelector(".score");
+        const score1Element = document.getElementById("score1");
+const score2Element = document.getElementById("score2");
 
-        score.classList.remove("animate");
+if (
+    previousScore1 !== null &&
+    data.score1 !== previousScore1
+) {
 
-        // Force le navigateur à rejouer l'animation
-        void score.offsetWidth;
+    score1Element.classList.remove("animate");
+    void score1Element.offsetWidth;
+    score1Element.classList.add("animate");
 
-        score.classList.add("animate");
+}
+
+if (
+    previousScore2 !== null &&
+    data.score2 !== previousScore2
+) {
+
+    score2Element.classList.remove("animate");
+    void score2Element.offsetWidth;
+    score2Element.classList.add("animate");
+
+}
     }
 
     // Mise à jour des anciennes valeurs
