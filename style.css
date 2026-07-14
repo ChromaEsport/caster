@@ -9,9 +9,9 @@ body {
 
     width:900px;
 
-    background:rgba(10,20,40,0.90);
+    background:rgba(1,12,44,0.95);
 
-    border:3px solid #c89c4d;
+    border:3px solid #3c9195;
 
     border-radius:15px;
 
@@ -30,7 +30,7 @@ body {
 
     font-weight:900;
 
-    color:#c89c4d;
+    color:#3c9195;
 
     letter-spacing:3px;
 
@@ -71,7 +71,7 @@ body {
 
     font-weight:900;
 
-    color:#c89c4d;
+    color:#3c9195;
 
 }
 
