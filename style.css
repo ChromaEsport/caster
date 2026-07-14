@@ -99,3 +99,44 @@ body {
 
 }
 
+.top-bar {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#010c2c;
+
+    border-bottom:2px solid #00d3dd;
+
+    padding:10px 20px;
+
+    margin:-25px -25px 20px -25px;
+
+}
+
+
+.brand {
+
+    font-size:24px;
+
+    font-weight:900;
+
+    color:#00d3dd;
+
+    letter-spacing:2px;
+
+}
+
+
+.live {
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
