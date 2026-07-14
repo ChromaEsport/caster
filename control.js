@@ -48,6 +48,8 @@ data.score2;
 document.getElementById("map").value =
 data.map;
 
+document.getElementById("mapType").value =
+data.mapType;
 
 }
 
