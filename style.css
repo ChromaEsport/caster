@@ -188,7 +188,7 @@ body {
     animation:scoreChange .6s ease;
 
 }
-#map {
+#mapDisplay {
     font-weight: bold;
     font-style: italic;
     color: #ed6516;
