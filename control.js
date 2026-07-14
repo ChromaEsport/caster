@@ -81,15 +81,7 @@ score2: score2,
 
 
 map:
-document.getElementById("map").value,
-
-
-mapCurrent:
-Number(document.getElementById("mapCurrent").value),
-
-
-mapTotal:
-Number(document.getElementById("mapTotal").value)
+document.getElementById("map").value
 
 
 });
