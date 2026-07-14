@@ -10,6 +10,61 @@ onSnapshot
 let score1 = 0;
 let score2 = 0;
 
+function updateMaps(){
+
+
+const selectedType =
+document.getElementById("mapType").value;
+
+
+const options =
+document.querySelectorAll("#map option");
+
+
+
+options.forEach(option => {
+
+
+if(option.dataset.type === selectedType){
+
+    option.hidden = false;
+
+}
+
+else{
+
+    option.hidden = true;
+
+}
+
+
+});
+
+
+
+// Sélectionne la première map disponible
+
+const firstVisible =
+document.querySelector("#map option:not([hidden])");
+
+
+if(firstVisible){
+
+document.getElementById("map").value =
+firstVisible.value;
+
+}
+
+
+}
+
+document
+.getElementById("mapType")
+.addEventListener(
+"change",
+updateMaps
+);
+
 const matchRef = doc(
 db,
 "matches",
@@ -140,6 +195,9 @@ alert("Score envoyé !");
 
 
 }
+
+updateMaps();
+
 
 window.addScore1 = addScore1;
 window.removeScore1 = removeScore1;
