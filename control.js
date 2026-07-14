@@ -123,6 +123,10 @@ score1: score1,
 score2: score2,
 
 
+mapType:
+document.getElementById("mapType").value,
+
+
 map:
 document.getElementById("map").value
 
