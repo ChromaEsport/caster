@@ -24,7 +24,7 @@ h1 {
 
     text-align:center;
 
-    color:#3c9195;
+    color:#00d3dd;
 
     font-size:42px;
 
@@ -52,7 +52,7 @@ body > * {
 
 h2 {
 
-    color:#3c9195;
+    color:#00d3dd;
 
     text-align:center;
 
@@ -126,6 +126,8 @@ button {
 button:hover {
 
     transform:scale(1.1);
+
+    background:#00d3dd;
 
 }
 .send-button {
