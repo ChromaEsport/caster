@@ -138,9 +138,9 @@ body {
     40%{
         transform:scale(1.35);
         text-shadow:
-        0 0 10px #3c9195,
-        0 0 20px #3c9195,
-        0 0 35px #3c9195;
+        0 0 10px #00d3dd,
+        0 0 20px #00d3dd,
+        0 0 35px #00d3dd;
     }
 
     100%{
@@ -167,9 +167,9 @@ body {
         transform:scale(1.45);
         color:#3c9195;
         text-shadow:
-            0 0 10px #3c9195,
-            0 0 20px #3c9195,
-            0 0 35px #3c9195;
+            0 0 10px #00d3dd,
+            0 0 20px #00d3dd,
+            0 0 35px #00d3dd;
     }
 
     100%{
