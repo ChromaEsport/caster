@@ -11,34 +11,47 @@
 <div class="container">
 <h1>CHROMA CONTROL PANEL</h1>
 
+<div class="team-card chroma-card">
 
-<h2>Equipe 1</h2>
+    <h2>ÉQUIPE 1</h2>
 
-<input id="team1" value="Team Alpha" oninput="this.value=this.value.toUpperCase()">
+    <input id="team1" value="CHROMA">
 
-<p>
-Score :
-<span id="score1">0</span>
-</p>
 
-<button onclick="removeScore1()">-</button>
-<button onclick="addScore1()">+</button>
+    <div class="score-control">
+
+        <button onclick="removeScore1()">−</button>
+
+        <span id="score1">0</span>
+
+        <button onclick="addScore1()">+</button>
+
+    </div>
+
+</div>
 
 
 <hr>
 
 
-<h2>Equipe 2</h2>
+<div class="team-card">
 
-<input id="team2" value="Team Beta" oninput="this.value=this.value.toUpperCase()">
+    <h2>ÉQUIPE 2</h2>
 
-<p>
-Score :
-<span id="score2">0</span>
-</p>
+    <input id="team2" value="TEAM BETA">
 
-<button onclick="removeScore2()">-</button>
-<button onclick="addScore2()">+</button>
+
+    <div class="score-control">
+
+        <button onclick="removeScore2()">−</button>
+
+        <span id="score2">0</span>
+
+        <button onclick="addScore2()">+</button>
+
+    </div>
+
+</div>
 
 
 <hr>
