@@ -34,3 +34,11 @@ onSnapshot(matchRef, (doc) => {
 
 
 });
+const casterCard = document.querySelector(".caster-card");
+
+
+setTimeout(() => {
+
+    casterCard.classList.add("show");
+
+}, 500);
