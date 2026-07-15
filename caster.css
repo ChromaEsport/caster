@@ -91,13 +91,7 @@ body {
     text-transform:uppercase;
 
 }
-.caster-card.show {
 
-    opacity:1;
-
-    transform:translateX(0);
-
-}
 
 .caster-border {
 
@@ -122,4 +116,11 @@ body {
     transition:
     opacity 0.8s ease,
     transform 0.8s ease;
+}
+.caster-border.show {
+
+    opacity:1;
+
+    transform:translateX(0);
+
 }
