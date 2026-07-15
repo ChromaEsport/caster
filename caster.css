@@ -39,7 +39,17 @@ body {
 
 }
 
+/* Animation */
 
+    opacity:0;
+
+    transform:translateX(-120px);
+
+    transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+}
 /* Découpe biseautée à droite */
 
 .caster-card::after {
@@ -107,5 +117,12 @@ body {
     font-weight:bold;
 
     text-transform:uppercase;
+
+}
+.caster-card.show {
+
+    opacity:1;
+
+    transform:translateX(0);
 
 }
