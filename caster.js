@@ -37,8 +37,113 @@ onSnapshot(matchRef, (doc) => {
 const casterCard = document.querySelector(".caster-card");
 
 
-setTimeout(() => {
+// Temps en millisecondes
+
+const FIRST_DISPLAY = 10000; // 2 minutes
+
+const HIDDEN_TIME = 5000; // 5 minutes
+
+const DISPLAY_TIME = 5000; // 1 minute
+
+
+
+function showCaster(){
 
     casterCard.classList.add("show");
 
+}
+
+
+
+function hideCaster(){
+
+    casterCard.classList.remove("show");
+
+}
+
+
+
+// Première apparition
+
+setTimeout(() => {
+
+
+    showCaster();
+
+
+    // Après 2 minutes → disparition
+
+    setTimeout(() => {
+
+
+        hideCaster();
+
+
+
+        // Après 5 minutes caché → retour
+
+        setTimeout(() => {
+
+
+            showCaster();
+
+
+
+            // Après 1 minute → disparition
+
+            setTimeout(() => {
+
+
+                hideCaster();
+
+
+                // Relance le cycle
+
+                startCycle();
+
+
+            }, DISPLAY_TIME);
+
+
+
+        }, HIDDEN_TIME);
+
+
+
+    }, FIRST_DISPLAY);
+
+
+
 }, 500);
+
+
+
+
+
+function startCycle(){
+
+
+    setTimeout(() => {
+
+
+        showCaster();
+
+
+
+        setTimeout(() => {
+
+
+            hideCaster();
+
+
+            startCycle();
+
+
+        }, DISPLAY_TIME);
+
+
+
+    }, HIDDEN_TIME);
+
+
+}
