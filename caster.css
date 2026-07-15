@@ -1,0 +1,83 @@
+body {
+
+    margin:0;
+
+    background:transparent;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+.caster-overlay {
+
+    width:450px;
+
+}
+
+
+
+.caster-card {
+
+    background:#010c2c;
+
+    border:3px solid #3c9195;
+
+    border-radius:15px;
+
+    padding:20px 30px;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.line {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:10px 0;
+
+}
+
+
+
+.icon {
+
+    font-size:28px;
+
+}
+
+
+
+#casters {
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
+
+
+
+#event {
+
+    color:#c89c4d;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
