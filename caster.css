@@ -41,15 +41,6 @@ body {
         0 100%
     );
     
-/* Animation */
-
-    opacity:0;
-
-    transform:translateX(-120px);
-
-    transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
 
 }
 
