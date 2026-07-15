@@ -52,31 +52,6 @@ body {
     transform 0.8s ease;
 
 }
-/* Découpe biseautée à droite */
-
-.caster-card::after {
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    right:0;
-
-    width:25px;
-
-    height:100%;
-
-    background:transparent;
-
-    border-right:3px solid #c89c4d;
-
-    transform:skewX(-35deg);
-
-}
-
-
 
 .line {
 
