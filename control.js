@@ -99,7 +99,13 @@ data.score1;
 document.getElementById("score2").innerHTML =
 data.score2;
 
+document.getElementById("casters").value =
+data.casters || "";
 
+
+document.getElementById("event").value =
+data.event || "";
+    
 document.getElementById("map").value =
 data.map;
 
@@ -179,7 +185,15 @@ score1: score1,
 
 score2: score2,
 
+    
+casters:
+document.getElementById("casters").value.toUpperCase(),
 
+
+event:
+document.getElementById("event").value.toUpperCase(),
+
+    
 mapType:
 document.getElementById("mapType").value,
 
