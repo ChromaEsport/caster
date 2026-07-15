@@ -268,23 +268,3 @@ select {
     align-items:start;
 
 }
-
-.left-column{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-.right-column{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
