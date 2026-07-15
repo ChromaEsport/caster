@@ -17,7 +17,9 @@ body {
 
 
 .caster-card {
-
+    
+    position:relative;
+    
     display:flex;
 
     flex-direction:column;
@@ -36,7 +38,7 @@ body {
         100% 100%,
         0 100%
     );
-
+    
 /* Animation */
 
     opacity:0;
