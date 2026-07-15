@@ -7,7 +7,7 @@ body {
 
 .overlay {
 
-    width:1200px;
+    width:1000px;
 
     background:rgba(1,12,44,0.90);
 
@@ -32,14 +32,14 @@ body {
 
     align-items:center;
 
-    gap:50px;
+    gap:5px;
 
 }
 
 
 .team {
 
-    width:250px;
+    width:410px;
 
     font-size:50px;
 
