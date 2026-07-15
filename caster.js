@@ -39,11 +39,11 @@ const casterCard = document.querySelector(".caster-card");
 
 // Temps en millisecondes
 
-const FIRST_DISPLAY = 10000; // 2 minutes
+const FIRST_DISPLAY = 120000; // 2 minutes
 
-const HIDDEN_TIME = 5000; // 5 minutes
+const HIDDEN_TIME = 300000; // 5 minutes
 
-const DISPLAY_TIME = 5000; // 1 minute
+const DISPLAY_TIME = 60000; // 1 minute
 
 
 
