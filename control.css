@@ -270,3 +270,8 @@ select {
     align-items:start;
 
 }
+.team-card select:first-of-type{
+
+    margin-bottom:25px;
+
+}
