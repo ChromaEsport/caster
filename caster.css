@@ -132,3 +132,22 @@ body {
     transform:translateX(0);
 
 }
+
+.caster-border {
+
+    position:relative;
+
+    width:400px;
+
+    background:#c89c4d;
+
+    padding:4px;
+
+    clip-path:polygon(
+        0 0,
+        92% 0,
+        100% 100%,
+        0 100%
+    );
+
+}
