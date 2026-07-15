@@ -19,6 +19,8 @@ body {
 .caster-card {
     
     position:relative;
+
+    overflow:hidden;
     
     display:flex;
 
@@ -58,15 +60,22 @@ body {
 
     position:absolute;
 
-    right:15px;
+    right:0;
 
-    top:20%;
+    top:0;
 
-    width:3px;
+    width:8px;
 
-    height:60%;
+    height:100%;
 
     background:#c89c4d;
+
+    clip-path:polygon(
+        100% 0,
+        100% 100%,
+        0 100%,
+        100% 0
+    );
 
 }
 
