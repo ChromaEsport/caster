@@ -257,3 +257,34 @@ select {
 
     height:58px;
 }
+.layout{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    gap:30px;
+
+    align-items:start;
+
+}
+
+.left-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.right-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
