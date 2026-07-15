@@ -34,7 +34,9 @@ onSnapshot(matchRef, (doc) => {
 
 
 });
-const casterCard = document.querySelector(".caster-card");
+
+
+const casterOverlay = document.querySelector(".caster-border");
 
 
 // Temps en millisecondes
@@ -49,7 +51,7 @@ const DISPLAY_TIME = 60000; // 1 minute
 
 function showCaster(){
 
-    casterCard.classList.add("show");
+     casterOverlay.classList.add("show");
 
 }
 
@@ -57,7 +59,7 @@ function showCaster(){
 
 function hideCaster(){
 
-    casterCard.classList.remove("show");
+     casterOverlay.classList.remove("show");
 
 }
 
