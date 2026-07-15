@@ -48,21 +48,15 @@ body {
 
     position:absolute;
 
+    right:0;
+
     top:0;
 
-    right:-1px;
-
-    width:40px;
+    width:4px;
 
     height:100%;
 
-    background:transparent;
-
-    border-top:60px solid transparent;
-
-    border-right:0;
-
-    border-bottom:60px solid transparent;
+    background:#c89c4d;
 
 }
 
