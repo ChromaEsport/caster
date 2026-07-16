@@ -88,3 +88,53 @@ body {
     letter-spacing:5px;
 
 }
+.shapes {
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+
+.shape {
+
+    position:absolute;
+
+    border:2px solid rgba(60,145,149,0.15);
+
+    transform:rotate(-25deg);
+
+}
+
+
+.shape1 {
+
+    width:900px;
+
+    height:900px;
+
+    right:-450px;
+
+    top:200px;
+
+}
+
+
+.shape2 {
+
+    width:700px;
+
+    height:700px;
+
+    left:-350px;
+
+    bottom:-200px;
+
+    border-color:rgba(200,156,77,0.12);
+
+}
