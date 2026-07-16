@@ -1,0 +1,54 @@
+body {
+
+    margin:0;
+
+    background:transparent;
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+
+.pov-card {
+
+    width:250px;
+
+    padding:10px 20px;
+
+    background:rgba(1,12,44,0.90);
+
+    border-left:5px solid #3c9195;
+
+    clip-path:polygon(
+        0 0,
+        90% 0,
+        100% 100%,
+        0 100%
+    );
+
+}
+
+
+
+.player {
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+
+
+.role {
+
+    color:#c89c4d;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
