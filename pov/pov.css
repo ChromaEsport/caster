@@ -18,11 +18,11 @@ body {
 
     background:rgba(1,12,44,0.90);
 
-    border-left:5px solid #3c9195;
+    border-left:5px solid #00d3dd;
 
     clip-path:polygon(
         0 0,
-        90% 0,
+        92% 0,
         100% 100%,
         0 100%
     );
