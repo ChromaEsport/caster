@@ -10,8 +10,6 @@ body {
 
     color:white;
 
-    display:flex;
-
     justify-content:center;
 
     align-items:center;
@@ -266,7 +264,7 @@ select {
 
     grid-template-columns:400px 1fr;
 
-    gap:30px;
+    gap:15px;
 
     align-items:start;
 
