@@ -1,49 +1,46 @@
 body {
 
-    margin: 0;
+    margin:0;
 
-    width: 1920px;
-    height: 1080px;
+    width:1920px;
 
-    overflow: hidden;
+    height:1080px;
 
-    background: #010c2c;
+    overflow:hidden;
 
-    font-family: Arial, sans-serif;
+    background:#010c2c;
+
+    font-family:Arial, sans-serif;
 
 }
 
-
-/* Fond */
 
 .background {
 
-    position: relative;
+    position:relative;
 
-    width: 1920px;
+    width:1920px;
 
-    height: 1080px;
+    height:1080px;
 
 }
 
 
-/* Logo */
+
+/* Logo centré */
 
 .logo {
 
-    position: absolute;
+    position:absolute;
 
-    top: 25px;
+    top:40px;
 
-    left: 50%;
+    left:50%;
 
-    transform: translateX(-50%);
+    transform:translateX(-50%);
 
-    height: 120px;
+    width:auto;
 
-    width: auto;
-
-    filter:
-        drop-shadow(0 0 10px rgba(60,145,149,0.45));
+    height:120px;
 
 }
