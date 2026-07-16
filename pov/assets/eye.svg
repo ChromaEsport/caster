@@ -1,0 +1,28 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Contour de l'oeil -->
+    <path 
+        d="M2 16C5.5 9.5 10.5 6 16 6C21.5 6 26.5 9.5 30 16C26.5 22.5 21.5 26 16 26C10.5 26 5.5 22.5 2 16Z"
+        stroke="#3c9195"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+    />
+
+    <!-- Pupille -->
+    <circle 
+        cx="16" 
+        cy="16" 
+        r="6"
+        fill="#c89c4d"
+    />
+
+    <!-- Petit reflet -->
+    <circle 
+        cx="14" 
+        cy="14"
+        r="2"
+        fill="#ffffff"
+        opacity="0.9"
+    />
+
+</svg>
