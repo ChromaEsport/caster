@@ -1,0 +1,112 @@
+body {
+
+    margin:0;
+
+    background:transparent;
+
+}
+
+
+.multiview {
+
+    width:1920px;
+
+    height:1080px;
+
+    position:relative;
+
+}
+
+
+
+/* Cadres POV */
+
+.pov {
+
+    position:absolute;
+
+    border:3px solid #3c9195;
+
+    box-sizing:border-box;
+
+}
+
+
+
+/* POV 1 */
+
+.pov1 {
+
+    left:0;
+
+    top:0;
+
+    width:960px;
+
+    height:360px;
+
+}
+
+
+
+/* POV 2 */
+
+.pov2 {
+
+    left:960px;
+
+    top:0;
+
+    width:960px;
+
+    height:360px;
+
+}
+
+
+
+/* POV 3 */
+
+.pov3 {
+
+    left:0;
+
+    top:360px;
+
+    width:960px;
+
+    height:360px;
+
+}
+
+
+
+/* POV 4 */
+
+.pov4 {
+
+    left:960px;
+
+    top:360px;
+
+    width:960px;
+
+    height:360px;
+
+}
+
+
+
+/* POV 5 */
+
+.pov5 {
+
+    left:480px;
+
+    top:720px;
+
+    width:960px;
+
+    height:360px;
+
+}
