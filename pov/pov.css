@@ -27,16 +27,14 @@ body {
 
 
 
-.icon {
+.player-icon {
 
-    top:-3px;
-    
-    font-size:26px;
+    width:28px;
 
-    line-height:1;
+    height:28px;
 
-    position:relative;
-    
+    flex-shrink:0;
+
 }
 
 
