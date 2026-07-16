@@ -48,3 +48,14 @@ body {
 
     line-height: 1;
 }
+.player {
+
+    display: flex;
+    
+    align-items: center;
+    
+    gap: 5px;
+    
+    padding-left: 10px;
+    
+}
