@@ -31,8 +31,47 @@ body {
 
     box-sizing:border-box;
 
+    background:transparent;
+
 }
 
+
+/* Barre or dans le coin */
+
+.pov::after {
+
+    content:"";
+
+    position:absolute;
+
+    right:-3px;
+
+    top:-3px;
+
+    width:80px;
+
+    height:4px;
+
+    background:#c89c4d;
+
+}
+.pov::before {
+
+    content:"";
+
+    position:absolute;
+
+    left:-3px;
+
+    bottom:-3px;
+
+    width:120px;
+
+    height:4px;
+
+    background:#3c9195;
+
+}
 
 /* Ligne du haut */
 
