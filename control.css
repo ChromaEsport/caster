@@ -82,7 +82,7 @@ input {
 
     color:black;
 
-    font-size:15px;
+    font-size:10px;
 
     text-align:center;
 
@@ -138,9 +138,9 @@ button:hover {
 
     height:60px;
 
-    margin:30px auto 0;
+    margin:0px auto 0;
 
-    border-radius:12px;
+    border-radius:10px;
 
     font-size:15px;
 
@@ -152,7 +152,6 @@ button:hover {
 
     cursor:pointer;
 
-    padding:10px 28px;
 }
 
 
@@ -248,7 +247,7 @@ select {
 
     color:black;
 
-    font-size:15px;
+    font-size:10px;
 
     text-align:center;
 
@@ -256,7 +255,6 @@ select {
 
     cursor:pointer;
 
-    height:58px;
 }
 .layout{
 
