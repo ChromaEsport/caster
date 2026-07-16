@@ -28,19 +28,18 @@ body {
 
 
 /* Logo centré */
-
 .logo {
-
-    position:absolute;
-
-    top:40px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:auto;
-
-    height:120px;
-
+    
+    position: absolute;
+    
+    top: -160px;
+    
+    left: 50%;
+    
+    transform: translateX(-50%);
+    
+    width: auto;
+    
+    height: 700px;
+    
 }
