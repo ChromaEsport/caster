@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="pov.css">
+
+
+<div class="pov-card">
+
+    <div class="player">
+        🎮 BEAM
+    </div>
+
+    <div class="role">
+        DPS
+    </div>
+
+</div>
