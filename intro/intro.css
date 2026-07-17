@@ -440,3 +440,50 @@ body{
     border-color:#c89c4d;
 
 }
+/* SCAN EFFECT */
+
+
+.scan {
+
+    position:absolute;
+
+    top:-200px;
+
+    left:-300px;
+
+    width:250px;
+
+    height:1400px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(60,145,149,0.35),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:scanMove 3s ease forwards;
+
+}
+
+
+
+@keyframes scanMove {
+
+
+    0% {
+
+        left:-300px;
+
+    }
+
+
+    100% {
+
+        left:2200px;
+
+    }
+
+}
