@@ -29,18 +29,30 @@ body{
 
 
 /* Logo */
-
-.logo{
+.logo1{
 
     position:absolute;
 
-    top:-160px;
+    top:0;
 
-    left:50%;
+    left:0;
 
-    transform:translateX(-50%);
+    width:1920px;
 
-    height:750px;
+    height:250px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.logo{
+
+    height:300px;
+
+    width:auto;
 
 }
 
