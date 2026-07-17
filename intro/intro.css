@@ -361,3 +361,79 @@ body{
     background:#c89c4d;
 
 }
+/* HUD ELEMENTS */
+
+
+.hud {
+
+    position:absolute;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.hud span {
+
+    width:12px;
+
+    height:12px;
+
+    border:2px solid #3c9195;
+
+}
+
+
+
+/* Coins */
+
+
+.top-left {
+
+    top:80px;
+
+    left:80px;
+
+}
+
+
+
+.top-right {
+
+    top:80px;
+
+    right:80px;
+
+}
+
+
+
+.bottom-left {
+
+    bottom:80px;
+
+    left:80px;
+
+}
+
+
+
+.bottom-right {
+
+    bottom:80px;
+
+    right:80px;
+
+}
+
+
+
+.bottom-right span,
+.top-right span {
+
+    border-color:#c89c4d;
+
+}
