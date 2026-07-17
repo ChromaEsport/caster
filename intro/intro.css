@@ -326,11 +326,15 @@ body{
 
     position:absolute;
 
-    height:2px;
+    width:450px;
+
+    height:3px;
 
     background:#3c9195;
 
     opacity:0.25;
+
+    transform-origin:center;
 
 }
 
@@ -339,26 +343,25 @@ body{
 
 .line-left {
 
-    width:450px;
+    left:-80px;
 
-    left:0;
+    top:350px;
 
-    top:300px;
+    transform:rotate(-35deg);
 
 }
-
 
 /* Ligne droite */
 
 .line-right {
 
-    width:450px;
+    right:-80px;
 
-    right:0;
-
-    bottom:300px;
+    bottom:350px;
 
     background:#c89c4d;
+
+    transform:rotate(35deg);
 
 }
 /* HUD ELEMENTS */
