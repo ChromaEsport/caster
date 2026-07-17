@@ -318,3 +318,46 @@ body{
     bottom:-200px;
 
 }
+
+/* TECH LINES */
+
+
+.tech-line {
+
+    position:absolute;
+
+    height:2px;
+
+    background:#3c9195;
+
+    opacity:0.25;
+
+}
+
+
+/* Ligne gauche */
+
+.line-left {
+
+    width:450px;
+
+    left:0;
+
+    top:300px;
+
+}
+
+
+/* Ligne droite */
+
+.line-right {
+
+    width:450px;
+
+    right:0;
+
+    bottom:300px;
+
+    background:#c89c4d;
+
+}
