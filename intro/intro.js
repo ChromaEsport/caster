@@ -42,26 +42,58 @@ onSnapshot(matchRef, (doc) => {
 
 
 const welcome = document.querySelector(".welcome");
-const text = document.getElementById("welcome-text");
 
+const line1 = document.getElementById("welcome-line1");
 
-const message = "BIENVENUE SUR LE LIVE";
-
-
-let index = 0;
+const line2 = document.getElementById("welcome-line2");
 
 
 
-function typeWriter(){
+const text1 = "BIENVENUE SUR LE LIVE";
+
+const text2 = "LE MATCH VA COMMENCER";
 
 
-    if(index < message.length){
 
-        text.textContent += message.charAt(index);
+let i = 0;
 
-        index++;
+let j = 0;
 
-        setTimeout(typeWriter,80);
+
+
+function writeLine1(){
+
+
+    if(i < text1.length){
+
+        line1.textContent += text1.charAt(i);
+
+        i++;
+
+        setTimeout(writeLine1,80);
+
+    }
+
+    else {
+
+        setTimeout(writeLine2,500);
+
+    }
+
+}
+
+
+
+function writeLine2(){
+
+
+    if(j < text2.length){
+
+        line2.textContent += text2.charAt(j);
+
+        j++;
+
+        setTimeout(writeLine2,80);
 
     }
 
@@ -72,19 +104,22 @@ function typeWriter(){
 function showWelcome(){
 
 
+    line1.textContent="";
+
+    line2.textContent="";
+
+
+    i=0;
+
+    j=0;
+
+
     welcome.classList.add("show");
 
 
-    text.textContent = "";
-
-    index = 0;
+    writeLine1();
 
 
-    typeWriter();
-
-
-
-    // reste visible 6 secondes
 
     setTimeout(()=>{
 
@@ -92,7 +127,7 @@ function showWelcome(){
         hideWelcome();
 
 
-    },6000);
+    },8000);
 
 
 }
@@ -106,8 +141,6 @@ function hideWelcome(){
 
 
 
-    // revient après 10 secondes caché
-
     setTimeout(()=>{
 
 
@@ -120,7 +153,5 @@ function hideWelcome(){
 }
 
 
-
-// Premier affichage
 
 setTimeout(showWelcome,1000);
