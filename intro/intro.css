@@ -1,1 +1,158 @@
+body{
 
+    margin:0;
+
+    width:1920px;
+
+    height:1080px;
+
+    overflow:hidden;
+
+    background:#010c2c;
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+.intro{
+
+    position:relative;
+
+    width:1920px;
+
+    height:1080px;
+
+}
+
+
+
+/* Logo */
+
+.logo{
+
+    position:absolute;
+
+    top:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    height:150px;
+
+}
+
+
+
+/* Evènement */
+
+.event{
+
+    position:absolute;
+
+    top:240px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#c89c4d;
+
+    font-size:36px;
+
+    font-weight:bold;
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* Equipes */
+
+.teams{
+
+    position:absolute;
+
+    top:420px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:100px;
+
+}
+
+
+
+.team{
+
+    color:white;
+
+    font-size:72px;
+
+    font-weight:bold;
+
+}
+
+
+
+.vs{
+
+    color:#3c9195;
+
+    font-size:64px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* BO */
+
+.bo{
+
+    position:absolute;
+
+    top:610px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#c89c4d;
+
+    font-size:32px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+/* Starting Soon */
+
+.status{
+
+    position:absolute;
+
+    bottom:120px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
