@@ -326,13 +326,13 @@ body{
 
     position:absolute;
 
-    width:450px;
+    width:850px;
 
     height:3px;
 
     background:#3c9195;
 
-    opacity:0.25;
+    opacity:0.45;
 
     transform-origin:center;
 
@@ -343,9 +343,9 @@ body{
 
 .line-left {
 
-    left:-80px;
+    left:-185px;
 
-    top:350px;
+    top:450px;
 
     transform:rotate(-55deg);
 
@@ -355,9 +355,9 @@ body{
 
 .line-right {
 
-    right:-80px;
+    right:-185px;
 
-    bottom:350px;
+    bottom:340px;
 
     background:#c89c4d;
 
