@@ -347,7 +347,7 @@ body{
 
     top:350px;
 
-    transform:rotate(-35deg);
+    transform:rotate(-55deg);
 
 }
 
@@ -361,7 +361,7 @@ body{
 
     background:#c89c4d;
 
-    transform:rotate(35deg);
+    transform:rotate(55deg);
 
 }
 /* HUD ELEMENTS */
