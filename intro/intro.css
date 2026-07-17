@@ -463,3 +463,35 @@ body{
     opacity:0.5;
 
 }
+/* WELCOME MESSAGE */
+
+
+.welcome {
+
+    position:absolute;
+
+    top:720px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    opacity:0;
+
+}
+
+
+
+.welcome.show {
+
+    opacity:1;
+
+}
