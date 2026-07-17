@@ -8,7 +8,12 @@ body{
 
     overflow:hidden;
 
-    background:#010c2c;
+    background:linear-gradient(
+    180deg,
+    #07163d 0%,
+    #03112f 35%,
+    #010c2c 100%
+);
 
     font-family:Arial,sans-serif;
 
@@ -24,6 +29,8 @@ body{
     height:1080px;
     
     top: 150px;
+
+    z-index:1;
 }
 
 
@@ -54,6 +61,7 @@ body{
 
     width:auto;
 
+    z-index:1;
 }
 
 
@@ -244,5 +252,69 @@ body{
 .bottom-line {
 
     top:540px;
+
+}
+/* BACKGROUND SHAPES */
+
+
+.background-shapes {
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:1920px;
+
+    height:1080px;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+
+
+.shape-left {
+
+    position:absolute;
+
+    width:700px;
+
+    height:1200px;
+
+    background:#3c9195;
+
+    opacity:0.08;
+
+    transform:rotate(35deg);
+
+    left:-500px;
+
+    top:-200px;
+
+}
+
+
+
+.shape-right {
+
+    position:absolute;
+
+    width:700px;
+
+    height:1200px;
+
+    background:#c89c4d;
+
+    opacity:0.05;
+
+    transform:rotate(-35deg);
+
+    right:-500px;
+
+    bottom:-200px;
 
 }
