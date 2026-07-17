@@ -176,26 +176,6 @@ body{
 }
 
 
-
-/* Starting Soon */
-
-.status{
-
-    position:absolute;
-
-    bottom:320px;
-
-    width:100%;
-
-    text-align:center;
-
-    color:white;
-
-    font-size:42px;
-
-    font-weight:bold;
-
-}
 /* Lignes match */
 
 .match-line {
