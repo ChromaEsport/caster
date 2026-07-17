@@ -147,7 +147,7 @@ function hideWelcome(){
         showWelcome();
 
 
-    },10000);
+    },3000);
 
 
 }
