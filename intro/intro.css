@@ -503,3 +503,24 @@ body{
     border-color:rgba(60,145,149,0.20);
 
 }
+/* TECH GRID */
+
+
+.tech-grid {
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    repeating-linear-gradient(
+        45deg,
+        rgba(60,145,149,0.06),
+        rgba(60,145,149,0.06) 1px,
+        transparent 1px,
+        transparent 35px
+    );
+
+    opacity:0.5;
+
+}
