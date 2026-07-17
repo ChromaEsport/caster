@@ -91,7 +91,7 @@ body{
 
 
 
-.team{
+.team {
 
     color:white;
 
@@ -99,11 +99,30 @@ body{
 
     font-weight:bold;
 
+    text-transform:uppercase;
+
+    width:750px;
+
+}
+
+.team1 {
+
+    text-align:right;
+
 }
 
 
+.team2 {
 
-.vs{
+    text-align:left;
+
+}
+
+.vs {
+
+    width:120px;
+
+    text-align:center;
 
     color:#3c9195;
 
