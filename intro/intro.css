@@ -22,7 +22,8 @@ body{
     width:1920px;
 
     height:1080px;
-
+    
+    top: 150px;
 }
 
 
@@ -33,13 +34,13 @@ body{
 
     position:absolute;
 
-    top:40px;
+    top:-160px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    height:150px;
+    height:750px;
 
 }
 
@@ -162,7 +163,7 @@ body{
 
     position:absolute;
 
-    bottom:120px;
+    bottom:320px;
 
     width:100%;
 
