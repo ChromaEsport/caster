@@ -39,3 +39,61 @@ onSnapshot(matchRef, (doc) => {
 
 
 });
+const welcome = document.querySelector(".welcome");
+const text = document.getElementById("welcome-text");
+
+
+const message = "BIENVENUE SUR LE LIVE";
+
+
+let index = 0;
+
+
+
+function typeWriter(){
+
+
+    if(index < message.length){
+
+        text.textContent += message.charAt(index);
+
+        index++;
+
+        setTimeout(typeWriter,80);
+
+    }
+
+
+}
+
+
+
+function showWelcome(){
+
+
+    welcome.classList.add("show");
+
+
+    text.textContent="";
+
+    index=0;
+
+
+    typeWriter();
+
+
+
+    setTimeout(()=>{
+
+
+        welcome.classList.remove("show");
+
+
+    },6000);
+
+
+}
+
+
+
+setTimeout(showWelcome,1000);
