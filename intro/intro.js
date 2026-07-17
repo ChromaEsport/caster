@@ -39,6 +39,8 @@ onSnapshot(matchRef, (doc) => {
 
 
 });
+
+
 const welcome = document.querySelector(".welcome");
 const text = document.getElementById("welcome-text");
 
@@ -63,7 +65,6 @@ function typeWriter(){
 
     }
 
-
 }
 
 
@@ -74,19 +75,21 @@ function showWelcome(){
     welcome.classList.add("show");
 
 
-    text.textContent="";
+    text.textContent = "";
 
-    index=0;
+    index = 0;
 
 
     typeWriter();
 
 
 
+    // reste visible 6 secondes
+
     setTimeout(()=>{
 
 
-        welcome.classList.remove("show");
+        hideWelcome();
 
 
     },6000);
@@ -95,5 +98,29 @@ function showWelcome(){
 }
 
 
+
+function hideWelcome(){
+
+
+    welcome.classList.remove("show");
+
+
+
+    // revient après 10 secondes caché
+
+    setTimeout(()=>{
+
+
+        showWelcome();
+
+
+    },10000);
+
+
+}
+
+
+
+// Premier affichage
 
 setTimeout(showWelcome,1000);
