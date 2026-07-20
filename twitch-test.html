@@ -2,69 +2,312 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
-<title>Twitch Test</title>
-</head>
 
-<body>
+<title>Chroma Twitch Test</title>
 
-<h1>Statistiques Twitch</h1>
+<style>
 
-<div id="viewers">
-Chargement...
-</div>
+body{
 
-
-<script>
-
-const clientId = "qwa622lj0cfz61of8gc9ti5nks0ag6";
-const token = "m1fe6fx9hrqun1a85kbkvkseym5b2d38j6f587zmj59p7oqs2l";
-
-const channel = "chromaesporttv";
-
-
-async function getTwitchStats(){
-
-    const response = await fetch(
-        `https://api.twitch.tv/helix/streams?user_login=${channel}`,
-        {
-            headers:{
-                "Client-ID": clientId,
-                "Authorization": `Bearer ${token}`
-            }
-        }
-    );
-
-
-    const data = await response.json();
-
-
-    if(data.data.length > 0){
-
-        const stream = data.data[0];
-
-        document.getElementById("viewers").innerHTML =
-        `
-        🔴 LIVE<br>
-        👁 ${stream.viewer_count} viewers<br>
-        🎮 ${stream.game_name}<br>
-        📝 ${stream.title}
-        `;
-
-    }else{
-
-        document.getElementById("viewers").innerHTML =
-        "⚫ Chaîne hors ligne";
-
-    }
+    margin:0;
+    width:1920px;
+    height:1080px;
+    background:#010c2c;
+    font-family:Arial,sans-serif;
+    color:white;
 
 }
 
 
-getTwitchStats();
+.twitch-panel{
+
+    position:absolute;
+
+    top:200px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:500px;
+
+    padding:30px;
+
+    background:#071936;
+
+    border:3px solid #c89c4d;
+
+    border-radius:20px;
+
+    text-align:center;
+
+}
+
+
+h1{
+
+    color:#c89c4d;
+    letter-spacing:5px;
+
+}
+
+
+.stat{
+
+    font-size:28px;
+    margin:20px;
+
+}
+
+
+.live{
+
+    color:#ff3b3b;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="twitch-panel">
+
+
+<h1>TWITCH LIVE</h1>
+
+
+<div class="stat live" id="status">
+
+Chargement...
+
+</div>
+
+
+<div class="stat">
+
+👁 <span id="viewers">0</span> viewers
+
+</div>
+
+
+<div class="stat">
+
+❤️ <span id="followers">0</span> followers
+
+</div>
+
+
+<div class="stat">
+
+⭐ <span id="subs">0</span> abonnés
+
+</div>
+
+
+<div class="stat">
+
+🎮 <span id="game">-</span>
+
+</div>
+
+
+<div class="stat">
+
+📝 <span id="title">-</span>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+const clientId = "qwa622lj0cfz61of8gc9ti5nks0ag6";
+
+const token = "f6cb75j3vik30p9n60i1eh3q42mtab";
+
+const channel = "chromaesporttv";
+
+const broadcasterId = "TON_BROADCASTER_ID";
+
+
+
+// LIVE + VIEWERS
+
+async function getStream(){
+
+
+const response = await fetch(
+
+`https://api.twitch.tv/helix/streams?user_login=${channel}`,
+
+{
+
+headers:{
+
+"Client-ID":clientId,
+
+"Authorization":`Bearer ${token}`
+
+}
+
+}
+
+);
+
+
+const data = await response.json();
+
+
+
+if(data.data.length > 0){
+
+
+const stream=data.data[0];
+
+
+document.getElementById("status").innerHTML=
+"🔴 LIVE";
+
+
+document.getElementById("viewers").innerHTML=
+stream.viewer_count;
+
+
+document.getElementById("game").innerHTML=
+stream.game_name;
+
+
+document.getElementById("title").innerHTML=
+stream.title;
+
+
+}
+
+else{
+
+
+document.getElementById("status").innerHTML=
+"⚫ HORS LIGNE";
+
+}
+
+
+}
+
+
+
+// FOLLOWERS
+
+async function getFollowers(){
+
+
+const response = await fetch(
+
+`https://api.twitch.tv/helix/channels/followers?broadcaster_id=${broadcasterId}`,
+
+{
+
+headers:{
+
+"Client-ID":clientId,
+
+"Authorization":`Bearer ${token}`
+
+}
+
+}
+
+);
+
+
+
+const data = await response.json();
+
+
+document.getElementById("followers").innerHTML=
+
+data.total;
+
+
+
+}
+
+
+
+// ABONNES
+
+async function getSubs(){
+
+
+const response = await fetch(
+
+`https://api.twitch.tv/helix/subscriptions?broadcaster_id=${broadcasterId}`,
+
+{
+
+headers:{
+
+"Client-ID":clientId,
+
+"Authorization":`Bearer ${token}`
+
+}
+
+}
+
+);
+
+
+
+const data = await response.json();
+
+
+document.getElementById("subs").innerHTML=
+
+data.total;
+
+
+
+}
+
+
+
+// Lancement
+
+getStream();
+
+getFollowers();
+
+getSubs();
+
+
+
+// Actualisation 60 secondes
+
+setInterval(()=>{
+
+getStream();
+
+getFollowers();
+
+getSubs();
+
+},60000);
+
 
 
 </script>
+
 
 </body>
 
