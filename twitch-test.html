@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Twitch Test</title>
+</head>
+
+<body>
+
+<h1>Statistiques Twitch</h1>
+
+<div id="viewers">
+Chargement...
+</div>
+
+
+<script>
+
+const clientId = "TON_CLIENT_ID";
+const token = "TON_ACCESS_TOKEN";
+
+const channel = "TON_LOGIN_TWITCH";
+
+
+async function getTwitchStats(){
+
+    const response = await fetch(
+        `https://api.twitch.tv/helix/streams?user_login=${channel}`,
+        {
+            headers:{
+                "Client-ID": clientId,
+                "Authorization": `Bearer ${token}`
+            }
+        }
+    );
+
+
+    const data = await response.json();
+
+
+    if(data.data.length > 0){
+
+        const stream = data.data[0];
+
+        document.getElementById("viewers").innerHTML =
+        `
+        🔴 LIVE<br>
+        👁 ${stream.viewer_count} viewers<br>
+        🎮 ${stream.game_name}<br>
+        📝 ${stream.title}
+        `;
+
+    }else{
+
+        document.getElementById("viewers").innerHTML =
+        "⚫ Chaîne hors ligne";
+
+    }
+
+}
+
+
+getTwitchStats();
+
+
+</script>
+
+</body>
+
+</html>
