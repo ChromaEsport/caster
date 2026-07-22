@@ -179,41 +179,41 @@ function updateSocial(){
 
 function changeSocial(){
 
-    // Disparition
-    socialContent.classList.add("hide");
+    // Animation de sortie de la carte
+    socialCard.classList.add("hide");
 
 
     setTimeout(()=>{
 
+
+        // Passage au réseau suivant
         current++;
 
         if(current >= socials.length)
             current = 0;
 
-        socialCard.classList.remove("hide");
-        socialCard.classList.add("show-change");
 
-        document.getElementById("socialLogo").src =
-            socials[current].logo;
+
+        // Mise à jour du contenu
+
+        socialLogo.src = socials[current].logo;
+
 
         document.getElementById("socialName").textContent =
             socials[current].name;
 
+
         document.getElementById("socialValue").textContent =
             socials[current].value;
 
-           // Prépare l'entrée
-        socialContent.style.transform = "translateY(12px)";
 
-        requestAnimationFrame(()=>{
 
-            socialCard.classList.remove("show-change");
+        // Animation de retour
 
-            socialContent.style.transform = "translateY(0)";
+        socialCard.classList.remove("hide");
 
-        });
 
-    },350);
+    },500);
 
 }
 setTimeout(()=>{
