@@ -669,3 +669,17 @@ body{
     margin-right:15px;
 
 }
+
+.social-content{
+
+    opacity:1;
+
+    transition:opacity .3s ease;
+
+}
+
+.social-content.fade{
+
+    opacity:0;
+
+}
