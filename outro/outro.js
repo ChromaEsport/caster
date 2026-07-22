@@ -180,7 +180,7 @@ function updateSocial(){
 function changeSocial(){
 
     // Disparition
-    socialContent.classList.add("fade");
+    socialContent.classList.add("hide");
 
 
     setTimeout(()=>{
@@ -189,6 +189,9 @@ function changeSocial(){
 
         if(current >= socials.length)
             current = 0;
+
+        socialCard.classList.remove("hide");
+        socialCard.classList.add("show-change");
 
         document.getElementById("socialLogo").src =
             socials[current].logo;
@@ -204,7 +207,7 @@ function changeSocial(){
 
         requestAnimationFrame(()=>{
 
-            socialContent.classList.remove("fade");
+            socialCard.classList.remove("show-change");
 
             socialContent.style.transform = "translateY(0)";
 
