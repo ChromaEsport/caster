@@ -160,9 +160,12 @@ body{
 
      line-height:2;
 
+
 }
 
-
+.teams.span {
+color:red;
+}
 
 .team {
 
