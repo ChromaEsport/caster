@@ -182,10 +182,18 @@ function changeSocial(){
         document.getElementById("socialValue").textContent =
             socials[current].value;
 
-        // Réapparition
-        socialContent.classList.remove("fade");
+           // Prépare l'entrée
+        socialContent.style.transform = "translateY(12px)";
 
-    },300);
+        requestAnimationFrame(()=>{
+
+            socialContent.classList.remove("fade");
+
+            socialContent.style.transform = "translateY(0)";
+
+        });
+
+    },350);
 
 }
 
