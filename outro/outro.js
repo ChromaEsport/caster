@@ -159,7 +159,7 @@ const socials = [
     {
         logo:"../asset/youtube.svg",
         name:"YOUTUBE",
-        value:"@chroma.esport",
+        value:"@ChromaEsportTV",
         class:"youtube"
     }
 
