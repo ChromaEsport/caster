@@ -138,25 +138,29 @@ const socials = [
     {
         logo:"../asset/instagram.svg",
         name:"INSTAGRAM",
-        value:"@chroma.esport_"
+        value:"@chroma.esport_",
+        class:"instagram"
     },
 
     {
         logo:"../asset/tiktok.svg",
         name:"TIKTOK",
-        value:"@chroma.esport_"
+        value:"@chroma.esport_",
+        class:"tiktok"
     },
 
     {
         logo:"../asset/discord.svg",
         name:"DISCORD",
-        value:"https://discord.gg/SSF8V28QDK"
+        value:"https://discord.gg/SSF8V28QDK",
+        class:"discord"
     },
 
     {
         logo:"../asset/youtube.svg",
         name:"YOUTUBE",
-        value:"@chroma.esport"
+        value:"@chroma.esport",
+        class:"youtube"
     }
 
 ];
@@ -164,6 +168,16 @@ const socials = [
 let current = 0;
 
 const socialContent = document.getElementById("socialContent");
+
+function updateCardColor(){
+
+    socialCard.className = "social-card";
+
+    socialCard.classList.add(
+        socials[current].class
+    );
+
+}
 
 function updateSocial(){
 
@@ -175,6 +189,7 @@ function updateSocial(){
     document.getElementById("socialValue").textContent =
         socials[current].value;
 
+     updateCardColor();
 }
 
 function changeSocial(){
@@ -204,7 +219,7 @@ function changeSocial(){
         document.getElementById("socialValue").textContent =
             socials[current].value;
 
-
+        updateCardColor();
 
         socialCard.classList.remove("change");
 
