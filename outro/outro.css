@@ -624,6 +624,8 @@ body{
 
     font-weight:bold;
 
+    opacity:0;
+
     animation: fadeUp 1.5s ease forwards;
 
     animation-delay:8s;
