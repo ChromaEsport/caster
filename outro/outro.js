@@ -127,4 +127,4 @@ function hideWelcome(){
 
 
 
-setTimeout(showWelcome,2000);
+setTimeout(showWelcome,1000);
