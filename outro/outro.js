@@ -28,6 +28,8 @@ const text2 = "Le stream est maintenant terminé";
 
 const socialCard = document.querySelector(".social-card");
 
+const socialsContainer = document.querySelector(".socials");
+
 
 
 let i = 0;
@@ -204,8 +206,6 @@ function changeSocial(){
 
             socialContent.classList.remove("fade");
 
-            socialCard.classList.add("show");
-
             socialContent.style.transform = "translateY(0)";
 
         });
@@ -213,6 +213,16 @@ function changeSocial(){
     },350);
 
 }
-updateSocial();
-setInterval(changeSocial,2000);
+setTimeout(()=>{
+
+    socialsContainer.classList.add("show");
+    
+    socialCard.classList.add("show");
+    
+    updateSocial();
+
+},9000);
+
+
+setInterval(changeSocial,3000);
 
