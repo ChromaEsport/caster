@@ -132,25 +132,25 @@ setTimeout(showWelcome,1000);
 const socials = [
 
     {
-        logo:"asset/instagram.svg",
+        logo:"../asset/instagram.svg",
         name:"INSTAGRAM",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"asset/tiktok.svg",
+        logo:"../asset/tiktok.svg",
         name:"TIKTOK",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"asset/discord.svg",
+        logo:"../asset/discord.svg",
         name:"DISCORD",
         value:"https://discord.gg/SSF8V28QDK"
     },
 
     {
-        logo:"asset/youtube.svg",
+        logo:"../asset/youtube.svg",
         name:"YOUTUBE",
         value:"@chroma.esport"
     }
@@ -161,10 +161,23 @@ let current = 0;
 
 const socialContent = document.getElementById("socialContent");
 
+function updateSocial(){
+
+    socialLogo.src = socials[current].logo;
+
+    document.getElementById("socialName").textContent =
+        socials[current].name;
+
+    document.getElementById("socialValue").textContent =
+        socials[current].value;
+
+}
+
 function changeSocial(){
 
     // Disparition
     socialContent.classList.add("fade");
+
 
     setTimeout(()=>{
 
@@ -196,5 +209,6 @@ function changeSocial(){
     },350);
 
 }
-
+updateSocial();
 setInterval(changeSocial,2000);
+
