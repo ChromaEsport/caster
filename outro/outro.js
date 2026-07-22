@@ -171,8 +171,16 @@ const socialContent = document.getElementById("socialContent");
 
 function updateCardColor(){
 
-    socialCard.className = "social-card";
+    // enlève uniquement les anciennes couleurs
+    socialCard.classList.remove(
+        "instagram",
+        "tiktok",
+        "discord",
+        "youtube"
+    );
 
+
+    // ajoute la couleur actuelle
     socialCard.classList.add(
         socials[current].class
     );
