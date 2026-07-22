@@ -28,7 +28,7 @@ body{
 
     height:1080px;
     
-    top: 200px;
+    top: 150px;
 
     z-index:1;
 }
@@ -692,31 +692,16 @@ body{
 
 .social-card {
 
-    position:relative;
-
-    width:520px;
-
-    margin:40px auto 0;
-
-    padding:30px 40px;
-
-    background:rgba(7,25,54,0.85);
-
-    border:2px solid #3c9195;
-
-    clip-path:polygon(
-        20px 0,
-        100% 0,
-        100% calc(100% - 20px),
-        calc(100% - 20px) 100%,
-        0 100%,
-        0 20px
-    );
-
-    box-shadow:
-        0 0 25px rgba(60,145,149,.25);
-  
-    opacity:0;
+    position: relative;
+    width: 520px;
+    margin: 40px auto 0;
+    padding: 15px 20px;
+    background: #00050a;
+    border: 2px solid #c89c4dc9;
+    /* clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); */
+    box-shadow: 0 0 25px rgb(200 156 77 / 72%);
+    opacity: 0;
+    border-radius: 20px;
 
     
 }
