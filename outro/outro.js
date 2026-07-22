@@ -132,25 +132,25 @@ setTimeout(showWelcome,1000);
 const socials = [
 
     {
-        icon:"📸",
+        logo:"assets/social/instagram.svg",
         name:"INSTAGRAM",
         value:"@chroma.esport_"
     },
 
     {
-        icon:"🎵",
+        logo:"assets/social/tiktok.svg",
         name:"TIKTOK",
         value:"@chroma.esport_"
     },
 
     {
-        icon:"💬",
+        logo:"assets/social/discord.svg",
         name:"DISCORD",
         value:"https://discord.gg/SSF8V28QDK"
     },
 
     {
-        icon:"▶️",
+        logo:"assets/social/youtube.svg",
         name:"YOUTUBE",
         value:"@chroma.esport"
     }
@@ -173,8 +173,8 @@ function changeSocial(){
         if(current >= socials.length)
             current = 0;
 
-        document.getElementById("socialIcon").textContent =
-            socials[current].icon;
+        document.getElementById("socialLogo").src =
+            socials[current].logo;
 
         document.getElementById("socialName").textContent =
             socials[current].name;
