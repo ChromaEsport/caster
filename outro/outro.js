@@ -45,9 +45,9 @@ const line2 = document.getElementById("welcome-line2");
 
 
 
-const text1 = "LE STREAM EST MAINTENANT TERMINÉ";
+const text1 = "Le stream est maintenant terminé";
 
-const text2 = "A REMPLACER";
+const text2 = "Merci à toutes et à tous ❤️";
 
 
 
