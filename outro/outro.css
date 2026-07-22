@@ -674,12 +674,18 @@ body{
 
     opacity:1;
 
-    transition:opacity .3s ease;
+    transform:translateY(0);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
 
 }
 
 .social-content.fade{
 
     opacity:0;
+
+    transform:translateY(-12px);
 
 }
