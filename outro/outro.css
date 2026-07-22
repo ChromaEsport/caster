@@ -715,8 +715,46 @@ body{
 
     box-shadow:
         0 0 25px rgba(60,145,149,.25);
+  
+    animation: socialEnter 1s ease forwards;
+}
+
+@keyframes socialEnter {
+
+    0% {
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.95);
+
+    }
+
+
+    70% {
+
+        opacity:1;
+
+        transform:
+            translateY(-5px)
+            scale(1.02);
+
+    }
+
+
+    100% {
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
 
 }
+
 .social-card::before {
 
     content:"";
