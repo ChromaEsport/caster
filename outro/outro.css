@@ -690,7 +690,9 @@ body{
 
 }
 
-.social-card{
+.social-card {
+
+    position:relative;
 
     width:520px;
 
@@ -698,16 +700,59 @@ body{
 
     padding:30px 40px;
 
-    background:#071936;
+    background:rgba(7,25,54,0.85);
 
     border:2px solid #3c9195;
 
-    border-radius:12px;
+    clip-path:polygon(
+        20px 0,
+        100% 0,
+        100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        0 100%,
+        0 20px
+    );
 
-    box-sizing:border-box;
+    box-shadow:
+        0 0 25px rgba(60,145,149,.25);
+
+}
+.social-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:80px;
+
+    height:3px;
+
+    background:#c89c4d;
 
 }
 
+
+.social-card::after {
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    right:0;
+
+    width:80px;
+
+    height:3px;
+
+    background:#c89c4d;
+
+}
 .social-header{
 
     display:flex;
