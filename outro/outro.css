@@ -624,11 +624,7 @@ body{
 
     font-weight:bold;
 
-    opacity:0;
-
-    animation: fadeUp 1.5s ease forwards;
-
-    animation-delay:9s;
+    opacity:1;
 
     
 }
@@ -716,7 +712,15 @@ body{
     box-shadow:
         0 0 25px rgba(60,145,149,.25);
   
-    animation: socialEnter 1s ease forwards;
+    opacity:0;
+
+    
+}
+
+.social-card.show {
+
+    animation:socialEnter 1s ease forwards;
+
 }
 
 @keyframes socialEnter {
