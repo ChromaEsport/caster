@@ -123,7 +123,7 @@ function showWelcome(){
         hideWelcome();
 
 
-    },8000);
+    },10000);
 
 
 }
