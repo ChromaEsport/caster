@@ -134,25 +134,25 @@ const socials = [
     {
         icon:"📸",
         name:"INSTAGRAM",
-        value:"@ChromaEsportTV"
+        value:"@chroma.esport_"
     },
 
     {
         icon:"🎵",
         name:"TIKTOK",
-        value:"@ChromaEsportTV"
+        value:"@chroma.esport_"
     },
 
     {
         icon:"💬",
         name:"DISCORD",
-        value:"discord.gg/xxxxx"
+        value:"https://discord.gg/SSF8V28QDK"
     },
 
     {
         icon:"▶️",
         name:"YOUTUBE",
-        value:"Chroma Esport TV"
+        value:"@chroma.esport"
     }
 
 ];
