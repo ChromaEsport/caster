@@ -159,24 +159,34 @@ const socials = [
 
 let current = 0;
 
+const socialContent = document.getElementById("socialContent");
+
 function changeSocial(){
 
-    document.getElementById("socialIcon").textContent =
-        socials[current].icon;
+    // Disparition
+    socialContent.classList.add("fade");
 
-    document.getElementById("socialName").textContent =
-        socials[current].name;
+    setTimeout(()=>{
 
-    document.getElementById("socialValue").textContent =
-        socials[current].value;
+        current++;
 
-    current++;
+        if(current >= socials.length)
+            current = 0;
 
-    if(current >= socials.length)
-        current = 0;
+        document.getElementById("socialIcon").textContent =
+            socials[current].icon;
+
+        document.getElementById("socialName").textContent =
+            socials[current].name;
+
+        document.getElementById("socialValue").textContent =
+            socials[current].value;
+
+        // Réapparition
+        socialContent.classList.remove("fade");
+
+    },300);
 
 }
-
-changeSocial();
 
 setInterval(changeSocial,2000);
