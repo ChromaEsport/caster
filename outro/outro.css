@@ -565,7 +565,7 @@ body{
 
     position:absolute;
 
-    top:240px;
+    top:260px;
 
     width:100%;
 
@@ -610,7 +610,7 @@ body{
 
     position:absolute;
 
-    top:690px;
+    top:670px;
 
     width:100%;
 
@@ -878,35 +878,35 @@ body{
 
 .social-card.instagram {
 
-    background:#00050a;
-    border-color:#c13584;
-    box-shadow:0 0 25px rgba(193,53,132,.5);
+    background:#02102e;
+    border-color:#e03596cc;
+    box-shadow:#e03596cc;
 
 }
 
 
 .social-card.tiktok {
 
-    background:#000000;
-    border-color:#ffffff;
-    box-shadow:0 0 25px rgba(255,255,255,.4);
+    background:#02102e;
+    border-color:#ffffffcc;
+    box-shadow:#ffffffcc;
 
 }
 
 
 .social-card.discord {
 
-    background:#5865F2;
-    border-color:#ffffff;
-    box-shadow:0 0 25px rgba(88,101,242,.6);
+    background:#02102e;
+    border-color:#5662f6cc;
+    box-shadow:#5662f6cc;
 
 }
 
 
 .social-card.youtube {
 
-    background:#ff0000;
-    border-color:#ffffff;
-    box-shadow:0 0 25px rgba(255,0,0,.6);
+    background:#02102e;
+    border-color:#ff0033cc;
+    box-shadow:#ff0033cc;
 
 }
