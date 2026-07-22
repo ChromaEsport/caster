@@ -62,6 +62,10 @@ body{
     width:auto;
 
     z-index:1;
+
+    filter:
+        drop-shadow(0 0 25px rgba(60,145,149,.35))
+        drop-shadow(0 0 60px rgba(60,145,149,.15));
 }
 
 
