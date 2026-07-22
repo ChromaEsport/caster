@@ -130,7 +130,7 @@ body{
 
     position:absolute;
 
-    top:375px;
+    top:335px;
 
     width:100%;
 
@@ -158,7 +158,7 @@ body{
 
     animation-delay:1.5s;
 
-     line-height:1.5;
+     line-height:2;
 
 }
 
@@ -315,7 +315,7 @@ body{
 
 .bottom-line {
 
-    top:495px;
+    top:525px;
 
 }
 /* BACKGROUND SHAPES */
@@ -534,7 +534,7 @@ body{
 
     position:absolute;
 
-    top:560px;
+    top:590px;
 
     width:100%;
 
