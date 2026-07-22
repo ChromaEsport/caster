@@ -702,6 +702,10 @@ body{
     box-shadow: 0 0 25px rgb(200 156 77 / 72%);
     opacity: 0;
     border-radius: 20px;
+    
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
 
     
 }
@@ -711,6 +715,28 @@ body{
     animation:socialEnter 1s ease forwards;
 
 }
+
+.social-card.hide {
+
+    opacity:0;
+
+    transform:
+        translateY(-20px)
+        scale(.96);
+
+}
+
+
+.social-card.show-change {
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
 
 @keyframes socialEnter {
 
