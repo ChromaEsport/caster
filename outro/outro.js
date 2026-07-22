@@ -20,7 +20,7 @@ const line1 = document.getElementById("welcome-line1");
 
 const line2 = document.getElementById("welcome-line2");
 
-
+const socialLogo = document.getElementById("socialLogo");
 
 const text1 = "Merci à tous pour votre SOUTIEN";
 
@@ -132,25 +132,25 @@ setTimeout(showWelcome,1000);
 const socials = [
 
     {
-        logo:"assets/social/instagram.svg",
+        logo:"assets/instagram.svg",
         name:"INSTAGRAM",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"assets/social/tiktok.svg",
+        logo:"assets/tiktok.svg",
         name:"TIKTOK",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"assets/social/discord.svg",
+        logo:"assets/discord.svg",
         name:"DISCORD",
         value:"https://discord.gg/SSF8V28QDK"
     },
 
     {
-        logo:"assets/social/youtube.svg",
+        logo:"assets/youtube.svg",
         name:"YOUTUBE",
         value:"@chroma.esport"
     }
