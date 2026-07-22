@@ -178,21 +178,21 @@ body{
 
 .chroma {
 
-    color:#ffffff;
+    color:#3c9195;
 
 }
 
 
 .esport {
 
-    color:#3c9195;
+    color:#ffffff;
 
 }
 
 
 .tv {
 
-    color:#c89c4d;
+    color:#ffffff;
 
 }
 .team {
@@ -571,7 +571,7 @@ body{
 
     text-align:center;
 
-    color:white;
+    color:#c89c4d;
 
     font-size:48px;
 
@@ -597,7 +597,7 @@ body{
 
 #welcome-line2 {
 
-    color:#c89c4d;
+    color:#ffffff;
 
     margin-top:15px;
 
@@ -634,7 +634,7 @@ body{
 
 .social-title {
 
-    color:#c89c4d;
+    color:#ffffff;
 
     font-size:30px;
 
