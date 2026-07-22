@@ -610,7 +610,7 @@ body{
 
     position:absolute;
 
-    top:670px;
+    top:630px;
 
     width:100%;
 
@@ -642,9 +642,9 @@ body{
 
     letter-spacing:4px;
 
-      margin-bottom:40px;
+    animation-delay:9s;
 
-      animation-delay:9s;
+    line-height:1.5;
 }
 
 
@@ -696,7 +696,7 @@ body{
 
     width:520px;
 
-    margin:40px auto 0;
+    margin:20px auto 0;
 
     padding:15px 20px;
 
@@ -837,6 +837,7 @@ body{
 
     gap:18px;
 
+    margin-top:15px;
 }
 
 #socialLogo{
@@ -863,7 +864,9 @@ body{
 
 .social-value{
 
-    margin-top:25px;
+    margin-top:10px;
+
+    margin-bottom:15px
 
     color:#c89c4d;
 
