@@ -26,6 +26,8 @@ const text1 = "Merci à tous pour votre SOUTIEN";
 
 const text2 = "Le stream est maintenant terminé";
 
+const socialCard = document.querySelector(".social-card");
+
 
 
 let i = 0;
@@ -201,6 +203,8 @@ function changeSocial(){
         requestAnimationFrame(()=>{
 
             socialContent.classList.remove("fade");
+
+            socialCard.classList.add("show");
 
             socialContent.style.transform = "translateY(0)";
 
