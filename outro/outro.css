@@ -163,10 +163,25 @@ body{
 
 }
 
-.teams.span {
-color:red;
+.chroma {
+
+    color:#ffffff;
+
 }
 
+
+.esport {
+
+    color:#3c9195;
+
+}
+
+
+.tv {
+
+    color:#c89c4d;
+
+}
 .team {
 
     color:white;
