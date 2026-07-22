@@ -150,4 +150,4 @@ function hideWelcome(){
 
 
 
-setTimeout(showWelcome,1000);
+setTimeout(showWelcome,2000);
