@@ -1,1 +1,491 @@
+body{
 
+    margin:0;
+
+    width:1920px;
+
+    height:1080px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+    180deg,
+    #07163d 0%,
+    #03112f 35%,
+    #010c2c 100%
+);
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+.intro{
+
+    position:relative;
+
+    width:1920px;
+
+    height:1080px;
+    
+    top: 150px;
+
+    z-index:1;
+}
+
+
+
+/* Logo */
+.logo1{
+
+    position:absolute;
+
+    top:90px;
+
+    left:0;
+
+    width:1920px;
+
+    height:250px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.logo{
+
+    height:700px;
+
+    width:auto;
+
+    z-index:1;
+}
+
+
+
+/* Evènement */
+
+.event{
+
+    position:absolute;
+
+    top:240px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#c89c4d;
+
+    font-size:36px;
+
+    font-weight:bold;
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* Equipes */
+
+.teams{
+
+    position:absolute;
+
+    top:420px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:100px;
+
+}
+
+
+
+.team {
+
+    color:white;
+
+    font-size:72px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    width:750px;
+
+}
+
+.team1 {
+
+    text-align:right;
+
+}
+
+
+.team2 {
+
+    text-align:left;
+
+}
+
+.vs {
+
+    width:120px;
+
+    text-align:center;
+
+    color:#c89c4d;
+
+    font-size:64px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* BO */
+
+.bo{
+
+    position:absolute;
+
+    top:610px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#c89c4d;
+
+    font-size:32px;
+
+    letter-spacing:4px;
+
+}
+
+
+/* Lignes match */
+
+.match-line {
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+.match-line span {
+
+    width:350px;
+
+    height:3px;
+
+    background:#3c9195;
+
+}
+
+
+
+.match-line div {
+
+    width:12px;
+
+    height:12px;
+
+    background:#c89c4d;
+
+    transform:rotate(45deg);
+
+}
+
+
+/* Position */
+
+.top-line {
+
+    top:350px;
+
+}
+
+
+.bottom-line {
+
+    top:540px;
+
+}
+/* BACKGROUND SHAPES */
+
+
+.background-shapes {
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:1920px;
+
+    height:1080px;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+
+
+.shape-left {
+
+    position:absolute;
+
+    width:700px;
+
+    height:1200px;
+
+    background:#3c9195;
+
+    opacity:0.10;
+
+    transform:rotate(35deg);
+
+    left:-500px;
+
+    top:-200px;
+
+}
+
+
+
+.shape-right {
+
+    position:absolute;
+
+    width:700px;
+
+    height:1200px;
+
+    background:#c89c4d;
+
+    opacity:0.10;
+
+    transform:rotate(-35deg);
+
+    right:-500px;
+
+    bottom:-200px;
+
+}
+
+/* TECH LINES */
+
+
+.tech-line {
+
+    position:absolute;
+
+    width:850px;
+
+    height:3px;
+
+    background:#3c9195;
+
+    opacity:0.45;
+
+    transform-origin:center;
+
+}
+
+
+/* Ligne gauche */
+
+.line-left {
+
+    left:-185px;
+
+    top:450px;
+
+    transform:rotate(-55deg);
+
+}
+
+/* Ligne droite */
+
+.line-right {
+
+    right:-185px;
+
+    bottom:340px;
+
+    background:#c89c4d;
+
+    transform:rotate(55deg);
+
+}
+/* HUD ELEMENTS */
+
+
+.hud {
+
+    position:absolute;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.hud span {
+
+    width:12px;
+
+    height:12px;
+
+    border:2px solid #3c9195;
+
+}
+
+
+
+/* Coins */
+
+
+.top-left {
+
+    top:80px;
+
+    left:80px;
+
+}
+
+
+
+.top-right {
+
+    top:80px;
+
+    right:80px;
+
+}
+
+
+
+.bottom-left {
+
+    bottom:80px;
+
+    left:80px;
+
+}
+
+
+
+.bottom-right {
+
+    bottom:80px;
+
+    right:80px;
+
+}
+
+
+
+.bottom-right span,
+.top-right span {
+
+    border-color:#c89c4d;
+
+}
+
+
+/* TECH GRID */
+
+
+.tech-grid {
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    repeating-linear-gradient(
+        45deg,
+        rgba(60,145,149,0.06),
+        rgba(60,145,149,0.06) 1px,
+        transparent 1px,
+        transparent 35px
+    );
+
+    opacity:0.5;
+
+}
+/* WELCOME MESSAGE */
+
+
+.welcome {
+
+    position:absolute;
+
+    top:720px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    opacity:0;
+
+    transition:opacity 0.8s ease;
+
+}
+
+
+
+.welcome.show {
+
+    opacity:1;
+
+}
+
+
+
+#welcome-line2 {
+
+    color:#c89c4d;
+
+    margin-top:15px;
+
+    font-size:40px;
+
+}
