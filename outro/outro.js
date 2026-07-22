@@ -14,29 +14,6 @@ const matchRef = doc(
 
 
 
-onSnapshot(matchRef, (doc) => {
-
-
-    const data = doc.data();
-
-
-    if (!data) return;
-
-
-
-
-    document.querySelector(".team1").textContent =
-        data.team1 || "CHROMA";
-
-
-
-    document.querySelector(".team2").textContent =
-        data.team2 || "ADVERSAIRE";
-
-
-});
-
-
 const welcome = document.querySelector(".welcome");
 
 const line1 = document.getElementById("welcome-line1");
