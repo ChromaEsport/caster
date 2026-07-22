@@ -880,7 +880,7 @@ body{
 
     background:#02102e;
     border-color:#e03596cc;
-    box-shadow:#e03596cc;
+    box-shadow:0 0 25px #e03596cc;
 
 }
 
@@ -889,7 +889,7 @@ body{
 
     background:#02102e;
     border-color:#ffffffcc;
-    box-shadow:#ffffffcc;
+    box-shadow:0 0 25px #ffffffcc;
 
 }
 
@@ -898,7 +898,7 @@ body{
 
     background:#02102e;
     border-color:#5662f6cc;
-    box-shadow:#5662f6cc;
+    box-shadow:0 0 25px #5662f6cc;
 
 }
 
@@ -907,6 +907,6 @@ body{
 
     background:#02102e;
     border-color:#ff0033cc;
-    box-shadow:#ff0033cc;
+    box-shadow:0 0 25px #ff0033cc;
 
 }
