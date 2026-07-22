@@ -219,12 +219,44 @@ body{
 .match-line div {
 
     width:12px;
-
     height:12px;
-
     background:#c89c4d;
-
     transform:rotate(45deg);
+
+    animation: pulseDiamond 3s ease-in-out infinite;
+
+}
+
+
+/* Pulsation du losange */
+
+@keyframes pulseDiamond {
+
+    0% {
+
+        transform:rotate(45deg) scale(1);
+
+        opacity:1;
+
+    }
+
+
+    50% {
+
+        transform:rotate(45deg) scale(1.35);
+
+        opacity:0.75;
+
+    }
+
+
+    100% {
+
+        transform:rotate(45deg) scale(1);
+
+        opacity:1;
+
+    }
 
 }
 
