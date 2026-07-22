@@ -874,3 +874,39 @@ body{
     letter-spacing:1px;
 
 }
+/* Couleurs selon le réseau */
+
+.social-card.instagram {
+
+    background:#00050a;
+    border-color:#c13584;
+    box-shadow:0 0 25px rgba(193,53,132,.5);
+
+}
+
+
+.social-card.tiktok {
+
+    background:#000000;
+    border-color:#ffffff;
+    box-shadow:0 0 25px rgba(255,255,255,.4);
+
+}
+
+
+.social-card.discord {
+
+    background:#5865F2;
+    border-color:#ffffff;
+    box-shadow:0 0 25px rgba(88,101,242,.6);
+
+}
+
+
+.social-card.youtube {
+
+    background:#ff0000;
+    border-color:#ffffff;
+    box-shadow:0 0 25px rgba(255,0,0,.6);
+
+}
