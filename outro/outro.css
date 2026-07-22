@@ -140,8 +140,6 @@ body{
 
     align-items:center;
 
-    gap:100px;
-
     color:#ffffff;
 
     font-size:36px;
@@ -164,11 +162,6 @@ body{
 
 }
 
-.subtitle-line {
-
-    margin-bottom:25px;
-
-}
 
 .brand {
 
