@@ -28,7 +28,7 @@ body{
 
     height:1080px;
     
-    top: 150px;
+    top: 125px;
 
     z-index:1;
 }
@@ -754,9 +754,9 @@ body{
 
     position:absolute;
 
-    top:0;
+    top:0.25em;
 
-    left:0;
+    left:30px;
 
     width:80px;
 
@@ -773,9 +773,9 @@ body{
 
     position:absolute;
 
-    bottom:0;
+    bottom:0.25em;
 
-    right:0;
+    right:30px;
 
     width:80px;
 
