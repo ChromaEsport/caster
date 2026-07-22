@@ -160,6 +160,26 @@ body{
 
      line-height:2;
 
+    flex-direction:column;
+
+}
+
+.subtitle-line {
+
+    margin-bottom:25px;
+
+}
+
+.brand {
+
+    font-size:72px;
+    font-weight:bold;
+    letter-spacing:4px;
+
+}
+.brand span {
+
+    margin:0 5px;
 
 }
 
