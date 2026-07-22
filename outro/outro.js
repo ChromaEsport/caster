@@ -24,10 +24,6 @@ onSnapshot(matchRef, (doc) => {
 
 
 
-    document.querySelector(".event").textContent =
-        data.event || "FACEIT MATCH";
-
-
 
     document.querySelector(".team1").textContent =
         data.team1 || "CHROMA";
