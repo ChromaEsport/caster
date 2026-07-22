@@ -132,25 +132,25 @@ setTimeout(showWelcome,1000);
 const socials = [
 
     {
-        logo:"assets/instagram.svg",
+        logo:"asset/instagram.svg",
         name:"INSTAGRAM",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"assets/tiktok.svg",
+        logo:"asset/tiktok.svg",
         name:"TIKTOK",
         value:"@chroma.esport_"
     },
 
     {
-        logo:"assets/discord.svg",
+        logo:"asset/discord.svg",
         name:"DISCORD",
         value:"https://discord.gg/SSF8V28QDK"
     },
 
     {
-        logo:"assets/youtube.svg",
+        logo:"asset/youtube.svg",
         name:"YOUTUBE",
         value:"@chroma.esport"
     }
