@@ -49,9 +49,9 @@ const line2 = document.getElementById("welcome-line2");
 
 
 
-const text1 = "BIENVENUE SUR LE LIVE";
+const text1 = "LE STREAM EST MAINTENANT TERMINÉ";
 
-const text2 = "LE MATCH VA COMMENCER";
+const text2 = "A REMPLACER";
 
 
 
