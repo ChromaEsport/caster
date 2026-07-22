@@ -22,7 +22,7 @@ const line2 = document.getElementById("welcome-line2");
 
 
 
-const text1 = "Merci à tous pour votre SOUTIENS";
+const text1 = "Merci à tous pour votre SOUTIEN";
 
 const text2 = "Le stream est maintenant terminé";
 
