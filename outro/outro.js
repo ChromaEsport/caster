@@ -128,3 +128,55 @@ function hideWelcome(){
 
 
 setTimeout(showWelcome,1000);
+
+const socials = [
+
+    {
+        icon:"📸",
+        name:"INSTAGRAM",
+        value:"@ChromaEsportTV"
+    },
+
+    {
+        icon:"🎵",
+        name:"TIKTOK",
+        value:"@ChromaEsportTV"
+    },
+
+    {
+        icon:"💬",
+        name:"DISCORD",
+        value:"discord.gg/xxxxx"
+    },
+
+    {
+        icon:"▶️",
+        name:"YOUTUBE",
+        value:"Chroma Esport TV"
+    }
+
+];
+
+let current = 0;
+
+function changeSocial(){
+
+    document.getElementById("socialIcon").textContent =
+        socials[current].icon;
+
+    document.getElementById("socialName").textContent =
+        socials[current].name;
+
+    document.getElementById("socialValue").textContent =
+        socials[current].value;
+
+    current++;
+
+    if(current >= socials.length)
+        current = 0;
+
+}
+
+changeSocial();
+
+setInterval(changeSocial,2000);
