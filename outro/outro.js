@@ -179,22 +179,20 @@ function updateSocial(){
 
 function changeSocial(){
 
-    // Animation de sortie de la carte
-    socialCard.classList.add("hide");
+
+    socialCard.classList.add("change");
 
 
     setTimeout(()=>{
 
 
-        // Passage au réseau suivant
         current++;
+
 
         if(current >= socials.length)
             current = 0;
 
 
-
-        // Mise à jour du contenu
 
         socialLogo.src = socials[current].logo;
 
@@ -208,24 +206,24 @@ function changeSocial(){
 
 
 
-        // Animation de retour
-
-        socialCard.classList.remove("hide");
+        socialCard.classList.remove("change");
 
 
     },500);
 
+
 }
 setTimeout(()=>{
 
-    socialsContainer.classList.add("show");
-    
-    socialCard.classList.add("show");
-    
+
+    socialsContainer.style.opacity = "1";
+
+    socialCard.classList.add("visible");
+
     updateSocial();
 
+
+    setInterval(changeSocial,3000);
+
+
 },9000);
-
-
-setInterval(changeSocial,3000);
-
