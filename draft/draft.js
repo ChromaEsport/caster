@@ -32,6 +32,8 @@ onSnapshot(draftRef, (docSnap) => {
     document.getElementById("map5Img").src = `../maps/${data.map5}.png`;
 
     document.getElementById("ban1_1Img").src =`../heroes/${data.ban1_1}.png`;
+    console.log(`../heroes/${data.ban1_1}.png`);
+    
     document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
 
 
