@@ -17,7 +17,7 @@ onSnapshot(draftRef, (docSnap) => {
     if (!data) return;
 
     document.getElementById("map1Name").textContent = data.map1;
-    document.getElementById("map1Img").src =`../maps/${data.map1}.webp`;
+    document.getElementById("map1Img").src =`../maps/${data.map1}.png`;
 
     document.getElementById("map2Name").textContent = data.map2;
     document.getElementById("map2Img").src = `caster/maps/${data.map2}.webp`;
