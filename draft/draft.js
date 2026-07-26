@@ -42,7 +42,7 @@ img.onload = () => {
     console.log("OK :", img.src);
 };
     
-    document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
+    //document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
 
 
 });
