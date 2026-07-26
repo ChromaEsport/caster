@@ -33,14 +33,6 @@ onSnapshot(draftRef, (docSnap) => {
 
     document.getElementById("ban1_1Img").src =`../heroes/${data.ban1_1}.png`;
     console.log(`../heroes/${data.ban1_1}.png`);
-
-    img.onerror = () => {
-    console.log("ERREUR :", img.src);
-};
-
-img.onload = () => {
-    console.log("OK :", img.src);
-};
     
     //document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
 
