@@ -43,7 +43,7 @@ body{
 .map-card{
 
     width:320px;
-    height:540px;
+    height:680px;
 
     overflow:hidden;
 
@@ -109,13 +109,37 @@ body{
 
 }
 
+.ban-title{
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#c89c4d;
+
+    color:#07163d;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
 .hero-bans{
 
     display:flex;
 
     justify-content:center;
 
-    gap:18px;
+    gap:8px;
 
     margin:18px 0;
 
@@ -123,9 +147,9 @@ body{
 
 .hero-ban{
 
-    width:70px;
+    width:130px;
 
-    height:70px;
+    height:130px;
 
     object-fit:cover;
 
