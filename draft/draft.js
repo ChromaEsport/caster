@@ -26,12 +26,12 @@ onSnapshot(draftRef, (docSnap) => {
     document.getElementById("map3Img").src = `../maps/${data.map3}.png`;
 
     document.getElementById("map4Name").textContent = data.map4;
-    document.getElementById("map4Img").src = `../asset/maps/${data.map4}.png`;
+    document.getElementById("map4Img").src = `../maps/${data.map4}.png`;
 
     document.getElementById("map5Name").textContent = data.map5;
-    document.getElementById("map5Img").src = `../asset/maps/${data.map5}.png`;
+    document.getElementById("map5Img").src = `../maps/${data.map5}.png`;
 
-    document.getElementById("ban1_1Img").src =`../asset/heroes/${data.ban1_1}.png`;
-    document.getElementById("ban1_2Img").src =`../asset/heroes/${data.ban1_2}.png`;
+    document.getElementById("ban1_1Img").src =`../heroes/${data.ban1_1}.png`;
+    document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
 
 });
