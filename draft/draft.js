@@ -26,9 +26,9 @@ onSnapshot(draftRef, (docSnap) => {
     document.getElementById("map3Img").src = `../maps/${data.map3}.png`;
 
     document.getElementById("map4Name").textContent = data.map4;
-    document.getElementById("map4Img").src = `../asset/maps/${data.map4}.webp`;
+    document.getElementById("map4Img").src = `../asset/maps/${data.map4}.png`;
 
     document.getElementById("map5Name").textContent = data.map5;
-    document.getElementById("map5Img").src = `../asset/maps/${data.map5}.webp`;
+    document.getElementById("map5Img").src = `../asset/maps/${data.map5}.png`;
 
 });
