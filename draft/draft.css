@@ -43,20 +43,7 @@ body{
 .map-card{
 
     width:320px;
-
     height:500px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
-
-    font-size:42px;
-
-    font-weight:bold;
 
     overflow:hidden;
 
@@ -66,8 +53,8 @@ body{
 
     border:3px solid #3c9195;
 
-
 }
+
 .map-image{
 
     width:100%;
