@@ -84,3 +84,27 @@ body{
     letter-spacing:2px;
 
 }
+
+.round-title{
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#c89c4d;
+
+    color:#07163d;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
