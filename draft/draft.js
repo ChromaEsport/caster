@@ -16,10 +16,19 @@ onSnapshot(draftRef, (docSnap) => {
 
     if (!data) return;
 
-    document.getElementById("map1").textContent = data.map1 || "MAP 1";
-    document.getElementById("map2").textContent = data.map2 || "MAP 2";
-    document.getElementById("map3").textContent = data.map3 || "MAP 3";
-    document.getElementById("map4").textContent = data.map4 || "MAP 4";
-    document.getElementById("map5").textContent = data.map5 || "MAP 5";
+    document.getElementById("map1Name").textContent = data.map1;
+    document.getElementById("map1Img").src =`../asset/maps/${data.map1}.webp`;
+
+    document.getElementById("map2Name").textContent = data.map2;
+    document.getElementById("map2Img").src = `../asset/maps/${data.map2}.webp`;
+
+    document.getElementById("map3Name").textContent = data.map3;
+    document.getElementById("map3Img").src = `../asset/maps/${data.map3}.webp`;
+
+    document.getElementById("map4Name").textContent = data.map4;
+    document.getElementById("map4Img").src = `../asset/maps/${data.map4}.webp`;
+
+    document.getElementById("map5Name").textContent = data.map5;
+    document.getElementById("map5Img").src = `../asset/maps/${data.map5}.webp`;
 
 });
