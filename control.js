@@ -273,3 +273,4 @@ window.removeScore2 = removeScore2;
 
 window.sendMatch = sendMatch;
 window.selectMap = selectMap;
+window.sendMap = sendMap;
