@@ -18,13 +18,83 @@ const pickedMapName =
 
 let lastSelectedMap = 0;
 
+let animationRunning = false;
+
+function sleep(ms){
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+
+}
+
+async function playMapSelection(mapIndex){
+
+    if(animationRunning) return;
+
+    animationRunning = true;
+
+    const cards = document.querySelectorAll(".map-card");
+
+    // Nettoyage
+    cards.forEach(card=>{
+
+        card.classList.remove(
+            "selected",
+            "left",
+            "right",
+            "dim"
+        );
+
+    });
+
+    // Laisse le navigateur appliquer le nettoyage
+    await sleep(50);
+
+    // Déplacement des cartes
+    cards.forEach((card,index)=>{
+
+        const i = index + 1;
+
+        if(i < mapIndex){
+
+            card.classList.add("left","dim");
+
+        }
+        else if(i > mapIndex){
+
+            card.classList.add("right","dim");
+
+        }
+
+    });
+
+    // On attend que les cartes se déplacent
+    await sleep(500);
+
+    // Zoom de la carte sélectionnée
+    document
+        .getElementById(`map${mapIndex}`)
+        .classList.add("selected");
+
+    // On attend la fin du zoom
+    await sleep(700);
+
+    // Affichage du bandeau
+    pickedMapName.textContent =
+        document.getElementById(`map${mapIndex}Name`).textContent;
+
+    mapPicked.classList.add("show");
+
+    await sleep(2000);
+
+    mapPicked.classList.remove("show");
+
+    animationRunning = false;
+
+}
+
 onSnapshot(draftRef, (docSnap) => {
 
     const data = docSnap.data();
-
-    console.log(data);
-    console.log("selectedMap =", data.selectedMap);
-    console.log("type =", typeof data.selectedMap);
 
     if (!data) return;
 
@@ -34,51 +104,15 @@ onSnapshot(draftRef, (docSnap) => {
 
     if(data.selectedMap > 0){
 
-        pickedMapName.textContent =
-            data[`map${data.selectedMap}`];
-
-        mapPicked.classList.add("show");
-
-        setTimeout(()=>{
-
-            mapPicked.classList.remove("show");
-
-        },2000);
+        playMapSelection(data.selectedMap);
 
     }
 
 }
-
-    // Retire les anciennes sélections
-document.querySelectorAll(".map-card").forEach(card=>{
-
-    card.classList.remove("selected");
-    card.classList.remove("dim");
-
-});
-
-// Si une map est sélectionnée
-if(data.selectedMap > 0){
-
-    document.querySelectorAll(".map-card").forEach(card=>{
-
-        card.classList.add("dim");
-
-    });
+    
 
 const card = document.querySelector(`#map${data.selectedMap}`);
-
-console.log(card);
     
-    document
-        .querySelector(`#map${data.selectedMap}`)
-        .classList.remove("dim");
-
-    document
-        .querySelector(`#map${data.selectedMap}`)
-        .classList.add("selected");
-
-}
 
     document.getElementById("map1Name").textContent = data.map1;
     document.getElementById("map1Img").src =`../maps/${data.map1}.png`;
