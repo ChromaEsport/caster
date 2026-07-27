@@ -142,6 +142,7 @@ const card = document.querySelector(`#map${data.selectedMap}`);
     // On remet le slot à zéro
     ban1_1Slot.classList.remove("show");
     ban1_1Slot.classList.remove("play");
+    ban1_1Slot.classList.remove("banned");
 
     // Petit délai pour relancer l'animation
     setTimeout(()=>{
@@ -160,6 +161,8 @@ const card = document.querySelector(`#map${data.selectedMap}`);
 
             // Affiche le portrait avec un zoom
             ban1_1Slot.classList.add("show");
+
+            ban1_1Slot.classList.add("banned");
 
             ban1_1Slot.classList.add("glow");
 
