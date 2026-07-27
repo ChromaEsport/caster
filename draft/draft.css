@@ -170,7 +170,9 @@ body{
 
     background:#c89c4d;
 
-    border-radius:8px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 
 }
 
@@ -256,6 +258,9 @@ body{
     margin-top: -5px;
 
     border-radius: 5px;
+
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 
 }
 
