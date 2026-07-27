@@ -219,6 +219,8 @@ alert("Score envoyé !");
 /*updateMaps();*/
 async function selectMap(mapName){
 
+console.log("CLICK MANCHE :", mapName);
+
 
 await setDoc(draftRef,{
 
@@ -227,7 +229,7 @@ selectedMap: mapName
 },{merge:true});
 
 
-console.log("Manche sélectionnée :", mapName);
+console.log("ENVOI FIRESTORE OK");
 
 
 }
