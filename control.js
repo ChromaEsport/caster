@@ -6,7 +6,7 @@ onSnapshot
 } from "./firebase.js";
 
 
-
+let currentMapNumber = 1;
 let score1 = 0;
 let score2 = 0;
 
@@ -219,14 +219,48 @@ alert("Score envoyé !");
 async function selectMap(mapNumber){
 
 
+currentMapNumber = Number(mapNumber);
+
+
 await setDoc(draftRef,{
 
-selectedMap: Number(mapNumber)
+selectedMap: currentMapNumber
 
 },{merge:true});
 
 
-console.log("Manche sélectionnée :", mapNumber);
+console.log(
+"Manche active :",
+currentMapNumber
+);
+}
+
+async function sendMap(){
+
+
+const mapName =
+document.getElementById("mapSelect").value;
+
+
+let data = {};
+
+data[`map${currentMapNumber}`] = mapName;
+
+
+data.currentMap = currentMapNumber;
+
+
+await setDoc(
+draftRef,
+data,
+{merge:true}
+);
+
+
+console.log(
+"Map envoyée :",
+mapName
+);
 
 
 }
