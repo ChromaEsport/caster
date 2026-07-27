@@ -10,6 +10,12 @@ const draftRef = doc(
     "current"
 );
 
+const ban1_1Slot = document.getElementById("ban1_1Slot");
+const ban1_1Img = document.getElementById("ban1_1Img");
+
+let lastBan1_1 = "";
+
+
 const mapPicked =
     document.getElementById("mapPicked");
 
@@ -129,8 +135,37 @@ const card = document.querySelector(`#map${data.selectedMap}`);
     document.getElementById("map5Name").textContent = data.map5;
     document.getElementById("map5Img").src = `../maps/${data.map5}.png`;
 
-    document.getElementById("ban1_1Img").src =`../heroes/${data.ban1_1}.png`;
-    console.log(`../heroes/${data.ban1_1}.png`);
+    if(data.ban1_1 !== lastBan1_1){
+
+    lastBan1_1 = data.ban1_1;
+
+    // On remet le slot à zéro
+    ban1_1Slot.classList.remove("show");
+    ban1_1Slot.classList.remove("play");
+
+    // Petit délai pour relancer l'animation
+    setTimeout(()=>{
+
+        // Affiche le bandeau BAN
+        ban1_1Slot.classList.add("play");
+
+        // Après 450 ms
+        setTimeout(()=>{
+
+            // Charge le héros
+            ban1_1Img.src = `../heroes/${data.ban1_1}.png`;
+
+            // Cache le bandeau
+            ban1_1Slot.classList.remove("play");
+
+            // Affiche le portrait avec un zoom
+            ban1_1Slot.classList.add("show");
+
+        },450);
+
+    },50);
+
+}
     
     //document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
 
