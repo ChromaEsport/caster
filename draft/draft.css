@@ -451,6 +451,11 @@ body{
 
     z-index:5;
 
+    margin-top:-5px
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
 }
 
 @keyframes banSlide{
