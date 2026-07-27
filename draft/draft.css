@@ -386,13 +386,16 @@ body{
     border-color .3s ease,
     box-shadow .3s ease;
 
+    height:160px;
+
 }
 
 .hero-slot.glow{
 
     margin-top:-5px
-    border-color:#ff3030;
+    /*border-color:#ff3030;*/
 
+    border: 3px solid #ff3030;
     box-shadow:
         0 0 12px #ff3030,
         0 0 25px rgba(255,0,0,.6),
