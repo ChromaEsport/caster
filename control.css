@@ -296,8 +296,6 @@ select {
 
     border-radius:8px;
 
-    padding:14px;
-
     font-size:18px;
 
     font-weight:bold;
@@ -305,6 +303,8 @@ select {
     cursor:pointer;
 
     transition:.25s;
+
+    width:auto;
 
 }
 
@@ -331,7 +331,6 @@ select {
 background:#010c2c;
 color:white;
 border:1px solid #3c9195;
-padding:10px 20px;
 cursor:pointer;
 border-radius:8px;
 
