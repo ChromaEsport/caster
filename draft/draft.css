@@ -421,7 +421,9 @@ body{
 
     z-index:5;
 
-    @keyframes banSlide{
+}
+
+@keyframes banSlide{
 
     0%{
 
@@ -447,7 +449,6 @@ body{
 
     }
 
-}
 }
 
 .hero-slot.play .ban-flash{
