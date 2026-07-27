@@ -7,6 +7,37 @@ onSnapshot
 
 
 let currentMapNumber = 1;
+
+const maps = [
+    "Antarctic Peninsula",
+    "Busan",
+    "Circuit Royal",
+    "Colosseo",
+    "Dorado",
+    "Eichenwalde",
+    "Esperança",
+    "Hanaoka",
+    "Havana",
+    "Hollywood",
+    "Ilios",
+    "Junk City",
+    "King's Row",
+    "Lijiang Tower",
+    "Midtown",
+    "Nepal",
+    "New Junk City",
+    "New Queen Street",
+    "Numbani",
+    "Oasis",
+    "Paraíso",
+    "Route 66",
+    "Runasapi",
+    "Samoa",
+    "Shambali Monastery",
+    "Suravasa",
+    "Temple of Anubis"
+];
+
 let score1 = 0;
 let score2 = 0;
 
