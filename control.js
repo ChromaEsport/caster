@@ -35,7 +35,7 @@ const maps = [
     "Samoa",
     "Shambali Monastery",
     "Suravasa",
-    "Temple of Anubis"
+    "Temple of Anubis",
     "Antarctica Peninsula",
     
 ];
