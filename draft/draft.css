@@ -297,6 +297,10 @@ body{
 
     transform:scale(.7);
 
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    
     opacity:0;
 
     transition:
