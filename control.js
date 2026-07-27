@@ -2,6 +2,7 @@ import {
 db,
 doc,
 setDoc,
+getDoc,   
 onSnapshot
 } from "./firebase.js";
 
@@ -10,7 +11,7 @@ onSnapshot
 let score1 = 0;
 let score2 = 0;
 
-function updateMaps(){
+/*function updateMaps(){
 
 
 const selectedType =
@@ -63,7 +64,7 @@ document
 .addEventListener(
 "change",
 updateMaps
-);
+);*/
 
 const matchRef = doc(
 db,
@@ -71,6 +72,11 @@ db,
 "current"
 );
 
+const draftRef = doc(
+    db,
+    "draft",
+    "current"
+);
 
 onSnapshot(matchRef,(doc)=>{
 
@@ -106,11 +112,11 @@ data.casters || "";
 document.getElementById("event").value =
 data.event || "";
     
-document.getElementById("map").value =
+/*document.getElementById("map").value =
 data.map;
 
 document.getElementById("mapType").value =
-data.mapType;
+data.mapType;*/
 
 }
 
@@ -210,7 +216,7 @@ alert("Score envoyé !");
 
 }
 
-updateMaps();
+/*updateMaps();*/
 
 
 window.addScore1 = addScore1;
