@@ -14,6 +14,10 @@ onSnapshot(draftRef, (docSnap) => {
 
     const data = docSnap.data();
 
+    console.log(data);
+    console.log("selectedMap =", data.selectedMap);
+    console.log("type =", typeof data.selectedMap);
+
     if (!data) return;
 
     // Retire les anciennes sélections
@@ -33,6 +37,10 @@ if(data.selectedMap > 0){
 
     });
 
+const card = document.querySelector(`#map${data.selectedMap}`);
+
+console.log(card);
+    
     document
         .querySelector(`#map${data.selectedMap}`)
         .classList.remove("dim");
