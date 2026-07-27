@@ -390,6 +390,7 @@ body{
 
 .hero-slot.glow{
 
+    margin-top:-5px
     border-color:#ff3030;
 
     box-shadow:
