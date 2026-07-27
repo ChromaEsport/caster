@@ -54,10 +54,41 @@ body{
     border:3px solid #c89c4d;
 
     transition:
-        transform .45s ease,
-        filter .45s ease,
-        opacity .45s ease,
-        box-shadow .45s ease;
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        filter .55s ease,
+        opacity .55s ease,
+        box-shadow .55s ease,
+        border-color .55s ease;
+
+}
+
+/* Cartes non sélectionnées */
+
+.map-card.dim{
+
+    transform:scale(.88);
+
+    filter:
+        brightness(.35)
+        saturate(.45);
+
+    opacity:.55;
+
+}
+
+/* Carte sélectionnée */
+
+.map-card.selected{
+
+    transform:scale(1.18);
+
+    z-index:50;
+
+    border-color:#c89c4d;
+
+    box-shadow:
+        0 0 25px rgba(200,156,77,.8),
+        0 0 60px rgba(200,156,77,.45);
 
 }
 
@@ -70,6 +101,31 @@ body{
     object-fit:cover;
 
     margin-top: -8px;
+
+}
+
+.map-image img{
+
+    transition:
+        transform .55s ease,
+        filter .55s ease;
+
+}
+
+.map-card.selected .map-image img{
+
+    transform:scale(1.08);
+
+}
+
+.map-card.selected .round-title{
+
+    color:white;
+
+    background:#c89c4d;
+
+    box-shadow:
+        0 0 15px rgba(200,156,77,.8);
 
 }
 
