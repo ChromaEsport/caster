@@ -36,8 +36,6 @@ const maps = [
     "Shambali Monastery",
     "Suravasa",
     "Temple of Anubis",
-    "Antarctica Peninsula",
-    
 ];
 
 maps.sort((a, b) => a.localeCompare(b));
