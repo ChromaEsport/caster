@@ -16,6 +16,33 @@ onSnapshot(draftRef, (docSnap) => {
 
     if (!data) return;
 
+    // Retire les anciennes sélections
+document.querySelectorAll(".map-card").forEach(card=>{
+
+    card.classList.remove("selected");
+    card.classList.remove("dim");
+
+});
+
+// Si une map est sélectionnée
+if(data.selectedMap > 0){
+
+    document.querySelectorAll(".map-card").forEach(card=>{
+
+        card.classList.add("dim");
+
+    });
+
+    document
+        .querySelector(`#map${data.selectedMap}`)
+        .classList.remove("dim");
+
+    document
+        .querySelector(`#map${data.selectedMap}`)
+        .classList.add("selected");
+
+}
+
     document.getElementById("map1Name").textContent = data.map1;
     document.getElementById("map1Img").src =`../maps/${data.map1}.png`;
 
