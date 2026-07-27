@@ -273,3 +273,55 @@ select {
     margin-bottom:40px;
 
 }
+
+.pick-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.pick-buttons button{
+
+    background:#0f1c3d;
+
+    color:#fff;
+
+    border:2px solid #3c9195;
+
+    border-radius:8px;
+
+    padding:14px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.pick-buttons button:hover{
+
+    background:#3c9195;
+
+    transform:translateY(-2px);
+
+}
+
+.pick-buttons button.active{
+
+    background:#c89c4d;
+
+    border-color:#c89c4d;
+
+    color:#000;
+
+}
