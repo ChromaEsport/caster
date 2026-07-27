@@ -54,10 +54,10 @@ body{
     border:3px solid #c89c4d;
 
     transition:
-        transform .55s cubic-bezier(.2,.8,.2,1),
-        filter .55s ease,
-        opacity .55s ease,
-        box-shadow .55s ease;
+    transform .8s cubic-bezier(.22,.61,.36,1),
+    filter .8s ease,
+    opacity .8s ease,
+    box-shadow .8s ease;
 
 
 }
@@ -85,29 +85,27 @@ body{
 
 .map-card.dim{
 
-    transform:scale(.88);
-
     filter:
-        brightness(.35)
-        saturate(.4);
+        brightness(.25)
+        saturate(.3)
+        blur(1px);
 
-    opacity:.55;
+    opacity:.45;
 
 }
-
 .map-card.left{
 
     transform:
-        translateX(-80px)
-        scale(.85);
+        translateX(-260px)
+        scale(.82);
 
 }
 
 .map-card.right{
 
     transform:
-        translateX(80px)
-        scale(.85);
+        translateX(260px)
+        scale(.82);
 
 }
 
@@ -116,9 +114,16 @@ body{
 
 .map-card.selected{
 
-    transform:scale(1.25);
+    transform:
+        scale(1.28);
 
     z-index:100;
+
+    box-shadow:
+        0 0 25px rgba(200,156,77,.8),
+        0 0 70px rgba(200,156,77,.45);
+
+    border-color:#c89c4d;
 
 }
 
