@@ -401,6 +401,10 @@ body{
 
 .hero-slot.glow{
 
+
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     margin-top:-5px
     /*border-color:#ff3030;*/
 
