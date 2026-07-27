@@ -461,6 +461,74 @@ body{
 
     opacity:1;
 
-    transform:scale(1);
+    animation:heroPop .45s ease forwards;
+
+}
+
+@keyframes heroPop{
+
+    0%{
+
+        transform:scale(.6);
+
+    }
+
+    60%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.hero-slot::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:6;
+
+}
+
+@keyframes heroFlash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:.85;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+.hero-slot.show::after{
+
+    animation:heroFlash .35s ease;
 
 }
