@@ -51,7 +51,7 @@ body{
 
     background:#07163d;
 
-    border-radius:18px;
+    border-radius:10px;
 
   
 
@@ -93,7 +93,7 @@ body{
 }
 .map-card.left{
 
-        transform: translateX(-50px) scale(.99);
+        transform: translateX(-70px) scale(.99);
 
 }
 
@@ -120,6 +120,10 @@ body{
     border:3px solid #c89c4d;
 
     width: 480px;
+
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
 
     
 
