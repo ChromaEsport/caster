@@ -200,12 +200,12 @@ event:
 document.getElementById("event").value.toUpperCase(),
 
     
-mapType:
+/*mapType:
 document.getElementById("mapType").value,
 
 
 map:
-document.getElementById("map").value
+document.getElementById("map").value*/
 
 
 });
