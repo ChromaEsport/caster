@@ -38,6 +38,21 @@ const maps = [
     "Temple of Anubis"
 ];
 
+maps.sort((a, b) => a.localeCompare(b));
+
+const mapSelect = document.getElementById("mapSelect");
+
+maps.forEach(map => {
+
+    const option = document.createElement("option");
+
+    option.value = map;
+    option.textContent = map;
+
+    mapSelect.appendChild(option);
+
+});
+
 let score1 = 0;
 let score2 = 0;
 
