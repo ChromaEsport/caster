@@ -325,3 +325,26 @@ select {
     color:#000;
 
 }
+
+.round-btn{
+
+background:#010c2c;
+color:white;
+border:1px solid #3c9195;
+padding:10px 20px;
+cursor:pointer;
+border-radius:8px;
+
+}
+
+
+.round-btn.active{
+
+background:#d4af37;
+color:#010c2c;
+border-color:#ffd700;
+
+box-shadow:
+0 0 15px rgba(212,175,55,0.8);
+
+}
