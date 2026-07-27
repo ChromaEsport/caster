@@ -125,6 +125,8 @@ body{
 
     border-color:#c89c4d;
 
+    width: 480px;
+
 }
 
 .map-image{
@@ -183,8 +185,6 @@ body{
     border-radius:8px;
 
     padding:6px 12px;
-
-    display:inline-block;
 
 }
 
