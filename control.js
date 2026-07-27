@@ -216,23 +216,16 @@ alert("Score envoyé !");
 }
 
 /*updateMaps();*/
-async function selectMap(mapNumber){
-
+function selectMap(mapNumber){
 
 currentMapNumber = Number(mapNumber);
 
 
-await setDoc(draftRef,{
-
-selectedMap: currentMapNumber
-
-},{merge:true});
-
-
 console.log(
-"Manche active :",
+"Manche préparée :",
 currentMapNumber
 );
+
 }
 
 async function sendMap(){
@@ -244,10 +237,15 @@ document.getElementById("mapSelect").value;
 
 let data = {};
 
+
 data[`map${currentMapNumber}`] = mapName;
 
 
 data.currentMap = currentMapNumber;
+
+
+// déclenche l'animation
+data.selectedMap = currentMapNumber;
 
 
 await setDoc(
