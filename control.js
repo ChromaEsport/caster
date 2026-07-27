@@ -217,7 +217,20 @@ alert("Score envoyé !");
 }
 
 /*updateMaps();*/
+async function selectMap(mapName){
 
+
+await setDoc(draftRef,{
+
+selectedMap: mapName
+
+},{merge:true});
+
+
+console.log("Manche sélectionnée :", mapName);
+
+
+}
 
 window.addScore1 = addScore1;
 window.removeScore1 = removeScore1;
@@ -226,3 +239,4 @@ window.addScore2 = addScore2;
 window.removeScore2 = removeScore2;
 
 window.sendMatch = sendMatch;
+window.selectMap = selectMap;
