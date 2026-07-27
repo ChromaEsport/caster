@@ -221,8 +221,28 @@ function selectMap(mapNumber){
 currentMapNumber = Number(mapNumber);
 
 
+// enlève la sélection des autres boutons
+
+document
+.querySelectorAll(".round-btn")
+.forEach(button=>{
+
+button.classList.remove("active");
+
+});
+
+
+// active le bouton choisi
+
+document
+.getElementById(`round${mapNumber}`)
+.classList.add("active");
+
+
+
 document.getElementById("selectedRound").innerHTML =
 "Manche sélectionnée : Manche " + currentMapNumber;
+
 
 
 console.log(
