@@ -216,19 +216,17 @@ alert("Score envoyé !");
 }
 
 /*updateMaps();*/
-async function selectMap(mapName){
-
-console.log("CLICK MANCHE :", mapName);
+async function selectMap(mapNumber){
 
 
 await setDoc(draftRef,{
 
-selectedMap: mapName
+selectedMap: Number(mapNumber)
 
 },{merge:true});
 
 
-console.log("ENVOI FIRESTORE OK");
+console.log("Manche sélectionnée :", mapNumber);
 
 
 }
