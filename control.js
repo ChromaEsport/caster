@@ -221,6 +221,10 @@ function selectMap(mapNumber){
 currentMapNumber = Number(mapNumber);
 
 
+document.getElementById("selectedRound").innerHTML =
+"Manche sélectionnée : Manche " + currentMapNumber;
+
+
 console.log(
 "Manche préparée :",
 currentMapNumber
