@@ -95,11 +95,28 @@ body{
 
 }
 
+.map-card.left{
+
+    transform:
+        translateX(-80px)
+        scale(.85);
+
+}
+
+.map-card.right{
+
+    transform:
+        translateX(80px)
+        scale(.85);
+
+}
+
+
 /* Carte sélectionnée */
 
 .map-card.selected{
 
-    transform:scale(1.18);
+    transform:scale(1.25);
 
     z-index:100;
 
