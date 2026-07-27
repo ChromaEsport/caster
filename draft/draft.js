@@ -161,6 +161,14 @@ const card = document.querySelector(`#map${data.selectedMap}`);
             // Affiche le portrait avec un zoom
             ban1_1Slot.classList.add("show");
 
+            ban1_1Slot.classList.add("glow");
+
+setTimeout(()=>{
+
+    ban1_1Slot.classList.remove("glow");
+
+},800);
+
         },450);
 
     },50);
