@@ -10,6 +10,14 @@ const draftRef = doc(
     "current"
 );
 
+const mapPicked =
+    document.getElementById("mapPicked");
+
+const pickedMapName =
+    document.getElementById("pickedMapName");
+
+let lastSelectedMap = 0;
+
 onSnapshot(draftRef, (docSnap) => {
 
     const data = docSnap.data();
@@ -19,6 +27,27 @@ onSnapshot(draftRef, (docSnap) => {
     console.log("type =", typeof data.selectedMap);
 
     if (!data) return;
+
+    if(data.selectedMap !== lastSelectedMap){
+
+    lastSelectedMap = data.selectedMap;
+
+    if(data.selectedMap > 0){
+
+        pickedMapName.textContent =
+            data[`map${data.selectedMap}`];
+
+        mapPicked.classList.add("show");
+
+        setTimeout(()=>{
+
+            mapPicked.classList.remove("show");
+
+        },2000);
+
+    }
+
+}
 
     // Retire les anciennes sélections
 document.querySelectorAll(".map-card").forEach(card=>{
