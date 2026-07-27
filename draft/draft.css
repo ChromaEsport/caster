@@ -398,31 +398,61 @@ body{
 
     align-items:center;
 
-    background:#b91c1c;
+    background:linear-gradient(
+        90deg,
+        #6e0000,
+        #d90000,
+        #6e0000
+    );
 
     color:white;
 
+    font-size:22px;
+
     font-weight:bold;
 
-    font-size:24px;
+    letter-spacing:5px;
 
-    letter-spacing:3px;
+    text-transform:uppercase;
 
-    opacity:0;
+    transform:translateX(-120%);
 
-    transform:scale(.8);
+    opacity:1;
 
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
+    z-index:5;
 
+    @keyframes banSlide{
+
+    0%{
+
+        transform:translateX(-120%);
+
+    }
+
+    15%{
+
+        transform:translateX(0);
+
+    }
+
+    85%{
+
+        transform:translateX(0);
+
+    }
+
+    100%{
+
+        transform:translateX(120%);
+
+    }
+
+}
 }
 
 .hero-slot.play .ban-flash{
 
-    opacity:1;
-
-    transform:scale(1);
+    animation:banSlide .45s ease forwards;
 
 }
 
