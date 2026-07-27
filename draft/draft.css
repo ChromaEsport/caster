@@ -53,6 +53,12 @@ body{
 
     border:3px solid #c89c4d;
 
+    transition:
+        transform .45s ease,
+        filter .45s ease,
+        opacity .45s ease,
+        box-shadow .45s ease;
+
 }
 
 .map-image{
