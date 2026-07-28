@@ -147,14 +147,6 @@ onSnapshot(draftRef, (docSnap) => {
     if (!data) return;
 
    if(data.selectedMap === 0){
-
-document
-.querySelectorAll(".ban-title")
-.forEach(title=>{
-
-    title.classList.remove("show");
-
-});
        
     document
     .querySelectorAll(".map-card")
