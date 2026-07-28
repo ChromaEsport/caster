@@ -136,7 +136,7 @@ onSnapshot(draftRef, (docSnap) => {
 
     if (!data) return;
 
-    if(data.selectedMap === 0){
+   if(data.selectedMap === 0){
 
     document
     .querySelectorAll(".map-card")
@@ -151,6 +151,32 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
+
+    document
+    .querySelectorAll(".hero-ban")
+    .forEach(img=>{
+
+        img.src = "";
+
+    });
+
+
+    document
+    .querySelectorAll(".hero-slot")
+    .forEach(slot=>{
+
+        slot.classList.remove(
+            "show",
+            "play",
+            "banned",
+            "glow"
+        );
+
+    });
+
+}
+
+        
 }
 
     if(data.selectedMap !== lastSelectedMap){
