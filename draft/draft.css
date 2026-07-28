@@ -861,3 +861,6 @@ body .draft-container::before{
     text-transform:uppercase;
 
 }
+.hero-role img[src=""]{
+    display:none;
+}
