@@ -38,6 +38,52 @@ const maps = [
     "Temple of Anubis",
 ];
 
+const heroes = [
+    "Ana",
+    "Ashe",
+    "Baptiste",
+    "Bastion",
+    "Brigitte",
+    "Cassidy",
+    "D.Va",
+    "Doomfist",
+    "Echo",
+    "Freja",
+    "Genji",
+    "Hanzo",
+    "Hazard",
+    "Illari",
+    "Junker Queen",
+    "Junkrat",
+    "Juno",
+    "Kiriko",
+    "Lifeweaver",
+    "Lúcio",
+    "Mauga",
+    "Mei",
+    "Mercy",
+    "Moira",
+    "Orisa",
+    "Pharah",
+    "Ramattra",
+    "Reaper",
+    "Reinhardt",
+    "Roadhog",
+    "Sigma",
+    "Sojourn",
+    "Soldier: 76",
+    "Sombra",
+    "Symmetra",
+    "Torbjörn",
+    "Tracer",
+    "Venture",
+    "Widowmaker",
+    "Winston",
+    "Wrecking Ball",
+    "Zarya",
+    "Zenyatta"
+];
+
 maps.sort((a, b) => a.localeCompare(b));
 
 const mapSelect = document.getElementById("mapSelect");
