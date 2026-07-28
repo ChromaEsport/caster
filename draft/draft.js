@@ -153,24 +153,6 @@ async function playBanAnimation(fieldName, heroName){
     // Chargement du héros
     img.src = `../heroes/${heroName}.png`;
 
-    heroNameElement.textContent = heroName.toUpperCase();
-
-if(heroRoles[heroName]){
-
-    heroRoleElement.textContent =
-        heroRoles[heroName].role;
-
-    heroRoleImg.src =
-        `../roles/${heroRoles[heroName].icon}`;
-
-}
-else{
-
-    heroRoleElement.textContent = "";
-
-    heroRoleImg.removeAttribute("src");
-
-}
 
     heroNameElement.textContent = heroName.toUpperCase();
 
@@ -232,10 +214,12 @@ onSnapshot(draftRef, (docSnap) => {
 });   
 
     document
-    .querySelectorAll(".hero-ban")
-    .forEach(img=>{
+.querySelectorAll(".hero-ban")
+.forEach(img=>{
 
-        img.src = "";
+    img.removeAttribute("src");
+    img.style.display = "none";
+
 
     });
 
