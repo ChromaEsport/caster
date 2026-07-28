@@ -167,46 +167,34 @@ const card = document.querySelector(`#map${data.selectedMap}`);
     document.getElementById("map5Name").textContent = data.map5;
     document.getElementById("map5Img").src = `../maps/${data.map5}.png`;
 
-    if(data.ban1_1 !== lastBan1_1){
+    const currentRound = data.currentMap;
 
-    lastBan1_1 = data.ban1_1;
+if(currentRound){
 
-    // On remet le slot à zéro
-    ban1_1Slot.classList.remove("show");
-    ban1_1Slot.classList.remove("play");
-    ban1_1Slot.classList.remove("banned");
+    const ban1 = data[`ban${currentRound}_1`];
+    const ban2 = data[`ban${currentRound}_2`];
 
-    // Petit délai pour relancer l'animation
-    setTimeout(()=>{
+    if(ban1 && lastBans[`ban${currentRound}_1`] !== ban1){
 
-        // Affiche le bandeau BAN
-        ban1_1Slot.classList.add("play");
+        lastBans[`ban${currentRound}_1`] = ban1;
 
-        // Après 450 ms
-        setTimeout(()=>{
+        playBanAnimation(
+            `ban${currentRound}_1`,
+            ban1
+        );
 
-            // Charge le héros
-            ban1_1Img.src = `../heroes/${data.ban1_1}.png`;
+    }
 
-            // Cache le bandeau
-            ban1_1Slot.classList.remove("play");
+    if(ban2 && lastBans[`ban${currentRound}_2`] !== ban2){
 
-            // Affiche le portrait avec un zoom
-            ban1_1Slot.classList.add("show");
+        lastBans[`ban${currentRound}_2`] = ban2;
 
-            ban1_1Slot.classList.add("banned");
+        playBanAnimation(
+            `ban${currentRound}_2`,
+            ban2
+        );
 
-            ban1_1Slot.classList.add("glow");
-
-setTimeout(()=>{
-
-    ban1_1Slot.classList.remove("glow");
-
-},800);
-
-        },450);
-
-    },50);
+    }
 
 }
     
