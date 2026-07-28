@@ -782,3 +782,60 @@ body .draft-container::before{
     animation:banIcon .4s ease forwards;
 
 }
+
+.hero-info{
+
+    position:absolute;
+
+    bottom:-55px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+.hero-name{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    color:white;
+
+    text-transform:uppercase;
+
+}
+
+
+.hero-role{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#8FECC9;
+
+    font-weight:bold;
+
+}
+
+
+.hero-role img{
+
+    width:22px;
+
+    height:22px;
+
+}
