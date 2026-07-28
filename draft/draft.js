@@ -10,10 +10,7 @@ const draftRef = doc(
     "current"
 );
 
-const ban1_1Slot = document.getElementById("ban1_1Slot");
-const ban1_1Img = document.getElementById("ban1_1Img");
-
-let lastBan1_1 = "";
+const lastBans = {};
 
 
 const mapPicked =
@@ -97,6 +94,41 @@ async function playMapSelection(mapIndex){
     animationRunning = false;
 
 }
+
+async function playBanAnimation(fieldName, heroName){
+
+    const slot = document.getElementById(fieldName + "Slot");
+    const img = document.getElementById(fieldName + "Img");
+
+    if(!slot || !img) return;
+
+    // Remise à zéro
+    slot.classList.remove("show");
+    slot.classList.remove("play");
+    slot.classList.remove("banned");
+
+    await sleep(50);
+
+    // Bandeau BAN
+    slot.classList.add("play");
+
+    await sleep(450);
+
+    // Chargement du héros
+    img.src = `../heroes/${heroName}.png`;
+
+    // Affichage
+    slot.classList.remove("play");
+    slot.classList.add("show");
+    slot.classList.add("banned");
+    slot.classList.add("glow");
+
+    await sleep(800);
+
+    slot.classList.remove("glow");
+
+}
+
 
 onSnapshot(draftRef, (docSnap) => {
 
