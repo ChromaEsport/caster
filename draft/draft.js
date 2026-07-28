@@ -161,6 +161,14 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
+    document
+.querySelectorAll(".ban-title")
+.forEach(title=>{
+
+    title.classList.remove("show");
+
+});   
+
 
     title.classList.remove("show");
     document
@@ -199,10 +207,9 @@ onSnapshot(draftRef, (docSnap) => {
 
 
 });
-    }
-
 }
-    
+
+
 
 const card = document.querySelector(`#map${data.selectedMap}`);
     
