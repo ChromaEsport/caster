@@ -117,60 +117,6 @@ maps.forEach(map => {
 let score1 = 0;
 let score2 = 0;
 
-/*function updateMaps(){
-
-
-const selectedType =
-document.getElementById("mapType").value;
-
-
-const options =
-document.querySelectorAll("#map option");
-
-
-
-options.forEach(option => {
-
-
-if(option.dataset.type === selectedType){
-
-    option.hidden = false;
-
-}
-
-else{
-
-    option.hidden = true;
-
-}
-
-
-});
-
-
-
-// Sélectionne la première map disponible
-
-const firstVisible =
-document.querySelector("#map option:not([hidden])");
-
-
-if(firstVisible){
-
-document.getElementById("map").value =
-firstVisible.value;
-
-}
-
-
-}
-
-document
-.getElementById("mapType")
-.addEventListener(
-"change",
-updateMaps
-);*/
 
 const matchRef = doc(
 db,
@@ -218,11 +164,6 @@ data.casters || "";
 document.getElementById("event").value =
 data.event || "";
     
-/*document.getElementById("map").value =
-data.map;
-
-document.getElementById("mapType").value =
-data.mapType;*/
 
 }
 
@@ -305,13 +246,7 @@ document.getElementById("casters").value.toUpperCase(),
 event:
 document.getElementById("event").value.toUpperCase(),
 
-    
-/*mapType:
-document.getElementById("mapType").value,
 
-
-map:
-document.getElementById("map").value*/
 
 
 });
@@ -322,7 +257,7 @@ alert("Score envoyé !");
 
 }
 
-/*updateMaps();*/
+
 function selectMap(mapNumber){
 
 currentMapNumber = Number(mapNumber);
