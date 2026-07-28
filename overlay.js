@@ -12,6 +12,12 @@ db,
 "current"
 );
 
+const draftRef = doc(
+db,
+"draft",
+"current"
+);
+
 
 let previousScore1 = null;
 let previousScore2 = null;
@@ -131,5 +137,29 @@ data.mapType.toUpperCase()
 
     previousScore2 = data.score2;
 
+
+});
+
+onSnapshot(draftRef, (docSnap)=>{
+
+    const data = docSnap.data();
+
+    if(!data) return;
+
+
+    if(data.currentMap){
+
+        const selectedMap =
+        data[`map${data.currentMap}`];
+
+
+        if(selectedMap){
+
+            document.getElementById("mapDisplay").textContent =
+            selectedMap.toUpperCase();
+
+        }
+
+    }
 
 });
