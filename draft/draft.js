@@ -260,7 +260,7 @@ if(currentRound){
 
 }
     
-    //document.getElementById("ban1_2Img").src =`../heroes/${data.ban1_2}.png`;
+
 
 
 });
