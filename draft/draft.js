@@ -10,6 +10,27 @@ const draftRef = doc(
     "current"
 );
 
+const heroRoles = {
+
+    "Ana":{
+        role:"SUPPORT",
+        icon:"support.png"
+    },
+
+    "Genji":{
+        role:"DPS",
+        icon:"dps.png"
+    },
+
+    "Reinhardt":{
+        role:"TANK",
+        icon:"tank.png"
+    }
+
+};
+
+
+
 const lastBans = {};
 
 
