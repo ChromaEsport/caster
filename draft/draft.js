@@ -161,7 +161,15 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
+    document
+.querySelectorAll(".ban-title")
+.forEach(title=>{
 
+    title.classList.remove("show");
+
+});
+
+    title.classList.remove("show");
     document
     .querySelectorAll(".hero-ban")
     .forEach(img=>{
@@ -196,11 +204,6 @@ onSnapshot(draftRef, (docSnap) => {
 
         playMapSelection(data.selectedMap);
 
-        document
-    .querySelectorAll(".ban-title")
-    .forEach(title=>{
-
-    title.classList.remove("show");
 
 });
     }
