@@ -148,6 +148,14 @@ onSnapshot(draftRef, (docSnap) => {
 
    if(data.selectedMap === 0){
 
+document
+.querySelectorAll(".ban-title")
+.forEach(title=>{
+
+    title.classList.remove("show");
+
+});
+       
     document
     .querySelectorAll(".map-card")
     .forEach(card=>{
@@ -161,13 +169,6 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
-    document
-.querySelectorAll(".ban-title")
-.forEach(title=>{
-
-    title.classList.remove("show");
-
-});
 
     title.classList.remove("show");
     document
