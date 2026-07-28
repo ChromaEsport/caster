@@ -183,6 +183,8 @@ onSnapshot(draftRef, (docSnap) => {
 
         img.removeAttribute("src");
 
+        img.style.display = "none";
+
     });   
 
 
@@ -229,12 +231,13 @@ const card = document.querySelector(`#map${data.selectedMap}`);
     name.textContent = map || "";
 
     if(map){
-
+ img.style.display = "block";
         img.src = `../maps/${map}.png`;
 
     }else{
 
         img.removeAttribute("src");
+img.style.display = "none";
 
     }
 
