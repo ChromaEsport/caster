@@ -84,6 +84,21 @@ const heroes = [
     "Zenyatta"
 ];
 
+heroes.sort((a, b) => a.localeCompare(b));
+
+const heroSelect = document.getElementById("heroSelect");
+
+heroes.forEach(hero => {
+
+    const option = document.createElement("option");
+
+    option.value = hero;
+    option.textContent = hero;
+
+    heroSelect.appendChild(option);
+
+});
+
 maps.sort((a, b) => a.localeCompare(b));
 
 const mapSelect = document.getElementById("mapSelect");
