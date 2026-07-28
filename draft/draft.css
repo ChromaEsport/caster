@@ -8,15 +8,59 @@ body{
 
     overflow:hidden;
 
-     background:
+    background:
+    
     radial-gradient(
-        circle at center,
-        rgba(60,145,149,0.15),
-        transparent 45%
+        circle at 50% 40%,
+        rgba(143,236,201,0.18),
+        transparent 35%
     ),
-    #010c2c;
 
+    radial-gradient(
+        circle at 10% 90%,
+        rgba(60,145,149,0.25),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 90% 10%,
+        rgba(60,145,149,0.20),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #010c2c,
+        #020718 60%,
+        #010c2c
+    );
     font-family:Arial,sans-serif;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(143,236,201,0.04) 50%,
+        transparent 100%
+    );
+
+
+    transform:skewX(-20deg);
+
+    pointer-events:none;
+
+    z-index:0;
 
 }
 
@@ -42,7 +86,7 @@ body::before{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
 
