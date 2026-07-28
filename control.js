@@ -282,8 +282,8 @@ document
 
 
 
-document.getElementById("selectedRound").innerHTML =
-"Manche sélectionnée : Manche " + currentMapNumber;
+//document.getElementById("selectedRound").innerHTML =
+//"Manche sélectionnée : Manche " + currentMapNumber;
 
 
 
