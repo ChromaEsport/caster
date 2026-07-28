@@ -102,6 +102,16 @@ async function playBanAnimation(fieldName, heroName){
 
     if(!slot || !img) return;
 
+    const round = fieldName.split("_")[0].replace("ban", "");
+
+    const title = document.getElementById(`banTitle${round}`);
+
+    if(title){
+
+    title.classList.add("show");
+
+}
+
     // Remise à zéro
     slot.classList.remove("show");
     slot.classList.remove("play");
