@@ -781,12 +781,6 @@ body .draft-container::before{
 
 .hero-info{
 
-    position:absolute;
-
-    bottom:-55px;
-
-    left:0;
-
     width:100%;
 
     text-align:center;
