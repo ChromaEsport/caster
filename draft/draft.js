@@ -161,7 +161,7 @@ if(heroRoles[heroName]){
         heroRoles[heroName].role;
 
     heroRoleImg.src =
-        `../roles/${heroRoles[heroName].icon}`;
+        `../role/${heroRoles[heroName].png}`;
 
 }
 else{
