@@ -436,6 +436,36 @@ async function sendBan2(){
 
 }
 
+async function resetDraft(){
+
+    await setDoc(draftRef,{
+
+        currentMap: 0,
+        selectedMap: 0,
+
+        map1:"",
+        map2:"",
+        map3:"",
+        map4:"",
+        map5:"",
+
+        ban1_1:"",
+        ban1_2:"",
+        ban2_1:"",
+        ban2_2:"",
+        ban3_1:"",
+        ban3_2:"",
+        ban4_1:"",
+        ban4_2:"",
+        ban5_1:"",
+        ban5_2:""
+
+    });
+
+    console.log("Draft réinitialisé");
+
+}
+
 window.addScore1 = addScore1;
 window.removeScore1 = removeScore1;
 
@@ -449,3 +479,5 @@ window.sendMap = sendMap;
 
 window.sendBan1 = sendBan1;
 window.sendBan2 = sendBan2;
+
+window.resetDraft = resetDraft;
