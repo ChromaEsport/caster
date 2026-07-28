@@ -146,20 +146,12 @@ onSnapshot(draftRef, (docSnap)=>{
 
     if(!data) return;
 
-
-    if(data.currentMap){
-
-        const selectedMap =
+    const selectedMap =
         data[`map${data.currentMap}`];
 
-
-        if(selectedMap){
-
-            document.getElementById("mapDisplay").textContent =
-            selectedMap.toUpperCase();
-
-        }
-
-    }
+    document.getElementById("mapDisplay").textContent =
+        selectedMap
+            ? selectedMap.toUpperCase()
+            : "EN ATTENTE DE LA MAP";
 
 });
