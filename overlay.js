@@ -146,10 +146,20 @@ onSnapshot(draftRef, (docSnap)=>{
 
     if(!data) return;
 
-    const selectedMap =
+
+    if(data.currentMap){
+
+        const selectedMap =
         data[`map${data.currentMap}`];
 
-    document.getElementById("mapDisplay").textContent =
-        selectedMap ? selectedMap.toUpperCase() : "";
+
+        if(selectedMap){
+
+            document.getElementById("mapDisplay").textContent =
+            selectedMap.toUpperCase();
+
+        }
+
+    }
 
 });
