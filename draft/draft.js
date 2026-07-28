@@ -212,20 +212,25 @@ onSnapshot(draftRef, (docSnap) => {
 const card = document.querySelector(`#map${data.selectedMap}`);
     
 
-    document.getElementById("map1Name").textContent = data.map1;
-    document.getElementById("map1Img").src =`../maps/${data.map1}.png`;
+    for(let i = 1; i <= 5; i++){
 
-    document.getElementById("map2Name").textContent = data.map2;
-    document.getElementById("map2Img").src = `../maps/${data.map2}.png`;
+    const img = document.getElementById(`map${i}Img`);
+    const name = document.getElementById(`map${i}Name`);
+    const map = data[`map${i}`];
 
-    document.getElementById("map3Name").textContent = data.map3;
-    document.getElementById("map3Img").src = `../maps/${data.map3}.png`;
+    name.textContent = map || "";
 
-    document.getElementById("map4Name").textContent = data.map4;
-    document.getElementById("map4Img").src = `../maps/${data.map4}.png`;
+    if(map){
 
-    document.getElementById("map5Name").textContent = data.map5;
-    document.getElementById("map5Img").src = `../maps/${data.map5}.png`;
+        img.src = `../maps/${map}.png`;
+
+    }else{
+
+        img.removeAttribute("src");
+
+    }
+
+}
 
     const currentRound = data.currentMap;
 
