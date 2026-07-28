@@ -187,10 +187,7 @@ body .draft-container::before{
 
       position:relative;
 
-    border:1px solid rgba(143,236,201,0.25);
-
-    box-shadow:
-    0 0 25px rgba(60,145,149,0.15);
+    
 
 
 }
@@ -257,10 +254,7 @@ body .draft-container::before{
     
     height: 484px;
 
-      border-color:#8FECC9;
-
-    box-shadow:
-    0 0 35px rgba(143,236,201,0.45);
+     
 
 }
 
