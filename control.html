@@ -49,105 +49,6 @@
         
 <hr>
 
-<div class="team-card">
-
-    <h2 class="section-title">
-        🚫 PICK & BAN
-    </h2>
-
-    <div class="pick-buttons">
-
-<button id="round1" class="round-btn" onclick="selectMap(1)">
-MANCHE 1
-</button>
-
-<button id="round2" class="round-btn" onclick="selectMap(2)">
-MANCHE 2
-</button>
-
-<button id="round3" class="round-btn" onclick="selectMap(3)">
-MANCHE 3
-</button>
-
-<button id="round4" class="round-btn" onclick="selectMap(4)">
-MANCHE 4
-</button>
-
-<button id="round5" class="round-btn" onclick="selectMap(5)">
-MANCHE 5
-</button>
-
-<!--<div id="selectedRound">
-Manche sélectionnée : Aucune
-</div>-->
-
-<h3>CHOIX DE LA MAP</h3>
-
-<select id="mapSelect">
-
-<!--<option value="Antarctic Peninsula">Antarctic Peninsula</option>
-<option value="Busan">Busan</option>
-<option value="Ilios">Ilios</option>
-<option value="Lijiang Tower">Lijiang Tower</option>
-<option value="Nepal">Nepal</option>
-<option value="Oasis">Oasis</option>
-<option value="Samoa">Samoa</option>
-<option value="Circuit Royal">Circuit Royal</option>
-<option value="Dorado">Dorado</option>
-<option value="Havana">Havana</option>
-<option value="Junkertown">Junkertown</option>
-<option value="Rialto">Rialto</option>
-<option value="Route 66">Route 66</option>
-<option value="Shambali Monastery">Shambali Monastery</option>
-<option value="Watchpoint: Gibraltar">Watchpoint Gibraltar</option>
-<option value="Aatlis">Aatlis</option>
-<option value="New Junk City">New Junk City</option>
-<option value="Suravasa">Suravasa</option>
-<option value="Blizzard World">Blizzard World</option>
-<option value="Eichenwalde">Eichenwalde</option>
-<option value="Hollywood">Hollywood</option>
-<option value="King's Row">King's Row</option>
-<option value="Midtown">Midtown</option>
-<option value="Neon Junction">Neon Junction</option>
-<option value="Numbani">Numbani</option>
-<option value="Paraíso">Paraíso</option>
-<option value="Colosseo">Colosseo</option>
-<option value="Esperança">Esperança</option>
-<option value="New Queen Street">New Queen Street</option>
-<option value="Runasapi">Runasapi</option>
-<option value="Hanaoka">Hanaoka</option>
-<option value="Throne of Anubis">Throne of Anubis</option>-->
-    
-</select>
-
-<button onclick="sendMap()">
-ENVOYER MAP
-</button>      
-
-<h3>BAN HEROES</h3>
-        
-<select id="heroSelect"></select>
-
-<button onclick="sendBan1()">
-ENVOYER BAN 1
-</button>
-
-  <button onclick="sendBan2()">
-    ENVOYER BAN 2
-  </button>   
-
-<button class="reset-btn" onclick="resetDraft()">
-    RESET DRAFT
-</button>    
-        
-    </div>
-        
-</div>
-
- </div>       
-
-<div class="right-column">
-    
 <div class="team-card chroma-card">
 
     <h2 class="section-title">
@@ -194,180 +95,71 @@ ENVOYER BAN 1
 
 </div>
 
+ </div>       
 
-<hr>
+<div class="right-column">
 
-<!--On va y arriver
-    
-    <div class="team-card">
+<div class="team-card">
 
     <h2 class="section-title">
-        TYPE DE MAP
+        🚫 PICK & BAN
     </h2>
 
-<select id="mapType">
+    <div class="pick-buttons">
 
-<option value="">
-CHOISIR TYPE DE MAP
-</option>
+<button id="round1" class="round-btn" onclick="selectMap(1)">
+MANCHE 1
+</button>
+
+<button id="round2" class="round-btn" onclick="selectMap(2)">
+MANCHE 2
+</button>
+
+<button id="round3" class="round-btn" onclick="selectMap(3)">
+MANCHE 3
+</button>
+
+<button id="round4" class="round-btn" onclick="selectMap(4)">
+MANCHE 4
+</button>
+
+<button id="round5" class="round-btn" onclick="selectMap(5)">
+MANCHE 5
+</button>
+
+<h3>CHOIX DE LA MAP</h3>
+
+<select id="mapSelect"></select>
+
+<button onclick="sendMap()">
+ENVOYER MAP
+</button>      
+
+<h3>BAN HEROES</h3>
+        
+<select id="heroSelect"></select>
+
+<button onclick="sendBan1()">
+ENVOYER BAN 1
+</button>
+
+  <button onclick="sendBan2()">
+    ENVOYER BAN 2
+  </button>   
+
+<button class="reset-btn" onclick="resetDraft()">
+    RESET DRAFT
+</button>    
+        
+    </div>
+        
+</div>
     
-<option value="CONTROL">
-CONTROL
-</option>
-
-<option value="HYBRID">
-HYBRID
-</option>
-
-<option value="ESCORT">
-ESCORT
-</option>
-
-<option value="PUSH">
-PUSH
-</option>
-
-<option value="FLASHPOINT">
-FLASHPOINT
-</option>
-
-</select>
-
-
-<h2 class="section-title">CHOISIR MAP</h2>
-
-<select id="map">
-
-<option value="" data-type=""">
-CHOISIR UNE MAP
-</option>
-    
-<option value="ANTARTIC PENINSULA" data-type="CONTROL">
-ANTARTIC PENINSULA
-</option>
-    
-<option value="BUSAN" data-type="CONTROL">
-BUSAN
-</option>
-
-<option value="ILIOS" data-type="CONTROL">
-ILIOS
-</option>
-
-<option value="LIJIANG TOWER" data-type="CONTROL">
-LIJIANG TOWER
-</option>
-
-<option value="NEPAL" data-type="CONTROL">
-NEPAL
-</option>
-
-<option value="OASIS" data-type="CONTROL">
-OASIS
-</option>
-
-<option value="SAMOA" data-type="CONTROL">
-SAMOA
-</option>
-
-<option value="KING'S ROW" data-type="HYBRID">
-KING'S ROW
-</option>
-
-<option value="HOLLYWOOD" data-type="HYBRID">
-HOLLYWOOD
-</option>
-
-<option value="MIDTOWN" data-type="HYBRID">
-MIDTOWN
-</option>
-
-<option value="NUMBANI" data-type="HYBRID">
-NUMBANI
-</option>
-
-<option value="PARAISO" data-type="HYBRID">
-PARAISO
-</option>
-
-<option value="EICHENWALDE" data-type="HYBRID">
-EICHENWALDE
-</option>
-
-<option value="BLIZZARD WORLD" data-type="HYBRID">
-BLIZZARD WORLD
-</option>
-
-<option value="CIRCUIT ROYAL" data-type="ESCORT">
-CIRCUIT ROYAL
-</option>
-
-<option value="DORADO" data-type="ESCORT">
-DORADO
-</option>
-
-<option value="HAVANA" data-type="ESCORT">
-HAVANA
-</option>
-
-<option value="JUNKERTOWN" data-type="ESCORT">
-JUNKERTOWN
-</option>
-
-<option value="RIALTO" data-type="ESCORT">
-RIALTO
-</option>
-
-<option value="ROUTE 66" data-type="ESCORT">
-ROUTE 66
-</option>
-
-<option value="SHAMBALI MONASTERY" data-type="ESCORT">
-SHAMBALI MONASTERY
-</option>
-
-<option value="WATCHPOINT GIBRALTAR" data-type="ESCORT">
-WATCHPOINT GIBRALTAR
-</option>
-
-<option value="COLOSSEO" data-type="PUSH">
-COLOSSEO
-</option>
-
-<option value="ESPERANÇA" data-type="PUSH">
-ESPERANÇA
-</option>
-
-<option value="NEW QUEEN STREET" data-type="PUSH">
-NEW QUEEN STREET
-</option>
-
-<option value="RUNASAPI" data-type="PUSH">
-RUNASAPI
-</option>
-
-<option value="NEW JUNK CITY" data-type="FLASHPOINT">
-NEW JUNK CITY
-</option>
-
-<option value="SURAVASA" data-type="FLASHPOINT">
-SURAVASA
-</option>
-
-<option value="HANAOKA" data-type="FLASHPOINT">
-HANAOKA
-</option>
-
-<option value="THRONE OF ANUBIS" data-type="FLASHPOINT">
-THRONE OF ANUBIS
-</option>
-
-</select>-->
-
 
 </div>
 
 </div>
+    
 <button class="send-button" onclick="sendMatch()">
 ENVOYER
 </button>
