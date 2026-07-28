@@ -263,6 +263,32 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
+       document
+.querySelectorAll(".hero-name")
+.forEach(name=>{
+
+    name.textContent = "";
+
+});
+
+
+document
+.querySelectorAll(".hero-role span")
+.forEach(role=>{
+
+    role.textContent = "";
+
+});
+
+
+document
+.querySelectorAll(".hero-role img")
+.forEach(icon=>{
+
+    icon.removeAttribute("src");
+
+});
+
 }
 
 
