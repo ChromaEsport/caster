@@ -169,8 +169,6 @@ onSnapshot(draftRef, (docSnap) => {
 
 });   
 
-
-    title.classList.remove("show");
     document
     .querySelectorAll(".hero-ban")
     .forEach(img=>{
