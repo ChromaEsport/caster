@@ -69,7 +69,7 @@ body::before{
     content: "";
     position: fixed;
     top: 38%;
-    left: 53%;
+    left: 50%;
     width: 1700px;
     height: 700px;
     transform: translate(-50%, -50%);
@@ -87,6 +87,59 @@ body::before{
     position:relative;
 
     z-index:2;
+
+}
+
+body .draft-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+
+    background-image:
+    repeating-linear-gradient(
+        120deg,
+        transparent 0px,
+        transparent 80px,
+        rgba(143,236,201,0.04) 82px,
+        transparent 84px
+    );
+
+
+    animation:
+    moveLines 20s linear infinite;
+
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+@keyframes moveLines{
+
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+
+    to{
+
+        transform:translate(120px,120px);
+
+    }
 
 }
 
@@ -131,6 +184,13 @@ body::before{
     filter .8s ease,
     opacity .8s ease,
     box-shadow .8s ease;
+
+      position:relative;
+
+    border:1px solid rgba(143,236,201,0.25);
+
+    box-shadow:
+    0 0 25px rgba(60,145,149,0.15);
 
 
 }
@@ -197,7 +257,10 @@ body::before{
     
     height: 484px;
 
-    
+      border-color:#8FECC9;
+
+    box-shadow:
+    0 0 35px rgba(143,236,201,0.45);
 
 }
 
