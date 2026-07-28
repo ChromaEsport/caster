@@ -121,6 +121,10 @@ async function playBanAnimation(fieldName, heroName){
     const slot = document.getElementById(fieldName + "Slot");
     const img = document.getElementById(fieldName + "Img");
 
+    const heroNameElement = document.getElementById(fieldName + "Name");
+    const heroRoleElement = document.getElementById(fieldName + "Role");
+    const heroRoleImg = document.getElementById(fieldName + "RoleImg");
+
     if(!slot || !img) return;
 
     const round = fieldName.split("_")[0].replace("ban", "");
@@ -147,6 +151,23 @@ async function playBanAnimation(fieldName, heroName){
 
     // Chargement du héros
     img.src = `../heroes/${heroName}.png`;
+
+    heroNameElement.textContent = heroName.toUpperCase();
+
+const heroData = heroRoles[heroName];
+
+if(heroData){
+
+    heroRoleElement.textContent = heroData.role;
+
+    heroRoleImg.src = `../roles/${heroData.icon}`;
+
+}else{
+
+    heroRoleElement.textContent = "";
+    heroRoleImg.removeAttribute("src");
+
+}
 
     // Affichage
     slot.classList.remove("play");
