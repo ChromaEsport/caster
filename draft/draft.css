@@ -262,8 +262,14 @@ body{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 
+    opacity: 0;
+    transition: opacity .3s ease;
+
 }
 
+.ban-title.show{
+    opacity: 1;
+}
 .hero-bans{
 
     display:flex;
