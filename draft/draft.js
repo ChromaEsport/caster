@@ -136,6 +136,23 @@ onSnapshot(draftRef, (docSnap) => {
 
     if (!data) return;
 
+    if(data.selectedMap === 0){
+
+    document
+    .querySelectorAll(".map-card")
+    .forEach(card=>{
+
+        card.classList.remove(
+            "selected",
+            "left",
+            "right",
+            "dim"
+        );
+
+    });
+
+}
+
     if(data.selectedMap !== lastSelectedMap){
 
     lastSelectedMap = data.selectedMap;
