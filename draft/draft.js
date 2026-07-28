@@ -152,7 +152,7 @@ async function playBanAnimation(fieldName, heroName){
 
     // Chargement du héros
     img.src = `../heroes/${heroName}.png`;
-
+    img.style.display = "block";
 
     heroNameElement.textContent = heroName.toUpperCase();
 
@@ -163,11 +163,13 @@ if(heroData){
     heroRoleElement.textContent = heroData.role;
 
     heroRoleImg.src = `../roles/${heroData.icon}`;
+    heroRoleImg.style.display = "block";
 
 }else{
 
     heroRoleElement.textContent = "";
     heroRoleImg.removeAttribute("src");
+    
 
 }
 
@@ -270,6 +272,7 @@ document
 .forEach(icon=>{
 
     icon.removeAttribute("src");
+    icon.style.display = "none";
 
 });
 
