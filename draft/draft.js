@@ -121,6 +121,7 @@ async function playBanAnimation(fieldName, heroName){
     const slot = document.getElementById(fieldName + "Slot");
     const img = document.getElementById(fieldName + "Img");
 
+
     const heroNameElement = document.getElementById(fieldName + "Name");
     const heroRoleElement = document.getElementById(fieldName + "Role");
     const heroRoleImg = document.getElementById(fieldName + "RoleImg");
@@ -151,6 +152,25 @@ async function playBanAnimation(fieldName, heroName){
 
     // Chargement du héros
     img.src = `../heroes/${heroName}.png`;
+
+    heroNameElement.textContent = heroName.toUpperCase();
+
+if(heroRoles[heroName]){
+
+    heroRoleElement.textContent =
+        heroRoles[heroName].role;
+
+    heroRoleImg.src =
+        `../roles/${heroRoles[heroName].icon}`;
+
+}
+else{
+
+    heroRoleElement.textContent = "";
+
+    heroRoleImg.removeAttribute("src");
+
+}
 
     heroNameElement.textContent = heroName.toUpperCase();
 
