@@ -176,8 +176,7 @@ onSnapshot(draftRef, (docSnap) => {
 
 }
 
-        
-}
+
 
     if(data.selectedMap !== lastSelectedMap){
 
