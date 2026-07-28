@@ -177,6 +177,14 @@ onSnapshot(draftRef, (docSnap) => {
 
     });
 
+    document
+    .querySelectorAll(".map-image img")
+    .forEach(img=>{
+
+        img.removeAttribute("src");
+
+    });   
+
 
     document
     .querySelectorAll(".hero-slot")
