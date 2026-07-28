@@ -415,6 +415,27 @@ async function sendBan1(){
 
 }
 
+async function sendBan2(){
+
+    const hero =
+        document.getElementById("heroSelect").value;
+
+    let data = {};
+
+    data[`ban${currentMapNumber}_2`] = hero;
+
+    await setDoc(
+        draftRef,
+        data,
+        { merge: true }
+    );
+
+    console.log(
+        `Ban 2 envoyé : ${hero}`
+    );
+
+}
+
 window.addScore1 = addScore1;
 window.removeScore1 = removeScore1;
 
@@ -427,3 +448,4 @@ window.selectMap = selectMap;
 window.sendMap = sendMap;
 
 window.sendBan1 = sendBan1;
+window.sendBan2 = sendBan2;
