@@ -206,7 +206,7 @@ onSnapshot(draftRef, (docSnap) => {
         playMapSelection(data.selectedMap);
 
 
-});
+};
 }
 
 
