@@ -192,6 +192,26 @@ hr {
     0 0 20px rgba(60,145,149,0.3);
 }
 
+.ban-card {
+
+    background:#224863fc;
+
+    border:2px solid #00d3dd;
+
+    border-radius:15px;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 20px rgba(60,145,149,0.3);
+}
+
 
 .chroma-card {
 
