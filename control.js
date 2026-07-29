@@ -404,6 +404,9 @@ async function resetDraft(){
     document.getElementById("heroSelect").selectedIndex = 0;
     document.getElementById("mapSelect").selectedIndex = 0;
 
+    // Remet la sélection du panel sur la manche 1
+    selectMap(1);
+
     alert("Draft réinitialisé !");
 
 }
