@@ -423,6 +423,9 @@ body .draft-container::before{
 
 }
 
+.hero-bans.dim{
+    gap:0px;}
+
 .hero-ban{
 
     width: 160px;
