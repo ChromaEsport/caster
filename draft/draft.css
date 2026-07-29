@@ -287,7 +287,7 @@ body .draft-container::before{
 .map-card.selected .map-image{
 
     border-color:#c89c4d;
-    height: 440px;
+    height: 448px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 
@@ -342,9 +342,9 @@ body .draft-container::before{
 .round-title{
 
 
-    padding-top: 2px;
+    padding-top: 4px;
     
-    padding-bottom: 6px;
+    padding-bottom: 8px;
 
     display:flex;
 
@@ -387,8 +387,8 @@ body .draft-container::before{
 
     text-transform:uppercase;
 
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 5px;
     margin-top: -8px;
 
     border-radius: 5px;
@@ -783,7 +783,7 @@ body .draft-container::before{
 
 .hero-info{
 
-   width: 103%;
+   width: 104%;
     text-align: center;
     margin-top: -1px;
     min-height: 42px;
@@ -791,6 +791,7 @@ body .draft-container::before{
     height: 65px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    margin-right: -1px;
 
 }
 
