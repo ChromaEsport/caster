@@ -111,6 +111,8 @@ ENVOYER
 
     <div class="pick-buttons">
 
+  <div class="manche">      
+
 <h3>MANCHE EN COURS</h3>
         
 <button id="round1" class="round-btn" onclick="selectMap(1)">
@@ -132,9 +134,13 @@ MANCHE 4
 <button id="round5" class="round-btn" onclick="selectMap(5)">
 MANCHE 5
 </button>
-
-<hr>        
-
+      
+ </div>   
+        
+<hr>   
+        
+ <div class="map">  
+     
 <h3>CHOIX DE LA MAP</h3>
 
 <select id="mapSelect">
@@ -145,8 +151,12 @@ MANCHE 5
 
 <button onclick="sendMap()">
 ENVOYER MAP
-</button>      
-
+</button>   
+     
+</div>
+        
+        <div class="heroes">  
+            
 <h3>BAN HEROES</h3>
         
 <select id="heroSelect">
@@ -162,13 +172,18 @@ ENVOYER BAN 1
   <button onclick="sendBan2()">
     ENVOYER BAN 2
   </button>  
+            
+          </div>  
 
         <hr>
-
+        
+ <div class="reset"> 
+     
 <button class="reset-btn" onclick="resetDraft()">
     RESET DRAFT
 </button>    
-        
+     
+         </div>
     </div>
         
 </div>
