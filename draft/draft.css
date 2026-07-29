@@ -252,7 +252,7 @@ body .draft-container::before{
     margin-left: 10px;
     margin-right: 10px;
     
-    height: 484px;
+    height: 486px;
 
      
 
@@ -288,8 +288,8 @@ body .draft-container::before{
 
     border-color:#c89c4d;
     height: 440px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 
 }
 
