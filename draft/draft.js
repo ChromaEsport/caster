@@ -26,7 +26,7 @@ const heroRoles = {
 "Wrecking Ball":{role:"TANK",icon:"tank.png"},
 "Zarya":{role:"TANK",icon:"tank.png"},
 "Domina":{role:"TANK",icon:"tank.png"},
-"Vital":{role:"SUPPORT",icon:"support.png"},
+"Lifeweaver":{role:"SUPPORT",icon:"support.png"},
 
 "Anran":{role:"DAMAGE",icon:"damage.png"},
 "Ashe":{role:"DAMAGE",icon:"damage.png"},
