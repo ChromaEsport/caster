@@ -145,7 +145,7 @@ body .draft-container::before{
 
 .title{
 
-    margin-top:20px;
+    margin-top:10px;
 
     text-align:center;
 
@@ -159,7 +159,7 @@ body .draft-container::before{
 
 .maps{
 
-   margin-top: 90px;
+   margin-top: 80px;
     margin-left: 80px;
     margin-right: 80px;
     margin-bottom: 0px;
@@ -342,9 +342,9 @@ body .draft-container::before{
 .round-title{
 
 
-    padding-top: 10px;
+    padding-top: 2px;
     
-    padding-bottom: 10px;
+    padding-bottom: 6px;
 
     display:flex;
 
