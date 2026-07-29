@@ -400,7 +400,11 @@ async function resetDraft(){
 
     });
 
-    console.log("Draft réinitialisé");
+     // Remet les menus sur le premier choix
+    document.getElementById("heroSelect").selectedIndex = 0;
+    document.getElementById("mapSelect").selectedIndex = 0;
+
+    alert("Draft réinitialisé !");
 
 }
 
