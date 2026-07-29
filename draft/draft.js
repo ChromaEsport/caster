@@ -363,8 +363,5 @@ if(currentRound){
     }
 
 }
-    
 
-
-
-
+});           
