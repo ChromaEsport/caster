@@ -375,7 +375,7 @@ body .draft-container::before{
 
     align-items:center;
 
-    background:#c89c4d;
+    background:#c80000;
 
     color:#ffffff;
 
@@ -423,23 +423,17 @@ body .draft-container::before{
 
 .hero-ban{
 
-   width: 160px;
+    width: 160px;
     height: 160px;
     object-fit: cover;
-    /* border-radius: 50%; */
-    border: 3px solid #c89c4d;
-    background: #010c2c;
+   
+    border: 3px solid #c80000;
+    background: #1e3e6600;
     margin-top: -2px;
-    /* margin-left: -3px; */
-    /* margin-right: -3px; */
-    border-top-width: 0px;
+    
 
     transform:scale(.7);
 
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    
     opacity:0;
 
     transition:
