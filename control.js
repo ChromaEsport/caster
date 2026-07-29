@@ -23,7 +23,7 @@ const maps = [
 "Rialto",
 "Route 66",
 "Shambali Monastery",
-"Watchpoint: Gibraltar",
+"Watchpoint Gibraltar",
 "Blizzard World",
 "Eichenwalde",
 "Hollywood",
