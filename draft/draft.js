@@ -335,6 +335,25 @@ img.style.display = "none";
 
     const currentRound = data.currentMap;
 
+document
+.querySelectorAll(".map-card")
+.forEach((card, index) => {
+
+    const roundNumber = index + 1;
+
+    if(currentRound > roundNumber){
+
+        card.classList.add("previous-round");
+
+    }else{
+
+        card.classList.remove("previous-round");
+
+    }
+
+});
+
+    
 if(currentRound){
 
     const ban1 = data[`ban${currentRound}_1`];
