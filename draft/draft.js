@@ -144,7 +144,7 @@ async function playBanAnimation(fieldName, heroName){
     slot.classList.remove("show");
     slot.classList.remove("play");
     slot.classList.remove("banned");
-    
+
 
 
     await sleep(50);
