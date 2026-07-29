@@ -423,8 +423,11 @@ body .draft-container::before{
 
 }
 
-.hero-bans.dim{
-    gap:0px;}
+.map-card.previous-round .hero-bans{
+
+    gap:0px;
+
+}
 
 .hero-ban{
 
