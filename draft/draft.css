@@ -402,6 +402,8 @@ body .draft-container::before{
     margin-left: -3px;
     margin-right: -3px;
 
+    box-shadow: 0 0 25px #c80000cc, 0 0 70px #c8000073;
+
 }
 
 .ban-title.show{
@@ -836,6 +838,9 @@ body .draft-container::before{
     align-items:center;
 
     width:160px;
+
+    box-shadow: 0 0 25px #c80000cc, 0 0 70px #c8000073;
+    
 
 }
 
