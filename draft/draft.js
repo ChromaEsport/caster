@@ -190,7 +190,7 @@ if(heroData){
 
     slot.classList.remove("glow");
 
-}
+}}
 
 
 onSnapshot(draftRef, (docSnap) => {
