@@ -194,24 +194,29 @@ hr {
 
 .ban-card {
 
-    background:#224863fc;
-
-    border:2px solid #00d3dd;
-
-    border-radius:15px;
-
-    padding:14px;
-
-    margin-bottom:12px;
-
-    text-align:center;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 0 20px rgba(60,145,149,0.3);
+    background: #224863fc;
+    border: 2px solid #00d3dd;
+    border-radius: 15px;
+    padding: 14px;
+    height: 700px;
+    margin-bottom: 12px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(60, 145, 149, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
+.reset-btn{
+
+    background: red;
+    margin-top: 25px;
+    border: 3px solid #ffffff;
+}
 
 .chroma-card {
 
