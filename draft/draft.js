@@ -125,7 +125,9 @@ async function playBanAnimation(fieldName, heroName){
     const heroNameElement = document.getElementById(fieldName + "Name");
     const heroRoleElement = document.getElementById(fieldName + "Role");
     const heroRoleImg = document.getElementById(fieldName + "RoleImg");
+    const heroContainer = document.getElementById(fieldName + "Container");
 
+    
     if(!slot || !img) return;
 
     const round = fieldName.split("_")[0].replace("ban", "");
@@ -140,8 +142,14 @@ async function playBanAnimation(fieldName, heroName){
 
     // Remise à zéro
     slot.classList.remove("show");
+      if(heroContainer){
+
+    heroContainer.classList.add("show");
     slot.classList.remove("play");
     slot.classList.remove("banned");
+    
+
+}
 
     await sleep(50);
 
@@ -275,6 +283,14 @@ document
     icon.style.display = "none";
 
 });
+
+   document
+.querySelectorAll(".hero-container, .hero-info")
+.forEach(container => {
+
+    container.classList.remove("show");
+
+});    
 
 }
 
