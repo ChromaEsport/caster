@@ -12,21 +12,61 @@ const draftRef = doc(
 
 const heroRoles = {
 
-    "Ana":{
-        role:"SUPPORT",
-        icon:"support.png"
-    },
+   "D.Va":{role:"TANK",icon:"tank.png"},
+"Doomfist":{role:"TANK",icon:"tank.png"},
+"Hazard":{role:"TANK",icon:"tank.png"},
+"Junker Queen":{role:"TANK",icon:"tank.png"},
+"Mauga":{role:"TANK",icon:"tank.png"},
+"Orisa":{role:"TANK",icon:"tank.png"},
+"Ramattra":{role:"TANK",icon:"tank.png"},
+"Reinhardt":{role:"TANK",icon:"tank.png"},
+"Roadhog":{role:"TANK",icon:"tank.png"},
+"Sigma":{role:"TANK",icon:"tank.png"},
+"Winston":{role:"TANK",icon:"tank.png"},
+"Wrecking Ball":{role:"TANK",icon:"tank.png"},
+"Zarya":{role:"TANK",icon:"tank.png"},
+"Domina":{role:"TANK",icon:"tank.png"},
+"Vital":{role:"SUPPORT",icon:"support.png"},
 
-    "Genji":{
-        role:"DPS",
-        icon:"dps.png"
-    },
+"Anran":{role:"DAMAGE",icon:"damage.png"},
+"Ashe":{role:"DAMAGE",icon:"damage.png"},
+"Bastion":{role:"DAMAGE",icon:"damage.png"},
+"Cassidy":{role:"DAMAGE",icon:"damage.png"},
+"Echo":{role:"DAMAGE",icon:"damage.png"},
+"Emre":{role:"DAMAGE",icon:"damage.png"},
+"Freja":{role:"DAMAGE",icon:"damage.png"},
+"Genji":{role:"DAMAGE",icon:"damage.png"},
+"Hanzo":{role:"DAMAGE",icon:"damage.png"},
+"Junkrat":{role:"DAMAGE",icon:"damage.png"},
+"Mei":{role:"DAMAGE",icon:"damage.png"},
+"Pharah":{role:"DAMAGE",icon:"damage.png"},
+"Reaper":{role:"DAMAGE",icon:"damage.png"},
+"Sierra":{role:"DAMAGE",icon:"damage.png"},
+"Sojourn":{role:"DAMAGE",icon:"damage.png"},
+"Soldier: 76":{role:"DAMAGE",icon:"damage.png"},
+"Sombra":{role:"DAMAGE",icon:"damage.png"},
+"Symmetra":{role:"DAMAGE",icon:"damage.png"},
+"Torbjörn":{role:"DAMAGE",icon:"damage.png"},
+"Tracer":{role:"DAMAGE",icon:"damage.png"},
+"Vendetta":{role:"DAMAGE",icon:"damage.png"},
+"Venture":{role:"DAMAGE",icon:"damage.png"},
+"Widowmaker":{role:"DAMAGE",icon:"damage.png"},
+"Shion":{role:"DAMAGE",icon:"damage.png"},
 
-    "Reinhardt":{
-        role:"TANK",
-        icon:"tank.png"
-    }
-
+"Ana":{role:"SUPPORT",icon:"support.png"},
+"Baptiste":{role:"SUPPORT",icon:"support.png"},
+"Brigitte":{role:"SUPPORT",icon:"support.png"},
+"Illari":{role:"SUPPORT",icon:"support.png"},
+"Jetpack Cat":{role:"SUPPORT",icon:"support.png"},
+"Juno":{role:"SUPPORT",icon:"support.png"},
+"Kiriko":{role:"SUPPORT",icon:"support.png"},
+"Lifeweaver":{role:"SUPPORT",icon:"support.png"},
+"Lúcio":{role:"SUPPORT",icon:"support.png"},
+"Mercy":{role:"SUPPORT",icon:"support.png"},
+"Mizuki":{role:"SUPPORT",icon:"support.png"},
+"Moira":{role:"SUPPORT",icon:"support.png"},
+"Wuyang":{role:"SUPPORT",icon:"support.png"},
+"Zenyatta":{role:"SUPPORT",icon:"support.png"}
 };
 
 
