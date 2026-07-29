@@ -142,9 +142,6 @@ async function playBanAnimation(fieldName, heroName){
 
     // Remise à zéro
     slot.classList.remove("show");
-      if(heroContainer){
-
-    heroContainer.classList.add("show");
     slot.classList.remove("play");
     slot.classList.remove("banned");
     
@@ -183,6 +180,9 @@ if(heroData){
 
     // Affichage
     slot.classList.remove("play");
+   if(heroContainer){
+
+    heroContainer.classList.add("show");
     slot.classList.add("show");
     slot.classList.add("banned");
     slot.classList.add("glow");
