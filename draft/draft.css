@@ -840,7 +840,17 @@ body .draft-container::before{
     width:160px;
 
     box-shadow: 0 0 25px #c80000cc, 0 0 70px #c8000073;
-    
+
+     visibility: hidden;
+
+
+}
+
+.hero-container.show{
+
+    opacity: 1;
+
+    visibility: visible;
 
 }
 
