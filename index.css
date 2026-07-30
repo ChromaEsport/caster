@@ -545,21 +545,51 @@ h1 {
    SOUS MENU
 ========================= */
 
-
 .submenu {
 
+    display: grid;
 
-    margin-top:10px;
+    grid-template-rows: 0fr;
 
-    display:flex;
+    opacity: 0;
 
-    flex-direction:column;
+    overflow: hidden;
 
-    gap:10px;
+    margin-top: 0;
+
+    padding-left: 20px;
+
+    transition:
+
+        grid-template-rows 0.4s ease,
+
+        opacity 0.25s ease,
+
+        margin-top 0.4s ease;
+
+}
 
 
-    padding-left:20px;
+/* Contenu interne du sous-menu */
 
+.submenu::before {
+
+    content: "";
+
+    min-height: 0;
+
+}
+
+
+/* Sous-menu ouvert */
+
+.category.active .submenu {
+
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+
+    margin-top: 10px;
 
 }
 
