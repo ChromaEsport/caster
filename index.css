@@ -586,7 +586,6 @@ h1 {
 
 .submenu::before {
 
-    content: "";
 
     min-height: 0;
 
