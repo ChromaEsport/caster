@@ -569,6 +569,18 @@ h1 {
 
 }
 
+.submenu-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-height: 0;
+
+}
+
 
 /* Contenu interne du sous-menu */
 
