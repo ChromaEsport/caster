@@ -132,7 +132,7 @@ async function playMapSelection(mapIndex){
     });
 
     // On attend que les cartes se déplacent
-    await sleep(500);
+    await sleep(900);
 
     // Zoom de la carte sélectionnée
     document
@@ -140,7 +140,7 @@ async function playMapSelection(mapIndex){
         .classList.add("selected");
 
     // On attend la fin du zoom
-    await sleep(700);
+    await sleep(950);
 
     // Affichage du bandeau
     pickedMapName.textContent =
