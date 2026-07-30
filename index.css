@@ -1,0 +1,354 @@
+/* =========================
+   IMPORT POLICE
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+
+/* =========================
+   VARIABLES CHROMA
+========================= */
+
+:root {
+
+    --background: #010c2c;
+
+    --background-dark: #000617;
+
+    --primary: #3c9195;
+
+    --primary-light: #8fecc9;
+
+    --gold: #c89c4d;
+
+    --white: #ffffff;
+
+    --text: #dcecff;
+
+    --card: rgba(10, 28, 65, 0.85);
+
+    --border: rgba(143, 236, 201, 0.25);
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    color: var(--text);
+
+    font-family: "Rajdhani", sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            rgba(60, 145, 149, 0.25),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--background-dark),
+            var(--background)
+        );
+
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+h1 {
+
+    position: relative;
+
+    margin-bottom: 45px;
+
+    color: var(--white);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(32px, 5vw, 60px);
+
+    font-weight: 800;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+    text-shadow:
+
+        0 0 10px rgba(143, 236, 201, 0.4),
+
+        0 0 30px rgba(60, 145, 149, 0.3);
+
+}
+
+
+/* Ligne sous le titre */
+
+h1::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -18px;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary-light),
+            var(--gold),
+            var(--primary-light),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 15px rgba(143, 236, 201, 0.7);
+
+}
+
+
+/* =========================
+   LIENS / BOUTONS
+========================= */
+
+a {
+
+    position: relative;
+
+    width: min(500px, 100%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 64px;
+
+    padding: 15px 25px;
+
+    color: var(--white);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
+
+    transition:
+
+        transform 0.25s ease,
+
+        border-color 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        background 0.25s ease;
+
+}
+
+
+/* Effet lumineux au survol */
+
+a::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 80%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(143, 236, 201, 0.2),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+
+}
+
+
+a:hover::before {
+
+    left: 140%;
+
+}
+
+
+/* Hover */
+
+a:hover {
+
+    transform: translateY(-4px);
+
+    color: var(--primary-light);
+
+    background:
+
+        rgba(20, 55, 90, 0.95);
+
+    border-color: var(--primary-light);
+
+    box-shadow:
+
+        0 0 15px rgba(143, 236, 201, 0.3),
+
+        0 15px 35px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* Clic */
+
+a:active {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* Navigation clavier */
+
+a:focus-visible {
+
+    outline: 3px solid var(--gold);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================
+   ESPACEMENT ENTRE BOUTONS
+========================= */
+
+br {
+
+    display: block;
+
+    height: 12px;
+
+    content: "";
+
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 40px 15px;
+
+    }
+
+
+    h1 {
+
+        margin-bottom: 40px;
+
+        font-size: 32px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    a {
+
+        min-height: 58px;
+
+        padding: 12px 15px;
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+
+    }
+
+}
