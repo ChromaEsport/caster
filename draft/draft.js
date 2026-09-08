@@ -26,6 +26,7 @@ const heroRoles = {
 "Zarya":{role:"TANK",icon:"tank.png"},
 "Domina":{role:"TANK",icon:"tank.png"},
 "Danger":{role:"TANK",icon:"tank.png"},
+"D.Mon":{role:"TANK",icon:"tank.png"},
 
 "Anran":{role:"DAMAGE",icon:"damage.png"},
 "Ashe":{role:"DAMAGE",icon:"damage.png"},
