@@ -570,7 +570,15 @@ h1 {
     font-weight: 600;
 }
 
-
+.liens-partenaires {
+margin-top: 16px;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 400;
+}
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -607,7 +615,7 @@ footer {
 
     color: var(--white);
 
-    font-size: 13px;
+    font-size: 18px;
 
     font-weight: 900;
 
@@ -617,9 +625,9 @@ footer {
 
 .slogan {
 
-    color: var(--turquoise-light);
+    color: var(--gold);
 
-    font-size: 10px;
+    font-size: 18px;
 
     font-weight: 700;
 
@@ -716,122 +724,4 @@ footer {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
-@media (max-width: 900px) {
-
-    .partners {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 15px;
-
-    }
-
-
-    .partner-card {
-
-        height: 200px;
-
-        padding: 20px;
-
-    }
-
-
-    .logo-container {
-
-        width: 150px;
-        height: 85px;
-
-    }
-
-
-    .header {
-
-        gap: 20px;
-
-    }
-
-
-    .title-wrapper {
-
-        min-width: 300px;
-
-    }
-
-}
-
-
-@media (max-width: 650px) {
-
-    .partners-screen {
-
-        padding: 30px 20px;
-
-    }
-
-
-    .header-line {
-
-        display: none;
-
-    }
-
-
-    .title-wrapper {
-
-        min-width: auto;
-
-    }
-
-
-    .header {
-
-        margin-bottom: 30px;
-
-    }
-
-
-    .partners {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .partner-card {
-
-        height: 150px;
-
-        flex-direction: row;
-
-        justify-content: flex-start;
-
-    }
-
-
-    .logo-container {
-
-        width: 130px;
-        height: 75px;
-
-    }
-
-
-    .thanks {
-
-        margin-top: 25px;
-
-    }
-
-
-    footer {
-
-        display: none;
-
-    }
-
-}
