@@ -1,0 +1,437 @@
+/* =========================================================
+CHROMA ESPORT — DOFUS OVERLAY
+Prototype 01 — Barre supérieure
+========================================================= */
+
+:root {
+--chroma-dark: #010c2c;
+--chroma-blue: #3c9195;
+--chroma-gold: #c89c4d;
+--chroma-dragon: #8fecc9;
+
+```
+/* Hauteurs des différents niveaux */
+--team-height: 58px;
+--score-height: 82px;
+--dofus-height: 110px;
+
+/* Largeurs */
+--team-width: 300px;
+--score-width: 115px;
+--dofus-width: 300px;
+```
+
+}
+
+/* ---------------------------------------------------------
+PAGE
+--------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+  }
+
+html,
+body {
+margin: 0;
+padding: 0;
+
+```
+width: 100%;
+height: 100%;
+
+overflow: hidden;
+
+background: transparent;
+
+font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+```
+
+}
+
+/* ---------------------------------------------------------
+BARRE PRINCIPALE
+--------------------------------------------------------- */
+
+.dofus-header {
+
+```
+position: absolute;
+
+top: 0;
+left: 50%;
+
+transform: translateX(-50%);
+
+display: flex;
+
+align-items: flex-start;
+
+height: var(--dofus-height);
+
+/*
+    Aucun espace entre les blocs :
+    les cinq éléments forment une seule barre.
+*/
+gap: 0;
+
+color: white;
+
+filter:
+    drop-shadow(0 5px 10px rgba(0, 0, 0, 0.45));
+```
+
+}
+
+/* ---------------------------------------------------------
+BLOCS ÉQUIPES
+--------------------------------------------------------- */
+
+.team-block {
+
+```
+width: var(--team-width);
+height: var(--team-height);
+
+margin-top: 0;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+position: relative;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(1, 12, 44, 0.98),
+        rgba(1, 12, 44, 0.92)
+    );
+
+border-top: 2px solid var(--chroma-blue);
+border-bottom: 2px solid var(--chroma-gold);
+
+overflow: hidden;
+```
+
+}
+
+/* Accent lumineux intérieur */
+
+.team-block::before {
+
+```
+content: "";
+
+position: absolute;
+
+top: 0;
+bottom: 0;
+
+width: 5px;
+
+background:
+    linear-gradient(
+        180deg,
+        var(--chroma-dragon),
+        var(--chroma-blue)
+    );
+```
+
+}
+
+/* Équipe gauche */
+
+.team-left::before {
+left: 0;
+}
+
+/* Équipe droite */
+
+.team-right::before {
+right: 0;
+}
+
+/* Texte équipe */
+
+.team-block span {
+
+```
+position: relative;
+
+z-index: 2;
+
+padding: 0 20px;
+
+font-size: 22px;
+font-weight: 800;
+
+letter-spacing: 1.2px;
+
+text-transform: uppercase;
+
+white-space: nowrap;
+
+text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8);
+```
+
+}
+
+/* ---------------------------------------------------------
+BLOCS SCORE
+--------------------------------------------------------- */
+
+.score-block {
+
+```
+width: var(--score-width);
+height: var(--score-height);
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+position: relative;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(20, 31, 62, 0.99),
+        rgba(1, 12, 44, 0.98)
+    );
+
+border-left: 1px solid rgba(200, 156, 77, 0.65);
+border-right: 1px solid rgba(200, 156, 77, 0.65);
+
+border-bottom: 2px solid var(--chroma-gold);
+
+overflow: hidden;
+```
+
+}
+
+/* Petite lumière verticale */
+
+.score-block::before {
+
+```
+content: "";
+
+position: absolute;
+
+top: 0;
+bottom: 0;
+
+width: 2px;
+
+background:
+    linear-gradient(
+        180deg,
+        transparent,
+        var(--chroma-gold),
+        transparent
+    );
+```
+
+}
+
+.score-left::before {
+left: 0;
+}
+
+.score-right::before {
+right: 0;
+}
+
+/* Chiffre */
+
+.score-block span {
+
+```
+position: relative;
+
+z-index: 2;
+
+font-size: 42px;
+
+line-height: 1;
+
+font-weight: 900;
+
+color: var(--chroma-gold);
+
+text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.9),
+    0 0 12px rgba(200, 156, 77, 0.25);
+```
+
+}
+
+/* ---------------------------------------------------------
+BLOC CENTRAL DOFUS
+--------------------------------------------------------- */
+
+.dofus-block {
+
+```
+width: var(--dofus-width);
+height: var(--dofus-height);
+
+position: relative;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(1, 12, 44, 0.99),
+        rgba(10, 35, 54, 0.98)
+    );
+
+border-left: 2px solid var(--chroma-gold);
+border-right: 2px solid var(--chroma-gold);
+
+border-bottom: 2px solid var(--chroma-dragon);
+
+overflow: hidden;
+
+/*
+    Petit chanfrein visuel :
+    le centre ressort légèrement.
+*/
+clip-path:
+    polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+```
+
+}
+
+/* Halo central */
+
+.dofus-block::before {
+
+```
+content: "";
+
+position: absolute;
+
+width: 180px;
+height: 180px;
+
+left: 50%;
+top: 50%;
+
+transform: translate(-50%, -50%);
+
+background:
+    radial-gradient(
+        circle,
+        rgba(143, 236, 201, 0.16) 0%,
+        rgba(60, 145, 149, 0.08) 35%,
+        transparent 70%
+    );
+
+pointer-events: none;
+```
+
+}
+
+/* Logo */
+
+.dofus-block img {
+
+```
+position: relative;
+
+z-index: 2;
+
+max-width: 82%;
+max-height: 82%;
+
+object-fit: contain;
+
+filter:
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.8));
+```
+
+}
+
+/* ---------------------------------------------------------
+PETITES LIGNES DE DÉCORATION
+--------------------------------------------------------- */
+
+.team-left::after,
+.team-right::after,
+.score-left::after,
+.score-right::after {
+
+```
+content: "";
+
+position: absolute;
+
+bottom: -2px;
+
+height: 2px;
+
+background: var(--chroma-gold);
+```
+
+}
+
+.team-left::after {
+right: 0;
+width: 45%;
+}
+
+.team-right::after {
+left: 0;
+width: 45%;
+}
+
+.score-left::after,
+.score-right::after {
+left: 20%;
+right: 20%;
+}
+
+/* ---------------------------------------------------------
+ADAPTATION PETITS ÉCRANS
+--------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+```
+:root {
+    --team-width: 230px;
+    --score-width: 90px;
+    --dofus-width: 230px;
+
+    --team-height: 52px;
+    --score-height: 72px;
+    --dofus-height: 95px;
+}
+
+.team-block span {
+    font-size: 18px;
+}
+
+.score-block span {
+    font-size: 34px;
+}
+```
+
+}
