@@ -56,6 +56,34 @@ body {
 /* =========================================================
    MAIN SCREEN
    ========================================================= */
+.logo1{
+
+    position:absolute;
+
+    top:90px;
+
+    left:0;
+
+    width:1920px;
+
+    height:250px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.logo{
+
+    height:700px;
+
+    width:auto;
+
+    z-index:1;
+}
+
 
 .partners-screen {
 
