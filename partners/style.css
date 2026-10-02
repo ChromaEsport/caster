@@ -174,7 +174,7 @@ body {
 
 .header {
 
-    width: min(1100px, 90vw);
+    width: min(1500px, 90vw);
 
     display: flex;
     align-items: center;
@@ -234,7 +234,7 @@ body {
 
     color: var(--gold);
 
-    font-size: 13px;
+    font-size: 30px;
 
     font-weight: 700;
 
@@ -262,7 +262,7 @@ h1 {
 
     color: var(--white-soft);
 
-    font-size: 15px;
+    font-size: 25px;
 
     line-height: 1.5;
 }
@@ -466,7 +466,7 @@ h1 {
 
     color: var(--white);
 
-    font-size: 15px;
+    font-size: 24px;
 
     font-weight: 600;
 
@@ -507,9 +507,9 @@ h1 {
 
 .thanks-line {
 
-    width: 100%;
-
-    height: 1px;
+    width: 150%;
+    margin-bottom: 20px;
+    height: 2px;
 
     background:
         linear-gradient(
