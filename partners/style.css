@@ -203,7 +203,7 @@ body {
     align-items: center;
     gap: 35px;
 
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     z-index: 2;
 
@@ -514,7 +514,7 @@ h1 {
 
     width: min(850px, 80vw);
 
-    margin-top: 30px;
+    margin-top: 15px;
 
     display: flex;
 
