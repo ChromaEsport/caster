@@ -1,0 +1,815 @@
+/* =========================================================
+   CHROMA ESPORT — PARTNERS SCREEN
+   ========================================================= */
+
+:root {
+    --navy: #010c2c;
+    --navy-light: #071737;
+
+    --turquoise: #3c9195;
+    --turquoise-light: #8fecc9;
+
+    --gold: #c89c4d;
+
+    --white: #ffffff;
+    --white-soft: rgba(255, 255, 255, 0.72);
+    --white-muted: rgba(255, 255, 255, 0.45);
+
+    --card-background: rgba(255, 255, 255, 0.045);
+    --card-border: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background: var(--navy);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   MAIN SCREEN
+   ========================================================= */
+
+.partners-screen {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 5vh 7vw;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(60, 145, 149, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #010c2c 0%,
+            #020f32 50%,
+            #010c2c 100%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.partners-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background-image:
+        linear-gradient(
+            rgba(60, 145, 149, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(60, 145, 149, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 25%,
+            black 75%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.glow {
+
+    position: absolute;
+
+    width: 35vw;
+    height: 35vw;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.10;
+
+    pointer-events: none;
+}
+
+
+.glow-left {
+
+    left: -15vw;
+    top: 20%;
+
+    background: var(--turquoise);
+}
+
+
+.glow-right {
+
+    right: -15vw;
+    bottom: 10%;
+
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+    width: min(1100px, 90vw);
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    margin-bottom: 55px;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    animation: headerAppear 0.9s ease forwards;
+}
+
+
+.header-line {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 145, 149, 0.65)
+        );
+}
+
+
+.header-line:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(60, 145, 149, 0.65),
+            transparent
+        );
+}
+
+
+.title-wrapper {
+
+    text-align: center;
+
+    min-width: 380px;
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.35em;
+}
+
+
+h1 {
+
+    font-size: clamp(34px, 4vw, 62px);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.title-wrapper p {
+
+    margin-top: 16px;
+
+    color: var(--white-soft);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PARTNERS
+   ========================================================= */
+
+.partners {
+
+    width: min(1150px, 90vw);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   PARTNER CARD
+   ========================================================= */
+
+.partner-card {
+
+    position: relative;
+
+    height: 245px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    backdrop-filter: blur(8px);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.97);
+
+    animation:
+        cardAppear 0.8s ease forwards;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Ligne turquoise supérieure */
+
+.partner-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--turquoise),
+            transparent
+        );
+
+    opacity: 0.65;
+}
+
+
+/* Halo */
+
+.partner-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: var(--turquoise);
+
+    filter: blur(80px);
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.partner-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(60, 145, 149, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(60, 145, 149, 0.10),
+            rgba(255, 255, 255, 0.025)
+        );
+}
+
+
+.partner-card:hover::after {
+
+    opacity: 0.10;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 190px;
+    height: 105px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo-container img {
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 5px 20px rgba(0, 0, 0, 0.35)
+        );
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.partner-card:hover .logo-container img {
+
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   PARTNER NAME
+   ========================================================= */
+
+.partner-name {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--white);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   THANKS
+   ========================================================= */
+
+.thanks {
+
+    width: min(850px, 80vw);
+
+    margin-top: 48px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 13px;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    animation:
+        thanksAppear 0.8s ease forwards;
+
+    animation-delay: 1.15s;
+}
+
+
+.thanks-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(200, 156, 77, 0.5),
+            transparent
+        );
+}
+
+
+.thanks-title {
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.24em;
+
+    text-align: center;
+}
+
+
+.thanks-text {
+
+    max-width: 650px;
+
+    color: var(--white-muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    animation:
+        footerAppear 0.8s ease forwards;
+
+    animation-delay: 1.4s;
+}
+
+
+.chroma-mark {
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.25em;
+}
+
+
+.slogan {
+
+    color: var(--turquoise-light);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3em;
+}
+
+
+.slogan::before {
+
+    content: "•";
+
+    margin-right: 18px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes headerAppear {
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes cardAppear {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes thanksAppear {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes footerAppear {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   DELAYS
+   ========================================================= */
+
+.partner-card:nth-child(1) {
+
+    animation-delay: 0.35s;
+
+}
+
+
+.partner-card:nth-child(2) {
+
+    animation-delay: 0.55s;
+
+}
+
+
+.partner-card:nth-child(3) {
+
+    animation-delay: 0.75s;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .partners {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 15px;
+
+    }
+
+
+    .partner-card {
+
+        height: 200px;
+
+        padding: 20px;
+
+    }
+
+
+    .logo-container {
+
+        width: 150px;
+        height: 85px;
+
+    }
+
+
+    .header {
+
+        gap: 20px;
+
+    }
+
+
+    .title-wrapper {
+
+        min-width: 300px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .partners-screen {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .header-line {
+
+        display: none;
+
+    }
+
+
+    .title-wrapper {
+
+        min-width: auto;
+
+    }
+
+
+    .header {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .partners {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .partner-card {
+
+        height: 150px;
+
+        flex-direction: row;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .logo-container {
+
+        width: 130px;
+        height: 75px;
+
+    }
+
+
+    .thanks {
+
+        margin-top: 25px;
+
+    }
+
+
+    footer {
+
+        display: none;
+
+    }
+
+}
