@@ -37,8 +37,8 @@ margin: 0;
 padding: 0;
 
 
-width: 100%;
-height: 100%;
+width: 1920px;
+height: 1080px;
 
 overflow: hidden;
 
@@ -93,8 +93,8 @@ BLOCS ÉQUIPES
 .team-block {
 
 
-width: var(--team-width);
-height: var(--team-height);
+width: 640px;
+height: 70px;
 
 margin-top: 0;
 
@@ -116,7 +116,8 @@ border-top: 2px solid var(--chroma-blue);
 border-bottom: 2px solid var(--chroma-gold);
 
 overflow: hidden;
-
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
 
 }
 
@@ -189,8 +190,8 @@ BLOCS SCORE
 .score-block {
 
 
-width: var(--score-width);
-height: var(--score-height);
+width: 120px;
+height: 90px;
 
 display: flex;
 
@@ -213,7 +214,8 @@ border-bottom: 2px solid var(--chroma-gold);
 
 overflow: hidden;
 
-
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
 }
 
 /* Petite lumière verticale */
@@ -280,8 +282,8 @@ BLOC CENTRAL DOFUS
 .dofus-block {
 
 
-width: var(--dofus-width);
-height: var(--dofus-height);
+width: 200px;
+height: 110px;
 
 position: relative;
 
@@ -303,7 +305,8 @@ border-right: 2px solid var(--chroma-gold);
 border-bottom: 2px solid var(--chroma-dragon);
 
 overflow: hidden;
-
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
 /*
     Petit chanfrein visuel :
     le centre ressort légèrement.
@@ -358,8 +361,8 @@ position: relative;
 
 z-index: 2;
 
-max-width: 82%;
-max-height: 82%;
+max-width: 100%;
+max-height: 110%;
 
 object-fit: contain;
 
@@ -406,32 +409,4 @@ width: 45%;
 .score-right::after {
 left: 20%;
 right: 20%;
-}
-
-/* ---------------------------------------------------------
-ADAPTATION PETITS ÉCRANS
---------------------------------------------------------- */
-
-@media (max-width: 1200px) {
-
-
-:root {
-    --team-width: 230px;
-    --score-width: 90px;
-    --dofus-width: 230px;
-
-    --team-height: 52px;
-    --score-height: 72px;
-    --dofus-height: 95px;
-}
-
-.team-block span {
-    font-size: 18px;
-}
-
-.score-block span {
-    font-size: 34px;
-}
-
-
 }
