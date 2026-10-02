@@ -510,6 +510,7 @@ h1 {
 
     width: 150%;
     margin-bottom: 20px;
+    margin-top: 20px;
     height: 2px;
 
     background:
@@ -547,7 +548,9 @@ h1 {
 
    text-align: center;
 
-    font-weight: 400
+    font-weight: 400;
+
+    width:150%;
 }
 
 .thanks-text {
