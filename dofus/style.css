@@ -113,7 +113,7 @@ background:
     );
 
 border-top: 2px solid var(--chroma-blue);
-border-bottom: 2px solid var(--chroma-gold);
+border-bottom: 4px solid var(--chroma-gold);
 
 overflow: hidden;
 border-bottom-right-radius: 10px;
@@ -210,7 +210,7 @@ background:
 border-left: 1px solid rgba(200, 156, 77, 0.65);
 border-right: 1px solid rgba(200, 156, 77, 0.65);
 
-border-bottom: 2px solid var(--chroma-gold);
+border-bottom: 4px solid var(--chroma-gold);
 
 overflow: hidden;
 
@@ -302,7 +302,7 @@ background:
 border-left: 2px solid var(--chroma-gold);
 border-right: 2px solid var(--chroma-gold);
 
-border-bottom: 2px solid var(--chroma-dragon);
+border-bottom: 4px solid #b0d250;
 
 overflow: hidden;
 border-bottom-right-radius: 10px;
