@@ -76,7 +76,7 @@ height: var(--dofus-height);
     Aucun espace entre les blocs :
     les cinq éléments forment une seule barre.
 */
-gap: 0;
+gap: 3px;
 
 color: white;
 
