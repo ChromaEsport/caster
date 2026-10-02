@@ -546,6 +546,8 @@ h1 {
     line-height: 1.5;
 
    text-align: center;
+
+    font-weight: 400
 }
 
 .thanks-text {
@@ -559,6 +561,8 @@ h1 {
     line-height: 1.5;
 
     text-align: center;
+
+    font-weight: 600;
 }
 
 
