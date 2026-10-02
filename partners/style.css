@@ -238,7 +238,9 @@ body {
 
     font-weight: 700;
 
-    letter-spacing: 0.35em;
+    letter-spacing: 0.15em;
+
+   margin-bottom: 50px;
 }
 
 
@@ -525,11 +527,11 @@ h1 {
 
     color: var(--gold);
 
-    font-size: 12px;
+    font-size: 30px;
 
     font-weight: 800;
 
-    letter-spacing: 0.24em;
+    letter-spacing: 0.14em;
 
     text-align: center;
 }
