@@ -59,7 +59,7 @@ body {
 .logo1{
 
 
-    height:150px;
+    height:175px;
 
     display:flex;
 
@@ -75,6 +75,8 @@ body {
     width:auto;
 
     z-index:1;
+
+    margin-top: 50px;
 }
 
 
@@ -277,13 +279,13 @@ h1 {
 
     text-transform: uppercase;
 
-   margin-top: 10px;
+   margin-top: 50px;
 }
 
 
 .title-wrapper p {
 
-    margin-top: 16px;
+    margin-top: 10px;
 
     color: #ffffff;
 
@@ -309,6 +311,9 @@ h1 {
     gap: 28px;
 
     z-index: 2;
+
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
 
 
