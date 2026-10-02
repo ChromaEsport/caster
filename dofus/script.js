@@ -1,154 +1,121 @@
 import {
-    db,
-    doc,
-    onSnapshot
+db,
+doc,
+onSnapshot
 } from "./firebase.js";
 
-
-/* =========================================================
-   CHROMA ESPORT — DOFUS OVERLAY
-   Connexion au Control Panel Chroma
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   DOCUMENT FIREBASE
-
-   Même document que le Control Panel :
-
-   matches/current
-   --------------------------------------------------------- */
+console.log("=================================");
+console.log("CHROMA DOFUS OVERLAY");
+console.log("Script chargé");
+console.log("=================================");
 
 const matchRef = doc(
-    db,
-    "matches",
-    "current"
+db,
+"matches",
+"current"
 );
 
+console.log("Écoute Firebase :", matchRef.path);
 
-/* ---------------------------------------------------------
-   ÉLÉMENTS HTML
-   --------------------------------------------------------- */
-
-const team1Element = document.getElementById("team1");
-const team2Element = document.getElementById("team2");
-
-const score1Element = document.getElementById("score1");
-const score2Element = document.getElementById("score2");
+onSnapshot(
+matchRef,
 
 
-/* ---------------------------------------------------------
-   DONNÉES PAR DÉFAUT
-   --------------------------------------------------------- */
+(snapshot) => {
 
-const defaultMatch = {
+    console.log("🔥 SNAPSHOT REÇU");
 
-    team1: "ÉQUIPE 1",
-
-    team2: "ÉQUIPE 2",
-
-    score1: 0,
-
-    score2: 0
-
-};
+    console.log("Document existe :", snapshot.exists());
 
 
-/* ---------------------------------------------------------
-   AFFICHAGE
-   --------------------------------------------------------- */
+    if (!snapshot.exists()) {
 
-function updateOverlay(data) {
+        console.warn(
+            "⚠️ Le document matches/current n'existe pas."
+        );
+
+        return;
+    }
+
+
+    const data = snapshot.data();
+
+
+    console.log(
+        "📡 DONNÉES FIREBASE :",
+        data
+    );
+
+
+    console.log(
+        "Équipe 1 :",
+        data.team1
+    );
+
+    console.log(
+        "Score 1 :",
+        data.score1
+    );
+
+    console.log(
+        "Équipe 2 :",
+        data.team2
+    );
+
+    console.log(
+        "Score 2 :",
+        data.score2
+    );
+
 
     /*
-        Si Firebase n'a pas encore de données,
-        on utilise les valeurs par défaut.
+    ============================================
+    MISE À JOUR DE L'OVERLAY
+    ============================================
     */
 
-    const match = {
-
-        ...defaultMatch,
-
-        ...data
-
-    };
+    document.getElementById("team1").textContent =
+        data.team1 || "ÉQUIPE 1";
 
 
-    /* ÉQUIPE 1 */
-
-    team1Element.textContent =
-        match.team1 || "ÉQUIPE 1";
+    document.getElementById("score1").textContent =
+        data.score1 ?? 0;
 
 
-    /* SCORE 1 */
-
-    score1Element.textContent =
-        Number(match.score1) || 0;
+    document.getElementById("team2").textContent =
+        data.team2 || "ÉQUIPE 2";
 
 
-    /* SCORE 2 */
-
-    score2Element.textContent =
-        Number(match.score2) || 0;
+    document.getElementById("score2").textContent =
+        data.score2 ?? 0;
 
 
-    /* ÉQUIPE 2 */
+    console.log(
+        "✅ OVERLAY MIS À JOUR"
+    );
 
-    team2Element.textContent =
-        match.team2 || "ÉQUIPE 2";
+},
+
+
+(error) => {
+
+    console.error(
+        "❌ ERREUR FIREBASE"
+    );
+
+    console.error(error);
+
+    console.error(
+        "Code erreur :",
+        error.code
+    );
+
+    console.error(
+        "Message :",
+        error.message
+    );
 
 }
 
 
-/* ---------------------------------------------------------
-   CONNEXION TEMPS RÉEL FIREBASE
-   --------------------------------------------------------- */
-
-onSnapshot(
-
-    matchRef,
-
-    (snapshot) => {
-
-        if (!snapshot.exists()) {
-
-            console.log(
-                "Aucun match trouvé dans matches/current"
-            );
-
-            updateOverlay(defaultMatch);
-
-            return;
-        }
-
-
-        const data = snapshot.data();
-
-
-        console.log(
-            "Match reçu :",
-            data
-        );
-
-
-        updateOverlay(data);
-
-    },
-
-    (error) => {
-
-        console.error(
-            "Erreur Firebase :",
-            error
-        );
-
-    }
-
 );
-
-
-/* ---------------------------------------------------------
-   INITIALISATION
-   --------------------------------------------------------- */
-
-updateOverlay(defaultMatch);
