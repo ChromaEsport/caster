@@ -2,7 +2,7 @@ import {
     db,
     doc,
     onSnapshot
-} from "firebase.js";
+} from "./firebase.js";
 
 
 /* =========================================================
