@@ -471,7 +471,8 @@ body{
     opacity:0;
 
     transition:opacity 0.8s ease;
-
+    
+    -webkit-text-stroke: 2px black;
 }
 
 
@@ -491,5 +492,7 @@ body{
     margin-top:15px;
 
     font-size:40px;
+
+    -webkit-text-stroke: 2px black;
 
 }
