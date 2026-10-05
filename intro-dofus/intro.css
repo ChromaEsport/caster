@@ -28,7 +28,10 @@ body{
     z-index:1;
 }
 
-
+.fond-container {
+    position:absolute;
+    z-index:1;
+}
 
 /* Logo */
 .logo1{
