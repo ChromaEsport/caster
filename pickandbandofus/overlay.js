@@ -9,7 +9,7 @@ import {
     db,
     doc,
     onSnapshot
-} from "./dofus-firebase.js";
+} from "../dofus-firebase.js";
 
 const DRAFT_CLASSES = [
     "Féca", "Osamodas", "Enutrof", "Sram",
