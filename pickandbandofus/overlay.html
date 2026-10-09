@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chroma Esport - Pick & Ban</title>
+    <link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+    <main class="draft-overlay">
+
+    <header class="header">
+        <div class="brand">
+            <span class="brand-mark">C</span>
+            <div>
+                <h1>CHROMA <span>ESPORT</span></h1>
+                <p> PICK & BAN</p>
+            </div>
+        </div>
+        <div class="match-status" id="matchStatus">DRAFT EN COURS</div>
+    </header>
+
+    <section class="battlefield">
+        <div class="team team-a">
+            <div class="team-heading">
+                <span class="team-letter">A</span>
+                <div>
+                    <h2 id="teamAName">ÉQUIPE A</h2>
+                    <p>ÉQUIPE BLEUE</p>
+                </div>
+            </div>
+            <div class="players" id="playersA"></div>
+        </div>
+
+        <div class="map-panel">
+            <div class="map-label">CARTE DU MATCH</div>
+            <div class="map-art" id="mapArt">
+                <div class="map-symbol">✦</div>
+                <div class="map-name" id="mapName">EN ATTENTE</div>
+            </div>
+            <div class="map-footer">
+                <span class="status-dot"></span>
+                <span id="mapStatus">TIRAGE NON EFFECTUÉ</span>
+            </div>
+        </div>
+
+        <div class="team team-b">
+            <div class="team-heading">
+                <div>
+                    <h2 id="teamBName">ÉQUIPE B</h2>
+                    <p>ÉQUIPE ROUGE</p>
+                </div>
+                <span class="team-letter">B</span>
+            </div>
+            <div class="players" id="playersB"></div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="section-heading">
+            <h3>CHRONOLOGIE DU DRAFT</h3>
+            <span id="actionCount">0 ACTION</span>
+        </div>
+        <div class="timeline" id="timeline">
+            <div class="timeline-empty">Les actions de pick et ban apparaîtront ici.</div>
+        </div>
+    </section>
+
+    <section class="classes-section">
+        <div class="section-heading">
+            <h3>CLASSES DOFUS</h3>
+            <span>LISTE COMMUNE</span>
+        </div>
+        <div class="class-list" id="classList"></div>
+    </section>
+
+    <footer class="footer">
+        <span>CHROMA ESPORT</span>
+        <span>NEVER BACK DOWN</span>
+    </footer>
+
+</main>
+<script src="overlay.js"></script>
+
+
+</body>
+</html>
