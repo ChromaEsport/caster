@@ -292,7 +292,6 @@ function renderTimeline(state) {
 
         return `
             <div class="timeline-item team-${team.toLowerCase()} ${type}">
-                <span class="timeline-arrow">${arrow}</span>
                 <div class="timeline-info">
                     <small>
                         ${index + 1}. ${type.toUpperCase()} · ${owner}
