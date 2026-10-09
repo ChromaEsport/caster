@@ -343,7 +343,6 @@ function renderClasses(state) {
                 ${image
                     ? `<img src="${escapeHTML(image)}" alt="">`
                     : ""}
-                <span class="class-name">${escapeHTML(character)}</span>
                 ${used
                     ? `<span class="class-owner">${escapeHTML(used.label)}</span>`
                     : ""}
