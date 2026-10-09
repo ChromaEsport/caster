@@ -336,7 +336,7 @@ function renderClasses(state) {
 
     classList.innerHTML = DRAFT_CLASSES.map(character => {
         const used = usage.get(character);
-        const image = characterImage(character);
+        const image = characterIcon(character);
 
         return `
             <div class="class-tile ${used ? "used" : ""} ${used?.type === "ban" ? "banned" : ""}">
