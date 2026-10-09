@@ -266,17 +266,8 @@ async function saveDraft() {
     }
 }
 
+
 async function submitAction(team, type) {
-    if (type === "ban" && draftState.actions.some(action => action.type === "ban" && action.team === team)) {
-        alert(`L'équipe ${team} a déjà effectué un ban.`);
-        return;
-    }
-
-    if (type === "pick" && draftState.actions.some(action => action.type === "pick" && action.team === team)) {
-        alert(`L'équipe ${team} a déjà effectué un pick.`);
-        return;
-    }
-
     const selectId = `${type}${team}`;
     const className = normalizeClass($(selectId).value);
 
@@ -285,12 +276,14 @@ async function submitAction(team, type) {
         return;
     }
 
+    // Une classe ne peut être utilisée qu'une seule fois
     if (usedClasses().has(className)) {
         alert("Cette classe a déjà été pick ou ban.");
         refreshClassOptions();
         return;
     }
 
+    // Ajoute une nouvelle action sans limiter le nombre de picks ou de bans
     draftState.actions.push({
         team,
         type,
@@ -303,6 +296,7 @@ async function submitAction(team, type) {
 
     await saveDraft();
 }
+
 
 async function changeMap(number) {
     if (draftState.mapLocked) {
