@@ -21,7 +21,8 @@
 html,
 body {
 margin: 0;
-width: 100%;
+width: 1920px;
+height: 1080px;
 min-height: 100%;
 background: transparent;
 color: var(--text);
