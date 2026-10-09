@@ -297,7 +297,9 @@ function renderTimeline(state) {
                     <small>
                         ${index + 1}. ${type.toUpperCase()} · ${owner}
                     </small>
-                    <span>${escapeHTML(action.character || "Classe inconnue")}</span>
+<span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
+
+
                 </div>
             </div>
         `;
