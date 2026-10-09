@@ -3,7 +3,7 @@ import {
     doc,
     setDoc,
     onSnapshot
-} from "dofus-firebase.js";
+} from "./dofus-firebase.js";
 
 /*
  * Documents séparés de ceux d'Overwatch :
