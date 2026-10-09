@@ -1,299 +1,378 @@
-/*
 
-* Chroma Esport — Overlay Pick & Ban
-* Fichier prévu pour fonctionner avec un control.js séparé.
-*
-* Le panneau de contrôle peut envoyer les mises à jour avec :
-* localStorage.setItem("chromaDraftState", JSON.stringify(state));
-*
-* Pour une synchronisation entre deux pages OBS/control ouvertes
-* dans le même navigateur, le stockage local peut suffire.
-* Pour deux appareils ou navigateurs différents, il faut un backend
-* commun (Firebase, WebSocket, etc.).
-  */
+/*
+ * Chroma Esport — Overlay Pick & Ban Dofus
+ * Synchronisation en temps réel avec Firebase.
+ * Projet séparé : dofus-firebase.js
+ */
+
+import {
+    db,
+    doc,
+    onSnapshot
+} from "./dofus-firebase.js";
 
 const DRAFT_CLASSES = [
-"Féca", "Osamodas", "Enutrof", "Sram",
-"Xélor", "Écaflip", "Éniripsa", "Iop",
-"Cra", "Sadida", "Sacrieur", "Pandawa",
-"Roublard", "Zobal", "Steamer", "Eliotrope",
-"Huppermage", "Ouginak", "Forgelance"
+    "Féca", "Osamodas", "Enutrof", "Sram",
+    "Xélor", "Écaflip", "Éniripsa", "Iop",
+    "Crâ", "Sadida", "Sacrieur", "Pandawa",
+    "Roublard", "Zobal", "Steamer", "Eliotrope",
+    "Huppermage", "Ouginak", "Forgelance"
 ];
 
-/*
-
-* Remplace les noms ci-dessous par les noms exacts de tes cartes
-* disponibles. Les chemins d'images peuvent être renseignés ensuite.
-  */
-  const DEFAULT_MAPS = [
-  { name: "Carte 01", image: "" },
-  { name: "Carte 02", image: "" },
-  { name: "Carte 03", image: "" },
-  { name: "Carte 04", image: "" },
-  { name: "Carte 05", image: "" }
-  ];
-
 const DEFAULT_STATE = {
-teamA: "ÉQUIPE A",
-teamB: "ÉQUIPE B",
-map: null,
-mapLocked: false,
-actions: [],
-picks: {
-A: { J1: null, J2: null, J3: null },
-B: { J1: null, J2: null, J3: null }
-},
-bans: {
-A: [],
-B: []
-}
+    teamA: "ÉQUIPE A",
+    teamB: "ÉQUIPE B",
+    caster1: "",
+    caster2: "",
+    eventName: "",
+    scoreA: 0,
+    scoreB: 0,
+    map: null,
+    mapLocked: false,
+    actions: [],
+    picks: {
+        A: { J1: null, J2: null, J3: null },
+        B: { J1: null, J2: null, J3: null }
+    },
+    bans: {
+        A: [],
+        B: []
+    }
 };
 
-const STORAGE_KEY = "chromaDraftState";
-
-function readState() {
-try {
-const saved = localStorage.getItem(STORAGE_KEY);
-if (!saved) return structuredClone(DEFAULT_STATE);
-
-
-    const parsed = JSON.parse(saved);
-    return {
-        ...structuredClone(DEFAULT_STATE),
-        ...parsed,
-        picks: parsed.picks || structuredClone(DEFAULT_STATE.picks),
-        bans: parsed.bans || structuredClone(DEFAULT_STATE.bans),
-        actions: Array.isArray(parsed.actions) ? parsed.actions : []
-    };
-} catch (error) {
-    console.error("Impossible de lire l'état du draft :", error);
-    return structuredClone(DEFAULT_STATE);
-}
-
-
-}
-
-function characterImage(character) {
-/*
-* Optionnel : ajoute ici les chemins des portraits.
-* Exemple :
-* const images = { "Féca": "../dofus/classes/feca.png" };
-*/
-const images = {};
-return images[character] || "";
-}
+let currentState = structuredClone(DEFAULT_STATE);
+let matchLoaded = false;
+let draftLoaded = false;
 
 function escapeHTML(value) {
-return String(value ?? "").replace(/[&<>"']/g, char => ({
-"&": "&",
-"<": "<",
-">": ">",
-'"': """,
-"'": "'"
-})[char]);
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
 }
 
-function renderPlayer(team, player) {
-const state = readState();
-const pick = state.picks?.[team]?.[player] || null;
-const bans = (state.bans?.[team] || [])
-.filter(ban => ban.player === player)
-.slice(0, 2);
+/*
+ * Images des classes.
+ * Ajoute les chemins des portraits lorsque tes images seront prêtes.
+ */
+function characterImage(character) {
+    const images = {};
+    return images[character] || "";
+}
 
+function normalizeState(data = {}) {
+    return {
+        ...structuredClone(DEFAULT_STATE),
+        ...data,
+        picks: {
+            A: {
+                ...DEFAULT_STATE.picks.A,
+                ...(data.picks?.A || {})
+            },
+            B: {
+                ...DEFAULT_STATE.picks.B,
+                ...(data.picks?.B || {})
+            }
+        },
+        bans: {
+            A: Array.isArray(data.bans?.A) ? data.bans.A : [],
+            B: Array.isArray(data.bans?.B) ? data.bans.B : []
+        },
+        actions: Array.isArray(data.actions) ? data.actions : []
+    };
+}
 
-const pickImage = pick?.character ? characterImage(pick.character) : "";
+function renderPlayer(state, team, player) {
+    const pick = state.picks?.[team]?.[player] || null;
 
-const pickMarkup = pick
-    ? `
-        <img src="${escapeHTML(pickImage)}" alt="">
-        <span class="pick-badge">${team}-${player}</span>
-        <div class="character-name">${escapeHTML(pick.character)}</div>
-    `
-    : `
-        <div class="pick-placeholder">?</div>
-        <span class="pick-badge">${team}-${player}</span>
-        <div class="character-name">PICK EN ATTENTE</div>
-    `;
+    const bans = (state.bans?.[team] || [])
+        .filter(ban => ban.player === player)
+        .slice(0, 2);
 
-let banMarkup = "";
+    const pickImage = pick?.character
+        ? characterImage(pick.character)
+        : "";
 
-for (let i = 0; i < 2; i++) {
-    const ban = bans[i];
-
-    if (ban) {
-        const image = characterImage(ban.character);
-        banMarkup += `
-            <div class="ban-card">
-                ${image ? `<img src="${escapeHTML(image)}" alt="">` : ""}
-                <span class="ban-badge">${escapeHTML(ban.team || team)}</span>
-                <div class="ban-name">${escapeHTML(ban.character)}</div>
+    const pickMarkup = pick
+        ? `
+            ${pickImage
+                ? `<img src="${escapeHTML(pickImage)}" alt="">`
+                : '<div class="pick-placeholder">?</div>'}
+            <span class="pick-badge">${team}-${player}</span>
+            <div class="character-name">
+                ${escapeHTML(pick.character)}
             </div>
+        `
+        : `
+            <div class="pick-placeholder">?</div>
+            <span class="pick-badge">${team}-${player}</span>
+            <div class="character-name">PICK EN ATTENTE</div>
         `;
-    } else {
-        banMarkup += `
-            <div class="ban-card">
-                <div class="ban-placeholder">—</div>
-            </div>
-        `;
+
+    let banMarkup = "";
+
+    for (let i = 0; i < 2; i++) {
+        const ban = bans[i];
+
+        if (ban) {
+            const image = characterImage(ban.character);
+
+            banMarkup += `
+                <div class="ban-card">
+                    ${image
+                        ? `<img src="${escapeHTML(image)}" alt="">`
+                        : ""}
+                    <span class="ban-badge">
+                        ${escapeHTML(ban.team || team)}
+                    </span>
+                    <div class="ban-name">
+                        ${escapeHTML(ban.character)}
+                    </div>
+                </div>
+            `;
+        } else {
+            banMarkup += `
+                <div class="ban-card">
+                    <div class="ban-placeholder">—</div>
+                </div>
+            `;
+        }
     }
-}
 
-return `
-    <article class="player-card">
-        <div class="player-label">${player}</div>
-        <div class="pick-card">${pickMarkup}</div>
-        <div class="bans-label">BANS</div>
-        <div class="bans">${banMarkup}</div>
-    </article>
-`;
-
-
+    return `
+        <article class="player-card">
+            <div class="player-label">${player}</div>
+            <div class="pick-card">${pickMarkup}</div>
+            <div class="bans-label">BANS</div>
+            <div class="bans">${banMarkup}</div>
+        </article>
+    `;
 }
 
 function renderTeams(state) {
-document.getElementById("teamAName").textContent = state.teamA || "ÉQUIPE A";
-document.getElementById("teamBName").textContent = state.teamB || "ÉQUIPE B";
+    const teamAName = document.getElementById("teamAName");
+    const teamBName = document.getElementById("teamBName");
+    const playersA = document.getElementById("playersA");
+    const playersB = document.getElementById("playersB");
 
+    if (teamAName) {
+        teamAName.textContent = state.teamA || "ÉQUIPE A";
+    }
 
-document.getElementById("playersA").innerHTML =
-    ["J1", "J2", "J3"].map(player => renderPlayer("A", player)).join("");
+    if (teamBName) {
+        teamBName.textContent = state.teamB || "ÉQUIPE B";
+    }
 
-document.getElementById("playersB").innerHTML =
-    ["J1", "J2", "J3"].map(player => renderPlayer("B", player)).join("");
+    if (playersA) {
+        playersA.innerHTML = ["J1", "J2", "J3"]
+            .map(player => renderPlayer(state, "A", player))
+            .join("");
+    }
 
-
+    if (playersB) {
+        playersB.innerHTML = ["J1", "J2", "J3"]
+            .map(player => renderPlayer(state, "B", player))
+            .join("");
+    }
 }
 
 function renderMap(state) {
-const mapName = document.getElementById("mapName");
-const mapStatus = document.getElementById("mapStatus");
-const mapArt = document.getElementById("mapArt");
+    const mapName = document.getElementById("mapName");
+    const mapStatus = document.getElementById("mapStatus");
+    const mapArt = document.getElementById("mapArt");
 
+    if (!mapName || !mapStatus || !mapArt) return;
 
-if (!state.map) {
-    mapName.textContent = "EN ATTENTE";
-    mapStatus.textContent = "TIRAGE NON EFFECTUÉ";
-    mapArt.style.backgroundImage = "";
-    return;
-}
+    if (!state.map) {
+        mapName.textContent = "EN ATTENTE";
+        mapStatus.textContent = "TIRAGE NON EFFECTUÉ";
+        mapArt.style.backgroundImage = "";
+        return;
+    }
 
-mapName.textContent = state.map.name || "CARTE DU MATCH";
-mapStatus.textContent = state.mapLocked ? "CARTE VERROUILLÉE" : "CARTE TIRÉE";
+    mapName.textContent = state.map.name || "CARTE DU MATCH";
+    mapStatus.textContent = state.mapLocked
+        ? "CARTE VERROUILLÉE"
+        : "CARTE TIRÉE";
 
-if (state.map.image) {
-    mapArt.style.backgroundImage =
-        `linear-gradient(rgba(1,12,44,.45), rgba(1,12,44,.8)), url("${state.map.image}")`;
-    mapArt.style.backgroundSize = "cover";
-    mapArt.style.backgroundPosition = "center";
-} else {
-    mapArt.style.backgroundImage = "";
-}
+    if (state.map.image) {
+        mapArt.style.backgroundImage =
+            `linear-gradient(rgba(1,12,44,.45), rgba(1,12,44,.8)), url("${state.map.image}")`;
 
-
+        mapArt.style.backgroundSize = "cover";
+        mapArt.style.backgroundPosition = "center";
+    } else {
+        mapArt.style.backgroundImage = "";
+    }
 }
 
 function renderTimeline(state) {
-const timeline = document.getElementById("timeline");
-const actions = state.actions || [];
+    const timeline = document.getElementById("timeline");
+    const actionCount = document.getElementById("actionCount");
 
+    if (!timeline) return;
 
-document.getElementById("actionCount").textContent =
-    `${actions.length} ACTION${actions.length > 1 ? "S" : ""}`;
+    const actions = state.actions || [];
 
-if (!actions.length) {
-    timeline.innerHTML =
-        '<div class="timeline-empty">Les actions de pick et ban apparaîtront ici.</div>';
-    return;
-}
+    if (actionCount) {
+        actionCount.textContent =
+            `${actions.length} ACTION${actions.length > 1 ? "S" : ""}`;
+    }
 
-timeline.innerHTML = actions.map((action, index) => {
-    const type = action.type === "ban" ? "ban" : "pick";
-    const team = action.team === "B" ? "B" : "A";
-    const arrow = team === "A" ? "➜" : "⟵";
-    const owner = type === "pick"
-        ? `${team}-${action.player || "J1"}`
-        : `Équipe ${team}`;
+    if (!actions.length) {
+        timeline.innerHTML =
+            '<div class="timeline-empty">Les actions de pick et ban apparaîtront ici.</div>';
+        return;
+    }
 
-    return `
-        <div class="timeline-item team-${team.toLowerCase()} ${type}">
-            <span class="timeline-arrow">${arrow}</span>
-            <div class="timeline-info">
-                <small>${index + 1}. ${type.toUpperCase()} · ${owner}</small>
-                <span>${escapeHTML(action.character || "Classe inconnue")}</span>
+    timeline.innerHTML = actions.map((action, index) => {
+        const type = action.type === "ban" ? "ban" : "pick";
+        const team = action.team === "B" ? "B" : "A";
+        const arrow = team === "A" ? "➜" : "⟵";
+
+        const owner = type === "pick"
+            ? `${team}-${action.player || "J1"}`
+            : `Équipe ${team}`;
+
+        return `
+            <div class="timeline-item team-${team.toLowerCase()} ${type}">
+                <span class="timeline-arrow">${arrow}</span>
+                <div class="timeline-info">
+                    <small>
+                        ${index + 1}. ${type.toUpperCase()} · ${owner}
+                    </small>
+                    <span>${escapeHTML(action.character || "Classe inconnue")}</span>
+                </div>
             </div>
-        </div>
-    `;
-}).join("");
+        `;
+    }).join("");
 
-timeline.scrollLeft = timeline.scrollWidth;
-
-
+    timeline.scrollLeft = timeline.scrollWidth;
 }
 
 function renderClasses(state) {
-const classList = document.getElementById("classList");
-const usage = new Map();
+    const classList = document.getElementById("classList");
+    if (!classList) return;
 
+    const usage = new Map();
 
-for (const team of ["A", "B"]) {
-    for (const player of ["J1", "J2", "J3"]) {
-        const pick = state.picks?.[team]?.[player];
-        if (pick?.character) {
-            usage.set(pick.character, {
-                team,
-                label: `${team}-${player}`,
-                type: "pick"
-            });
+    for (const team of ["A", "B"]) {
+        for (const player of ["J1", "J2", "J3"]) {
+            const pick = state.picks?.[team]?.[player];
+
+            if (pick?.character) {
+                usage.set(pick.character, {
+                    label: `${team}-${player}`,
+                    type: "pick"
+                });
+            }
+        }
+
+        for (const ban of state.bans?.[team] || []) {
+            if (ban?.character) {
+                usage.set(ban.character, {
+                    label: ban.team || team,
+                    type: "ban"
+                });
+            }
         }
     }
 
-    for (const ban of state.bans?.[team] || []) {
-        if (ban?.character) {
-            usage.set(ban.character, {
-                team: ban.team || team,
-                label: ban.team || team,
-                type: "ban"
-            });
-        }
-    }
-}
+    classList.innerHTML = DRAFT_CLASSES.map(character => {
+        const used = usage.get(character);
+        const image = characterImage(character);
 
-classList.innerHTML = DRAFT_CLASSES.map(character => {
-    const used = usage.get(character);
-    const image = characterImage(character);
-
-    return `
-        <div class="class-tile ${used ? "used" : ""} ${used?.type === "ban" ? "banned" : ""}">
-            ${image ? `<img src="${escapeHTML(image)}" alt="">` : ""}
-            <span class="class-name">${escapeHTML(character)}</span>
-            ${used ? `<span class="class-owner">${escapeHTML(used.label)}</span>` : ""}
-        </div>
-    `;
-}).join("");
-
-
+        return `
+            <div class="class-tile ${used ? "used" : ""} ${used?.type === "ban" ? "banned" : ""}">
+                ${image
+                    ? `<img src="${escapeHTML(image)}" alt="">`
+                    : ""}
+                <span class="class-name">${escapeHTML(character)}</span>
+                ${used
+                    ? `<span class="class-owner">${escapeHTML(used.label)}</span>`
+                    : ""}
+            </div>
+        `;
+    }).join("");
 }
 
 function render() {
-const state = readState();
+    const state = currentState;
 
+    renderTeams(state);
+    renderMap(state);
+    renderTimeline(state);
+    renderClasses(state);
 
-renderTeams(state);
-renderMap(state);
-renderTimeline(state);
-renderClasses(state);
+    const matchStatus = document.getElementById("matchStatus");
 
-document.getElementById("matchStatus").textContent =
-    state.actions?.length ? "DRAFT EN COURS" : "EN ATTENTE DU DRAFT";
-
-
+    if (matchStatus) {
+        if (!matchLoaded || !draftLoaded) {
+            matchStatus.textContent = "CONNEXION À FIREBASE…";
+        } else {
+            matchStatus.textContent = state.actions.length
+                ? "DRAFT EN COURS"
+                : "EN ATTENTE DU DRAFT";
+        }
+    }
 }
 
-window.addEventListener("storage", event => {
-if (event.key === STORAGE_KEY) render();
-});
+/*
+ * Synchronisation des informations du match.
+ * Document Firestore : dofusMatches/current
+ */
+onSnapshot(
+    doc(db, "dofusMatches", "current"),
+    snapshot => {
+        if (snapshot.exists()) {
+            const data = snapshot.data();
+
+            currentState = normalizeState({
+                ...currentState,
+                ...data
+            });
+        }
+
+        matchLoaded = true;
+        render();
+    },
+    error => {
+        console.error("Erreur Firebase — informations du match :", error);
+
+        const status = document.getElementById("matchStatus");
+        if (status) status.textContent = "ERREUR FIREBASE — MATCH";
+    }
+);
+
+/*
+ * Synchronisation du Pick & Ban et de la carte.
+ * Document Firestore : dofusDraft/current
+ */
+onSnapshot(
+    doc(db, "dofusDraft", "current"),
+    snapshot => {
+        if (snapshot.exists()) {
+            const data = snapshot.data();
+
+            currentState = normalizeState({
+                ...currentState,
+                ...data
+            });
+        }
+
+        draftLoaded = true;
+        render();
+    },
+    error => {
+        console.error("Erreur Firebase — draft :", error);
+
+        const status = document.getElementById("matchStatus");
+        if (status) status.textContent = "ERREUR FIREBASE — DRAFT";
+    }
+);
 
 window.addEventListener("DOMContentLoaded", render);
 window.addEventListener("focus", render);
-
-render();
