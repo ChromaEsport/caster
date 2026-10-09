@@ -39,6 +39,7 @@ const maps = [
 "Suravasa",
 "Hanaoka",
 "Throne of Anubis",
+"Neon Jonction",
 ];
 
 const heroes = [
