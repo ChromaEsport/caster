@@ -59,6 +59,7 @@ function escapeHTML(value) {
  * Ajoute les chemins des portraits lorsque tes images seront prêtes.
  */
 
+
 function characterImage(character) {
     const images = {
         "Féca": "feca.png",
@@ -69,7 +70,7 @@ function characterImage(character) {
         "Écaflip": "ecaflip.png",
         "Éniripsa": "eniripsa.png",
         "Iop": "iop.png",
-        "Crâ": "cra.png",
+        "Crâ": "crâ.png",
         "Sadida": "sadida.png",
         "Sacrieur": "sacrieur.png",
         "Pandawa": "pandawa.png",
@@ -97,7 +98,7 @@ function characterIcon(character) {
         "Écaflip": "classe-ecaflip.png",
         "Éniripsa": "classe-eniripsa.png",
         "Iop": "classe-iop.png",
-        "Crâ": "classe-cra.png",
+        "Crâ": "classe-crâ.png",
         "Sadida": "classe-sadida.png",
         "Sacrieur": "classe-sacrieur.png",
         "Pandawa": "classe-pandawa.png",
