@@ -502,21 +502,16 @@ width: 1100px;
 
 .class-tile {
 position: relative;
-min-width: 0;
 display: flex;
 align-items: center;
-gap: 7px;
-min-height: 48px;
-padding: 6px;
 background: rgba(7, 23, 53, .9);
 border: 1px solid rgba(143, 236, 201, .13);
+justify-content: center;
 }
 
 .class-tile img {
-width: 32px;
-height: 32px;
-flex: 0 0 32px;
-object-fit: contain;
+
+height: 155px;
 }
 
 .class-tile .class-name {
