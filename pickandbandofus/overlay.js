@@ -58,9 +58,61 @@ function escapeHTML(value) {
  * Images des classes.
  * Ajoute les chemins des portraits lorsque tes images seront prêtes.
  */
+
 function characterImage(character) {
-    const images = {};
-    return images[character] || "";
+    const images = {
+        "Féca": "feca.png",
+        "Osamodas": "osamodas.png",
+        "Enutrof": "enutrof.png",
+        "Sram": "sram.png",
+        "Xélor": "xelor.png",
+        "Écaflip": "ecaflip.png",
+        "Éniripsa": "eniripsa.png",
+        "Iop": "iop.png",
+        "Crâ": "cra.png",
+        "Sadida": "sadida.png",
+        "Sacrieur": "sacrieur.png",
+        "Pandawa": "pandawa.png",
+        "Roublard": "roublard.png",
+        "Zobal": "zobal.png",
+        "Steamer": "steamer.png",
+        "Eliotrope": "eliotrope.png",
+        "Huppermage": "huppermage.png",
+        "Ouginak": "ouginak.png",
+        "Forgelance": "forgelance.png"
+    };
+
+    return images[character]
+        ? `./portraits/${images[character]}`
+        : "";
+}
+
+function characterIcon(character) {
+    const images = {
+        "Féca": "classe-feca.png",
+        "Osamodas": "classe-osamodas.png",
+        "Enutrof": "classe-enutrof.png",
+        "Sram": "classe-sram.png",
+        "Xélor": "classe-xelor.png",
+        "Écaflip": "classe-ecaflip.png",
+        "Éniripsa": "classe-eniripsa.png",
+        "Iop": "classe-iop.png",
+        "Crâ": "classe-cra.png",
+        "Sadida": "classe-sadida.png",
+        "Sacrieur": "classe-sacrieur.png",
+        "Pandawa": "classe-pandawa.png",
+        "Roublard": "classe-roublard.png",
+        "Zobal": "classe-zobal.png",
+        "Steamer": "classe-steamer.png",
+        "Eliotrope": "classe-eliotrope.png",
+        "Huppermage": "classe-huppermage.png",
+        "Ouginak": "classe-ouginak.png",
+        "Forgelance": "classe-forgelance.png"
+    };
+
+    return images[character]
+        ? `./classes/${images[character]}`
+        : "";
 }
 
 function normalizeState(data = {}) {
