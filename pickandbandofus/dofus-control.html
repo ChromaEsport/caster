@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chroma Esport — Dofus Control</title>
+    <link rel="stylesheet" href="dofus-control.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark">C</span>
+        <div>
+            <h1>CHROMA <span>ESPORT</span></h1>
+            <p>DOFUS CONTROL PANEL</p>
+        </div>
+    </div>
+    <div class="status">
+        <span class="status-dot"></span>
+        CONTRÔLE DU MATCH
+    </div>
+</header>
+
+<main class="dashboard">
+
+    <section class="match-column">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="heading-icon">🎙</span>
+                <div>
+                    <h2>CASTERS & ÉVÉNEMENT</h2>
+                    <p>Informations affichées sur l'overlay</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <label>
+                    Caster 1
+                    <input id="caster1" type="text" placeholder="Pseudo du caster">
+                </label>
+
+                <label>
+                    Caster 2
+                    <input id="caster2" type="text" placeholder="Pseudo du caster">
+                </label>
+
+                <label class="full-width">
+                    Nom de l'événement
+                    <input id="eventName" type="text" placeholder="Ex. CHROMA CUP — FINALE">
+                </label>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="heading-icon">🏆</span>
+                <div>
+                    <h2>SCORE DU MATCH</h2>
+                    <p>Configure les équipes et ajuste le score</p>
+                </div>
+            </div>
+
+            <div class="scoreboard">
+
+                <div class="team-box team-a">
+                    <div class="team-label">ÉQUIPE A</div>
+                    <div class="score-number" id="scoreA">0</div>
+                    <div class="score-buttons">
+                        <button class="score-btn" id="minusA" type="button">−</button>
+                        <button class="score-btn" id="plusA" type="button">+</button>
+                    </div>
+                    <label class="team-name-label" for="teamA">NOM DE L'ÉQUIPE</label>
+                    <input id="teamA" type="text" placeholder="Équipe A">
+                </div>
+
+                <div class="versus">VS</div>
+
+                <div class="team-box team-b">
+                    <div class="team-label">ÉQUIPE B</div>
+                    <div class="score-number" id="scoreB">0</div>
+                    <div class="score-buttons">
+                        <button class="score-btn" id="minusB" type="button">−</button>
+                        <button class="score-btn" id="plusB" type="button">+</button>
+                    </div>
+                    <label class="team-name-label" for="teamB">NOM DE L'ÉQUIPE</label>
+                    <input id="teamB" type="text" placeholder="Équipe B">
+                </div>
+
+            </div>
+
+            <button id="saveMatch" class="primary-btn" type="button">
+                ENREGISTRER LE MATCH
+            </button>
+        </div>
+
+        <div class="panel help-panel">
+            <div class="panel-heading">
+                <span class="heading-icon">📡</span>
+                <div>
+                    <h2>SYNCHRONISATION</h2>
+                    <p id="syncMessage">En attente de connexion…</p>
+                </div>
+            </div>
+            <div class="sync-info">
+                Les informations sont enregistrées dans Firebase.
+                L'overlay devra écouter les mêmes documents pour afficher
+                les changements en direct.
+            </div>
+        </div>
+
+    </section>
+
+    <aside class="draft-column">
+
+        <div class="draft-header">
+            <div>
+                <span class="eyebrow">MODE COMPÉTITIF</span>
+                <h2>PICK <span>&</span> BAN</h2>
+            </div>
+            <span class="draft-number">01</span>
+        </div>
+
+        <section class="draft-card map-card">
+            <div class="card-title">
+                <span class="step-number">01</span>
+                <div>
+                    <h3>SÉLECTION DE LA MAP</h3>
+                    <p>54 maps numérotées</p>
+                </div>
+            </div>
+
+            <div class="map-display">
+                <span>MAP SÉLECTIONNÉE</span>
+                <strong id="selectedMapLabel">MAP 01</strong>
+            </div>
+
+            <label for="mapSelect">Choisir une map</label>
+            <select id="mapSelect"></select>
+
+            <div class="button-row">
+                <button id="randomMap" class="secondary-btn" type="button">
+                    MAP ALÉATOIRE
+                </button>
+                <button id="lockMap" class="primary-btn compact" type="button">
+                    VERROUILLER
+                </button>
+            </div>
+
+            <p id="mapStatus" class="small-status">Map non verrouillée</p>
+        </section>
+
+        <section class="draft-card">
+            <div class="card-title">
+                <span class="step-number">02</span>
+                <div>
+                    <h3>ÉQUIPE A</h3>
+                    <p>Choisir un ban ou un pick</p>
+                </div>
+            </div>
+
+            <label for="banA">BAN — ÉQUIPE A</label>
+            <div class="action-row">
+                <select id="banA" class="class-select"></select>
+                <button id="submitBanA" class="ban-btn" type="button">BAN</button>
+            </div>
+
+            <label for="pickA">PICK — ÉQUIPE A</label>
+            <div class="action-row">
+                <select id="pickA" class="class-select"></select>
+                <button id="submitPickA" class="pick-btn" type="button">PICK</button>
+            </div>
+        </section>
+
+        <section class="draft-card">
+            <div class="card-title">
+                <span class="step-number">03</span>
+                <div>
+                    <h3>ÉQUIPE B</h3>
+                    <p>Choisir un ban ou un pick</p>
+                </div>
+            </div>
+
+            <label for="banB">BAN — ÉQUIPE B</label>
+            <div class="action-row">
+                <select id="banB" class="class-select"></select>
+                <button id="submitBanB" class="ban-btn" type="button">BAN</button>
+            </div>
+
+            <label for="pickB">PICK — ÉQUIPE B</label>
+            <div class="action-row">
+                <select id="pickB" class="class-select"></select>
+                <button id="submitPickB" class="pick-btn" type="button">PICK</button>
+            </div>
+        </section>
+
+        <section class="draft-card history-card">
+            <div class="history-heading">
+                <div>
+                    <h3>CHRONOLOGIE</h3>
+                    <p>Ordre des picks et des bans</p>
+                </div>
+                <span id="actionCount">0 ACTION</span>
+            </div>
+
+            <div id="draftHistory" class="draft-history">
+                <p class="empty-history">Aucune action pour le moment.</p>
+            </div>
+
+            <div class="reset-row">
+                <button id="undoAction" class="secondary-btn" type="button">
+                    ANNULER LA DERNIÈRE ACTION
+                </button>
+                <button id="resetDraft" class="danger-btn" type="button">
+                    RESET
+                </button>
+            </div>
+        </section>
+
+    </aside>
+
+</main>
+
+<script type="module" src="dofus-control.js"></script>
+</body>
+</html>
