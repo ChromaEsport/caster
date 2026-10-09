@@ -405,7 +405,7 @@ background: var(--gold);
 
 .timeline-section,
 .classes-section {
-margin-top: 20px;
+margin-top: 15px;
 }
 
 .section-heading {
@@ -494,8 +494,10 @@ font-size: 8px;
 
 .class-list {
 display: grid;
-grid-template-columns: repeat(6, minmax(0, 1fr));
-gap: 7px;
+grid-template-columns: repeat(10, minmax(0, 1fr));
+margin-left: auto;
+margin-right: auto;
+width: 1100px;
 }
 
 .class-tile {
