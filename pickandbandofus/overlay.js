@@ -344,7 +344,7 @@ function renderClasses(state) {
         return `
             <div class="class-tile ${used ? "used" : ""} ${used?.type === "ban" ? "banned" : ""}">
                 ${image
-                    ? <img class="character-used" src="${escapeHTML(image)}" alt="">
+                    ? `<img class="character-used" src="${escapeHTML(image)}" alt="">`
                     : ""}
                 ${used
                     ? `<span class="class-owner">${escapeHTML(used.label)}</span>`
