@@ -130,12 +130,13 @@ margin-top: 20px;
 min-width: 0;
 padding: 14px;
 background: linear-gradient(145deg, rgba(12, 33, 65, .9), rgba(4, 17, 42, .8));
-border: 1px solid var(--line);
+border: 1px solid hsl(183deg 43% 41% / 45%);
 border-top: 3px solid var(--turquoise);
 }
 
 .team-b {
-border-top-color: var(--red);
+border: 1px solid hsl(356deg 83% 63% / 45%);
+border-top: 3px solid #ef515c;
 }
 
 .team-heading {
