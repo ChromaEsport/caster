@@ -522,10 +522,34 @@ font-weight: 800;
 overflow-wrap: anywhere;
 }
 
+
 .class-tile.used {
-opacity: .42;
-filter: grayscale(1);
+    opacity: 1;
+    filter: none;
 }
+
+/* Griser uniquement l'image de la classe */
+.class-tile.used img {
+    filter: grayscale(1);
+    opacity: 0.4;
+}
+
+/* Garder les badges colorés */
+.class-tile.used .class-owner {
+    opacity: 1;
+    filter: none;
+}
+
+.class-owner.pick-owner {
+    background: #38d69a;
+    color: #010c2c;
+}
+
+.class-owner.ban-owner {
+    background: #ef515c;
+    color: #ffffff;
+}
+
 
 .class-owner {
 position: absolute;
