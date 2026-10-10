@@ -149,21 +149,23 @@ function renderPlayer(state, team, player) {
         ? characterImage(pick.character)
         : "";
 
-    const pickMarkup = pick
-        ? `
-            ${pickImage
-                ? `<img src="${escapeHTML(pickImage)}" alt="">`
-                : '<div class="pick-placeholder">?</div>'}
-            <span class="pick-badge">${team}-${player}</span>
-            <div class="character-name">
-                ${escapeHTML(pick.character)}
-            </div>
-        `
-        : `
-            <div class="pick-placeholder">?</div>
-            <span class="pick-badge">${team}-${player}</span>
-            <div class="character-name">PICK EN ATTENTE</div>
-        `;
+    
+const pickMarkup = pick
+    ? `
+        ${pickImage
+            ? `<img class="character-used" src="${escapeHTML(pickImage)}" alt="">`
+            : '<div class="pick-placeholder character-used">?</div>'}
+        <span class="pick-badge pick-badge-used">${team}-${player}</span>
+        <div class="character-name">
+            ${escapeHTML(pick.character)}
+        </div>
+    `
+    : `
+        <div class="pick-placeholder">?</div>
+        <span class="pick-badge">${team}-${player}</span>
+        <div class="character-name">PICK EN ATTENTE</div>
+    `;
+
 
     let banMarkup = "";
 
