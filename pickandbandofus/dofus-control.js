@@ -48,7 +48,8 @@ let matchState = {
 };
 
 let draftState = {
-    mapNumber: 1,
+    mapNumber: null,
+    publishedMapNumber: null,
     mapLocked: false,
     actions: []
 };
@@ -87,6 +88,11 @@ function usedClasses(exceptActionIndex = -1) {
 function fillMapOptions() {
     $("mapSelect").replaceChildren();
 
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Aucune map sélectionnée";
+    $("mapSelect").appendChild(placeholder);
+
     for (let number = 1; number <= 54; number++) {
         const option = document.createElement("option");
         option.value = String(number);
@@ -94,7 +100,10 @@ function fillMapOptions() {
         $("mapSelect").appendChild(option);
     }
 
-    $("mapSelect").value = String(draftState.mapNumber);
+    $("mapSelect").value = draftState.mapNumber == null
+        ? ""
+        : String(draftState.mapNumber);
+
     updateMapDisplay();
 }
 
@@ -141,21 +150,24 @@ function refreshClassOptions() {
 }
 
 function updateMapDisplay() {
-    $("mapSelect").value = String(draftState.mapNumber);
+    $("mapSelect").value = draftState.mapNumber == null
+        ? ""
+        : String(draftState.mapNumber);
 
     $("selectedMapLabel").textContent =
-        `MAP ${String(draftState.mapNumber).padStart(2, "0")}`;
+        draftState.mapNumber == null
+            ? "AUCUNE MAP"
+            : `MAP ${String(draftState.mapNumber).padStart(2, "0")}`;
 
     $("mapStatus").textContent = draftState.mapLocked
-        ? "Map verrouillée"
-        : "Map non verrouillée";
+        ? "Map validée et verrouillée"
+        : "Map en attente de validation";
 
     $("lockMap").textContent = draftState.mapLocked
         ? "DÉVERROUILLER"
-        : "VERROUILLER";
+        : "VALIDER LA MAP";
 
     $("mapSelect").disabled = draftState.mapLocked;
-    $("randomMap").disabled = draftState.mapLocked;
 }
 
 function updateMatchUI() {
@@ -263,7 +275,10 @@ async function saveDraft() {
     try {
         await setDoc(draftRef, {
             mapNumber: draftState.mapNumber,
-            map: getMapData(draftState.mapNumber),
+            publishedMapNumber: draftState.publishedMapNumber,
+            map: draftState.publishedMapNumber != null
+                ? getMapData(draftState.publishedMapNumber)
+                : null,
             mapLocked: draftState.mapLocked,
             actions: draftState.actions,
             updatedAt: new Date().toISOString()
@@ -313,19 +328,47 @@ async function submitAction(team, type) {
 async function changeMap(number) {
     if (draftState.mapLocked) {
         alert("Déverrouille la map avant de la modifier.");
+        updateMapDisplay();
+        return;
+    }
+
+    if (number === "") {
+        draftState.mapNumber = null;
+        updateMapDisplay();
         return;
     }
 
     const parsed = Number(number);
-    if (!Number.isInteger(parsed) || parsed < 1 || parsed > 54) return;
+
+    if (!Number.isInteger(parsed) || parsed < 1 || parsed > 54) {
+        return;
+    }
 
     draftState.mapNumber = parsed;
     updateMapDisplay();
-    await saveDraft();
+
+    // Ne pas enregistrer ici :
+    // la map sera publiée uniquement lors de la validation.
 }
 
 async function toggleMapLock() {
-    draftState.mapLocked = !draftState.mapLocked;
+    if (draftState.mapLocked) {
+        // Déverrouille sans retirer la map déjà affichée.
+        draftState.mapLocked = false;
+        updateMapDisplay();
+        await saveDraft();
+        return;
+    }
+
+    if (draftState.mapNumber == null) {
+        alert("Sélectionne une map avant de la valider.");
+        return;
+    }
+
+    // Publie la map sélectionnée sur l'overlay.
+    draftState.publishedMapNumber = draftState.mapNumber;
+    draftState.mapLocked = true;
+
     updateMapDisplay();
     await saveDraft();
 }
