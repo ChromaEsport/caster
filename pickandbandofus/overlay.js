@@ -206,7 +206,7 @@ function renderBans(state, team) {
     // Deux ban-card indépendantes des joueurs
     let markup = "";
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 5; i++) {
         const ban = bans[i];
 
         if (ban) {
