@@ -123,7 +123,7 @@ display: grid;
 grid-template-columns: minmax(0, 1fr) minmax(170px, .65fr) minmax(0, 1fr);
 gap: 10px;
 align-items: stretch;
-margin-top: 20px;
+margin-top: 25px;
 }
 
 .team {
@@ -416,7 +416,8 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 12px;
-margin-bottom: 5px;
+margin-bottom: 15px;
+margin-top: 15px;
 }
 
 .section-heading h3 {
@@ -442,6 +443,8 @@ overflow-x: auto;
 background: rgba(7, 23, 53, .85);
 border: 1px solid var(--line);
 grid-template-columns: repeat(8, minmax(0, 1fr));
+margin-top: 0px;
+margin-bottom: 10px;
 }
 
 .timeline-empty {
@@ -647,26 +650,27 @@ color: var(--mint);
 .classes-section {
     display: flex;
     align-items: stretch;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 24px;
     margin-top: 8px;
     width: 100%;
+    margin-top: 30px;
 }
 
 .classes-title {
     display: flex;
     align-items: center;
     gap: 14px;
-    flex: 0 0 320px;
+    flex: 0 0 260px;
     min-width: 0;
-    padding: 12px 10px;
     background: linear-gradient(
         135deg,
         rgba(12, 33, 65, .95),
         rgba(1, 12, 44, .8)
     );
     border: 1px solid rgba(143, 236, 201, .2);
-    border-left: 3px solid var(--mint);
+    height: 150px;
+    margin-top: 80px;
 }
 
 .classes-title-accent {
@@ -731,14 +735,10 @@ color: var(--mint);
     align-items: center;
     justify-content: center;
     min-width: 0;
-    padding: 12px;
+    
 }
 
 .classes-logo img {
-    display: block;
-    width: 100%;
-    max-width: 220px;
+    width: 200%;
     max-height: 280px;
-    height: auto;
-    object-fit: contain;
 }
