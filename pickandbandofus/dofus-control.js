@@ -66,6 +66,15 @@ function normalizeClass(value) {
     return String(value || "").trim();
 }
 
+
+function getMapData(number) {
+    return {
+        name: `Map ${number}`,
+        image: `./maps/${number}.png`
+    };
+}
+
+
 function usedClasses(exceptActionIndex = -1) {
     return new Set(
         draftState.actions
