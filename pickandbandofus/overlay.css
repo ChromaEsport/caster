@@ -320,20 +320,19 @@ text-transform: uppercase;
 }
 
 .map-panel {
-min-width: 0;
 display: flex;
 flex-direction: column;
 align-items: stretch;
 justify-content: center;
-padding: 14px;
 background: rgba(1, 12, 44, .7);
 border: 1px solid rgba(200, 156, 77, .45);
 text-align: center;
+border-top: 3px solid #c89c4d;
 }
 
 .map-label {
 color: var(--gold);
-font-size: 10px;
+font-size: 12px;
 font-weight: 900;
 letter-spacing: 2px;
 margin-bottom: 12px;
@@ -574,57 +573,6 @@ letter-spacing: 1.4px;
 color: var(--mint);
 }
 
-@media (max-width: 850px) {
-.draft-overlay {
-padding: 12px;
-}
-
-
-.battlefield {
-    grid-template-columns: minmax(0, 1fr) minmax(110px, .55fr) minmax(0, 1fr);
-    gap: 7px;
-    margin-top: 12px;
-}
-
-.team {
-    padding: 7px;
-}
-
-.team-heading h2 {
-    font-size: 15px;
-}
-
-.players {
-    gap: 4px;
-}
-
-.map-panel {
-    padding: 7px;
-}
-
-.map-art {
-    min-height: 100px;
-}
-
-.map-name {
-    font-size: 14px;
-}
-
-.class-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.pick-badge {
-    font-size: 7px;
-    padding: 3px;
-}
-
-.character-name {
-    font-size: 10px;
-}
-
-
-}
 
 /* Organisation des joueurs et des bans par équipe */
 .players {
