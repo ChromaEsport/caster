@@ -301,7 +301,7 @@ function renderMap(state) {
     mapName.textContent = map.name || "";
 
     mapArt.style.backgroundImage =
-        `linear-gradient(rgba(1,12,44,.15), rgba(1,12,44,.35)), url("${map.image}")`;
+        `url("${map.image}")`;
 
     mapArt.style.backgroundSize = "cover";
     mapArt.style.backgroundPosition = "center";
