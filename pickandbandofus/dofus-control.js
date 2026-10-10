@@ -258,10 +258,12 @@ async function changeScore(team, difference) {
     }
 }
 
+
 async function saveDraft() {
     try {
         await setDoc(draftRef, {
             mapNumber: draftState.mapNumber,
+            map: getMapData(draftState.mapNumber),
             mapLocked: draftState.mapLocked,
             actions: draftState.actions,
             updatedAt: new Date().toISOString()
@@ -274,6 +276,7 @@ async function saveDraft() {
         alert("Impossible d'enregistrer le Pick & Ban dans Firebase.");
     }
 }
+
 
 
 async function submitAction(team, type) {
