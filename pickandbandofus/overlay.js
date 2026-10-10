@@ -435,8 +435,17 @@ function renderClasses(state) {
     }).join("");
 }
 
+
 function render() {
     const state = currentState;
+
+    // Afficher le nom de l'événement
+    const eventNameElement = document.getElementById("eventName");
+
+    if (eventNameElement) {
+        eventNameElement.textContent =
+            state.eventName?.trim() || "CHROMA ESPORT";
+    }
 
     renderTeams(state);
     renderMap(state);
@@ -455,6 +464,7 @@ function render() {
         }
     }
 }
+
 
 /*
  * Synchronisation des informations du match.
