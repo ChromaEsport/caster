@@ -216,7 +216,6 @@ input::placeholder {
 
 .scoreboard {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 35px minmax(0, 1fr);
     align-items: center;
     gap: 8px;
 }
@@ -257,7 +256,7 @@ input::placeholder {
 }
 
 .team-b .score-number {
-    color: var(--gold);
+    color: var(--mint);
 }
 
 .score-buttons {
