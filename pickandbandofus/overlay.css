@@ -712,3 +712,33 @@ color: var(--mint);
     min-width: 0;
     margin: 0;
 }
+
+
+
+
+/* Logo Chroma Esport à droite de la liste des classes */
+.classes-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.classes-logo {
+    flex: 0 0 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 12px;
+}
+
+.classes-logo img {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    max-height: 280px;
+    height: auto;
+    object-fit: contain;
+}
