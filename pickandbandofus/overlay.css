@@ -146,6 +146,14 @@ gap: 11px;
 margin-bottom: 12px;
 }
 
+.team-a .team-heading p {
+color: var(--turquoise)
+}
+
+.team-b .team-heading p {
+color: var(--red)
+}
+
 .team-b .team-heading {
 justify-content: flex-end;
 text-align: right;
@@ -187,7 +195,7 @@ min-width: 0;
 .player-label {
 margin-bottom: 7px;
 text-align: center;
-color: var(--muted);
+color: var(--text);
 font-size: 12px;
 font-weight: 800;
 letter-spacing: 1px;
@@ -267,7 +275,7 @@ text-transform: uppercase;
 text-align: center;
 font-size: 12px;
 font-weight: 800;
-color: var(--muted);
+color: var(--text);
 letter-spacing: 1.3px;
 }
 
@@ -456,6 +464,7 @@ font-size: 12px;
 font-weight: 800;
 justify-content: space-evenly;
 height: 40px;
+color: var(--muted);
 }
 
 .timeline-item.team-a {
@@ -484,7 +493,7 @@ gap: 20px;
 }
 
 .timeline-info small {
-color: var(--muted);
+color: var(--text);
 font-size: 12px;
 }
 
