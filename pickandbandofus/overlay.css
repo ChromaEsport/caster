@@ -608,21 +608,24 @@ padding: 12px;
 
 }
 
-/* Personnages pick : image grisée, badge vert */
-.pick-card img.character-used {
+/* Classes déjà utilisées : image grisée */
+.class-tile.used img {
     filter: grayscale(1);
-    opacity: 0.65;
+    opacity: 0.4;
 }
 
-.pick-card .pick-badge-used {
-    background: var(--green);
-    color: #032b23;
-    filter: none;
+/* Badge de pick : vert */
+.class-owner.pick-owner {
+    background: #38d69a;
+    color: #010c2c;
     opacity: 1;
+    filter: none;
 }
 
-/* Personnages bannis : image grisée, badge rouge */
-.ban-card img.character-used {
-    filter: grayscale(1);
-    opacity: 0.6;
+/* Badge de ban : rouge */
+.class-owner.ban-owner {
+    background: #ef515c;
+    color: #ffffff;
+    opacity: 1;
+    filter: none;
 }
