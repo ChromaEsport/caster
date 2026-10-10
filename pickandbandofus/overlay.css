@@ -335,7 +335,8 @@ color: var(--gold);
 font-size: 12px;
 font-weight: 900;
 letter-spacing: 2px;
-margin-bottom: 12px;
+margin-bottom: 5px;
+margin-top: 5px;
 }
 
 .map-art {
