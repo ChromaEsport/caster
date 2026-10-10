@@ -724,7 +724,7 @@ color: var(--mint);
 .classes-section {
     display: flex;
     align-items: stretch;
-    justify-content: center;
+    justify-content: space-around;
     gap: 24px;
     width: 100%;
 }
