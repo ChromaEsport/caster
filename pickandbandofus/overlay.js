@@ -138,8 +138,25 @@ function normalizeState(data = {}) {
     };
 }
 
+
 function renderPlayer(state, team, player) {
-    const pick = state.picks?.[team]?.[player] || null;
+    // Pick déjà présent dans l'ancien format
+    const savedPick = state.picks?.[team]?.[player] || null;
+
+    // Pick envoyé par le panneau de contrôle via Firebase
+    const pickAction = [...(state.actions || [])]
+        .reverse()
+        .find(action =>
+            action.type === "pick" &&
+            action.team === team &&
+            (action.player === player || (!action.player && player === "J1"))
+        );
+
+    const pick = savedPick || (
+        pickAction
+            ? { character: pickAction.className || pickAction.character }
+            : null
+    );
 
     const bans = (state.bans?.[team] || [])
         .filter(ban => ban.player === player)
@@ -149,23 +166,21 @@ function renderPlayer(state, team, player) {
         ? characterImage(pick.character)
         : "";
 
-    
-const pickMarkup = pick
-    ? `
-        ${pickImage
-            ? `<img class="character-used" src="${escapeHTML(pickImage)}" alt="">`
-            : '<div class="pick-placeholder character-used">?</div>'}
-        <span class="pick-badge pick-badge-used">${team}-${player}</span>
-        <div class="character-name">
-            ${escapeHTML(pick.character)}
-        </div>
-    `
-    : `
-        <div class="pick-placeholder">?</div>
-        <span class="pick-badge">${team}-${player}</span>
-        <div class="character-name">PICK EN ATTENTE</div>
-    `;
-
+    const pickMarkup = pick
+        ? `
+            ${pickImage
+                ? `<img class="character-used" src="${escapeHTML(pickImage)}" alt="">`
+                : '<div class="pick-placeholder character-used">?</div>'}
+            <span class="pick-badge pick-badge-used">${team}-${player}</span>
+            <div class="character-name">
+                ${escapeHTML(pick.character)}
+            </div>
+        `
+        : `
+            <div class="pick-placeholder">?</div>
+            <span class="pick-badge">${team}-${player}</span>
+            <div class="character-name">PICK EN ATTENTE</div>
+        `;
 
     let banMarkup = "";
 
@@ -206,6 +221,7 @@ const pickMarkup = pick
         </article>
     `;
 }
+
 
 function renderTeams(state) {
     const teamAName = document.getElementById("teamAName");
