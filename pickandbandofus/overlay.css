@@ -243,7 +243,7 @@ z-index: 2;
 padding: 4px 6px;
 background: var(--green);
 color: #032b23;
-font-size: 9px;
+font-size: 14px;
 font-weight: 900;
 }
 
@@ -256,9 +256,11 @@ z-index: 1;
 padding: 18px 3px 6px;
 background: linear-gradient(transparent, rgba(1, 8, 25, .95));
 text-align: center;
-font: 800 13px 'Barlow Condensed', sans-serif;
+font: 800 32px 'Barlow Condensed', sans-serif;
 letter-spacing: .6px;
 overflow-wrap: anywhere;
+text-transform: uppercase;
+-webkit-text-stroke: 0.8px black;
 }
 
 .bans-label {
