@@ -315,11 +315,46 @@ function renderClasses(state) {
 
     const usage = new Map();
 
+    // 1. Récupération des picks et bans depuis les actions Firebase
+    const actions = Array.isArray(state.actions) ? state.actions : [];
+
+    const pickCounters = {
+        A: 0,
+        B: 0
+    };
+
+    for (const action of actions) {
+        const character = action.className || action.character;
+
+        if (!character) continue;
+
+        const team = action.team === "B" ? "B" : "A";
+        const type = action.type === "ban" ? "ban" : "pick";
+
+        if (type === "ban") {
+            // Badge rouge : A ou B
+            usage.set(character, {
+                label: team,
+                type: "ban"
+            });
+        } else {
+            // Badge vert : A-J1, A-J2, A-J3, B-J1...
+            const player = action.player || `J${pickCounters[team] + 1}`;
+            pickCounters[team]++;
+
+            usage.set(character, {
+                label: `${team}-${player}`,
+                type: "pick"
+            });
+        }
+    }
+
+    // 2. Compatibilité avec les anciennes données picks / bans
     for (const team of ["A", "B"]) {
         for (const player of ["J1", "J2", "J3"]) {
             const pick = state.picks?.[team]?.[player];
 
-            if (pick?.character) {
+            if (pick?.character && !usage.has(pick.character)) {
                 usage.set(pick.character, {
                     label: `${team}-${player}`,
                     type: "pick"
@@ -328,7 +363,7 @@ function renderClasses(state) {
         }
 
         for (const ban of state.bans?.[team] || []) {
-            if (ban?.character) {
+            if (ban?.character && !usage.has(ban.character)) {
                 usage.set(ban.character, {
                     label: ban.team || team,
                     type: "ban"
@@ -337,6 +372,7 @@ function renderClasses(state) {
         }
     }
 
+    // 3. Affichage des classes
     classList.innerHTML = DRAFT_CLASSES.map(character => {
         const used = usage.get(character);
         const image = characterIcon(character);
@@ -344,10 +380,10 @@ function renderClasses(state) {
         return `
             <div class="class-tile ${used ? "used" : ""} ${used?.type === "ban" ? "banned" : ""}">
                 ${image
-                    ? `<img class="character-used" src="${escapeHTML(image)}" alt="">`
+                    ? `<img src="${escapeHTML(image)}" alt="${escapeHTML(character)}">`
                     : ""}
                 ${used
-                    ? `<span class="class-owner">${escapeHTML(used.label)}</span>`
+                    ? `<span class="class-owner ${used.type === "ban" ? "ban-owner" : "pick-owner"}">${escapeHTML(used.label)}</span>`
                     : ""}
             </div>
         `;
