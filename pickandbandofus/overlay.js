@@ -141,22 +141,28 @@ function normalizeState(data = {}) {
 
 function renderPlayer(state, team, player) {
     // Pick déjà présent dans l'ancien format
-    const savedPick = state.picks?.[team]?.[player] || null;
+    
+const savedPick = state.picks?.[team]?.[player] || null;
 
-    // Pick envoyé par le panneau de contrôle via Firebase
-    const pickAction = [...(state.actions || [])]
-        .reverse()
-        .find(action =>
-            action.type === "pick" &&
-            action.team === team &&
-            (action.player === player || (!action.player && player === "J1"))
-        );
-
-    const pick = savedPick || (
-        pickAction
-            ? { character: pickAction.className || pickAction.character }
-            : null
+// Récupère tous les picks de cette équipe dans l'ordre
+const teamPicks = (state.actions || [])
+    .filter(action =>
+        action.type === "pick" &&
+        action.team === team
     );
+
+// Associe le 1er pick à J1, le 2e à J2 et le 3e à J3
+const playerIndex = Number(player.replace("J", "")) - 1;
+const pickAction = teamPicks[playerIndex];
+
+const pick = savedPick || (
+    pickAction
+        ? {
+            character: pickAction.className || pickAction.character
+        }
+        : null
+);
+
 
     const bans = (state.bans?.[team] || [])
         .filter(ban => ban.player === player)
