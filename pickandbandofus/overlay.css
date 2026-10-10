@@ -352,21 +352,7 @@ overflow: hidden;
 background:
 radial-gradient(circle at 50% 35%, rgba(200, 156, 77, .24), transparent 48%),
 linear-gradient(135deg, #102447, #07132b);
-border: 1px solid rgba(200, 156, 77, .35);
-}
-
-.map-art::before,
-.map-art::after {
-content: "";
-position: absolute;
-width: 140%;
-height: 1px;
-background: rgba(200, 156, 77, .2);
-transform: rotate(35deg);
-}
-
-.map-art::after {
-transform: rotate(-35deg);
+height: 100%;
 }
 
 .map-symbol,
@@ -375,15 +361,21 @@ position: relative;
 z-index: 1;
 }
 
-.map-symbol {
-color: var(--gold);
-font-size: 42px;
-}
 
 .map-name {
-font: 900 20px 'Barlow Condensed', sans-serif;
-letter-spacing: 1px;
-overflow-wrap: anywhere;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 18px 3px 6px;
+    background: linear-gradient(transparent, rgba(1, 8, 25, .95));
+    text-align: center;
+    font: 800 32px 'Barlow Condensed', sans-serif;
+    letter-spacing: .6px;
+    overflow-wrap: anywhere;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.8px black;
 }
 
 .map-footer {
