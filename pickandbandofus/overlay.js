@@ -290,20 +290,18 @@ function renderMap(state) {
 
     if (!mapName || !mapArt) return;
 
-    const number = Number(state.mapNumber || state.map?.number || 0);
+    const map = state.map;
 
-    if (!number) {
-        mapName.textContent = "EN ATTENTE";
+    if (!map || !map.image) {
+        mapName.textContent = "";
         mapArt.style.backgroundImage = "";
         return;
     }
 
-    const image = state.map?.image || `./maps/${number}.png`;
-
-    mapName.textContent = state.map?.name || `Map ${number}`;
+    mapName.textContent = map.name || "";
 
     mapArt.style.backgroundImage =
-        `linear-gradient(rgba(1,12,44,.15), rgba(1,12,44,.35)), url("${image}")`;
+        `linear-gradient(rgba(1,12,44,.15), rgba(1,12,44,.35)), url("${map.image}")`;
 
     mapArt.style.backgroundSize = "cover";
     mapArt.style.backgroundPosition = "center";
