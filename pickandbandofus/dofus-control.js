@@ -412,7 +412,8 @@ async function resetDraft() {
     if (!confirmed) return;
 
     draftState = {
-        mapNumber: 1,
+        mapNumber: null,
+        publishedMapNumber: null,
         mapLocked: false,
         actions: []
     };
@@ -420,6 +421,7 @@ async function resetDraft() {
     fillMapOptions();
     renderHistory();
     refreshClassOptions();
+
     await saveDraft();
 }
 
@@ -435,7 +437,6 @@ function bindEvents() {
         changeMap(event.target.value);
     });
 
-    $("randomMap").addEventListener("click", randomMap);
     $("lockMap").addEventListener("click", toggleMapLock);
 
     $("submitBanA").addEventListener("click", () => submitAction("A", "ban"));
@@ -471,10 +472,17 @@ function listenToFirebase() {
         const data = snapshot.data();
 
         draftState = {
-            mapNumber: Number(data.mapNumber || 1),
-            mapLocked: Boolean(data.mapLocked),
-            actions: Array.isArray(data.actions) ? data.actions : []
-        };
+    mapNumber: data.mapNumber == null
+        ? null
+        : Number(data.mapNumber),
+
+    publishedMapNumber: data.publishedMapNumber == null
+        ? null
+        : Number(data.publishedMapNumber),
+
+    mapLocked: Boolean(data.mapLocked),
+    actions: Array.isArray(data.actions) ? data.actions : []
+};
 
         fillMapOptions();
         updateMapDisplay();
