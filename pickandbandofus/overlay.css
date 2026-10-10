@@ -629,3 +629,18 @@ padding: 12px;
     opacity: 1;
     filter: none;
 }
+/* Les badges restent colorés même si la classe est grisée */
+.class-tile.used .class-owner {
+opacity: 1 !important;
+filter: none !important;
+}
+
+.class-tile.used .class-owner.pick-owner {
+background: #38d69a;
+color: #010c2c;
+}
+
+.class-tile.used .class-owner.ban-owner {
+background: #ef515c;
+color: #ffffff;
+}
