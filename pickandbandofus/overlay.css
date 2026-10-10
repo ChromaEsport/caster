@@ -607,3 +607,22 @@ padding: 12px;
 
 
 }
+
+/* Personnages pick : image grisée, badge vert */
+.pick-card img.character-used {
+    filter: grayscale(1);
+    opacity: 0.65;
+}
+
+.pick-card .pick-badge-used {
+    background: var(--green);
+    color: #032b23;
+    filter: none;
+    opacity: 1;
+}
+
+/* Personnages bannis : image grisée, badge rouge */
+.ban-card img.character-used {
+    filter: grayscale(1);
+    opacity: 0.6;
+}
