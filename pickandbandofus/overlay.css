@@ -37,7 +37,7 @@ overflow: hidden;
 position: relative;
 width: 100%;
 min-height: 100vh;
-padding: 22px 28px 14px;
+padding: 0px 5px 0px;
 overflow: hidden;
 background:
 radial-gradient(ellipse at 50% 25%, rgba(60, 145, 149, .15), transparent 43%),
@@ -121,9 +121,9 @@ letter-spacing: 1.5px;
 .battlefield {
 display: grid;
 grid-template-columns: minmax(0, 1fr) minmax(170px, .65fr) minmax(0, 1fr);
-gap: 18px;
+gap: 10px;
 align-items: stretch;
-margin-top: 22px;
+margin-top: 20px;
 }
 
 .team {
@@ -177,7 +177,6 @@ color: #ff9299;
 .players {
 display: grid;
 grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 9px;
 }
 
 .player-card {
@@ -640,7 +639,6 @@ padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
     width: 100%;
     min-width: 0;
 }
@@ -672,6 +670,7 @@ padding: 12px;
 .team-bans .bans-label {
     text-align: center;
     margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 
