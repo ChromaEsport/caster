@@ -542,7 +542,7 @@ overflow-wrap: anywhere;
 
 .class-owner.pick-owner {
     
-    color: #010c2c;
+    color: var(--mint);
 }
 
 .class-owner.ban-owner {
