@@ -283,35 +283,33 @@ function renderTeams(state) {
 }
 
 
+
 function renderMap(state) {
     const mapName = document.getElementById("mapName");
-    const mapStatus = document.getElementById("mapStatus");
     const mapArt = document.getElementById("mapArt");
 
-    if (!mapName || !mapStatus || !mapArt) return;
+    if (!mapName || !mapArt) return;
 
-    if (!state.map) {
+    const number = Number(state.mapNumber || state.map?.number || 0);
+
+    if (!number) {
         mapName.textContent = "EN ATTENTE";
-        mapStatus.textContent = "TIRAGE NON EFFECTUÉ";
         mapArt.style.backgroundImage = "";
         return;
     }
 
-    mapName.textContent = state.map.name || "CARTE DU MATCH";
-    mapStatus.textContent = state.mapLocked
-        ? "CARTE VERROUILLÉE"
-        : "CARTE TIRÉE";
+    const image = state.map?.image || `./maps/${number}.png`;
 
-    if (state.map.image) {
-        mapArt.style.backgroundImage =
-            `linear-gradient(rgba(1,12,44,.45), rgba(1,12,44,.8)), url("${state.map.image}")`;
+    mapName.textContent = state.map?.name || `Map ${number}`;
 
-        mapArt.style.backgroundSize = "cover";
-        mapArt.style.backgroundPosition = "center";
-    } else {
-        mapArt.style.backgroundImage = "";
-    }
+    mapArt.style.backgroundImage =
+        `linear-gradient(rgba(1,12,44,.15), rgba(1,12,44,.35)), url("${image}")`;
+
+    mapArt.style.backgroundSize = "cover";
+    mapArt.style.backgroundPosition = "center";
+    mapArt.style.backgroundRepeat = "no-repeat";
 }
+
 
 function renderTimeline(state) {
     const timeline = document.getElementById("timeline");
