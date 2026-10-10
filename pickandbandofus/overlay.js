@@ -139,34 +139,25 @@ function normalizeState(data = {}) {
 }
 
 
-function renderPlayer(state, team, player) {
-    // Pick déjà présent dans l'ancien format
-    
-const savedPick = state.picks?.[team]?.[player] || null;
 
-// Récupère tous les picks de cette équipe dans l'ordre
-const teamPicks = (state.actions || [])
-    .filter(action =>
+function renderPlayer(state, team, player) {
+    const savedPick = state.picks?.[team]?.[player] || null;
+
+    const teamPicks = (state.actions || []).filter(action =>
         action.type === "pick" &&
         action.team === team
     );
 
-// Associe le 1er pick à J1, le 2e à J2 et le 3e à J3
-const playerIndex = Number(player.replace("J", "")) - 1;
-const pickAction = teamPicks[playerIndex];
+    const playerIndex = Number(player.replace("J", "")) - 1;
+    const pickAction = teamPicks[playerIndex];
 
-const pick = savedPick || (
-    pickAction
-        ? {
-            character: pickAction.className || pickAction.character
-        }
-        : null
-);
-
-
-    const bans = (state.bans?.[team] || [])
-        .filter(ban => ban.player === player)
-        .slice(0, 2);
+    const pick = savedPick || (
+        pickAction
+            ? {
+                character: pickAction.className || pickAction.character
+            }
+            : null
+    );
 
     const pickImage = pick?.character
         ? characterImage(pick.character)
@@ -188,15 +179,41 @@ const pick = savedPick || (
             <div class="character-name">PICK EN ATTENTE</div>
         `;
 
-    let banMarkup = "";
+    return `
+        <article class="player-card">
+            <div class="player-label">${player}</div>
+            <div class="pick-card">${pickMarkup}</div>
+        </article>
+    `;
+}
+
+
+function renderBans(state, team) {
+    // Récupération des bans de l'équipe dans l'ordre chronologique
+    const actionBans = (state.actions || [])
+        .filter(action =>
+            action.type === "ban" &&
+            action.team === team
+        );
+
+    // Compatibilité avec les anciennes données Firebase
+    const legacyBans = state.bans?.[team] || [];
+
+    const bans = actionBans.length
+        ? actionBans
+        : legacyBans;
+
+    // Deux ban-card indépendantes des joueurs
+    let markup = "";
 
     for (let i = 0; i < 2; i++) {
         const ban = bans[i];
 
         if (ban) {
-            const image = characterImage(ban.character);
+            const character = ban.className || ban.character;
+            const image = characterImage(character);
 
-            banMarkup += `
+            markup += `
                 <div class="ban-card">
                     ${image
                         ? `<img src="${escapeHTML(image)}" alt="">`
@@ -205,12 +222,12 @@ const pick = savedPick || (
                         ${escapeHTML(ban.team || team)}
                     </span>
                     <div class="ban-name">
-                        ${escapeHTML(ban.character)}
+                        ${escapeHTML(character || "Classe inconnue")}
                     </div>
                 </div>
             `;
         } else {
-            banMarkup += `
+            markup += `
                 <div class="ban-card">
                     <div class="ban-placeholder">—</div>
                 </div>
@@ -219,14 +236,13 @@ const pick = savedPick || (
     }
 
     return `
-        <article class="player-card">
-            <div class="player-label">${player}</div>
-            <div class="pick-card">${pickMarkup}</div>
+        <div class="team-bans">
             <div class="bans-label">BANS</div>
-            <div class="bans">${banMarkup}</div>
-        </article>
+            <div class="bans">${markup}</div>
+        </div>
     `;
 }
+
 
 
 function renderTeams(state) {
@@ -244,17 +260,28 @@ function renderTeams(state) {
     }
 
     if (playersA) {
-        playersA.innerHTML = ["J1", "J2", "J3"]
-            .map(player => renderPlayer(state, "A", player))
-            .join("");
+        playersA.innerHTML = `
+            <div class="team-players">
+                ${["J1", "J2", "J3"]
+                    .map(player => renderPlayer(state, "A", player))
+                    .join("")}
+            </div>
+            ${renderBans(state, "A")}
+        `;
     }
 
     if (playersB) {
-        playersB.innerHTML = ["J1", "J2", "J3"]
-            .map(player => renderPlayer(state, "B", player))
-            .join("");
+        playersB.innerHTML = `
+            <div class="team-players">
+                ${["J1", "J2", "J3"]
+                    .map(player => renderPlayer(state, "B", player))
+                    .join("")}
+            </div>
+            ${renderBans(state, "B")}
+        `;
     }
 }
+
 
 function renderMap(state) {
     const mapName = document.getElementById("mapName");
