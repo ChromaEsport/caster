@@ -541,12 +541,12 @@ overflow-wrap: anywhere;
 }
 
 .class-owner.pick-owner {
-    background: #38d69a;
+    
     color: #010c2c;
 }
 
 .class-owner.ban-owner {
-    background: #ef515c;
+    
     color: #ffffff;
 }
 
@@ -555,7 +555,7 @@ overflow-wrap: anywhere;
 position: absolute;
 top: 2px;
 right: 3px;
-font-size: 8px;
+font-size: 16px;
 font-weight: 900;
 color: var(--mint);
 }
