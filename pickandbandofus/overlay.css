@@ -745,18 +745,15 @@ color: var(--mint);
 
 
 
-/* Chronologie du draft : BAN rouge et PICK vert */
-.timeline-action .action-type {
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.timeline-action .action-type.ban {
+/* Couleurs des actions dans la chronologie */
+.timeline-info .action-type.ban {
     color: #ff4545;
+    font-weight: 900;
     text-shadow: 0 0 8px rgba(255, 69, 69, 0.35);
 }
 
-.timeline-action .action-type.pick {
+.timeline-info .action-type.pick {
     color: #8fecc9;
+    font-weight: 900;
     text-shadow: 0 0 8px rgba(143, 236, 201, 0.25);
 }
