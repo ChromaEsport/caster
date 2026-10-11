@@ -260,6 +260,7 @@ BLOCS SCORE
     border-bottom-left-radius: 3px;
     background: linear-gradient(180deg, rgba(1, 12, 44, 0.98), rgba(1, 12, 44, 0.92));
     font: 800 40px 'Barlow Condensed', sans-serif;
+    border-top: 2px solid var(--chroma-blue);
 
 }
 
@@ -279,6 +280,7 @@ BLOCS SCORE
     border-bottom-left-radius: 5px;
     background: linear-gradient(180deg, rgba(1, 12, 44, 0.98), rgba(1, 12, 44, 0.92));
     font: 800 40px 'Barlow Condensed', sans-serif;
+    border-top: 2px solid #ef515c;
 }
 
 
@@ -303,7 +305,7 @@ width: 200px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
+    border-top: 2px solid #b0d250;
 }
 
 
