@@ -1,121 +1,266 @@
+
 import {
-db,
-doc,
-onSnapshot
+    db,
+    doc,
+    onSnapshot
 } from "./firebase.js";
 
 console.log("=================================");
 console.log("CHROMA DOFUS OVERLAY");
-console.log("Script chargé");
+console.log("Connexion Firebase");
 console.log("=================================");
 
 const matchRef = doc(
-db,
-"dofusMatches",
-"current"
+    db,
+    "dofusMatches",
+    "current"
 );
 
-console.log("Écoute Firebase :", matchRef.path);
+const draftRef = doc(
+    db,
+    "dofusDraft",
+    "current"
+);
 
-onSnapshot(
-matchRef,
+let matchData = {};
+let draftData = {};
 
+/*
+============================================
+OUTILS
+============================================
+*/
 
-(snapshot) => {
+function getElement(id) {
+    const element = document.getElementById(id);
 
-    console.log("🔥 SNAPSHOT REÇU");
+    if (!element) {
+        console.warn(`Élément HTML introuvable : #${id}`);
+    }
 
-    console.log("Document existe :", snapshot.exists());
+    return element;
+}
 
+function isChroma(teamName) {
+    return String(teamName || "")
+        .toLowerCase()
+        .includes("chroma");
+}
 
-    if (!snapshot.exists()) {
+/*
+============================================
+MISE À JOUR DES ÉQUIPES ET DES SCORES
+============================================
+*/
 
-        console.warn(
-            "⚠️ Le document matches/current n'existe pas."
-        );
+function renderMatch() {
+    const teamA = getElement("teamA");
+    const scoreA = getElement("scoreA");
+    const teamB = getElement("teamB");
+    const scoreB = getElement("scoreB");
 
+    if (teamA) {
+        teamA.textContent = matchData.teamA || "ÉQUIPE A";
+    }
+
+    if (scoreA) {
+        scoreA.textContent = matchData.scoreA ?? 0;
+    }
+
+    if (teamB) {
+        teamB.textContent = matchData.teamB || "ÉQUIPE B";
+    }
+
+    if (scoreB) {
+        scoreB.textContent = matchData.scoreB ?? 0;
+    }
+
+    renderPlayers("playersA", "A");
+    renderPlayers("playersB", "B");
+}
+
+/*
+============================================
+JOUEURS CHROMA ET PERSONNAGES
+============================================
+*/
+
+function renderPlayers(containerId, teamKey) {
+    const container = document.getElementById(containerId);
+
+    if (!container) {
         return;
     }
 
+    container.replaceChildren();
 
-    const data = snapshot.data();
+    const teamName = teamKey === "A"
+        ? matchData.teamA
+        : matchData.teamB;
 
+    // Les joueurs s'affichent uniquement du côté Chroma.
+    if (!isChroma(teamName)) {
+        return;
+    }
 
-    console.log(
-        "📡 DONNÉES FIREBASE :",
-        data
+    const actions = Array.isArray(draftData.actions)
+        ? draftData.actions
+        : [];
+
+    const picks = actions.filter(action =>
+        action.type === "pick" &&
+        action.team === teamKey
     );
 
+    const playerIds = ["J1", "J2", "J3"];
 
-    console.log(
-        "Équipe A :",
-        data.teamA
-    );
+    playerIds.forEach((playerId, index) => {
+        // Cherche le pick attribué à ce joueur.
+        // Si aucun joueur n'est renseigné dans le pick,
+        // utilise l'ordre des picks de son équipe.
+        const action = picks.find(item =>
+            item.player === playerId
+        ) || picks[index];
 
-    console.log(
-        "Score A :",
-        data.scoreA
-    );
+        const playerName =
+            matchData[`chroma${playerId}`] || playerId;
 
-    console.log(
-        "Équipe B :",
-        data.teamB
-    );
+        const characterName = action
+            ? (
+                action.className ||
+                action.character ||
+                "Personnage choisi"
+            )
+            : "En attente";
 
-    console.log(
-        "Score B :",
-        data.scoreB
-    );
+        const line = document.createElement("div");
+        line.className = "chroma-player";
 
+        const name = document.createElement("span");
+        name.className = "player-name";
+        name.textContent = playerName;
 
-    /*
-    ============================================
-    MISE À JOUR DE L'OVERLAY
-    ============================================
-    */
+        const character = document.createElement("span");
+        character.className = "player-class";
+        character.textContent = characterName;
 
-    document.getElementById("teamA").textContent =
-        data.teamA || "ÉQUIPE A";
-
-
-    document.getElementById("scoreA").textContent =
-        data.scoreA ?? 0;
-
-
-    document.getElementById("teamB").textContent =
-        data.teamB || "ÉQUIPE B";
-
-
-    document.getElementById("scoreB").textContent =
-        data.scoreB ?? 0;
-
-
-    console.log(
-        "✅ OVERLAY MIS À JOUR"
-    );
-
-},
-
-
-(error) => {
-
-    console.error(
-        "❌ ERREUR FIREBASE"
-    );
-
-    console.error(error);
-
-    console.error(
-        "Code erreur :",
-        error.code
-    );
-
-    console.error(
-        "Message :",
-        error.message
-    );
-
+        line.append(name, character);
+        container.appendChild(line);
+    });
 }
 
+/*
+============================================
+AFFICHAGE DE LA MAP
+============================================
+*/
 
+function renderMap() {
+    const mapName = getElement("mapName");
+    const mapImage = getElement("mapImage");
+
+    if (!mapName || !mapImage) {
+        return;
+    }
+
+    const map = draftData.map;
+
+    if (!map) {
+        mapName.textContent = "MAP EN ATTENTE";
+        mapImage.removeAttribute("src");
+        mapImage.hidden = true;
+        return;
+    }
+
+    mapName.textContent = map.name || "MAP DOFUS";
+
+    if (map.image) {
+        mapImage.onerror = () => {
+            console.error(
+                "Impossible de charger l'image de la map :",
+                map.image
+            );
+
+            mapImage.hidden = true;
+        };
+
+        mapImage.onload = () => {
+            mapImage.hidden = false;
+        };
+
+        mapImage.hidden = true;
+        mapImage.src = map.image;
+    } else {
+        mapImage.removeAttribute("src");
+        mapImage.hidden = true;
+    }
+}
+
+/*
+============================================
+ÉCOUTE FIREBASE : MATCH
+Équipes, scores et pseudos
+============================================
+*/
+
+onSnapshot(
+    matchRef,
+
+    snapshot => {
+        console.log("🔥 SNAPSHOT MATCH REÇU");
+        console.log("Document existe :", snapshot.exists());
+
+        if (!snapshot.exists()) {
+            console.warn(
+                "Le document dofusMatches/current n'existe pas."
+            );
+            return;
+        }
+
+        matchData = snapshot.data();
+
+        console.log("📡 DONNÉES MATCH :", matchData);
+
+        renderMatch();
+    },
+
+    error => {
+        console.error("❌ ERREUR FIREBASE — MATCH");
+        console.error(error);
+        console.error("Code :", error.code);
+        console.error("Message :", error.message);
+    }
+);
+
+/*
+============================================
+ÉCOUTE FIREBASE : DRAFT
+Map et picks
+============================================
+*/
+
+onSnapshot(
+    draftRef,
+
+    snapshot => {
+        console.log("🔥 SNAPSHOT DRAFT REÇU");
+
+        draftData = snapshot.exists()
+            ? snapshot.data()
+            : {};
+
+        console.log("📡 DONNÉES DRAFT :", draftData);
+
+        renderMap();
+
+        renderPlayers("playersA", "A");
+        renderPlayers("playersB", "B");
+    },
+
+    error => {
+        console.error("❌ ERREUR FIREBASE — DRAFT");
+        console.error(error);
+        console.error("Code :", error.code);
+        console.error("Message :", error.message);
+    }
 );
