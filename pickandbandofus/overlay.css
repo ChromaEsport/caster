@@ -494,7 +494,8 @@ color: var(--red);
 
 .timeline-info {
 display: flex;
-gap: 20px;
+gap: 8px;
+align-items: center;
 }
 
 .timeline-info small {
