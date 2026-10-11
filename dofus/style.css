@@ -113,13 +113,45 @@ background:
     );
 
 border-top: 2px solid var(--chroma-blue);
-border-bottom: 4px solid var(--chroma-blue);
+border-bottom: 6px solid var(--chroma-blue);
 
 overflow: hidden;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 5px;
 
 }
+
+.team-block .team-right {
+
+
+width: 640px;
+height: 70px;
+
+margin-top: 0;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+position: relative;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(1, 12, 44, 0.98),
+        rgba(1, 12, 44, 0.92)
+    );
+
+border-top: 2px solid #ef515c;
+border-bottom: 6px solid #ef515c;
+
+overflow: hidden;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 5px;
+
+}
+
 
 /* Accent lumineux intérieur */
 
@@ -151,6 +183,7 @@ left: 0;
 
 .team-right::before {
 right: 0;
+background:#ef515c;
 }
 
 /* Texte équipe */
