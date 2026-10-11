@@ -366,7 +366,7 @@ filter:
 }
 
 /* Chaque joueur est présenté côte à côte */
- #playersB.chroma-player{
+ #playersB .chroma-player{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,7 +387,7 @@ filter:
     text-align: center;
 }
 
- #playersA.chroma-player {
+ #playersA .chroma-player {
     display: flex;
     flex-direction: column;
     align-items: center;
