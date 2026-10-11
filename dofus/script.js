@@ -89,25 +89,25 @@ PORTRAITS DES CLASSES DOFUS
 // Chemins supposés : dossier images/classes/ dans dofus/.
 // Adapte les chemins aux noms réels de tes fichiers.
 const CLASS_IMAGES = {
-    "Féca": "./pickandbandofus/portraits/feca.png",
-    "Osamodas": "./pickandbandofus/portraits/osamodas.png",
-    "Enutrof": "./pickandbandofus/portraits/enutrof.png",
-    "Sram": "./pickandbandofus/portraits/sram.png",
-    "Xélor": "./pickandbandofus/portraits/xelor.png",
-    "Écaflip": "./pickandbandofus/portraits/ecaflip.png",
-    "Éniripsa": "./pickandbandofus/portraits/eniripsa.png",
-    "Iop": "./pickandbandofus/portraits/iop.png",
-    "Crâ": "./pickandbandofus/portraits/crâ.png",
-    "Sadida": "./pickandbandofus/portraits/sadida.png",
-    "Sacrieur": "./pickandbandofus/portraits/sacrieur.png",
-    "Pandawa": "./pickandbandofus/portraits/pandawa.png",
-    "Roublard": "./pickandbandofus/portraits/roublard.png",
-    "Zobal": "./pickandbandofus/portraits/zobal.png",
-    "Steamer": "./pickandbandofus/portraits/steamer.png",
-    "Eliotrope": "./pickandbandofus/portraits/eliotrope.png",
+    "Féca": "../pickandbandofus/portraits/feca.png",
+    "Osamodas": "../pickandbandofus/portraits/osamodas.png",
+    "Enutrof": "../pickandbandofus/portraits/enutrof.png",
+    "Sram": "../pickandbandofus/portraits/sram.png",
+    "Xélor": "../pickandbandofus/portraits/xelor.png",
+    "Écaflip": "../pickandbandofus/portraits/ecaflip.png",
+    "Éniripsa": "../pickandbandofus/portraits/eniripsa.png",
+    "Iop": "../pickandbandofus/portraits/iop.png",
+    "Crâ": "../pickandbandofus/portraits/crâ.png",
+    "Sadida": "../pickandbandofus/portraits/sadida.png",
+    "Sacrieur": "../pickandbandofus/portraits/sacrieur.png",
+    "Pandawa": "../pickandbandofus/portraits/pandawa.png",
+    "Roublard": "../pickandbandofus/portraits/roublard.png",
+    "Zobal": "../pickandbandofus/portraits/zobal.png",
+    "Steamer": "../pickandbandofus/portraits/steamer.png",
+    "Eliotrope": "../pickandbandofus/portraits/eliotrope.png",
     "Huppermage": "../pickandbandofus/portraits/huppermage.png",
-    "Ouginak": "./pickandbandofus/portraits/ouginak.png",
-    "Forgelance": "./pickandbandofus/portraits/forgelance.png"
+    "Ouginak": "../pickandbandofus/portraits/ouginak.png",
+    "Forgelance": "../pickandbandofus/portraits/forgelance.png"
 };
 
 function getClassImage(className) {
