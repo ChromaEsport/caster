@@ -45,8 +45,7 @@ overflow: hidden;
 background: transparent;
 
 font-family:
-    "Segoe UI",
-    Arial,
+    "Barlow Condensed",
     sans-serif;
 
 
@@ -282,62 +281,6 @@ BLOCS SCORE
     font: 800 40px 'Barlow Condensed', sans-serif;
 }
 
-/* Petite lumière verticale */
-
-.score-block::before {
-
-
-content: "";
-
-position: absolute;
-
-top: 0;
-bottom: 0;
-
-width: 2px;
-
-background:
-    linear-gradient(
-        180deg,
-        transparent,
-        var(--chroma-gold),
-        transparent
-    );
-
-
-}
-
-.score-left::before {
-left: 0;
-}
-
-.score-right::before {
-right: 0;
-}
-
-/* Chiffre */
-
-.score-block span {
-
-
-position: relative;
-
-z-index: 2;
-
-font-size: 42px;
-
-line-height: 1;
-
-font-weight: 900;
-
-color: var(--chroma-gold);
-
-text-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.9),
-    0 0 12px rgba(200, 156, 77, 0.25);
-
-
-}
 
 /* ---------------------------------------------------------
 BLOC CENTRAL DOFUS
@@ -347,74 +290,22 @@ BLOC CENTRAL DOFUS
 
 
 width: 200px;
-height: 110px;
-
-position: relative;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-background:
-    linear-gradient(
-        180deg,
-        rgba(1, 12, 44, 0.99),
-        rgba(10, 35, 54, 0.98)
-    );
-
-border-left: 2px solid var(--chroma-gold);
-border-right: 2px solid var(--chroma-gold);
-
-border-bottom: 4px solid #b0d250;
-
-overflow: hidden;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
-/*
-    Petit chanfrein visuel :
-    le centre ressort légèrement.
-*/
-clip-path:
-    polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
-
+    height: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(1, 12, 44, 0.99), rgba(10, 35, 54, 0.98));
+    border-left: 4px solid #b0d250;
+    border-right: 4px solid #b0d250;
+    border-bottom: 4px solid #b0d250;
+    overflow: hidden;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
 }
 
-/* Halo central */
-
-.dofus-block::before {
-
-
-content: "";
-
-position: absolute;
-
-width: 180px;
-height: 180px;
-
-left: 50%;
-top: 50%;
-
-transform: translate(-50%, -50%);
-
-background:
-    radial-gradient(
-        circle,
-        rgba(143, 236, 201, 0.16) 0%,
-        rgba(60, 145, 149, 0.08) 35%,
-        transparent 70%
-    );
-
-pointer-events: none;
-
-
-}
 
 /* Logo */
 
