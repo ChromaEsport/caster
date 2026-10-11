@@ -121,6 +121,11 @@ border-bottom-left-radius: 5px;
 
 }
 
+#teamA{
+width: 555px;
+text-align: center;
+}
+
 .team-blockB {
 
 
@@ -235,9 +240,10 @@ text-shadow:
     height: 38px;
     flex: 0 0 38px;
     background: rgba(60, 145, 149, .18);
-    border: 1px solid var(--turquoise);
+    border: 1px solid var(--chroma-blue);
     color: var(--mint);
     font: 900 22px 'Barlow Condensed', sans-serif;
+    margin-left: 5px;
 }
 /* ---------------------------------------------------------
 BLOCS SCORE
