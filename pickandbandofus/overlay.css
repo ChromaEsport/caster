@@ -144,6 +144,7 @@ display: flex;
 align-items: center;
 gap: 11px;
 margin-bottom: 12px;
+text-transform: uppercase;
 }
 
 .team-a .team-heading p {
@@ -196,9 +197,10 @@ min-width: 0;
 margin-bottom: 7px;
 text-align: center;
 color: var(--text);
-font-size: 12px;
+font-size: 16px;
 font-weight: 800;
 letter-spacing: 1px;
+text-transform: uppercase;
 }
 
 .pick-card {
