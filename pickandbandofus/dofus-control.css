@@ -418,7 +418,7 @@ input::placeholder {
 
 .map-display strong {
     color: var(--gold);
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
 }
 
@@ -537,6 +537,7 @@ input::placeholder {
     margin: 0px;
     margin-top: 12px;
     text-align: center;
+    font-size:14px;
 }
 
 .chroma-players p {
