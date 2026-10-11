@@ -309,6 +309,7 @@ function renderMap(state) {
 }
 
 
+
 function renderTimeline(state) {
     const timeline = document.getElementById("timeline");
     const actionCount = document.getElementById("actionCount");
@@ -331,21 +332,22 @@ function renderTimeline(state) {
     timeline.innerHTML = actions.map((action, index) => {
         const type = action.type === "ban" ? "ban" : "pick";
         const team = action.team === "B" ? "B" : "A";
-        const arrow = team === "A" ? "➜" : "⟵";
 
         const owner = type === "pick"
             ? `${team}-${action.player || "J1"}`
             : `Équipe ${team}`;
 
+        const actionLabel = type === "ban" ? "BAN" : "PICK";
+
         return `
             <div class="timeline-item team-${team.toLowerCase()} ${type}">
                 <div class="timeline-info">
                     <small>
-                        ${index + 1}. ${type.toUpperCase()} · ${owner}
+                        ${index + 1}.
+                        <span class="action-type ${type}">${actionLabel}</span>
+                        · ${owner}
                     </small>
-<span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
-
-
+                    <span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
                 </div>
             </div>
         `;
@@ -353,6 +355,7 @@ function renderTimeline(state) {
 
     timeline.scrollLeft = timeline.scrollWidth;
 }
+
 
 function renderClasses(state) {
     const classList = document.getElementById("classList");
