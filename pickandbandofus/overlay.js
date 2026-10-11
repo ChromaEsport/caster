@@ -343,44 +343,51 @@ function renderTimeline(state) {
         return;
     }
 
-    timeline.innerHTML = actions.map((action, index) => {
-        const type = action.type === "ban" ? "ban" : "pick";
-        const team = action.team === "B" ? "B" : "A";
+    
+timeline.innerHTML = actions.map((action, index) => {
+    const type = action.type === "ban" ? "ban" : "pick";
+    const team = action.team === "B" ? "B" : "A";
 
-        
-const player = action.player || "J1";
-const teamName = team === "A" ? state.teamA : state.teamB;
+    // Détermine le joueur même pour les anciennes actions
+    // qui n'enregistrent pas encore la propriété "player".
+    const teamPicksBefore = actions
+        .slice(0, index)
+        .filter(previous =>
+            previous.type === "pick" &&
+            previous.team === team
+        ).length;
 
-const isChroma = (teamName || "")
-    .toLowerCase()
-    .includes("chroma");
+    const player = action.player || `J${teamPicksBefore + 1}`;
 
-const playerName = isChroma
-    ? (state[`chroma${player}`]?.trim() || player)
-    : player;
+    const teamName = team === "A" ? state.teamA : state.teamB;
+    const isChroma = (teamName || "")
+        .toLowerCase()
+        .includes("chroma");
 
-const owner = type === "pick"
-    ? `${team}-${playerName}`
-    : `Équipe ${team}`;
+    const playerName = isChroma
+        ? (state[`chroma${player}`]?.trim() || player)
+        : player;
 
+    const owner = type === "pick"
+        ? `${team}-${playerName}`
+        : `Équipe ${team}`;
 
-        const actionLabel = type === "ban" ? "BAN" : "PICK";
+    const actionLabel = type === "ban" ? "BAN" : "PICK";
 
-        return `
-            <div class="timeline-item team-${team.toLowerCase()} ${type}">
-                <div class="timeline-info">
-                    <small>
-                        ${index + 1}.
-                        <span class="action-type ${type}">${actionLabel}</span>
-                        · ${owner}
-                    </small>
-                    <span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
-                </div>
+    return `
+        <div class="timeline-item team-${team.toLowerCase()} ${type}">
+            <div class="timeline-info">
+                <small>
+                    ${index + 1}. ${type.toUpperCase()} · ${escapeHTML(owner)}
+                </small>
+                <span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
             </div>
-        `;
-    }).join("");
+        </div>
+    `;
+}).join("");
 
-    timeline.scrollLeft = timeline.scrollWidth;
+timeline.scrollLeft = timeline.scrollWidth;
+
 }
 
 
