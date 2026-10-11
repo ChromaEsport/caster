@@ -163,6 +163,19 @@ function renderPlayer(state, team, player) {
         ? characterImage(pick.character)
         : "";
 
+    
+    const teamName = team === "A" ? state.teamA : state.teamB;
+
+    const isChroma = (teamName || "")
+        .toLowerCase()
+        .includes("chroma");
+
+    const playerName = isChroma
+        ? (state[`chroma${player}`]?.trim() || player)
+        : player;
+
+
+    
     const pickMarkup = pick
         ? `
             ${pickImage
@@ -181,8 +194,9 @@ function renderPlayer(state, team, player) {
 
     return `
         <article class="player-card">
-            <div class="player-label">${player}</div>
-            <div class="pick-card">${pickMarkup}</div>
+            
+             <div class="player-label">${escapeHTML(playerName)}</div>
+             <div class="pick-card">${pickMarkup}</div>
         </article>
     `;
 }
