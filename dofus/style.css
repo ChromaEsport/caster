@@ -479,3 +479,80 @@ filter:
 #mapImage[hidden] {
     display: none;
 }
+
+
+
+/* =========================================
+   CARTES JOUEURS AVEC PORTRAITS DOFUS
+   ========================================= */
+
+.chroma-player {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 205px;
+    min-width: 0;
+    height: 145px;
+    padding: 12px 8px;
+
+    color: white;
+    background-color: #010c2c;
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(1, 12, 44, 0.98) 0%,
+            rgba(1, 12, 44, 0.65) 45%,
+            rgba(1, 12, 44, 0.12) 100%
+        ),
+        var(--class-image, none);
+
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+
+    border-radius: 5px;
+    font-family: "Barlow Condensed", sans-serif;
+    text-align: center;
+}
+
+/* Bordure turquoise pour l'équipe A */
+#playersA .chroma-player {
+    border-bottom: 3px solid #3c9195;
+}
+
+/* Bordure rouge pour l'équipe B */
+#playersB .chroma-player {
+    border-bottom: 3px solid #ef515c;
+}
+
+/* Pseudo du joueur */
+.chroma-player .player-name {
+    position: relative;
+    z-index: 1;
+
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    text-shadow: 0 2px 5px #010c2c;
+}
+
+/* Classe jouée */
+.chroma-player .player-class {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 3px;
+    color: #8fecc9;
+    font-size: 15px;
+    font-weight: 800;
+
+    text-shadow: 0 2px 5px #010c2c;
+}
