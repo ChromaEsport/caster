@@ -121,11 +121,15 @@ border-bottom-left-radius: 5px;
 
 }
 
-#teamA{
-width: 555px;
-text-align: center;
+#teamA {
+font: 800 30px 'Barlow Condensed', sans-serif;
+    letter-spacing: 1.5px;
 }
 
+#teamB {
+font: 800 30px 'Barlow Condensed', sans-serif;
+    letter-spacing: 1.5px;
+}
 .team-blockB {
 
 
@@ -246,6 +250,21 @@ text-shadow:
     margin-left: 5px;
     position: absolute;
     left: 5px;
+}
+
+.team-letterB {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    background: rgba(239, 81, 92, .50);
+    border: 1px solid #ef515c;
+    color: #ffffff;
+    font: 900 22px 'Barlow Condensed', sans-serif;
+    margin-left: 5px;
+    position: absolute;
+    left: 635px;
 }
 /* ---------------------------------------------------------
 BLOCS SCORE
