@@ -687,6 +687,10 @@ color: var(--mint);
 
 .classes-title-content {
     min-width: 0;
+    display: grid;
+    justify-content: stretch;
+    justify-items: center;
+    width: 225px;
 }
 
 .classes-title h2 {
