@@ -378,7 +378,9 @@ timeline.innerHTML = actions.map((action, index) => {
         <div class="timeline-item team-${team.toLowerCase()} ${type}">
             <div class="timeline-info">
                 <small>
-                    ${index + 1}. ${type.toUpperCase()} · ${escapeHTML(owner)}
+                    
+    ${index + 1}. <span class="action-type ${type}">${actionLabel}</span> · ${escapeHTML(owner)}
+
                 </small>
                 <span>${escapeHTML(action.className || action.character || "Classe inconnue")}</span>
             </div>
