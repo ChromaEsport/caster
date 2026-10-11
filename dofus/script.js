@@ -207,9 +207,9 @@ AFFICHAGE DE LA MAP
 
 function renderMap() {
     const mapName = getElement("mapName");
-    const mapImage = getElement("mapImage");
+    /*const mapImage = getElement("mapImage");*/
 
-    if (!mapName || !mapImage) {
+    if (!mapName /*|| !mapImage*/) {
         return;
     }
 
@@ -217,14 +217,14 @@ function renderMap() {
 
     if (!map) {
         mapName.textContent = "MAP EN ATTENTE";
-        mapImage.removeAttribute("src");
-        mapImage.hidden = true;
+        /*mapImage.removeAttribute("src");
+        mapImage.hidden = true;*/
         return;
     }
 
     mapName.textContent = map.name || "MAP DOFUS";
 
-    if (map.image) {
+    /*if (map.image) {
         mapImage.onerror = () => {
             console.error(
                 "Impossible de charger l'image de la map :",
@@ -243,7 +243,7 @@ function renderMap() {
     } else {
         mapImage.removeAttribute("src");
         mapImage.hidden = true;
-    }
+    }*/
 }
 
 /*
