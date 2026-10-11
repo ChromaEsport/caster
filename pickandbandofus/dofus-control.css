@@ -201,6 +201,14 @@ select {
     outline: none;
 }
 
+input {
+text-transform: uppercase;
+}
+
+select {
+    font-size:14px;
+}
+
 input:focus,
 select:focus {
     border-color: var(--mint);
@@ -208,7 +216,8 @@ select:focus {
 }
 
 input::placeholder {
-    color: #627794;
+    color: #627794;*
+    text-transform: uppercase;
 }
 
 .full-width {
@@ -528,3 +537,15 @@ input::placeholder {
     margin-top: 16px;
 }
 
+.chroma-players h3 {
+    margin: 0px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.chroma-players p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
