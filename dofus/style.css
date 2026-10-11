@@ -348,7 +348,7 @@ filter:
     align-items: flex-start;
     justify-content: center;
 
-    gap: 18px;
+    gap: 5px;
 
     width: 640px;
 }
@@ -356,17 +356,17 @@ filter:
 /* Équipe A : sous son bloc */
 .players-a {
     left: 0;
-    top: 0;
+    top: -60px;
 }
 
 /* Équipe B : sous son bloc */
 .players-b {
     right: 0;
-    top: 0;
+    top: -60px;
 }
 
 /* Chaque joueur est présenté côte à côte */
-.chroma-player {
+ .chroma-player .player-b{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -376,21 +376,41 @@ filter:
     padding: 8px 12px;
 
     color: white;
-    background: rgba(1, 12, 44, 0.92);
+    background: rgba(1, 12, 44);
+
+    border-bottom: 3px solid #ef515c;
+    border-radius: 0 0 5px 5px;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+ .chroma-player .player-a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+    padding: 8px 12px;
+
+    color: white;
+    background: rgba(1, 12, 44);
 
     border-bottom: 3px solid #3c9195;
     border-radius: 0 0 5px 5px;
 
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 700;
     text-align: center;
 }
-
 /* Pseudo */
 .chroma-player .player-name {
     color: #ffffff;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -398,9 +418,8 @@ filter:
 /* Personnage */
 .chroma-player .player-class {
     margin-top: 3px;
-
-    color: #8fecc9;
-    font-size: 17px;
+    color: #d0d4d9;
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -426,10 +445,10 @@ filter:
     color: white;
     background: rgba(1, 12, 44, 0.92);
 
-    border-left: 3px solid #b0d250;
-    border-right: 3px solid #b0d250;
-    border-bottom: 3px solid #b0d250;
-    border-radius: 0 0 6px 6px;
+    border-left: 4px solid #b0d250;
+    border-right: 4px solid #b0d250;
+    border-bottom: 4px solid #b0d250;
+    border-radius: 0 0 6px 5px;
 }
 
 .details-label {
@@ -440,7 +459,7 @@ filter:
 }
 
 #mapName {
-    color: #8fecc9;
+    color: #ffffff;
     font-size: 22px;
     font-weight: 900;
     text-align: center;
