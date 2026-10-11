@@ -347,9 +347,22 @@ function renderTimeline(state) {
         const type = action.type === "ban" ? "ban" : "pick";
         const team = action.team === "B" ? "B" : "A";
 
-        const owner = type === "pick"
-            ? `${team}-${action.player || "J1"}`
-            : `Équipe ${team}`;
+        
+const player = action.player || "J1";
+const teamName = team === "A" ? state.teamA : state.teamB;
+
+const isChroma = (teamName || "")
+    .toLowerCase()
+    .includes("chroma");
+
+const playerName = isChroma
+    ? (state[`chroma${player}`]?.trim() || player)
+    : player;
+
+const owner = type === "pick"
+    ? `${team}-${playerName}`
+    : `Équipe ${team}`;
+
 
         const actionLabel = type === "ban" ? "BAN" : "PICK";
 
