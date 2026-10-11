@@ -319,12 +319,23 @@ async function submitAction(team, type) {
     }
 
     // Ajoute une nouvelle action sans limiter le nombre de picks ou de bans
+    
+    // Pour un pick, attribue le prochain joueur disponible de cette équipe.
+    const player = type === "pick"
+        ? `J${draftState.actions.filter(action =>
+            action.type === "pick" &&
+            action.team === team
+        ).length + 1}`
+        : null;
+
     draftState.actions.push({
         team,
         type,
         className,
+        player,
         timestamp: new Date().toISOString()
     });
+
 
     renderHistory();
     refreshClassOptions();
