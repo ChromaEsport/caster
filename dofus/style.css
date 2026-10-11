@@ -340,7 +340,7 @@ filter:
    JOUEURS SOUS LE BLOC DE L'ÉQUIPE CHROMA
    --------------------------------------------------------- */
 
-.chroma-players {
+/*.chroma-players {
     position: absolute;
 
     display: flex;
@@ -351,7 +351,7 @@ filter:
     gap: 5px;
 
     width: 640px;
-}
+}*/
 
 /* Équipe A : sous son bloc */
 .players-a {
@@ -408,20 +408,20 @@ filter:
     text-align: center;
 }
 /* Pseudo */
-.chroma-player .player-name {
+/*.chroma-player .player-name {
     color: #ffffff;
     font-size: 14px;
     font-weight: 800;
     text-transform: uppercase;
-}
+}*/
 
 /* Personnage */
-.chroma-player .player-class {
+/*.chroma-player .player-class {
     margin-top: 3px;
     color: #d0d4d9;
     font-size: 12px;
     font-weight: 700;
-}
+}*/
 
 /* ---------------------------------------------------------
    MAP SOUS LE LOGO DOFUS
