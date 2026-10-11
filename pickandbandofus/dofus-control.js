@@ -177,6 +177,10 @@ function updateMatchUI() {
     $("eventName").value = matchState.eventName || "";
     $("teamA").value = matchState.teamA || "";
     $("teamB").value = matchState.teamB || "";
+    
+    $("chromaJ1").value = matchState.chromaJ1 || "";
+    $("chromaJ2").value = matchState.chromaJ2 || "";
+    $("chromaJ3").value = matchState.chromaJ3 || "";
 
     $("scoreA").textContent = Number(matchState.scoreA || 0);
     $("scoreB").textContent = Number(matchState.scoreB || 0);
@@ -234,7 +238,12 @@ async function saveMatch() {
         caster2: $("caster2").value.trim(),
         eventName: $("eventName").value.trim(),
         teamA: $("teamA").value.trim(),
-        teamB: $("teamB").value.trim()
+        teamB: $("teamB").value.trim(),
+        
+        chromaJ1: $("chromaJ1").value.trim(),
+        chromaJ2: $("chromaJ2").value.trim(),
+        chromaJ3: $("chromaJ3").value.trim()
+
     };
 
     try {
