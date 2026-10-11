@@ -90,7 +90,7 @@ filter:
 BLOCS ÉQUIPES
 --------------------------------------------------------- */
 
-.team-block {
+.team-blockA {
 
 
 width: 640px;
@@ -121,7 +121,7 @@ border-bottom-left-radius: 5px;
 
 }
 
-.team-block .team-right {
+.team-blockB {
 
 
 width: 640px;
@@ -211,12 +211,53 @@ text-shadow:
 
 
 }
-
+.team-letterA {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    background: rgba(60, 145, 149, .18);
+    border: 1px solid var(--turquoise);
+    color: var(--mint);
+    font: 900 22px 'Barlow Condensed', sans-serif;
+}
 /* ---------------------------------------------------------
 BLOCS SCORE
 --------------------------------------------------------- */
 
-.score-block {
+.score-blockA {
+
+
+width: 120px;
+height: 90px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+position: relative;
+
+background:
+    linear-gradient(
+        180deg,
+        rgba(20, 31, 62, 0.99),
+        rgba(1, 12, 44, 0.98)
+    );
+
+border-left: 1px solid rgba(200, 156, 77, 0.65);
+border-right: 1px solid rgba(200, 156, 77, 0.65);
+
+border-bottom: 4px solid var(--chroma-gold);
+
+overflow: hidden;
+
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+.score-blockB {
 
 
 width: 120px;
