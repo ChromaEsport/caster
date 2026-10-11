@@ -118,7 +118,7 @@ border-bottom: 4px solid var(--chroma-blue);
 overflow: hidden;
 border-bottom-right-radius: 3px;
 border-bottom-left-radius: 5px;
-
+text-transform: uppercase;
 }
 
 #teamA {
@@ -158,7 +158,7 @@ border-bottom: 4px solid #ef515c;
 overflow: hidden;
 border-bottom-right-radius: 3px;
 border-bottom-left-radius: 5px;
-
+text-transform: uppercase;
 }
 
 
@@ -212,31 +212,8 @@ right: 0;
 background:#ef515c;
 }
 
-/* Texte équipe */
-
-.team-block span {
 
 
-position: relative;
-
-z-index: 2;
-
-padding: 0 20px;
-
-font-size: 22px;
-font-weight: 800;
-
-letter-spacing: 1.2px;
-
-text-transform: uppercase;
-
-white-space: nowrap;
-
-text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.8);
-
-
-}
 .team-letterA {
     display: grid;
     place-items: center;
@@ -271,65 +248,38 @@ BLOCS SCORE
 --------------------------------------------------------- */
 
 .score-blockA {
+    width: 120px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-right: 4px solid var(--chroma-blue);
+    border-bottom: 4px solid var(--chroma-blue);
+    overflow: hidden;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    background: linear-gradient(180deg, rgba(1, 12, 44, 0.98), rgba(1, 12, 44, 0.92));
+    font: 800 40px 'Barlow Condensed', sans-serif;
 
-
-width: 120px;
-height: 90px;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-position: relative;
-
-background:
-    linear-gradient(
-        180deg,
-        rgba(20, 31, 62, 0.99),
-        rgba(1, 12, 44, 0.98)
-    );
-
-border-left: 1px solid rgba(200, 156, 77, 0.65);
-border-right: 1px solid rgba(200, 156, 77, 0.65);
-
-border-bottom: 4px solid var(--chroma-gold);
-
-overflow: hidden;
-
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
 }
 
 .score-blockB {
 
 
-width: 120px;
-height: 90px;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-position: relative;
-
-background:
-    linear-gradient(
-        180deg,
-        rgba(20, 31, 62, 0.99),
-        rgba(1, 12, 44, 0.98)
-    );
-
-border-left: 1px solid rgba(200, 156, 77, 0.65);
-border-right: 1px solid rgba(200, 156, 77, 0.65);
-
-border-bottom: 4px solid var(--chroma-gold);
-
-overflow: hidden;
-
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
+    width: 120px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-left: 4px solid #ef515c;
+    border-bottom: 4px solid #ef515c;
+    overflow: hidden;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 5px;
+    background: linear-gradient(180deg, rgba(1, 12, 44, 0.98), rgba(1, 12, 44, 0.92));
+    font: 800 40px 'Barlow Condensed', sans-serif;
 }
 
 /* Petite lumière verticale */
