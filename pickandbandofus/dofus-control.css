@@ -201,10 +201,6 @@ select {
     outline: none;
 }
 
-input {
-text-transform: uppercase;
-}
-
 select {
     font-size:14px;
 }
