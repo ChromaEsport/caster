@@ -319,21 +319,117 @@ filter:
 
 }
 
-/* Joueur & Map */
+
+/* =========================================================
+   JOUEURS CHROMA ET MAP
+   ========================================================= */
+
 .match-details {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 1723px;
+    height: 300px;
+
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   JOUEURS SOUS LE BLOC DE L'ÉQUIPE CHROMA
+   --------------------------------------------------------- */
+
+.chroma-players {
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 18px;
+
+    width: 640px;
+}
+
+/* Équipe A : sous son bloc */
+.players-a {
+    left: 0;
+    top: 0;
+}
+
+/* Équipe B : sous son bloc */
+.players-b {
+    right: 0;
+    top: 0;
+}
+
+/* Chaque joueur est présenté côte à côte */
+.chroma-player {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    width: 100%;
-    margin-top: 20px;
+    justify-content: center;
+
+    min-width: 150px;
+    padding: 8px 12px;
+
+    color: white;
+    background: rgba(1, 12, 44, 0.92);
+
+    border-bottom: 3px solid #3c9195;
+    border-radius: 0 0 5px 5px;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
 }
 
+/* Pseudo */
+.chroma-player .player-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Personnage */
+.chroma-player .player-class {
+    margin-top: 3px;
+
+    color: #8fecc9;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   MAP SOUS LE LOGO DOFUS
+   --------------------------------------------------------- */
+
 .match-map {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+
+    width: 300px;
+    padding: 12px;
+
+    color: white;
+    background: rgba(1, 12, 44, 0.92);
+
+    border-left: 3px solid #b0d250;
+    border-right: 3px solid #b0d250;
+    border-bottom: 3px solid #b0d250;
+    border-radius: 0 0 6px 6px;
 }
 
 .details-label {
@@ -347,42 +443,20 @@ filter:
     color: #8fecc9;
     font-size: 22px;
     font-weight: 900;
+    text-align: center;
 }
 
 #mapImage {
-    width: 220px;
+    display: block;
+
+    width: 260px;
     max-width: 100%;
     height: auto;
+
     border: 2px solid #c89c4d;
     border-radius: 6px;
 }
 
 #mapImage[hidden] {
     display: none;
-}
-
-.match-players {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    width: 100%;
-}
-
-.chroma-players {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
-.chroma-player {
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.chroma-player .player-class {
-    color: #8fecc9;
-    margin-left: 8px;
 }
