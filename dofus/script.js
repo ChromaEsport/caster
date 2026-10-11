@@ -11,7 +11,7 @@ console.log("=================================");
 
 const matchRef = doc(
 db,
-"matches",
+"dofusMatches",
 "current"
 );
 
@@ -48,23 +48,23 @@ matchRef,
 
 
     console.log(
-        "Équipe 1 :",
-        data.team1
+        "Équipe A :",
+        data.teamA
     );
 
     console.log(
-        "Score 1 :",
-        data.score1
+        "Score A :",
+        data.scoreA
     );
 
     console.log(
-        "Équipe 2 :",
-        data.team2
+        "Équipe B :",
+        data.teamB
     );
 
     console.log(
-        "Score 2 :",
-        data.score2
+        "Score B :",
+        data.scoreB
     );
 
 
@@ -74,20 +74,20 @@ matchRef,
     ============================================
     */
 
-    document.getElementById("team1").textContent =
-        data.team1 || "ÉQUIPE 1";
+    document.getElementById("teamA").textContent =
+        data.teamA || "ÉQUIPE A";
 
 
-    document.getElementById("score1").textContent =
-        data.score1 ?? 0;
+    document.getElementById("scoreA").textContent =
+        data.scoreA ?? 0;
 
 
-    document.getElementById("team2").textContent =
-        data.team2 || "ÉQUIPE 2";
+    document.getElementById("teamB").textContent =
+        data.teamB || "ÉQUIPE B";
 
 
-    document.getElementById("score2").textContent =
-        data.score2 ?? 0;
+    document.getElementById("scoreB").textContent =
+        data.scoreB ?? 0;
 
 
     console.log(
