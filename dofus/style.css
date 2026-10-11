@@ -155,7 +155,7 @@ border-bottom-left-radius: 5px;
 
 /* Accent lumineux intérieur */
 
-.team-block::before {
+.team-blockA::before {
 
 
 content: "";
@@ -173,6 +173,23 @@ background: var(--chroma-blue);
 
 }
 
+.team-blockB::before {
+
+
+content: "";
+
+position: absolute;
+
+top: 0;
+bottom: 0;
+
+width: 5px;
+
+background: #ef515c;
+    );
+
+
+}
 /* Équipe gauche */
 
 .team-left::before {
@@ -325,7 +342,7 @@ right: 0;
 
 .score-block span {
 
-```
+
 position: relative;
 
 z-index: 2;
