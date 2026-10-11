@@ -113,7 +113,7 @@ background:
     );
 
 border-top: 2px solid var(--chroma-blue);
-border-bottom: 4px solid var(--chroma-gold);
+border-bottom: 4px solid var(--chroma-blue);
 
 overflow: hidden;
 border-bottom-right-radius: 10px;
@@ -135,11 +135,7 @@ bottom: 0;
 
 width: 5px;
 
-background:
-    linear-gradient(
-        180deg,
-        var(--chroma-dragon),
-        var(--chroma-blue)
+background: var(--chroma-blue);
     );
 
 
