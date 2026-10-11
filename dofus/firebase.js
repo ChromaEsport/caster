@@ -8,12 +8,12 @@ import {
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBHMDcbowJ2XfD6_RbmMiPj8epjfoXMA1M",
-    authDomain: "chroma-caster.firebaseapp.com",
-    projectId: "chroma-caster",
-    storageBucket: "chroma-caster.firebasestorage.app",
-    messagingSenderId: "657595541032",
-    appId: "1:657595541032:web:270a4394e10a8d2b1df71d6"
+    apiKey: "AIzaSyBjAXL0MmZwbmOhEMNiBydxw5g03gh67tk",
+  authDomain: "chroma-dofus-caster.firebaseapp.com",
+  projectId: "chroma-dofus-caster",
+  storageBucket: "chroma-dofus-caster.firebasestorage.app",
+  messagingSenderId: "682274634660",
+  appId: "1:682274634660:web:8b17175ad7317783631f31"
 };
 
 
