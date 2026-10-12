@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Chroma Esport - Casters & Événement</title>
 
 <style>
@@ -26,20 +25,23 @@ html, body {
     padding: 0;
     overflow: hidden;
     background: transparent;
-    font-family: Arial, sans-serif;
+    font-family: "Barlow Condensed", Arial, sans-serif;
 }
 
 #eventBanner {
     position: absolute;
     top: 90px;
     left: 50%;
+    z-index: 100;
+
     width: 780px;
+    padding: 3px;
+
     transform: translate(-50%, -220px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    padding: 3px;
     border-radius: 7px;
 
     background: linear-gradient(
@@ -95,15 +97,17 @@ html, body {
     font-size: 32px;
     font-weight: 900;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 .casters-row {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
-    margin-top: 9px;
 
+    margin-top: 9px;
     color: white;
     font-size: 18px;
     font-weight: 700;
@@ -120,6 +124,14 @@ html, body {
     color: white;
     text-transform: uppercase;
 }
+
+#connectionStatus {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: transparent;
+    font-size: 1px;
+}
 </style>
 </head>
 
@@ -128,41 +140,100 @@ html, body {
 <div id="eventBanner">
     <div class="banner-content">
         <div class="brand">CHROMA ESPORT</div>
-
-        <div id="eventName">ÉVÉNEMENT</div>
+        <div id="eventName">Chargement de l'événement…</div>
 
         <div class="casters-row">
             <span class="casters-label">CASTERS</span>
-            <span id="casterNames">À VENIR</span>
+            <span id="casterNames">Chargement…</span>
         </div>
     </div>
 </div>
 
+<div id="connectionStatus">Connexion Firebase…</div>
+
 <script type="module">
+import {
+    db,
+    doc,
+    onSnapshot
+} from "./dofus-firebase.js";
+
 /*
- * BANDEAU CASTERS & ÉVÉNEMENT
- * Cycle : visible 8 secondes, toutes les 30 secondes.
- *
- * La connexion Firebase sera reliée aux champs exacts
- * du control panel dans l'étape suivante.
+ * Fichier indépendant de l'overlay principal.
+ * Lecture en temps réel de dofusMatches/current.
  */
 
+const matchRef = doc(db, "dofusMatches", "current");
+
+const eventNameElement = document.getElementById("eventName");
+const casterNamesElement = document.getElementById("casterNames");
 const banner = document.getElementById("eventBanner");
+const statusElement = document.getElementById("connectionStatus");
 
 const VISIBLE_DURATION = 8000;
 const CYCLE_DURATION = 30000;
 
+let bannerTimer = null;
+let cycleTimer = null;
+let firstSnapshotReceived = false;
+
+function updateBanner(data) {
+    const eventName = String(data.eventName || "").trim();
+    const caster1 = String(data.caster1 || "").trim();
+    const caster2 = String(data.caster2 || "").trim();
+
+    eventNameElement.textContent = eventName || "ÉVÉNEMENT À VENIR";
+
+    const casters = [caster1, caster2].filter(Boolean);
+
+    casterNamesElement.textContent = casters.length
+        ? casters.join("  •  ")
+        : "CASTERS À VENIR";
+}
+
 function showBanner() {
     banner.classList.add("visible");
 
-    setTimeout(() => {
+    clearTimeout(bannerTimer);
+
+    bannerTimer = setTimeout(() => {
         banner.classList.remove("visible");
     }, VISIBLE_DURATION);
 }
 
-showBanner();
+function startLoop() {
+    if (cycleTimer !== null) return;
 
-setInterval(showBanner, CYCLE_DURATION);
+    showBanner();
+
+    cycleTimer = setInterval(() => {
+        showBanner();
+    }, CYCLE_DURATION);
+}
+
+onSnapshot(
+    matchRef,
+    snapshot => {
+        if (!snapshot.exists()) {
+            statusElement.textContent = "Document Firebase introuvable";
+            updateBanner({});
+            return;
+        }
+
+        updateBanner(snapshot.data());
+        statusElement.textContent = "Connecté à Firebase";
+
+        // Démarre l'animation à la première réception des données.
+        if (!firstSnapshotReceived) {
+            firstSnapshotReceived = true;
+            startLoop();
+        }
+    },
+    error => {
+        console.error("Erreur Firebase Casters & Événement :", error);
+        statusElement.textContent = "Erreur Firebase";
+    }
+);
 </script>
 
 </body>
