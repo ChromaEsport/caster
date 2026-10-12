@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chroma Esport - Casters & Événement</title>
+
+<style>
+:root {
+    --chroma-dark: #010c2c;
+    --chroma-blue: #3c9195;
+    --chroma-gold: #c89c4d;
+    --chroma-dragon: #8fecc9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    font-family: Arial, sans-serif;
+}
+
+#eventBanner {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 780px;
+    transform: translate(-50%, -220px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    padding: 3px;
+    border-radius: 7px;
+
+    background: linear-gradient(
+        110deg,
+        var(--chroma-blue),
+        var(--chroma-gold),
+        var(--chroma-dragon)
+    );
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease,
+        visibility 0s linear 0.8s;
+}
+
+#eventBanner.visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease,
+        visibility 0s;
+}
+
+.banner-content {
+    min-height: 125px;
+    padding: 16px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background: rgba(1, 12, 44, 0.97);
+    border-radius: 5px;
+}
+
+.brand {
+    color: var(--chroma-dragon);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+#eventName {
+    margin-top: 5px;
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.casters-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 9px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.casters-label {
+    color: var(--chroma-gold);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+#casterNames {
+    color: white;
+    text-transform: uppercase;
+}
+</style>
+</head>
+
+<body>
+
+<div id="eventBanner">
+    <div class="banner-content">
+        <div class="brand">CHROMA ESPORT</div>
+
+        <div id="eventName">ÉVÉNEMENT</div>
+
+        <div class="casters-row">
+            <span class="casters-label">CASTERS</span>
+            <span id="casterNames">À VENIR</span>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+/*
+ * BANDEAU CASTERS & ÉVÉNEMENT
+ * Cycle : visible 8 secondes, toutes les 30 secondes.
+ *
+ * La connexion Firebase sera reliée aux champs exacts
+ * du control panel dans l'étape suivante.
+ */
+
+const banner = document.getElementById("eventBanner");
+
+const VISIBLE_DURATION = 8000;
+const CYCLE_DURATION = 30000;
+
+function showBanner() {
+    banner.classList.add("visible");
+
+    setTimeout(() => {
+        banner.classList.remove("visible");
+    }, VISIBLE_DURATION);
+}
+
+showBanner();
+
+setInterval(showBanner, CYCLE_DURATION);
+</script>
+
+</body>
+</html>
