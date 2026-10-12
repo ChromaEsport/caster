@@ -2,42 +2,31 @@ import {
     db,
     doc,
     onSnapshot
-} from "../firebase.js";
+} from "../dofus-firebase.js";
 
 
 
 const matchRef = doc(
     db,
-    "matches",
+    "dofusMatches",
     "current"
 );
 
 
 
-onSnapshot(matchRef, (doc) => {
-
-
-    const data = doc.data();
-
+onSnapshot(matchRef, (snapshot) => {
+    const data = snapshot.data();
 
     if (!data) return;
 
-
-
     document.querySelector(".event").textContent =
-        data.event || "FACEIT MATCH";
-
-
+        data.eventName || "ÉVÉNEMENT DOFUS";
 
     document.querySelector(".team1").textContent =
-        data.team1 || "CHROMA";
-
-
+        data.teamA || "ÉQUIPE A";
 
     document.querySelector(".team2").textContent =
-        data.team2 || "ADVERSAIRE";
-
-
+        data.teamB || "ÉQUIPE B";
 });
 
 
