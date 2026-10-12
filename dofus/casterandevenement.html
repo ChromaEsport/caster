@@ -102,21 +102,20 @@ html, body {
 }
 
 .casters-row {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-
     margin-top: 9px;
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
 }
 
 .casters-label {
     color: var(--chroma-gold);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 900;
     letter-spacing: 2px;
 }
@@ -177,19 +176,25 @@ let bannerTimer = null;
 let cycleTimer = null;
 let firstSnapshotReceived = false;
 
+
 function updateBanner(data) {
     const eventName = String(data.eventName || "").trim();
     const caster1 = String(data.caster1 || "").trim();
     const caster2 = String(data.caster2 || "").trim();
 
-    eventNameElement.textContent = eventName || "ÉVÉNEMENT À VENIR";
+    // 🎮 Nom de l'événement
+    eventNameElement.textContent = eventName
+        ? "🏆 " + eventName
+        : "🏆 ÉVÉNEMENT À VENIR";
 
+    // 🎙️ Noms des casters
     const casters = [caster1, caster2].filter(Boolean);
 
     casterNamesElement.textContent = casters.length
-        ? casters.join("  &  ")
-        : "CASTERS À VENIR";
+        ? "🎙️ " + casters.join("  •  ")
+        : "🎙️ CASTERS À VENIR";
 }
+
 
 function showBanner() {
     banner.classList.add("visible");
