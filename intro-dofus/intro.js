@@ -2,7 +2,7 @@ import {
     db,
     doc,
     onSnapshot
-} from "../dofus-firebase.js";
+} from "../pickandbandofus/dofus-firebase.js";
 
 
 
