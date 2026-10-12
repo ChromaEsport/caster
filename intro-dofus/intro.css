@@ -89,7 +89,8 @@ body{
     font-weight:bold;
 
     letter-spacing:8px;
-
+    
+    text-transform: uppercase;
 }
 
 
@@ -104,14 +105,6 @@ body{
 
     width:100%;
 
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    gap:390px;
-flex-direction: row;
 }
 
 
@@ -132,14 +125,20 @@ flex-direction: row;
 
 .team1 {
 
-    text-align:right;
+    position: absolute;
+    left: 320px;
+    text-align: center;
+    width: 500px;
 
 }
 
 
 .team2 {
 
-    text-align:left;
+    position: absolute;
+    left: 1110px;
+    text-align: center;
+    width: 500px;
 
 }
 
