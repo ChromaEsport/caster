@@ -35,7 +35,7 @@ html, body {
     left: 50%;
     z-index: 100;
 
-    width: 780px;
+    width: 280px;
     padding: 3px;
 
     transform: translate(-50%, 220px);
@@ -95,7 +95,7 @@ html, body {
 #eventName {
     margin-top: 5px;
     color: white;
-    font-size: 32px;
+    font-size: 12px;
     font-weight: 900;
     text-transform: uppercase;
     overflow-wrap: anywhere;
@@ -191,7 +191,7 @@ function updateBanner(data) {
     const casters = [caster1, caster2].filter(Boolean);
 
     casterNamesElement.textContent = casters.length
-        ? "🎙️ " + casters.join("  •  ")
+        ? "🎙️ " + casters.join("  &  ")
         : "🎙️ CASTERS À VENIR";
 }
 
