@@ -93,7 +93,7 @@ body {
 
    position:absolute;
 
-    top:400px;
+    top:365px;
 
     width:100%;
 
@@ -118,9 +118,9 @@ body {
 .team1 {
 
     position: absolute;
-    left: 320px;
+    left: 110px;
     text-align: center;
-    width: 500px;
+    width: 650px;
 
 }
 
@@ -128,9 +128,9 @@ body {
 .team2 {
 
   position: absolute;
-    left: 1110px;
+    left: 1170px;
     text-align: center;
-    width: 500px;
+    width: 650px;
 
 }
 
