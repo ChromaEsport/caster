@@ -91,19 +91,11 @@ body {
 
 .teams{
 
-    position:absolute;
+   position:absolute;
 
-    top:420px;
+    top:400px;
 
     width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:100px;
 
 }
 
@@ -113,7 +105,7 @@ body {
 
     color:white;
 
-    font-size:72px;
+    font-size:50px;
 
     font-weight:bold;
 
@@ -125,14 +117,20 @@ body {
 
 .team1 {
 
-    text-align:right;
+    position: absolute;
+    left: 320px;
+    text-align: center;
+    width: 500px;
 
 }
 
 
 .team2 {
 
-    text-align:left;
+  position: absolute;
+    left: 1110px;
+    text-align: center;
+    width: 500px;
 
 }
 
