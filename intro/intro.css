@@ -11,7 +11,11 @@ body {
             rgba(1, 12, 44, 0.35)
         ),
         url('./fondowintro.png') center center / cover no-repeat;
-
+    
+        background-size: 1920px 1080px;
+        background-position: top left;
+        background-repeat: no-repeat;
+    
     font-family: Arial, sans-serif;
 }
 
