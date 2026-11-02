@@ -184,6 +184,16 @@ data.event || "";
 
 });
 
+onSnapshot(draftRef, (docSnap) => {
+
+    const data = docSnap.data() || {};
+
+    const result = data[`result${currentMapNumber}`] || "";
+
+    updateResultButtons(result);
+
+});
+
 function addScore1(){
 
 score1++;
