@@ -385,6 +385,39 @@ async function sendBan2(){
 
 }
 
+async function setRoundResult(result){
+
+    const data = {};
+
+    data[`result${currentMapNumber}`] = result;
+
+    await setDoc(
+        draftRef,
+        data,
+        { merge:true }
+    );
+
+    updateResultButtons(result);
+
+    console.log(
+        `Résultat manche ${currentMapNumber} : ${result}`
+    );
+
+}
+
+
+function updateResultButtons(result){
+
+    document
+        .getElementById("winBtn")
+        .classList.toggle("active", result === "GAGNÉ");
+
+    document
+        .getElementById("loseBtn")
+        .classList.toggle("active", result === "PERDU");
+
+}
+
 async function resetDraft(){
 
     await setDoc(draftRef,{
@@ -408,6 +441,12 @@ async function resetDraft(){
         ban4_2:"",
         ban5_1:"",
         ban5_2:""
+
+        result1:"",
+        result2:"",
+        result3:"",
+        result4:"",
+        result5:""
 
     });
 
@@ -435,5 +474,7 @@ window.sendMap = sendMap;
 
 window.sendBan1 = sendBan1;
 window.sendBan2 = sendBan2;
+
+window.setRoundResult = setRoundResult;
 
 window.resetDraft = resetDraft;
