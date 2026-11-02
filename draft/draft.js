@@ -373,7 +373,38 @@ img.style.display = "none";
     }
 
 }
+// Affichage des résultats des manches
 
+for(let i = 1; i <= 5; i++){
+
+    const resultElement =
+        document.getElementById(`result${i}`);
+
+    const result =
+        data[`result${i}`] || "";
+
+    resultElement.textContent = result;
+
+    resultElement.classList.remove(
+        "win",
+        "lose"
+    );
+
+    if(result === "GAGNÉ"){
+
+        resultElement.classList.add("win");
+
+    }
+
+    if(result === "PERDU"){
+
+        resultElement.classList.add("lose");
+
+    }
+
+}
+
+    // Affichage de la manche actuelle
     const currentRound = data.currentMap;
 
 document
