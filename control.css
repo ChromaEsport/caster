@@ -386,3 +386,51 @@ box-shadow:
 margin-bottom: 10px;
 
 }
+.round-result {
+
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align:center;
+
+}
+
+.result-buttons {
+
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:10px;
+
+}
+
+.result-btn {
+
+    width:95px;
+    height:42px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:bold;
+    border:2px solid white;
+    opacity:0.6;
+
+}
+
+.result-btn.win {
+
+    background:#168b48;
+
+}
+
+.result-btn.lose {
+
+    background:#b52332;
+
+}
+
+.result-btn.active {
+
+    opacity:1;
+    transform:scale(1.05);
+    box-shadow:0 0 12px rgba(255,255,255,0.5);
+
+}
