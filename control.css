@@ -215,7 +215,6 @@ hr {
     border: 2px solid #00d3dd;
     border-radius: 15px;
     padding: 14px;
-    height: 700px;
     margin-bottom: 12px;
     text-align: center;
     overflow: hidden;
@@ -338,7 +337,7 @@ select {
 
     width:200px;
 
-    margin: 5px;
+    margin: 2px;
 
 }
 
@@ -388,18 +387,14 @@ margin-bottom: 10px;
 }
 .round-result {
 
-    margin-top:15px;
-    margin-bottom:15px;
     text-align:center;
 
 }
 
 .result-buttons {
 
-    display:flex;
+    display:grid;
     justify-content:center;
-    gap:10px;
-    margin-top:10px;
 
 }
 
