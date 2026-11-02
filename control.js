@@ -450,13 +450,13 @@ async function resetDraft(){
         ban4_1:"",
         ban4_2:"",
         ban5_1:"",
-        ban5_2:""
+        ban5_2:"",
 
         result1:"",
         result2:"",
         result3:"",
         result4:"",
-        result5:""
+        result5:"",
 
     });
 
