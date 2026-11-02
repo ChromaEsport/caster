@@ -304,6 +304,8 @@ document
 .getElementById(`round${mapNumber}`)
 .classList.add("active");
 
+// Réinitialise l'affichage des boutons GAGNÉ / PERDU
+    updateResultButtons("");
 
 
 //document.getElementById("selectedRound").innerHTML =
