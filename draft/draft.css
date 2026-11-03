@@ -912,7 +912,7 @@ body .draft-container::before{
 
     object-fit:contain;
 
-    display:block;
+    display:block !important;
 
     transform:none;
 
@@ -921,6 +921,6 @@ body .draft-container::before{
 .map-result.win,
 .map-result.lose {
 
-    display:block;
+    display:block !important;
 
 }
