@@ -383,7 +383,8 @@ for(let i = 1; i <= 5; i++){
     const result =
         data[`result${i}`] || "";
 
-    resultElement.textContent = result;
+    const resultImg =
+        resultElement.querySelector("img");
 
     resultElement.classList.remove(
         "win",
@@ -392,13 +393,23 @@ for(let i = 1; i <= 5; i++){
 
     if(result === "GAGNÉ"){
 
+        resultImg.src = "./WIN.png";
+
         resultElement.classList.add("win");
 
     }
 
-    if(result === "PERDU"){
+    else if(result === "PERDU"){
+
+        resultImg.src = "./LOSE.png";
 
         resultElement.classList.add("lose");
+
+    }
+
+    else {
+
+        resultImg.removeAttribute("src");
 
     }
 
