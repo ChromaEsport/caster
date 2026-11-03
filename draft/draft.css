@@ -897,7 +897,7 @@ body .draft-container::before{
 
     z-index:10;
 
-    display:none;
+    /*display:none;*/
 
     width:75%;
 
