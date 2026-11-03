@@ -237,7 +237,7 @@ if(heroData){
 onSnapshot(draftRef, (docSnap) => {
 
     const data = docSnap.data();
-
+console.log("MISE À JOUR FIRESTORE :", data);
     if (!data) return;
 
    if(data.selectedMap === 0){
