@@ -373,41 +373,37 @@ img.style.display = "none";
     }
 
 }
-// Affichage des résultats des manches
+// AFFICHAGE DES RÉSULTATS DES MANCHES
 
 for(let i = 1; i <= 5; i++){
 
-    const resultElement =
-        document.getElementById(`result${i}`);
+    const resultElement = document.getElementById(`result${i}`);
 
-    const result =
-        data[`result${i}`] || "";
+    if(!resultElement) continue;
 
-    const resultImg =
-        resultElement.querySelector("img");
+    const resultImg = resultElement.querySelector("img");
 
-    resultElement.classList.remove(
-        "win",
-        "lose"
-    );
+    if(!resultImg) continue;
+
+    const result = data[`result${i}`] || "";
+
+    resultElement.classList.remove("win", "lose");
 
     if(result === "GAGNÉ"){
 
         resultImg.src = "./WIN.png";
-
         resultElement.classList.add("win");
 
     }
 
     else if(result === "PERDU"){
 
-        resultImg.src = "./LOSE.png";
-
+        resultImg.src = ".LOSE.png";
         resultElement.classList.add("lose");
 
     }
 
-    else {
+    else{
 
         resultImg.removeAttribute("src");
 
