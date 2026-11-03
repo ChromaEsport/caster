@@ -398,7 +398,7 @@ for(let i = 1; i <= 5; i++){
 
     else if(result === "PERDU"){
 
-        resultImg.src = ".LOSE.png";
+        resultImg.src = "./LOSE.png";
         resultElement.classList.add("lose");
 
     }
