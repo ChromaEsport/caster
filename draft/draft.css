@@ -282,7 +282,7 @@ body .draft-container::before{
 
 }
 
-.map-image img{
+.map-image > img{
 
     width:100%;
     height:100%;
@@ -913,6 +913,8 @@ body .draft-container::before{
     object-fit:contain;
 
     display:block;
+
+    transform:none;
 
 }
 
