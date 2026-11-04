@@ -10,6 +10,7 @@ let currentMapNumber = 1;
 
 const maps = [
 "Antarctic Peninsula",
+"Aatlis",
 "Busan",
 "Ilios",
 "Lijiang Tower",
@@ -40,6 +41,7 @@ const maps = [
 "Hanaoka",
 "Throne of Anubis",
 "Neon Jonction",
+"Grimsvotn",
 ];
 
 const heroes = [
