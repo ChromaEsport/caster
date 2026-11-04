@@ -66,7 +66,8 @@ const heroRoles = {
 "Moira":{role:"SUPPORT",icon:"support.png"},
 "Wuyang":{role:"SUPPORT",icon:"support.png"},
 "Zenyatta":{role:"SUPPORT",icon:"support.png"},
-"Ange":{role:"SUPPORT",icon:"support.png"},  
+"Ange":{role:"SUPPORT",icon:"support.png"},
+"Doctrine":{role:"SUPPORT",icon:"support.png"},  
     
 };
 
