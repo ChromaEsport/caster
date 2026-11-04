@@ -96,6 +96,7 @@ const heroes = [
 "Zenyatta",
 "Ange",  
 "D.Mon",
+"Doctrine",
 ];
 
 heroes.sort((a, b) => a.localeCompare(b));
