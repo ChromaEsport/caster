@@ -25,7 +25,7 @@
       overflow: hidden;
       width: 1920px;
       height: 1080px;
-      
+      position: relative;
     }
 
     /* Bandeau plein écran de gauche à droite */
@@ -142,3 +142,68 @@
       height: 20px;
       fill: var(--white);
       display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .role-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hud-bar">
+    <div class="hud-line"></div>
+
+    <!-- GAUCHE : Pseudo du joueur -->
+    <div class="section-left">
+      <div class="player-name" id="playerName">PSEUDO</div>
+      <div class="slash-divider"></div>
+    </div>
+
+    <!-- CENTRE : Logo Chroma -->
+    <div class="section-center">
+      <div class="logo-container">
+        <img src="logo_chroma.png" alt="Chroma Esport">
+      </div>
+    </div>
+
+    <!-- DROITE : Icône & Rôle -->
+    <div class="section-right">
+      <div class="slash-divider"></div>
+      <div class="role-icon" id="roleIcon"></div>
+      <div class="role-name" id="roleName">DAMAGE</div>
+    </div>
+  </div>
+
+  <script>
+    // Dictionnaire des icônes de rôles officielles (en blanc)
+    const rolesSVG = {
+      tank: `<svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>`,
+      dps: `<svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8H7z"/></svg>`,
+      damage: `<svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8H7z"/></svg>`,
+      support: `<svg viewBox="0 0 24 24"><path d="M19 10.5h-5.5V5h-3v5.5H5v3h5.5V19h3v-5.5H19v-3z"/></svg>`
+    };
+
+    const roleLabels = {
+      tank: 'TANK',
+      dps: 'DAMAGE',
+      damage: 'DAMAGE',
+      support: 'SUPPORT'
+    };
+
+    // Lecture des paramètres de l'URL (?pseudo=...&role=...)
+    const params = new URLSearchParams(window.location.search);
+    const pseudo = params.get('pseudo') || 'PLAYER';
+    const roleKey = (params.get('role') || 'dps').toLowerCase();
+
+    // Injection dynamique
+    document.getElementById('playerName').textContent = pseudo;
+    document.getElementById('roleName').textContent = roleLabels[roleKey] || 'DAMAGE';
+    document.getElementById('roleIcon').innerHTML = rolesSVG[roleKey] || rolesSVG['dps'];
+  </script>
+</body>
+</html>
