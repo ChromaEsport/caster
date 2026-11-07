@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Chroma Esport - Overwatch Full Width HUD</title>
+  <title>Chroma Esport - Overlay Player HUD</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&family=Rajdhani:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Rajdhani:ital,wght@0,700;1,700&display=swap');
 
     :root {
       --chroma-dark: #010C2C;
       --chroma-primary: #3C9195;
-      --chroma-accent: #8FECC9;
+      --chroma-accent: #56D6DC;
       --white: #FFFFFF;
     }
 
@@ -25,53 +25,189 @@
       overflow: hidden;
       width: 1920px;
       height: 1080px;
-      position: relative;
+      
     }
 
-    /* Bandeau plein écran de gauche à droite */
-    .hud-bar {
+    /* Container global du bandeau */
+    .hud-container {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 1920px;
-      height: 44px;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1350px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 80px;
-      background: rgba(1, 12, 44, 0.88);
-      backdrop-filter: blur(5px);
-      /* Forme biseautée adaptée au format 1920px */
-      clip-path: polygon(
-        0 44px, 
-        20px 12px, 
-        150px 12px, 
-        180px 0, 
-        880px 0, 
-        910px 14px, 
-        1010px 14px, 
-        1040px 0, 
-        1740px 0, 
-        1770px 12px, 
-        1900px 12px, 
-        1920px 44px
-      );
-      border-top: 2px solid var(--chroma-accent);
-      box-shadow: 0 -4px 20px rgba(60, 145, 149, 0.35);
+      position: relative;
     }
 
-    /* Ligne néon lumineuse supérieure */
-    .hud-line {
+    /* Fond noir transparent avec découpes biseautées précises */
+    .hud-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 12, 44, 0.88);
+      backdrop-filter: blur(6px);
+      clip-path: polygon(
+        0 26px, 
+        24px 0, 
+        570px 0, 
+        600px 18px, 
+        750px 18px, 
+        780px 0, 
+        1326px 0, 
+        1350px 26px, 
+        1326px 52px, 
+        780px 52px, 
+        750px 34px, 
+        600px 34px, 
+        570px 52px, 
+        24px 52px
+      );
+      box-shadow: inset 0 0 15px rgba(86, 214, 220, 0.2);
+    }
+
+    /* Contour lumineux turquoise (Stroke Glow) */
+    .hud-border {
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(90deg, var(--chroma-accent), #8FECC9, var(--chroma-accent));
+      clip-path: polygon(
+        0 26px, 24px 0, 570px 0, 600px 18px, 750px 18px, 780px 0, 1326px 0, 1350px 26px, 1326px 52px, 780px 52px, 750px 34px, 600px 34px, 570px 52px, 24px 52px
+      );
+      z-index: 1;
+      filter: drop-shadow(0 0 6px rgba(86, 214, 220, 0.8));
+    }
+
+    .hud-border::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: rgba(1, 12, 44, 0.9);
+      clip-path: inherit;
+    }
+
+    /* --- CONTENU --- */
+    .hud-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 45px;
+    }
+
+    /* GAUCHE : Logo + Branding */
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--chroma-accent);
+      box-shadow: 0 0 10px var(--chroma-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #010C2C;
+    }
+
+    .logo-circle img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .brand-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--chroma-accent);
+      letter-spacing: 2px;
+    }
+
+    /* CENTRE : Dôme avec Rôle */
+    .role-dome {
+      position: absolute;
+      left: 50%;
+      top: -14px;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Arc lumineux au dessus du rôle */
+    .dome-arc {
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--chroma-accent), var(--chroma-primary), var(--chroma-accent));
+      width: 66px;
+      height: 33px;
+      border-top: 3px solid var(--chroma-accent);
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -4px 10px var(--chroma-accent);
     }
 
-    /* --- SECTION GAUCHE : PSEUDO --- */
-    .section-left {
+    .role-icon-box {
+      margin-top: 6px;
+      width: 24px;
+      height: 24px;
+      fill: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .role-icon-box svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--white);
+    }
+
+    .role-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--white);
+      letter-spacing: 1.5px;
+      margin-top: 1px;
+      z-index: 3;
+    }
+
+    /* DROITE : Pseudo du joueur */
+    .player-section {
       display: flex;
       align-items: center;
       gap: 15px;
@@ -79,108 +215,51 @@
 
     .player-name {
       font-family: 'Teko', sans-serif;
-      font-size: 28px;
-      line-height: 22px;
-      font-weight: 600;
+      font-size: 34px;
+      line-height: 28px;
+      font-weight: 700;
       color: var(--white);
       text-transform: uppercase;
       letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-
-    /* Séparateur oblique turquoise */
-    .slash-divider {
-      width: 2px;
-      height: 20px;
-      background: var(--chroma-accent);
-      transform: skewX(-20deg);
-    }
-
-    /* --- SECTION CENTRE : LOGO CHROMA --- */
-    .section-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-container {
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-container img {
-      max-width: 100%;
-      max-height: 100%;
-      filter: drop-shadow(0 0 6px var(--chroma-accent));
-    }
-
-    /* --- SECTION DROITE : RÔLE & ICÔNE --- */
-    .section-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .role-name {
-      font-family: 'Teko', sans-serif;
-      font-size: 24px;
-      line-height: 20px;
-      font-weight: 600;
-      color: var(--chroma-accent);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .role-icon {
-      width: 20px;
-      height: 20px;
-      fill: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .role-icon svg {
-      width: 100%;
-      height: 100%;
-      fill: var(--white);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
   </style>
 </head>
 <body>
 
-  <div class="hud-bar">
-    <div class="hud-line"></div>
+  <div class="hud-container">
+    <div class="hud-border"></div>
+    <div class="hud-bg"></div>
 
-    <!-- GAUCHE : Pseudo du joueur -->
-    <div class="section-left">
-      <div class="player-name" id="playerName">PSEUDO</div>
-      <div class="slash-divider"></div>
-    </div>
-
-    <!-- CENTRE : Logo Chroma -->
-    <div class="section-center">
-      <div class="logo-container">
-        <img src="logo_chroma.png" alt="Chroma Esport">
+    <div class="hud-content">
+      <!-- GAUCHE : LOGO CHROMA + TEXTE -->
+      <div class="brand-section">
+        <div class="logo-circle">
+          <img src="logo_chroma.png" alt="Chroma">
+        </div>
+        <div class="brand-divider"></div>
+        <div class="brand-text">
+          <span class="brand-title">CHROMA</span>
+          <span class="brand-sub">ESPORT</span>
+        </div>
       </div>
-    </div>
 
-    <!-- DROITE : Icône & Rôle -->
-    <div class="section-right">
-      <div class="slash-divider"></div>
-      <div class="role-icon" id="roleIcon"></div>
-      <div class="role-name" id="roleName">DAMAGE</div>
+      <!-- CENTRE : DÔME DE RÔLE -->
+      <div class="role-dome">
+        <div class="dome-arc"></div>
+        <div class="role-icon-box" id="roleIcon"></div>
+        <div class="role-label" id="roleLabel">TANK</div>
+      </div>
+
+      <!-- DROITE : PSEUDO DU JOUEUR -->
+      <div class="player-section">
+        <div class="player-name" id="playerName">BEAM</div>
+      </div>
     </div>
   </div>
 
   <script>
-    // Dictionnaire des icônes de rôles officielles (en blanc)
+    // Icônes OW2 officielles (SVG blanc)
     const rolesSVG = {
       tank: `<svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>`,
       dps: `<svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8H7z"/></svg>`,
@@ -188,22 +267,22 @@
       support: `<svg viewBox="0 0 24 24"><path d="M19 10.5h-5.5V5h-3v5.5H5v3h5.5V19h3v-5.5H19v-3z"/></svg>`
     };
 
-    const roleLabels = {
+    const roleNames = {
       tank: 'TANK',
       dps: 'DAMAGE',
       damage: 'DAMAGE',
       support: 'SUPPORT'
     };
 
-    // Lecture des paramètres de l'URL (?pseudo=...&role=...)
+    // Lecture des parametres dans l'URL (?pseudo=...&role=...)
     const params = new URLSearchParams(window.location.search);
-    const pseudo = params.get('pseudo') || 'PLAYER';
-    const roleKey = (params.get('role') || 'dps').toLowerCase();
+    const pseudo = params.get('pseudo') || 'BEAM';
+    const roleKey = (params.get('role') || 'tank').toLowerCase();
 
     // Injection dynamique
     document.getElementById('playerName').textContent = pseudo;
-    document.getElementById('roleName').textContent = roleLabels[roleKey] || 'DAMAGE';
-    document.getElementById('roleIcon').innerHTML = rolesSVG[roleKey] || rolesSVG['dps'];
+    document.getElementById('roleLabel').textContent = roleNames[roleKey] || 'TANK';
+    document.getElementById('roleIcon').innerHTML = rolesSVG[roleKey] || rolesSVG['tank'];
   </script>
 </body>
 </html>
