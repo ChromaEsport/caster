@@ -32,7 +32,7 @@
   const roleIcon = document.getElementById("roleIcon");
   if (roleIcon) {
     const roleKey = roleParam || (player?.role || "").toLowerCase().split(/\\s+/)[0];
-    const roleFiles = { tank: "tank", dps: "dps", support: "support" };
+    const roleFiles = { tank: "tank", dps: "damage", support: "support" };
     if (roleFiles[roleKey]) {
       roleIcon.src = `../roles/${roleFiles[roleKey]}.png`;
       roleIcon.alt = `Rôle ${roleKey}`;
