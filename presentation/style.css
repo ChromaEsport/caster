@@ -42,15 +42,15 @@ body { font-family:Rajdhani,Arial,sans-serif; }
 .side-rail i { width:3px;height:58px;background:linear-gradient(var(--orange),var(--gold)); }
 
 .header {
-  position:absolute;left:6.5%;right:6%;top:5.5%;height:76px;
-  display:flex;align-items:center;gap:24px;
+  position:absolute;left:6.5%;right:6%;top:5%;height:92px;
+  display:flex;align-items:center;gap:30px;
 }
-.logo { display:block;width:78px;height:66px;max-width:78px;max-height:66px;flex:0 0 78px;object-fit:contain; }
-.header-rule { height:42px;width:1px;background:rgba(143,236,201,.35); }
-.header-label { display:flex;flex-direction:column;gap:2px; }
-.header-label span { color:var(--muted);font:700 11px Rajdhani;letter-spacing:4px; }
-.header-label strong { font:800 20px 'Barlow Condensed';letter-spacing:3px; }
-.header-index { margin-left:auto;color:var(--muted);font:700 12px Rajdhani;letter-spacing:3px; }
+.logo { display:block;width:92px;height:78px;max-width:92px;max-height:78px;flex:0 0 92px;object-fit:contain; }
+.header-rule { height:52px;width:1px;background:rgba(143,236,201,.35); }
+.header-label { display:flex;flex-direction:column;gap:4px; }
+.header-label span { color:var(--muted);font:700 13px Rajdhani;letter-spacing:4.5px; }
+.header-label strong { font:800 24px 'Barlow Condensed';letter-spacing:3.5px; }
+.header-index { margin-left:auto;color:var(--muted);font:700 14px Rajdhani;letter-spacing:3.5px; }
 .header-index b { color:var(--mint); }
 
 .content {
