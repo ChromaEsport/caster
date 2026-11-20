@@ -15,13 +15,15 @@
     ? heroParam.split(/[-_ ]+/).map(part => part ? part[0].toUpperCase() + part.slice(1).toLowerCase() : "").join("")
     : "";
 
+  const numberFromUrl = (params.get("number") || "").trim();
+
   const fields = {
     playerName: player?.name || requested.toUpperCase(),
     playerTag: "CHROMA OVERWATCH",
     playerRole: roleFromUrl || player?.role || "",
     playerTeam: "CHROMA OVERWATCH",
     heroName: heroFromUrl ? heroFromUrl.toUpperCase() : (player?.hero || ""),
-    heroNumber: player?.heroNumber || ""
+    heroNumber: numberFromUrl || player?.heroNumber || ""
   };
 
   Object.entries(fields).forEach(([id, value]) => {
