@@ -7,6 +7,8 @@ const banner = document.getElementById("banner");
 const nameEl = document.getElementById("playerName");
 const roleIcon = document.getElementById("roleIcon");
 const roleLabel = document.getElementById("roleLabel");
+const heroArt = document.getElementById("heroArt");
+const heroImage = document.getElementById("heroImage");
 const designs = ["broadcast", "strike", "minimal"];
 
 const roles = {
@@ -19,6 +21,8 @@ function hideBanner() {
   banner.classList.remove("visible");
   banner.setAttribute("aria-hidden", "true");
   nameEl.textContent = "";
+  heroArt.hidden = true;
+  heroImage.removeAttribute("src");
 }
 
 if (!playerId) {
@@ -45,6 +49,15 @@ if (!playerId) {
     roleIcon.src = role.icon;
     roleIcon.alt = role.alt;
     roleLabel.textContent = role.label;
+    const heroFile = String(player.hero || "").trim();
+    if (heroFile) {
+      heroImage.src = `../heroes/${encodeURIComponent(heroFile)}`;
+      heroImage.alt = heroFile.replace(/\\.png$/i, "");
+      heroArt.hidden = false;
+    } else {
+      heroArt.hidden = true;
+      heroImage.removeAttribute("src");
+    }
     banner.classList.add("visible");
     banner.setAttribute("aria-hidden", "false");
   }, error => {
