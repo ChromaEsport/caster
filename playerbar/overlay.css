@@ -481,36 +481,35 @@ body{font-family:Inter,Arial,sans-serif}
 }
 
 
-/* Nom du héros — toujours lisible sur l'illustration */
+/* Nom du héros — placé directement sur le bandeau, hors de l'image */
 #banner .hero-name{
   position:absolute;
-  z-index:3;
-  right:0;
-  bottom:10px;
-  max-width:100%;
+  z-index:6;
+  right:4.2%;
+  bottom:12px;
+  max-width:210px;
   padding:5px 12px 4px;
   color:#fff;
-  background:linear-gradient(90deg,rgba(1,12,44,.12),rgba(1,12,44,.94) 28%);
+  background:linear-gradient(90deg,rgba(1,12,44,.18),rgba(1,12,44,.96) 28%);
   border-right:2px solid var(--mint);
   font:900 15px/.95 'Barlow Condensed',sans-serif;
   letter-spacing:2px;
   text-align:right;
-  text-shadow:0 2px 8px rgba(0,0,0,.9);
+  text-shadow:0 2px 8px rgba(0,0,0,.95);
   white-space:nowrap;
   pointer-events:none;
 }
 #banner.design-strike .hero-name{
   color:#f4d79b;
   border-right-color:var(--gold);
-  background:linear-gradient(90deg,rgba(1,12,44,.12),rgba(20,15,10,.96) 28%);
+  background:linear-gradient(90deg,rgba(1,12,44,.18),rgba(20,15,10,.97) 28%);
 }
 #banner.design-minimal .hero-name{
-  bottom:7px;
+  bottom:10px;
   font-size:12px;
   padding:4px 8px 3px;
   letter-spacing:1.5px;
-  border-right-width:2px;
 }
 @media(max-width:700px){
-  #banner .hero-name{bottom:6px;font-size:9px;padding:3px 6px 2px;letter-spacing:1px}
+  #banner .hero-name{right:2%;bottom:8px;max-width:105px;font-size:9px;padding:3px 6px 2px;letter-spacing:1px}
 }
