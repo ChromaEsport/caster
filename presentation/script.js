@@ -15,9 +15,7 @@
     playerName: player?.name || requested.toUpperCase(),
     playerTag: player?.tag || "",
     playerRole: player?.role || "",
-    playerTeam: player?.team || "",
-    playerStatus: player?.status || "",
-    playerResponsibility: player?.responsibility || "",
+    playerTeam: "CHROMA OVERWATCH",
     heroName: heroFromUrl ? heroFromUrl.toUpperCase() : (player?.hero || ""),
     heroNumber: player?.heroNumber || ""
   };
