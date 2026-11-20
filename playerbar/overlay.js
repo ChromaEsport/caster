@@ -10,6 +10,7 @@ const roleIcon = document.getElementById("roleIcon");
 const roleLabel = document.getElementById("roleLabel");
 const heroArt = document.getElementById("heroArt");
 const heroImage = document.getElementById("heroImage");
+const heroName = document.getElementById("heroName");
 const designs = ["broadcast", "strike", "minimal"];
 
 const roles = {
@@ -24,6 +25,7 @@ function hideBanner() {
   nameEl.textContent = "";
   heroArt.hidden = true;
   heroImage.removeAttribute("src");
+  heroName.textContent = "";
 }
 
 if (!playerId) {
@@ -54,10 +56,12 @@ if (!playerId) {
     if (heroFile) {
       heroImage.src = `../heroes/${encodeURIComponent(heroFile)}`;
       heroImage.alt = heroFile.replace(/\.png$/i, "");
+      heroName.textContent = heroFile.replace(/\.[^.]+$/, "").toUpperCase();
       heroArt.hidden = false;
     } else {
       heroArt.hidden = true;
       heroImage.removeAttribute("src");
+      heroName.textContent = "";
     }
     banner.classList.add("visible");
     banner.setAttribute("aria-hidden", "false");
