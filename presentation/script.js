@@ -46,7 +46,7 @@
   const heroPortrait = document.getElementById("heroPortrait");
   if (heroPortrait) {
     if (heroFromUrl) {
-      // Exemple : ?heroes=reinhardt -> perso/reinhardt.jpg
+      // Exemple : ?heroes=reinhardt -> perso/reinhardt.png
       const heroFile = heroParam.toLowerCase().replace(/[^a-z0-9_-]/g, "");
       heroPortrait.src = `perso/${encodeURIComponent(heroFile)}.png`;
       heroPortrait.alt = heroFromUrl;
