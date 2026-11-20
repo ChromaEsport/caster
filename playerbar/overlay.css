@@ -582,3 +582,37 @@ body{font-family:Inter,Arial,sans-serif}
   #banner.design-strike .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
   #banner.design-strike .identity{padding-left:155px}
 }
+
+
+/* STRIKE — logo Chroma agrandi, sans cadre, centré verticalement */
+#banner.design-strike .brand{
+  align-items:center;
+}
+#banner.design-strike .brand-mark{
+  width:100px;
+  height:100px;
+  flex:0 0 100px;
+  display:grid;
+  place-items:center;
+  overflow:visible;
+}
+#banner.design-strike .brand-mark:before{
+  display:none !important;
+  content:none !important;
+}
+#banner.design-strike .brand-mark img{
+  width:88px;
+  height:88px;
+  max-width:none;
+  max-height:none;
+  object-fit:contain;
+  filter:drop-shadow(0 0 12px rgba(200,156,77,.48)) drop-shadow(0 4px 8px rgba(0,0,0,.65));
+}
+@media(max-width:1100px){
+  #banner.design-strike .brand-mark{width:86px;height:86px;flex-basis:86px}
+  #banner.design-strike .brand-mark img{width:76px;height:76px}
+}
+@media(max-width:700px){
+  #banner.design-strike .brand-mark{width:58px;height:58px;flex-basis:58px}
+  #banner.design-strike .brand-mark img{width:52px;height:52px}
+}
