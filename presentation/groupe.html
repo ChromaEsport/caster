@@ -90,7 +90,7 @@ body{font-family:Rajdhani,Arial,sans-serif}
    const number=(params.get("number"+i)||player.heroNumber||String(i).padStart(2,"0")).trim();
    const status=(params.get("status"+i)||player.status||"").trim();
    const roleIcon=roleFiles[roleRaw] ? `<img class="role-icon" src="../roles/${roleFiles[roleRaw]}.png" alt="">` : "";
-   const portrait=heroSlug ? `<img class="portrait" src="perso/${encodeURIComponent(heroSlug)}.jpg" alt="${heroName}" onerror="this.remove();this.parentElement.querySelector('.portrait-placeholder').hidden=false">` : "";
+   const portrait=heroSlug ? `<img class="portrait" src="perso/${encodeURIComponent(heroSlug)}.png" alt="${heroName}" onerror="this.remove();this.parentElement.querySelector('.portrait-placeholder').hidden=false">` : "";
    const card=document.createElement("article");
    card.className="player-card";card.style.setProperty("--i",i-1);
    card.innerHTML=`
