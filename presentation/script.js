@@ -60,5 +60,15 @@
   const stage = document.getElementById("stage");
   requestAnimationFrame(() => stage.classList.add("playing"));
 
-  if (params.get("preview") === "1") stage.classList.remove("playing");
+  const previewMode = params.get("preview") === "1";
+  if (previewMode) {
+    stage.classList.remove("playing");
+  } else {
+    // Durée d'affichage en secondes : 8 par défaut, réglable avec ?duration=10
+    const requestedDuration = Number(params.get("duration") || 8);
+    const durationSeconds = Number.isFinite(requestedDuration)
+      ? Math.min(60, Math.max(1, requestedDuration))
+      : 8;
+    window.setTimeout(() => stage.classList.add("disappearing"), durationSeconds * 1000);
+  }
 })();
