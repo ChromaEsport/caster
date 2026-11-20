@@ -57,8 +57,6 @@ body { font-family:Rajdhani,Arial,sans-serif; }
   display:grid;grid-template-columns:49% 51%;align-items:center;
 }
 .player-info { position:relative;z-index:3;padding:0 0 0 1%; }
-.overline { display:flex;align-items:center;gap:12px;color:var(--mint);font:700 17px Rajdhani;letter-spacing:5px;margin-bottom:22px; }
-.pulse { width:9px;height:9px;background:var(--orange);border-radius:50%;box-shadow:0 0 14px rgba(253,85,3,.8); }
 h1 {
   position:relative;margin:0 0 16px;font:900 clamp(110px,14vw,220px)/.76 'Barlow Condensed';
   letter-spacing:-4px;text-transform:uppercase;white-space:nowrap;
@@ -73,10 +71,7 @@ h1 {
   background:linear-gradient(90deg,rgba(60,145,149,.18),rgba(60,145,149,.035));
   border-left:3px solid var(--teal);
 }
-.team-icon { display:flex;align-items:center;gap:3px;height:32px; }
-.team-icon span { display:block;width:5px;height:20px;background:var(--mint);transform:skew(-22deg); }
-.team-icon span:nth-child(2) { height:30px;background:var(--gold); }
-.team-icon span:nth-child(3) { height:14px;background:var(--teal); }
+.team-logo { display:block;width:48px;height:42px;flex:0 0 48px;object-fit:contain; }
 .team-copy { display:flex;flex-direction:column;gap:2px; }
 .team-copy small { color:var(--muted);font:700 10px Rajdhani;letter-spacing:3px; }
 .team-copy strong { font:800 23px 'Barlow Condensed';letter-spacing:2px; }
@@ -137,7 +132,7 @@ h1 {
 .corner-br { right:20px;bottom:19px;border-right:2px solid;border-bottom:2px solid; }
 
 .stage.playing .header { animation:dropIn .65s ease both; }
-.stage.playing .overline,.stage.playing h1,.stage.playing .role-line,.stage.playing .team-card { animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both; }
+.stage.playing h1,.stage.playing .role-line,.stage.playing .team-card { animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both; }
 .stage.playing h1 { animation-delay:.15s; }
 .stage.playing .role-line { animation-delay:.32s; }
 .stage.playing .team-card { animation-delay:.48s; }
