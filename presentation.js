@@ -1,4 +1,3 @@
-
 const players = {
   jk: {
     number: "PLAYER 01",
