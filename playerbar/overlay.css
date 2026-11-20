@@ -481,16 +481,18 @@ body{font-family:Inter,Arial,sans-serif}
 }
 
 
-/* Nom du héros — placé directement sur le bandeau, hors de l'image */
+/* Nom du héros — placé à gauche de l'illustration, sans chevauchement */
 #banner .hero-name{
   position:absolute;
   z-index:6;
-  right:4.2%;
-  bottom:12px;
-  max-width:210px;
-  padding:5px 12px 4px;
+  right:calc(4.2% + 230px + 14px);
+  top:50%;
+  bottom:auto;
+  transform:translateY(-50%);
+  max-width:190px;
+  padding:6px 12px 5px;
   color:#fff;
-  background:linear-gradient(90deg,rgba(1,12,44,.18),rgba(1,12,44,.96) 28%);
+  background:linear-gradient(90deg,rgba(1,12,44,.08),rgba(1,12,44,.92));
   border-right:2px solid var(--mint);
   font:900 15px/.95 'Barlow Condensed',sans-serif;
   letter-spacing:2px;
@@ -500,16 +502,30 @@ body{font-family:Inter,Arial,sans-serif}
   pointer-events:none;
 }
 #banner.design-strike .hero-name{
+  right:calc(5% + 245px + 14px);
   color:#f4d79b;
   border-right-color:var(--gold);
-  background:linear-gradient(90deg,rgba(1,12,44,.18),rgba(20,15,10,.97) 28%);
+  background:linear-gradient(90deg,rgba(1,12,44,.08),rgba(20,15,10,.94));
 }
 #banner.design-minimal .hero-name{
-  bottom:10px;
+  right:calc(3% + 190px + 12px);
   font-size:12px;
-  padding:4px 8px 3px;
+  padding:5px 9px 4px;
   letter-spacing:1.5px;
 }
+@media(max-width:1100px){
+  #banner .hero-name{right:calc(3% + 175px + 10px);max-width:145px;font-size:13px}
+  #banner.design-minimal .hero-name{right:calc(3% + 175px + 10px)}
+  #banner.design-strike .hero-name{right:calc(4% + 190px + 10px)}
+}
 @media(max-width:700px){
-  #banner .hero-name{right:2%;bottom:8px;max-width:105px;font-size:9px;padding:3px 6px 2px;letter-spacing:1px}
+  #banner .hero-name{
+    right:calc(2% + 105px + 7px);
+    max-width:90px;
+    font-size:9px;
+    padding:4px 6px 3px;
+    letter-spacing:.8px;
+  }
+  #banner.design-minimal .hero-name{right:calc(2% + 105px + 7px);font-size:8px}
+  #banner.design-strike .hero-name{right:calc(2% + 115px + 7px)}
 }
