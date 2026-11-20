@@ -6,6 +6,10 @@
 
   // Un joueur non encore configuré affiche au minimum le pseudo demandé,
   // sans reprendre par erreur les informations de JK.
+  const roleParam = (params.get("role") || "").trim().toLowerCase();
+  const allowedRoles = { tank: "TANK", dps: "DPS", support: "SUPPORT" };
+  const roleFromUrl = allowedRoles[roleParam] || "";
+
   const heroParam = (params.get("heroes") || "").trim();
   const heroFromUrl = heroParam
     ? heroParam.split(/[-_ ]+/).map(part => part ? part[0].toUpperCase() + part.slice(1).toLowerCase() : "").join("")
@@ -14,7 +18,7 @@
   const fields = {
     playerName: player?.name || requested.toUpperCase(),
     playerTag: "CHROMA OVERWATCH",
-    playerRole: player?.role || "",
+    playerRole: roleFromUrl || player?.role || "",
     playerTeam: "CHROMA OVERWATCH",
     heroName: heroFromUrl ? heroFromUrl.toUpperCase() : (player?.hero || ""),
     heroNumber: player?.heroNumber || ""
