@@ -100,9 +100,11 @@ h1 {
   object-fit:contain;object-position:center center;
 }
 .character-name {
-  position:absolute;left:9%;right:0;bottom:2%;z-index:2;
+  position:absolute;right:0;bottom:2%;z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:2px;
   text-shadow:0 3px 15px #000;
+  left: 0px;
+  top: 725px;
 }
 .character-name span { color:var(--muted);font:700 11px Rajdhani;letter-spacing:5px; }
 .character-name strong { color:var(--mint);font:900 38px 'Barlow Condensed';letter-spacing:5px; }
