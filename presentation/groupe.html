@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chroma Esport — Team Line-up</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+:root{--navy:#010c2c;--deep:#000719;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d;--orange:#fd5503;--white:#f4f8fc;--muted:#91a3b8}
+*{box-sizing:border-box}
+html,body{width:1920px;height:1080px;margin:0;padding:0;overflow:hidden;background:transparent!important;color:var(--white)}
+body{font-family:Rajdhani,Arial,sans-serif}
+.stage{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:linear-gradient(112deg,#000719 0%,#010c2c 48%,#071a32 100%);opacity:1;transform:scale(1);transition:opacity .7s ease,transform .7s ease}
+.stage.disappearing{opacity:0;transform:scale(.99);pointer-events:none}
+.background-grid{position:absolute;inset:0;z-index:-2;opacity:.17;background-image:linear-gradient(rgba(143,236,201,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(143,236,201,.13) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,black,transparent 80%)}
+.background-shape{position:absolute;z-index:-1;top:-25%;right:-5%;width:58%;height:150%;background:linear-gradient(145deg,rgba(60,145,149,.23),rgba(1,12,44,.08) 55%,rgba(200,156,77,.09));clip-path:polygon(28% 0,100% 0,100% 100%,0 100%,0 30%);border-left:1px solid rgba(143,236,201,.18)}
+.side-rail{position:absolute;left:0;top:0;bottom:0;width:64px;background:rgba(0,4,19,.62);border-right:1px solid rgba(60,145,149,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;color:var(--muted);font:700 10px Rajdhani;letter-spacing:3px;writing-mode:vertical-rl}
+.side-rail span,.side-rail b{transform:rotate(180deg)}.side-rail b{color:var(--mint)}.side-rail i{width:3px;height:58px;background:linear-gradient(var(--orange),var(--gold))}
+.header{position:absolute;left:6.5%;right:6%;top:5%;height:92px;display:flex;align-items:center;gap:30px}
+.logo{width:92px;height:78px;flex:0 0 92px;object-fit:contain}
+.header-rule{height:52px;width:1px;background:rgba(143,236,201,.35)}
+.header-label{display:flex;flex-direction:column;gap:4px}
+.header-label span{color:var(--muted);font:700 13px Rajdhani;letter-spacing:4.5px}
+.header-label strong{font:800 24px 'Barlow Condensed';letter-spacing:3.5px}
+.header-index{margin-left:auto;color:var(--muted);font:700 14px Rajdhani;letter-spacing:3.5px}.header-index b{color:var(--mint)}
+.title-block{position:absolute;left:9.5%;right:6%;top:17%;display:flex;align-items:end;justify-content:space-between}
+.title-block small{color:var(--gold);font:700 13px Rajdhani;letter-spacing:5px}
+.title-block h1{margin:3px 0 0;font:900 64px/.95 'Barlow Condensed';letter-spacing:3px}
+.title-block p{margin:0 0 5px;color:var(--muted);font:700 14px Rajdhani;letter-spacing:3px}
+.roster{position:absolute;left:8.2%;right:5.5%;top:29%;bottom:15%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.player-card{position:relative;min-width:0;overflow:hidden;background:linear-gradient(160deg,rgba(18,47,72,.92),rgba(0,7,25,.96) 70%);border:1px solid rgba(60,145,149,.42);border-top:3px solid var(--teal);display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.player-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(143,236,201,.08),transparent 38%);pointer-events:none}
+.card-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:16px 18px 0;color:var(--muted);font:700 11px Rajdhani;letter-spacing:3px}
+.card-number{color:rgba(143,236,201,.55);font:900 28px 'Barlow Condensed'}
+.portrait-wrap{position:relative;height:430px;margin:4px 8px 0;display:flex;align-items:center;justify-content:center}
+.portrait-wrap:after{content:"";position:absolute;left:8%;right:8%;bottom:10px;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.portrait-glow{position:absolute;width:80%;height:70%;border-radius:50%;background:rgba(60,145,149,.2);filter:blur(42px)}
+.portrait{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 15px 20px rgba(0,0,0,.55))}
+.portrait-placeholder{position:relative;z-index:1;color:rgba(143,236,201,.16);font:900 90px 'Barlow Condensed';letter-spacing:4px}
+.player-meta{position:relative;z-index:2;padding:12px 20px 20px;display:flex;flex-direction:column;flex:1}
+.player-name{font:900 48px/.95 'Barlow Condensed';letter-spacing:1px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 6px 20px rgba(0,0,0,.35)}
+.role-line{display:flex;align-items:center;gap:10px;margin-top:14px;min-height:34px}
+.role-icon{width:30px;height:30px;object-fit:contain}
+.role-label{color:var(--mint);font:800 22px 'Barlow Condensed';letter-spacing:3px}
+.player-status{min-height:22px;margin:5px 0 0 40px;color:var(--gold);font:700 13px Rajdhani;letter-spacing:2px;text-transform:uppercase}
+.hero-label{margin-top:auto;padding-top:12px;border-top:1px solid rgba(60,145,149,.35);color:var(--muted);font:700 10px Rajdhani;letter-spacing:3px}
+.hero-name{margin-top:3px;color:var(--white);font:800 23px 'Barlow Condensed';letter-spacing:2px;text-transform:uppercase}
+.footer{position:absolute;left:9.5%;right:6%;bottom:5%;height:50px;display:flex;align-items:center;gap:26px;border-top:1px solid rgba(60,145,149,.42);padding-top:13px}
+.footer-slogan{white-space:nowrap;font:900 28px 'Barlow Condensed';letter-spacing:4px}.footer-slogan span{color:var(--orange)}
+.footer-line{height:1px;flex:1;background:linear-gradient(90deg,rgba(143,236,201,.35),transparent)}
+.footer-caption{white-space:nowrap;color:var(--muted);font:700 10px Rajdhani;letter-spacing:3px}.footer-caption b{color:var(--gold);padding:0 8px}
+.corner{position:absolute;width:34px;height:34px;border-color:var(--gold);opacity:.8}.corner-tl{top:19px;left:82px;border-top:2px solid;border-left:2px solid}.corner-br{right:20px;bottom:19px;border-right:2px solid;border-bottom:2px solid}
+.stage.playing .header{animation:dropIn .65s ease both}.stage.playing .title-block{animation:riseIn .7s .12s both}.stage.playing .player-card{animation:riseIn .7s calc(.2s + var(--i)*.09s) both}.stage.playing .footer{animation:riseIn .65s .7s both}
+@keyframes dropIn{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}@keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<main class="stage" id="stage">
+<div class="background-grid"></div><div class="background-shape"></div>
+<div class="side-rail"><span>CHROMA ESPORT</span><i></i><b>OVERWATCH</b></div>
+<header class="header">
+<img class="logo" src="../../logo/chroma%20badge.png" alt="Chroma Esport">
+<div class="header-rule"></div>
+<div class="header-label"><span>CHROMA ESPORT</span><strong>TEAM LINE-UP</strong></div>
+<div class="header-index">ROSTER <b>/ 2026</b></div>
+</header>
+<section class="title-block"><div><small>UNITED AS ONE · BUILT TO COMPETE</small><h1>CHROMA OVERWATCH</h1></div><p>OFFICIAL TEAM ROSTER <span style="color:var(--mint)">/ 05 PLAYERS</span></p></section>
+<section class="roster" id="roster" aria-label="Composition de l'équipe"></section>
+<footer class="footer"><div class="footer-slogan">NEVER BACK DOWN<span>.</span></div><div class="footer-line"></div><div class="footer-caption">BUILT TO COMPETE <b>•</b> UNITED AS ONE</div></footer>
+<div class="corner corner-tl"></div><div class="corner corner-br"></div>
+</main>
+<script src="../players.js"></script>
+<script>
+(() => {
+ const params = new URLSearchParams(location.search);
+ const players = window.CHROMA_PLAYERS || {};
+ const roles = {tank:"TANK",dps:"DPS",damage:"DPS",support:"SUPPORT"};
+ const roleFiles = {tank:"tank",dps:"damage",damage:"damage",support:"support"};
+ const roster = document.getElementById("roster");
+ for(let i=1;i<=5;i++){
+   const key=(params.get("player"+i)||"").trim().toLowerCase();
+   const player=players[key]||{};
+   const name=(params.get("name"+i)||player.name||key.toUpperCase()||"JOUEUR "+i).trim();
+   const roleRaw=(params.get("role"+i)||player.role||"").trim().toLowerCase();
+   const role=roles[roleRaw]||roleRaw.toUpperCase();
+   const heroRaw=(params.get("heroes"+i)||player.hero||"").trim();
+   const heroSlug=heroRaw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9_-]/g,"");
+   const heroName=heroRaw.toUpperCase();
+   const number=(params.get("number"+i)||player.heroNumber||String(i).padStart(2,"0")).trim();
+   const status=(params.get("status"+i)||player.status||"").trim();
+   const roleIcon=roleFiles[roleRaw] ? `<img class="role-icon" src="../../roles/${roleFiles[roleRaw]}.png" alt="">` : "";
+   const portrait=heroSlug ? `<img class="portrait" src="../perso/${encodeURIComponent(heroSlug)}.jpg" alt="${heroName}" onerror="this.remove();this.parentElement.querySelector('.portrait-placeholder').hidden=false">` : "";
+   const card=document.createElement("article");
+   card.className="player-card";card.style.setProperty("--i",i-1);
+   card.innerHTML=`
+    <div class="card-top"><span>CHROMA OVERWATCH</span><b class="card-number">${number.replace(/[&<>"']/g,"")}</b></div>
+    <div class="portrait-wrap"><div class="portrait-glow"></div>${portrait}<div class="portrait-placeholder" ${portrait?"hidden":""}>OW</div></div>
+    <div class="player-meta">
+     <div class="player-name">${escapeHtml(name)}</div>
+     <div class="role-line">${roleIcon}<span class="role-label">${escapeHtml(role||"PLAYER")}</span></div>
+     <div class="player-status">${escapeHtml(status)}</div>
+     <div class="hero-label">SIGNATURE HERO</div><div class="hero-name">${escapeHtml(heroName||"À DÉFINIR")}</div>
+    </div>`;
+   roster.appendChild(card);
+ }
+ function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+ const stage=document.getElementById("stage");
+ requestAnimationFrame(()=>stage.classList.add("playing"));
+ if(params.get("preview")!=="1"){
+  const requested=Number(params.get("duration")||8);
+  const duration=Number.isFinite(requested)?Math.min(60,Math.max(1,requested)):8;
+  setTimeout(()=>stage.classList.add("disappearing"),duration*1000);
+ }
+})();
+</script>
+</body>
+</html>
