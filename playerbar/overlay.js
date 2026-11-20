@@ -1,4 +1,3 @@
-
 import { db, doc, onSnapshot } from "../firebase.js";
 
 const params = new URLSearchParams(location.search);
