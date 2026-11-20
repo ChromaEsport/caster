@@ -65,6 +65,7 @@ h1 {
 .role-line { display:flex;align-items:center;gap:17px;margin-top:24px; }
 .role-icon { display:block;width:48px;height:48px;flex:0 0 48px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(143,236,201,.2)); }
 .role-line strong { color:var(--mint);font:800 37px 'Barlow Condensed';letter-spacing:7px; }
+.player-designation { margin:10px 0 0 65px;color:var(--gold);font:700 19px Rajdhani;letter-spacing:4px;text-transform:uppercase;min-height:24px; }
 .team-card {
   display:flex;align-items:center;gap:17px;margin-top:52px;padding:15px 24px;
   width:max-content;max-width:90%;min-width:340px;
