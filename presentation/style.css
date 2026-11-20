@@ -22,7 +22,7 @@
 .brand-mark span{display:none}
 
 
-/* Positionnement propre du logo officiel à gauche du nom Chroma Esport */
-.brand{display:flex;align-items:center;gap:20px}
-.brand-logo{display:block;width:112px;height:76px;flex:0 0 112px;object-fit:contain;object-position:center}
+/* Logo officiel : taille harmonisée avec le bloc typographique */
+.brand{display:flex;align-items:center;gap:16px}
+.brand-logo{display:block;width:88px;height:72px;flex:0 0 88px;object-fit:contain;object-position:center}
 .brand-name{position:relative;z-index:1}
