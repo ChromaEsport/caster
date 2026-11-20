@@ -1,18 +1,244 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@500;600;700;800&display=swap');
-:root{--navy:#010c2c;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d;--white:#f4f7fa}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}body{font-family:Inter,Arial,sans-serif}
-.banner{position:absolute;left:10%;bottom:4.5%;width:80%;min-height:118px;display:flex;align-items:center;gap:28px;padding:17px 30px;background:linear-gradient(105deg,rgba(1,12,44,.98),rgba(5,31,53,.97) 65%,rgba(12,55,65,.96));border:1px solid rgba(143,236,201,.38);border-top:2px solid var(--mint);border-radius:5px 5px 13px 13px;box-shadow:0 15px 55px #0009;opacity:0;transform:translateY(28px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;overflow:hidden}
-.banner.visible{opacity:1;transform:translateY(0)}
-.banner:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 0 70%,rgba(143,236,201,.055) 70% 70.2%,transparent 70.2%);pointer-events:none}
-.brand{display:flex;align-items:center;gap:14px;flex:0 0 215px;position:relative;z-index:1}
-.brand img{width:72px;height:72px;object-fit:contain}.brand-name{font:800 23px 'Barlow Condensed',sans-serif;letter-spacing:2px;color:var(--white);line-height:.95;white-space:nowrap}
-.brand-name strong{color:var(--mint)}.brand-name small{display:block;margin-top:8px;font:700 9px Inter,sans-serif;letter-spacing:4px;color:#9db4c2}
-.divider{height:66px;width:1px;flex:0 0 1px;background:linear-gradient(transparent,var(--teal),transparent);position:relative;z-index:1}
-.players{display:flex;align-items:stretch;gap:12px;flex:1;min-width:0;position:relative;z-index:1}
-.player-card{min-width:0;flex:1;display:flex;align-items:center;gap:12px;padding:12px 15px;background:linear-gradient(135deg,rgba(60,145,149,.19),rgba(1,12,44,.35));border:1px solid rgba(143,236,201,.19);border-left:3px solid var(--gold);border-radius:5px;animation:card-in .35s ease both}
-.player-name{font:800 clamp(19px,2vw,29px) 'Barlow Condensed',sans-serif;color:#fff;letter-spacing:1px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
-.player-role{font:800 11px Inter,sans-serif;letter-spacing:1.5px;color:var(--mint);padding:8px 10px;border:1px solid #3c919588;background:#3c919522;border-radius:3px;white-space:nowrap}
-.role-mark{width:7px;height:30px;background:var(--mint);box-shadow:0 0 12px #8fecc955;flex:0 0 7px}
-.edge{position:absolute;right:0;top:0;width:4px;height:100%;background:var(--gold);box-shadow:0 0 20px #c89c4d88}
-@keyframes card-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:950px){.banner{left:5%;width:90%;gap:14px;padding:13px}.brand{flex-basis:165px}.brand img{width:55px;height:55px}.brand-name{font-size:18px}.players{gap:7px}.player-card{padding:9px;gap:7px}.player-role{font-size:9px;padding:6px}}
+
+:root{
+  --navy:#010c2c;
+  --deep:#061a35;
+  --teal:#3c9195;
+  --mint:#8fecc9;
+  --gold:#c89c4d;
+  --white:#f4f7fa;
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:transparent;
+}
+body{font-family:Inter,Arial,sans-serif}
+
+/* Bandeau principal */
+.banner{
+  position:absolute;
+  left:10%;
+  bottom:4.2%;
+  width:80%;
+  min-height:132px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:20px 34px;
+  isolation:isolate;
+  overflow:hidden;
+  border:1px solid rgba(143,236,201,.34);
+  border-radius:26px 8px 26px 8px;
+  background:
+    radial-gradient(ellipse at 8% 120%,rgba(60,145,149,.38),transparent 43%),
+    radial-gradient(ellipse at 82% -35%,rgba(143,236,201,.18),transparent 42%),
+    linear-gradient(105deg,rgba(1,12,44,.985),rgba(4,27,49,.98) 54%,rgba(7,43,55,.97));
+  box-shadow:
+    0 18px 55px rgba(0,0,0,.48),
+    0 0 35px rgba(60,145,149,.13),
+    inset 0 1px 0 rgba(255,255,255,.12);
+  opacity:0;
+  transform:translate3d(0,34px,0) scale(.985);
+  transition:
+    opacity .38s ease,
+    transform .62s cubic-bezier(.18,.85,.22,1);
+  pointer-events:none;
+}
+.banner.visible{
+  opacity:1;
+  transform:translate3d(0,0,0) scale(1);
+}
+
+/* Reflets organiques et halos */
+.banner:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:-55% -8%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 18% 80%,rgba(143,236,201,.14),transparent 24%),
+    radial-gradient(ellipse at 72% 25%,rgba(60,145,149,.19),transparent 31%),
+    radial-gradient(ellipse at 96% 95%,rgba(200,156,77,.10),transparent 20%);
+  filter:blur(12px);
+}
+.banner:after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  top:-80%;
+  left:-35%;
+  width:30%;
+  height:260%;
+  transform:rotate(22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.055),transparent);
+  animation:light-sweep 7s ease-in-out 1.2s infinite;
+  pointer-events:none;
+}
+@keyframes light-sweep{
+  0%,58%{left:-35%;opacity:0}
+  65%{opacity:1}
+  100%{left:125%;opacity:0}
+}
+
+/* Signature Chroma */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex:0 0 225px;
+  position:relative;
+  z-index:2;
+}
+.brand img{
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 13px rgba(143,236,201,.22));
+}
+.brand-name{
+  font:800 25px 'Barlow Condensed',sans-serif;
+  letter-spacing:2.2px;
+  color:var(--white);
+  line-height:.94;
+  white-space:nowrap;
+  text-shadow:0 2px 15px rgba(0,0,0,.3);
+}
+.brand-name strong{
+  color:var(--mint);
+  font-weight:900;
+}
+.brand-name small{
+  display:block;
+  margin-top:9px;
+  font:700 9px Inter,sans-serif;
+  letter-spacing:4.2px;
+  color:rgba(196,222,225,.72);
+}
+
+/* Séparation lumineuse */
+.divider{
+  height:70px;
+  width:1px;
+  flex:0 0 1px;
+  position:relative;
+  z-index:2;
+  background:linear-gradient(transparent,rgba(143,236,201,.72),rgba(60,145,149,.55),transparent);
+  box-shadow:0 0 13px rgba(143,236,201,.2);
+}
+
+/* Zone joueur */
+.players{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex:1;
+  min-width:0;
+  position:relative;
+  z-index:2;
+}
+.player-card{
+  position:relative;
+  min-width:0;
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 21px;
+  overflow:hidden;
+  border:1px solid rgba(143,236,201,.20);
+  border-radius:16px 5px 16px 5px;
+  background:
+    radial-gradient(ellipse at 0% 100%,rgba(60,145,149,.24),transparent 60%),
+    linear-gradient(110deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 8px 22px rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+  animation:card-arrive .55s cubic-bezier(.18,.85,.22,1) both;
+}
+.player-card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:15%;
+  bottom:15%;
+  width:3px;
+  border-radius:0 8px 8px 0;
+  background:linear-gradient(180deg,var(--mint),var(--teal),var(--gold));
+  box-shadow:0 0 13px rgba(143,236,201,.45);
+}
+.player-name{
+  min-width:0;
+  flex:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#fff;
+  font:800 clamp(22px,2.25vw,34px) 'Barlow Condensed',sans-serif;
+  letter-spacing:1.35px;
+  text-shadow:0 3px 16px rgba(0,0,0,.35);
+}
+.player-role{
+  flex:0 0 auto;
+  padding:9px 14px;
+  border:1px solid rgba(143,236,201,.35);
+  border-radius:999px;
+  background:linear-gradient(120deg,rgba(60,145,149,.28),rgba(143,236,201,.10));
+  color:var(--mint);
+  font:800 10px Inter,sans-serif;
+  letter-spacing:1.8px;
+  white-space:nowrap;
+  box-shadow:0 0 18px rgba(60,145,149,.10);
+}
+.role-mark{
+  width:8px;
+  height:34px;
+  flex:0 0 8px;
+  border-radius:99px;
+  background:linear-gradient(180deg,var(--mint),var(--teal));
+  box-shadow:0 0 15px rgba(143,236,201,.5);
+}
+
+/* Petit accent latéral */
+.edge{
+  position:absolute;
+  z-index:2;
+  right:0;
+  top:18%;
+  width:3px;
+  height:64%;
+  border-radius:8px 0 0 8px;
+  background:linear-gradient(180deg,transparent,var(--gold),var(--mint),transparent);
+  box-shadow:0 0 18px rgba(200,156,77,.35);
+}
+@keyframes card-arrive{
+  from{opacity:0;transform:translateY(13px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(max-width:1100px){
+  .banner{left:5%;width:90%;gap:18px;padding:16px 20px;min-height:112px}
+  .brand{flex-basis:175px;gap:11px}
+  .brand img{width:60px;height:60px}
+  .brand-name{font-size:21px}
+  .player-card{padding:12px 15px;gap:10px}
+  .player-role{font-size:9px;padding:7px 10px}
+}
+@media(max-width:700px){
+  .banner{left:3%;width:94%;gap:10px;padding:12px;min-height:90px}
+  .brand{flex-basis:125px;gap:7px}
+  .brand img{width:43px;height:43px}
+  .brand-name{font-size:16px;letter-spacing:1px}
+  .brand-name small{font-size:7px;letter-spacing:2px;margin-top:6px}
+  .divider{height:48px}
+  .player-card{padding:9px;gap:7px}
+  .player-name{font-size:clamp(16px,3vw,23px)}
+  .player-role{font-size:8px;letter-spacing:1px;padding:6px 8px}
+  .role-mark{height:25px;width:5px;flex-basis:5px}
+}
