@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chroma Esport — Bandeau joueur</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="control-page">
+<main class="panel">
+  <header class="panel-head">
+    <img src="../logo/logochroma.png" alt="Chroma Esport">
+    <div><span class="kicker">CHROMA OVERWATCH</span><h1>Bandeau joueur</h1><p>Personnalise ton identification à l'écran pendant ton cast.</p></div>
+  </header>
+  <section class="editor">
+    <label for="pseudo">Ton pseudo</label>
+    <input id="pseudo" maxlength="18" placeholder="Ex. Tilion" autocomplete="off">
+    <label for="role">Ton rôle</label>
+    <select id="role"><option value="TANK">TANK</option><option value="DPS">DPS</option><option value="SOUTIEN">SOUTIEN</option></select>
+    <div class="actions">
+      <button id="show" class="primary">Afficher le bandeau</button>
+      <button id="hide" class="secondary">Masquer</button>
+    </div>
+    <p id="status" class="status">Connexion en cours…</p>
+  </section>
+  <footer>CHROMA ESPORT <span>•</span> NEVER BACK DOWN</footer>
+</main>
+<script type="module" src="control.js"></script>
+</body></html>
