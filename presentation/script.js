@@ -16,11 +16,13 @@
     : "";
 
   const numberFromUrl = (params.get("number") || "").trim();
+  const designationFromUrl = (params.get("status") || "").trim();
 
   const fields = {
     playerName: player?.name || requested.toUpperCase(),
     playerTag: "CHROMA OVERWATCH",
     playerRole: roleFromUrl || player?.role || "",
+    playerDesignation: designationFromUrl || player?.status || "",
     playerTeam: "CHROMA OVERWATCH",
     heroName: heroFromUrl ? heroFromUrl.toUpperCase() : (player?.hero || ""),
     heroNumber: numberFromUrl || player?.heroNumber || ""
