@@ -523,3 +523,62 @@ body{font-family:Inter,Arial,sans-serif}
 @media(max-width:700px){
   #banner .identity .hero-name{font-size:9px;letter-spacing:.8px;padding:3px 6px 2px}
 }
+
+
+/* STRIKE — rôle centré dans le bandeau, icône et intitulé agrandis */
+#banner.design-strike .role-zone{
+  position:absolute;
+  z-index:3;
+  left:50%;
+  top:50%;
+  width:max-content;
+  height:auto;
+  transform:translate(-50%,-50%);
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+#banner.design-strike .role-zone:before{
+  width:178px;
+  height:88px;
+  border:1px solid rgba(200,156,77,.32);
+  border-radius:12px;
+  transform:skewX(-12deg);
+  box-shadow:0 0 0 7px rgba(200,156,77,.045),inset 0 0 25px rgba(200,156,77,.10);
+}
+#banner.design-strike .role-orbit{
+  width:70px;
+  height:70px;
+  flex:0 0 70px;
+  border-radius:13px !important;
+}
+#banner.design-strike .role-icon{
+  width:48px;
+  height:48px;
+}
+#banner.design-strike .role-label{
+  font-size:15px;
+  letter-spacing:2.5px;
+  min-width:104px;
+  text-align:left;
+}
+#banner.design-strike .identity{
+  padding-left:300px;
+}
+@media(max-width:1100px){
+  #banner.design-strike .role-zone{gap:12px}
+  #banner.design-strike .role-zone:before{width:150px;height:76px}
+  #banner.design-strike .role-orbit{width:60px;height:60px;flex-basis:60px}
+  #banner.design-strike .role-icon{width:42px;height:42px}
+  #banner.design-strike .role-label{font-size:13px;min-width:88px}
+  #banner.design-strike .identity{padding-left:250px}
+}
+@media(max-width:700px){
+  #banner.design-strike .role-zone{gap:7px}
+  #banner.design-strike .role-zone:before{width:104px;height:58px}
+  #banner.design-strike .role-orbit{width:43px;height:43px;flex-basis:43px}
+  #banner.design-strike .role-icon{width:30px;height:30px}
+  #banner.design-strike .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
+  #banner.design-strike .identity{padding-left:155px}
+}
