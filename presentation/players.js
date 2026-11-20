@@ -8,6 +8,7 @@ window.CHROMA_PLAYERS = {
     status: "CAPITAINE",
     responsibility: "MANAGER DES ÉQUIPES OVERWATCH",
     hero: "REINHARDT",
+    heroImage: "Reinhardt.png",
     heroNumber: "01"
   }
 };
