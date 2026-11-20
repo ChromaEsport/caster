@@ -22,7 +22,7 @@
 
   const heroPortrait = document.getElementById("heroPortrait");
   if (heroPortrait && player.heroImage) {
-    heroPortrait.src = `../heroes/${encodeURIComponent(player.heroImage)}`;
+    heroPortrait.src = /^https?:\/\//i.test(player.heroImage) ? player.heroImage : `../heroes/${encodeURIComponent(player.heroImage)}`;
     heroPortrait.alt = player.hero || "Héros Overwatch";
   }
 
