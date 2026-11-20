@@ -14,9 +14,10 @@
 html,body { width:1920px;height:1080px;margin:0;padding:0;overflow:hidden;background:var(--deep);color:var(--white); }
 body { font-family:Rajdhani,Arial,sans-serif; }
 .stage {
-  position:relative;isolation:isolate;width:1920px;height:1080px;min-width:1920px;min-height:1080px;max-width:1920px;max-height:1080px;overflow:hidden;
+  position:relative;opacity:1;transform:scale(1);transition:opacity .7s ease,transform .7s ease;isolation:isolate;width:1920px;height:1080px;min-width:1920px;min-height:1080px;max-width:1920px;max-height:1080px;overflow:hidden;
   background:linear-gradient(112deg,#000719 0%,#010c2c 48%,#071a32 100%);
 }
+.stage.disappearing { opacity:0;transform:scale(.985);pointer-events:none; }
 .background-grid {
   position:absolute;inset:0;z-index:-2;opacity:.17;
   background-image:linear-gradient(rgba(143,236,201,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(143,236,201,.13) 1px,transparent 1px);
