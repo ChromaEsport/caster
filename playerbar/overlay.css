@@ -584,35 +584,52 @@ body{font-family:Inter,Arial,sans-serif}
 }
 
 
-/* STRIKE — logo Chroma agrandi, sans cadre, centré verticalement */
-#banner.design-strike .brand{
-  align-items:center;
+
+
+/* BROADCAST ANGULAIRE — logo Chroma agrandi et rôle centré dans le bandeau */
+#banner.design-broadcast .brand{align-items:center}
+#banner.design-broadcast .brand-mark{
+  width:100px;height:100px;flex:0 0 100px;
+  display:grid;place-items:center;overflow:visible;
 }
-#banner.design-strike .brand-mark{
-  width:100px;
-  height:100px;
-  flex:0 0 100px;
-  display:grid;
-  place-items:center;
-  overflow:visible;
+#banner.design-broadcast .brand-mark:before{display:none !important;content:none !important}
+#banner.design-broadcast .brand-mark img{
+  width:88px;height:88px;max-width:none;max-height:none;object-fit:contain;
+  filter:drop-shadow(0 0 12px rgba(143,236,201,.48)) drop-shadow(0 4px 8px rgba(0,0,0,.65));
 }
-#banner.design-strike .brand-mark:before{
-  display:none !important;
-  content:none !important;
+#banner.design-broadcast .role-zone{
+  position:absolute;z-index:3;left:50%;top:50%;width:max-content;height:auto;
+  transform:translate(-50%,-50%);flex-direction:row;align-items:center;
+  justify-content:center;gap:18px;
 }
-#banner.design-strike .brand-mark img{
-  width:88px;
-  height:88px;
-  max-width:none;
-  max-height:none;
-  object-fit:contain;
-  filter:drop-shadow(0 0 12px rgba(200,156,77,.48)) drop-shadow(0 4px 8px rgba(0,0,0,.65));
+#banner.design-broadcast .role-zone:before{
+  width:178px;height:88px;border:1px solid rgba(143,236,201,.32);
+  border-radius:12px;transform:skewX(-12deg);
+  box-shadow:0 0 0 7px rgba(143,236,201,.045),inset 0 0 25px rgba(60,145,149,.12);
 }
+#banner.design-broadcast .role-orbit{
+  width:70px;height:70px;flex:0 0 70px;border-radius:13px;
+}
+#banner.design-broadcast .role-icon{width:48px;height:48px}
+#banner.design-broadcast .role-label{font-size:15px;letter-spacing:2.5px;min-width:104px;text-align:left}
+#banner.design-broadcast .identity{padding-left:300px}
 @media(max-width:1100px){
-  #banner.design-strike .brand-mark{width:86px;height:86px;flex-basis:86px}
-  #banner.design-strike .brand-mark img{width:76px;height:76px}
+  #banner.design-broadcast .brand-mark{width:86px;height:86px;flex-basis:86px}
+  #banner.design-broadcast .brand-mark img{width:76px;height:76px}
+  #banner.design-broadcast .role-zone{gap:12px}
+  #banner.design-broadcast .role-zone:before{width:150px;height:76px}
+  #banner.design-broadcast .role-orbit{width:60px;height:60px;flex-basis:60px}
+  #banner.design-broadcast .role-icon{width:42px;height:42px}
+  #banner.design-broadcast .role-label{font-size:13px;min-width:88px}
+  #banner.design-broadcast .identity{padding-left:250px}
 }
 @media(max-width:700px){
-  #banner.design-strike .brand-mark{width:58px;height:58px;flex-basis:58px}
-  #banner.design-strike .brand-mark img{width:52px;height:52px}
+  #banner.design-broadcast .brand-mark{width:58px;height:58px;flex-basis:58px}
+  #banner.design-broadcast .brand-mark img{width:52px;height:52px}
+  #banner.design-broadcast .role-zone{gap:7px}
+  #banner.design-broadcast .role-zone:before{width:104px;height:58px}
+  #banner.design-broadcast .role-orbit{width:43px;height:43px;flex-basis:43px}
+  #banner.design-broadcast .role-icon{width:30px;height:30px}
+  #banner.design-broadcast .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
+  #banner.design-broadcast .identity{padding-left:155px}
 }
