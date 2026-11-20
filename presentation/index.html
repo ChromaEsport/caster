@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chroma Esport — Player Presentation</title>
@@ -8,42 +8,57 @@
 </head>
 <body>
   <main class="stage" id="stage" aria-live="polite">
-    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <div class="grid-overlay"></div>
+    <div class="glow glow-left"></div>
+    <div class="glow glow-right"></div>
+    <div class="edge-mark edge-top"></div>
+    <div class="edge-mark edge-bottom"></div>
+
     <header class="topbar">
       <div class="brand">
-        <img class="brand-logo" src="../logo/chroma%20badge.png" alt="Logo Chroma Esport">
-        <div class="brand-name"><strong>CHROMA</strong><b>ESPORT</b></div>
+        <img class="brand-logo" src="../logo/chroma%20badge.png" alt="Chroma Esport">
+        <div class="brand-name"><strong>CHROMA</strong><span>ESPORT</span></div>
       </div>
-      <div class="event-label"><span>PLAYER PRESENTATION</span><b>/ OVERWATCH</b></div>
-      <div class="top-line"></div>
+      <div class="broadcast-label">
+        <span class="live-dot"></span>
+        <div><strong>PLAYER INTRODUCTION</strong><small>OVERWATCH DIVISION</small></div>
+      </div>
+      <div class="top-index"><span>CHROMA</span><b>01</b></div>
     </header>
 
     <section class="profile">
-      <div class="section-kicker"><i></i> PLAYER PROFILE</div>
       <div class="identity">
         <div class="identity-copy">
-          <div class="eyebrow" id="playerTag">CHROMA OVERWATCH</div>
+          <div class="eyebrow"><span class="eyebrow-line"></span><span id="playerTag">CHROMA OVERWATCH</span></div>
           <h1 id="playerName">JK</h1>
-          <div class="role"><span class="role-diamond"></span><span id="playerRole">TANK MAIN</span></div>
-          <div class="accent-line"></div>
-          <div class="details">
-            <article class="detail"><span>ÉQUIPE</span><strong id="playerTeam">CHROMA OVERWATCH</strong></article>
+          <div class="role"><span class="role-symbol"></span><span id="playerRole">TANK MAIN</span></div>
+          <div class="identity-rule"><span></span></div>
+          <div class="team-block">
+            <span class="team-label">ROSTER / ÉQUIPE</span>
+            <strong id="playerTeam">CHROMA OVERWATCH</strong>
           </div>
+          <div class="player-watermark">PLAYER<span>.</span></div>
         </div>
+
         <div class="hero-zone">
-          <div class="hero-orbit"></div>
+          <div class="hero-backplate"></div>
+          <div class="hero-ring ring-one"></div>
+          <div class="hero-ring ring-two"></div>
           <div class="hero-number" id="heroNumber">01</div>
-          <div class="hero-figure" id="heroFigure"><img id="heroPortrait" src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/2/27/OW2_Reinhardt.png/revision/latest?cb=20220409014723" alt="Reinhardt"></div>
-          <div class="hero-caption"><span>MAIN HERO</span><strong id="heroName">REINHARDT</strong></div>
+          <div class="hero-figure" id="heroFigure">
+            <img id="heroPortrait" src="https://static.wikia.nocookie.net/overwatch_gamepedia/images/2/27/OW2_Reinhardt.png/revision/latest?cb=20220409014723" alt="Reinhardt">
+          </div>
+          <div class="hero-caption"><span>HÉROS SIGNATURE</span><strong id="heroName">REINHARDT</strong></div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="motto">NEVER BACK<br>DOWN<span>.</span></div>
-      <div class="footer-meta"><span>CHROMA ESPORT</span><i></i><span>OVERWATCH DIVISION</span></div>
+      <div class="motto">NEVER BACK DOWN<span>.</span></div>
+      <div class="footer-center"><i></i><span>CHROMA ESPORT</span><i></i></div>
+      <div class="footer-right"><span>COMPETITIVE ROSTER</span><b>EST. CHROMA</b></div>
     </footer>
-    <div class="scanline"></div>
+    <div class="scanlines"></div>
   </main>
   <script src="players.js"></script>
   <script src="script.js"></script>
