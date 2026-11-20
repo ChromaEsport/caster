@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@500;600;700;800&display=swap');
 :root{--navy:#010c2c;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d;--white:#f4f7fa}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
-body{font-family:Inter,Arial,sans-serif}
-.banner{position:absolute;left:54px;bottom:58px;height:112px;min-width:650px;display:flex;align-items:center;gap:25px;padding:0 30px 0 22px;background:linear-gradient(100deg,rgba(1,12,44,.98),rgba(5,31,53,.96));border:1px solid rgba(143,236,201,.5);border-left:5px solid var(--gold);box-shadow:0 12px 40px #0008;opacity:0;transform:translateX(-35px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
-.banner.visible{opacity:1;transform:translateX(0)}
-.accent{position:absolute;right:0;top:0;width:5px;height:100%;background:var(--mint);box-shadow:0 0 18px #8fecc966}
-.brand{display:flex;align-items:center;gap:15px;min-width:215px}
-.brand img{width:67px;height:67px;object-fit:contain}
-.brand-name{font:800 22px 'Barlow Condensed',sans-serif;letter-spacing:2px;color:var(--white);line-height:.95}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}body{font-family:Inter,Arial,sans-serif}
+.banner{position:absolute;left:10%;bottom:4.5%;width:80%;min-height:118px;display:flex;align-items:center;gap:28px;padding:17px 30px;background:linear-gradient(105deg,rgba(1,12,44,.98),rgba(5,31,53,.97) 65%,rgba(12,55,65,.96));border:1px solid rgba(143,236,201,.38);border-top:2px solid var(--mint);border-radius:5px 5px 13px 13px;box-shadow:0 15px 55px #0009;opacity:0;transform:translateY(28px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;overflow:hidden}
+.banner.visible{opacity:1;transform:translateY(0)}
+.banner:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 0 70%,rgba(143,236,201,.055) 70% 70.2%,transparent 70.2%);pointer-events:none}
+.brand{display:flex;align-items:center;gap:14px;flex:0 0 215px;position:relative;z-index:1}
+.brand img{width:72px;height:72px;object-fit:contain}.brand-name{font:800 23px 'Barlow Condensed',sans-serif;letter-spacing:2px;color:var(--white);line-height:.95;white-space:nowrap}
 .brand-name strong{color:var(--mint)}.brand-name small{display:block;margin-top:8px;font:700 9px Inter,sans-serif;letter-spacing:4px;color:#9db4c2}
-.separator{height:58px;width:1px;background:linear-gradient(transparent,var(--teal),transparent)}
-.player{display:flex;flex-direction:column;gap:2px;min-width:210px}
-.label{font-size:9px;letter-spacing:3px;color:var(--gold);font-weight:800}
-#player-name{font:900 39px 'Barlow Condensed',sans-serif;letter-spacing:1px;color:#fff;text-transform:uppercase;line-height:1}
-.role-wrap{margin-left:auto;display:flex;align-items:center;gap:10px;padding:12px 17px;background:#3c919526;border:1px solid #3c919588;color:var(--mint);font:800 17px 'Barlow Condensed',sans-serif;letter-spacing:3px}
-.role-symbol{color:var(--gold);font-size:14px}
+.divider{height:66px;width:1px;flex:0 0 1px;background:linear-gradient(transparent,var(--teal),transparent);position:relative;z-index:1}
+.players{display:flex;align-items:stretch;gap:12px;flex:1;min-width:0;position:relative;z-index:1}
+.player-card{min-width:0;flex:1;display:flex;align-items:center;gap:12px;padding:12px 15px;background:linear-gradient(135deg,rgba(60,145,149,.19),rgba(1,12,44,.35));border:1px solid rgba(143,236,201,.19);border-left:3px solid var(--gold);border-radius:5px;animation:card-in .35s ease both}
+.player-name{font:800 clamp(19px,2vw,29px) 'Barlow Condensed',sans-serif;color:#fff;letter-spacing:1px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.player-role{font:800 11px Inter,sans-serif;letter-spacing:1.5px;color:var(--mint);padding:8px 10px;border:1px solid #3c919588;background:#3c919522;border-radius:3px;white-space:nowrap}
+.role-mark{width:7px;height:30px;background:var(--mint);box-shadow:0 0 12px #8fecc955;flex:0 0 7px}
+.edge{position:absolute;right:0;top:0;width:4px;height:100%;background:var(--gold);box-shadow:0 0 20px #c89c4d88}
+@keyframes card-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:950px){.banner{left:5%;width:90%;gap:14px;padding:13px}.brand{flex-basis:165px}.brand img{width:55px;height:55px}.brand-name{font-size:18px}.players{gap:7px}.player-card{padding:9px;gap:7px}.player-role{font-size:9px;padding:6px}}
