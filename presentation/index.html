@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chroma Esport — Player Presentation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" id="stage" aria-live="polite">
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><span>C</span></div>
+        <div class="brand-name"><strong>CHROMA</strong><b>ESPORT</b></div>
+      </div>
+      <div class="event-label"><span>PLAYER PRESENTATION</span><b>/ OVERWATCH</b></div>
+      <div class="top-line"></div>
+    </header>
+
+    <section class="profile">
+      <div class="section-kicker"><i></i> PLAYER PROFILE</div>
+      <div class="identity">
+        <div class="identity-copy">
+          <div class="eyebrow" id="playerTag">CHROMA OVERWATCH</div>
+          <h1 id="playerName">JK</h1>
+          <div class="role"><span class="role-diamond"></span><span id="playerRole">TANK MAIN</span></div>
+          <div class="accent-line"></div>
+          <div class="details">
+            <article class="detail"><span>ÉQUIPE</span><strong id="playerTeam">CHROMA OVERWATCH</strong></article>
+            <article class="detail"><span>STATUT</span><strong id="playerStatus">CAPITAINE</strong></article>
+            <article class="detail"><span>RESPONSABILITÉ</span><strong id="playerResponsibility">MANAGER DES ÉQUIPES OVERWATCH</strong></article>
+          </div>
+        </div>
+        <div class="hero-zone">
+          <div class="hero-orbit"></div>
+          <div class="hero-number" id="heroNumber">01</div>
+          <div class="hero-figure" id="heroFigure" aria-hidden="true">
+            <svg viewBox="0 0 520 650" role="img">
+              <defs>
+                <linearGradient id="armor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9e8ee"/><stop offset=".55" stop-color="#718e9b"/><stop offset="1" stop-color="#203c55"/></linearGradient>
+                <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fecc9"/><stop offset="1" stop-color="#3c9195"/></linearGradient>
+              </defs>
+              <path class="cape" d="M160 270 L85 335 L45 590 L260 635 L475 590 L435 335 L360 270Z"/>
+              <path class="arm" d="M155 285 L65 320 L28 455 L100 495 L185 365Z"/>
+              <path class="arm" d="M365 285 L455 320 L492 455 L420 495 L335 365Z"/>
+              <path class="torso" d="M175 245 L120 310 L160 475 L260 550 L360 475 L400 310 L345 245Z"/>
+              <path class="chest" d="M215 315 L260 295 L305 315 L330 390 L260 465 L190 390Z"/>
+              <path class="neck" d="M220 220 L220 275 L300 275 L300 220Z"/>
+              <path class="helmet" d="M180 95 L205 35 L315 35 L340 95 L325 225 L260 270 L195 225Z"/>
+              <path class="visor" d="M205 130 L315 130 L300 175 L260 195 L220 175Z"/>
+              <path class="crest" d="M230 38 L260 0 L290 38Z"/>
+              <path class="shield" d="M380 285 L485 250 L505 420 L405 445Z"/>
+              <path class="shield-mark" d="M420 320 L465 305 L475 395 L430 410Z"/>
+            </svg>
+          </div>
+          <div class="hero-caption"><span>MAIN HERO</span><strong id="heroName">REINHARDT</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="motto">NEVER BACK<br>DOWN<span>.</span></div>
+      <div class="footer-meta"><span>CHROMA ESPORT</span><i></i><span>OVERWATCH DIVISION</span></div>
+    </footer>
+    <div class="scanline"></div>
+  </main>
+  <script src="players.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
