@@ -20,6 +20,12 @@
     if (node && value) node.textContent = value;
   });
 
+  const heroPortrait = document.getElementById("heroPortrait");
+  if (heroPortrait && player.heroImage) {
+    heroPortrait.src = `../heroes/${encodeURIComponent(player.heroImage)}`;
+    heroPortrait.alt = player.hero || "Héros Overwatch";
+  }
+
   const stage = document.getElementById("stage");
   // Rejoue l'animation à chaque rechargement de la source navigateur OBS.
   requestAnimationFrame(() => stage.classList.add("playing"));
