@@ -23,6 +23,6 @@
 
 
 /* Logo officiel : taille harmonisée avec le bloc typographique */
-.brand{display:flex;align-items:center;gap:16px}
-.brand-logo{display:block;width:88px;height:72px;flex:0 0 88px;object-fit:contain;object-position:center}
+.brand{display:flex;align-items:center;gap:18px}
+.brand-logo{display:block;width:98px;height:68px;flex:0 0 98px;object-fit:contain;object-position:center}
 .brand-name{position:relative;z-index:1}
