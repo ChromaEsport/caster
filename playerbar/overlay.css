@@ -433,3 +433,49 @@ body{font-family:Inter,Arial,sans-serif}
 #banner.design-minimal .identity-kicker{font-size:7px !important;letter-spacing:2px !important}
 #banner.design-minimal .identity-kicker i{display:none !important}
 #banner.design-minimal .player-name{font-size:clamp(30px,3.5vw,46px) !important;letter-spacing:1px !important}
+
+
+/* Illustration du héros choisi — intégrée aux trois compositions */
+#banner .hero-art{
+  position:absolute;
+  z-index:1;
+  right:4.2%;
+  bottom:-20%;
+  width:230px;
+  height:165%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  pointer-events:none;
+  overflow:visible;
+  opacity:.96;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%);
+}
+#banner .hero-art[hidden]{display:none}
+#banner .hero-art img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(0 5px 18px rgba(0,0,0,.62));
+}
+#banner .identity{padding-right:220px}
+#banner.design-minimal .identity{padding-right:205px}
+#banner.design-strike .hero-art{right:5%;width:245px}
+#banner.design-strike .hero-art img{filter:drop-shadow(0 5px 20px rgba(200,156,77,.22)) drop-shadow(0 5px 14px rgba(0,0,0,.7))}
+#banner.design-minimal .hero-art{right:3%;width:190px;height:145%;opacity:.82}
+@media(max-width:1100px){
+  #banner .hero-art{right:3%;width:175px;height:150%}
+  #banner .identity{padding-right:165px}
+  #banner.design-minimal .identity{padding-right:150px}
+}
+@media(max-width:700px){
+  #banner .hero-art{right:2%;width:105px;height:135%;bottom:-12%;opacity:.72}
+  #banner .identity{padding-right:92px}
+  #banner.design-minimal .identity{padding-right:88px}
+  #banner .identity-kicker{max-width:100%;white-space:nowrap}
+}
