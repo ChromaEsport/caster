@@ -14,3 +14,9 @@
 @keyframes slideDown{from{opacity:0;transform:translateY(-35px)}to{opacity:1;transform:none}}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes growLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes heroEnter{from{opacity:0;transform:translate(80px,35px) scale(.82)}to{opacity:1;transform:translate(0,16px) scale(1)}}@keyframes orbitIn{from{opacity:0;transform:scale(.7) rotate(-25deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 @media(max-aspect-ratio:4/3){.profile{left:5%;right:3%}.identity{grid-template-columns:58% 42%}.detail strong{font-size:20px}.hero-figure{width:42vw}.event-label{letter-spacing:3px}.footer{left:5%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Logo officiel Chroma */
+.brand-mark{border:0;border-radius:0;box-shadow:none;background:transparent;overflow:visible}
+.brand-mark:before{display:none}
+.brand-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-mark span{display:none}
