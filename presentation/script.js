@@ -13,7 +13,7 @@
 
   const fields = {
     playerName: player?.name || requested.toUpperCase(),
-    playerTag: player?.tag || "",
+    playerTag: "CHROMA OVERWATCH",
     playerRole: player?.role || "",
     playerTeam: "CHROMA OVERWATCH",
     heroName: heroFromUrl ? heroFromUrl.toUpperCase() : (player?.hero || ""),
