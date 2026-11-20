@@ -34,7 +34,7 @@
       heroPortrait.src = `../heroes/${encodeURIComponent(heroFromUrl)}.png`;
       heroPortrait.alt = heroFromUrl;
     } else if (player?.heroImage) {
-      heroPortrait.src = /^https?:\\/\\//i.test(player.heroImage)
+      heroPortrait.src = (player.heroImage.startsWith("http://") || player.heroImage.startsWith("https://"))
         ? player.heroImage
         : `../heroes/${encodeURIComponent(player.heroImage)}`;
       heroPortrait.alt = player.hero || "Héros Overwatch";
