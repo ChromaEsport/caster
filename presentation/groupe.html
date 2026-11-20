@@ -60,7 +60,7 @@ body{font-family:Rajdhani,Arial,sans-serif}
 <div class="background-grid"></div><div class="background-shape"></div>
 <div class="side-rail"><span>CHROMA ESPORT</span><i></i><b>OVERWATCH</b></div>
 <header class="header">
-<img class="logo" src="../../logo/chroma%20badge.png" alt="Chroma Esport">
+<img class="logo" src="../logo/chroma%20badge.png" alt="Chroma Esport">
 <div class="header-rule"></div>
 <div class="header-label"><span>CHROMA ESPORT</span><strong>TEAM LINE-UP</strong></div>
 <div class="header-index">ROSTER <b>/ 2026</b></div>
@@ -70,7 +70,7 @@ body{font-family:Rajdhani,Arial,sans-serif}
 <footer class="footer"><div class="footer-slogan">NEVER BACK DOWN<span>.</span></div><div class="footer-line"></div><div class="footer-caption">BUILT TO COMPETE <b>•</b> UNITED AS ONE</div></footer>
 <div class="corner corner-tl"></div><div class="corner corner-br"></div>
 </main>
-<script src="../players.js"></script>
+<script src="players.js"></script>
 <script>
 (() => {
  const params = new URLSearchParams(location.search);
@@ -89,8 +89,8 @@ body{font-family:Rajdhani,Arial,sans-serif}
    const heroName=heroRaw.toUpperCase();
    const number=(params.get("number"+i)||player.heroNumber||String(i).padStart(2,"0")).trim();
    const status=(params.get("status"+i)||player.status||"").trim();
-   const roleIcon=roleFiles[roleRaw] ? `<img class="role-icon" src="../../roles/${roleFiles[roleRaw]}.png" alt="">` : "";
-   const portrait=heroSlug ? `<img class="portrait" src="../perso/${encodeURIComponent(heroSlug)}.jpg" alt="${heroName}" onerror="this.remove();this.parentElement.querySelector('.portrait-placeholder').hidden=false">` : "";
+   const roleIcon=roleFiles[roleRaw] ? `<img class="role-icon" src="../roles/${roleFiles[roleRaw]}.png" alt="">` : "";
+   const portrait=heroSlug ? `<img class="portrait" src="perso/${encodeURIComponent(heroSlug)}.jpg" alt="${heroName}" onerror="this.remove();this.parentElement.querySelector('.portrait-placeholder').hidden=false">` : "";
    const card=document.createElement("article");
    card.className="player-card";card.style.setProperty("--i",i-1);
    card.innerHTML=`
