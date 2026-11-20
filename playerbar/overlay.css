@@ -289,3 +289,95 @@ body{font-family:Inter,Arial,sans-serif}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
 }
+
+/* Variantes sélectionnables depuis l'espace joueur */
+.banner.design-broadcast{ /* identité Chroma Broadcast par défaut */ }
+
+/* STRIKE — silhouette plus agressive, accent or et panneau de pseudo */
+.banner.design-strike{
+  grid-template-columns:205px 150px minmax(0,1fr);
+  background:linear-gradient(105deg,#010c2c 0%,#10243d 47%,#342719 100%);
+  clip-path:polygon(0 0,93.5% 0,100% 50%,93.5% 100%,0 100%,3.2% 50%);
+}
+.banner.design-strike:before{
+  width:10px;
+  background:linear-gradient(180deg,#fff0c7,var(--gold),#8a5a20);
+  box-shadow:0 0 25px rgba(200,156,77,.7);
+}
+.banner.design-strike:after{
+  height:4px;
+  background:linear-gradient(90deg,var(--gold),#f4d79b 38%,transparent 82%);
+}
+.banner.design-strike .frame{
+  clip-path:none;
+  border:1px solid rgba(200,156,77,.55);
+}
+.banner.design-strike .brand-mark:before{
+  border-color:rgba(200,156,77,.8);
+  background:linear-gradient(145deg,rgba(200,156,77,.28),rgba(1,12,44,.1));
+}
+.banner.design-strike .brand:after,
+.banner.design-strike .identity:before{
+  background:linear-gradient(180deg,transparent,var(--gold),#f4d79b,transparent);
+}
+.banner.design-strike .brand-copy strong,
+.banner.design-strike .role-label{color:#f0c879}
+.banner.design-strike .role-orbit{
+  border-color:rgba(200,156,77,.8);
+  background:radial-gradient(circle,rgba(200,156,77,.28),rgba(1,12,44,.25) 68%);
+  box-shadow:0 0 20px rgba(200,156,77,.3),inset 0 0 14px rgba(200,156,77,.16);
+}
+.banner.design-strike .role-icon{filter:drop-shadow(0 0 8px rgba(240,200,121,.55))}
+.banner.design-strike .role-zone:before{border-color:rgba(200,156,77,.2)}
+.banner.design-strike .swoosh{border-color:rgba(200,156,77,.2)}
+.banner.design-strike .end-cap{background:linear-gradient(135deg,rgba(200,156,77,.25),rgba(60,145,149,.04))}
+.banner.design-strike .identity-kicker{color:rgba(240,200,121,.85)}
+
+/* MINIMAL — bandeau bas, lecture directe et sans médaillon */
+.banner.design-minimal{
+  height:104px;
+  grid-template-columns:190px 125px minmax(0,1fr);
+  background:linear-gradient(90deg,rgba(1,12,44,.98),rgba(4,27,43,.97));
+  clip-path:polygon(0 0,98.5% 0,100% 18%,100% 100%,0 100%);
+  padding-left:24px;
+}
+.banner.design-minimal:before{width:4px;background:var(--mint);box-shadow:0 0 15px rgba(143,236,201,.45)}
+.banner.design-minimal:after{height:1px;background:linear-gradient(90deg,var(--mint),rgba(143,236,201,.08) 75%,transparent)}
+.banner.design-minimal .frame{clip-path:none;border:1px solid rgba(143,236,201,.22)}
+.banner.design-minimal .brand-mark{width:54px;height:54px;flex-basis:54px}
+.banner.design-minimal .brand-mark:before{clip-path:none;border-radius:8px}
+.banner.design-minimal .brand-mark img{width:42px;height:42px}
+.banner.design-minimal .brand:after{right:14px;background:rgba(143,236,201,.25)}
+.banner.design-minimal .role-zone:before,
+.banner.design-minimal .role-orbit:before,
+.banner.design-minimal .role-orbit:after,
+.banner.design-minimal .orbit-dot,
+.banner.design-minimal .swoosh,
+.banner.design-minimal .end-cap{display:none}
+.banner.design-minimal .role-zone{flex-direction:row;gap:8px}
+.banner.design-minimal .role-orbit{width:42px;height:42px;border-radius:9px;background:rgba(60,145,149,.14);box-shadow:none}
+.banner.design-minimal .role-icon{width:28px;height:28px}
+.banner.design-minimal .role-label{font-size:8px;letter-spacing:1.5px}
+.banner.design-minimal .identity{align-items:flex-start;padding-left:12px}
+.banner.design-minimal .identity-kicker{font-size:7px;letter-spacing:2px}
+.banner.design-minimal .identity-kicker i{display:none}
+.banner.design-minimal .identity:before{right:0;width:2px}
+.banner.design-minimal .player-name{letter-spacing:1px}
+.banner.design-minimal .light-pass{opacity:.35}
+
+@media(max-width:1100px){
+  .banner.design-strike{grid-template-columns:175px 125px minmax(0,1fr)}
+  .banner.design-minimal{grid-template-columns:160px 105px minmax(0,1fr)}
+}
+@media(max-width:700px){
+  .banner.design-strike{grid-template-columns:115px 82px minmax(0,1fr)}
+  .banner.design-minimal{grid-template-columns:112px 78px minmax(0,1fr);height:86px;padding:0 12px}
+  .banner.design-minimal .brand{gap:5px}
+  .banner.design-minimal .brand-mark{width:36px;height:36px;flex-basis:36px}
+  .banner.design-minimal .brand-mark img{width:28px;height:28px}
+  .banner.design-minimal .brand-copy{font-size:13px}
+  .banner.design-minimal .role-zone{gap:5px}
+  .banner.design-minimal .role-orbit{width:32px;height:32px}
+  .banner.design-minimal .role-icon{width:22px;height:22px}
+  .banner.design-minimal .role-label{font-size:6px;letter-spacing:.8px}
+}
