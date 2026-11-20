@@ -1,3 +1,4 @@
+
 import { db, doc, setDoc, onSnapshot } from "../firebase.js";
 const idInput=document.getElementById("player-id");
 const pseudo=document.getElementById("pseudo");
