@@ -107,11 +107,7 @@ body{font-family:Rajdhani,Arial,sans-serif}
  function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
  const stage=document.getElementById("stage");
  requestAnimationFrame(()=>stage.classList.add("playing"));
- if(params.get("preview")!=="1"){
-  const requested=Number(params.get("duration")||8);
-  const duration=Number.isFinite(requested)?Math.min(60,Math.max(1,requested)):8;
-  setTimeout(()=>stage.classList.add("disappearing"),duration*1000);
- }
+ // La présentation collective reste affichée : aucun compte à rebours.
 })();
 </script>
 </body>
