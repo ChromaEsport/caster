@@ -48,7 +48,7 @@
     if (heroFromUrl) {
       // Exemple : ?heroes=reinhardt -> perso/reinhardt.jpg
       const heroFile = heroParam.toLowerCase().replace(/[^a-z0-9_-]/g, "");
-      heroPortrait.src = `perso/${encodeURIComponent(heroFile)}.jpg`;
+      heroPortrait.src = `perso/${encodeURIComponent(heroFile)}.png`;
       heroPortrait.alt = heroFromUrl;
     } else if (player?.heroImage) {
       heroPortrait.src = (player.heroImage.startsWith("http://") || player.heroImage.startsWith("https://"))
