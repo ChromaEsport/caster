@@ -82,16 +82,6 @@ h1 {
 .name-decoration em { color:rgba(253,85,3,.11);font-style:normal; }
 
 .character-panel { position:relative;height:100%;display:flex;align-items:center;justify-content:center; }
-.character-frame {
-  position:absolute;inset:3% 0 1% 4%;
-  border:1px solid rgba(143,236,201,.25);
-  clip-path:polygon(14% 0,100% 0,100% 85%,86% 100%,0 100%,0 14%);
-  background:linear-gradient(145deg,rgba(60,145,149,.11),rgba(1,12,44,.08));
-}
-.character-frame:before {
-  content:"";position:absolute;inset:13px;border:1px solid rgba(200,156,77,.2);
-  clip-path:polygon(14% 0,100% 0,100% 85%,86% 100%,0 100%,0 14%);
-}
 .character-glow {
   position:absolute;width:75%;height:72%;border-radius:50%;
   background:rgba(60,145,149,.16);filter:blur(70px);
@@ -137,12 +127,10 @@ h1 {
 .stage.playing .role-line { animation-delay:.32s; }
 .stage.playing .team-card { animation-delay:.48s; }
 .stage.playing .character-image { animation:characterIn 1s .2s cubic-bezier(.16,1,.3,1) both; }
-.stage.playing .character-frame { animation:frameIn .9s .1s both; }
 .stage.playing .footer { animation:riseIn .65s .75s both; }
 @keyframes dropIn { from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none} }
 @keyframes riseIn { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none} }
 @keyframes characterIn { from{opacity:0;transform:translate(55px,20px) scale(.9)}to{opacity:1;transform:none} }
-@keyframes frameIn { from{opacity:0;clip-path:inset(0 0 100% 0)}to{opacity:1;clip-path:inset(0 0 0 0)} }
 
 @media (max-aspect-ratio:4/3) {
   .content { left:8%;right:3%;grid-template-columns:48% 52%; }
