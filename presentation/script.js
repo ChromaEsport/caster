@@ -46,8 +46,9 @@
   const heroPortrait = document.getElementById("heroPortrait");
   if (heroPortrait) {
     if (heroFromUrl) {
-      // Exemple : ?player=cheo&heroes=reinhardt -> ../heroes/Reinhardt.png
-      heroPortrait.src = `../heroes/${encodeURIComponent(heroFromUrl)}.png`;
+      // Exemple : ?heroes=reinhardt -> perso/reinhardt.jpg
+      const heroFile = heroParam.toLowerCase().replace(/[^a-z0-9_-]/g, "");
+      heroPortrait.src = `perso/${encodeURIComponent(heroFile)}.jpg`;
       heroPortrait.alt = heroFromUrl;
     } else if (player?.heroImage) {
       heroPortrait.src = (player.heroImage.startsWith("http://") || player.heroImage.startsWith("https://"))
