@@ -633,3 +633,25 @@ body{font-family:Inter,Arial,sans-serif}
   #banner.design-broadcast .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
   #banner.design-broadcast .identity{padding-left:155px}
 }
+
+
+/* BROADCAST ANGULAIRE — restaurer la zone d'identité à droite */
+#banner.design-broadcast .identity{
+  padding-left:15px !important;
+  padding-right:220px !important;
+  align-items:flex-end !important;
+  justify-self:stretch;
+  min-width:0;
+}
+#banner.design-broadcast .identity-kicker,
+#banner.design-broadcast .player-name,
+#banner.design-broadcast .hero-name{
+  position:relative;
+  z-index:6;
+}
+@media(max-width:1100px){
+  #banner.design-broadcast .identity{padding-left:12px !important;padding-right:165px !important}
+}
+@media(max-width:700px){
+  #banner.design-broadcast .identity{padding-left:8px !important;padding-right:92px !important}
+}
