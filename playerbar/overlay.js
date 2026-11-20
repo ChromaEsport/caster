@@ -52,7 +52,7 @@ if (!playerId) {
     const heroFile = String(player.hero || "").trim();
     if (heroFile) {
       heroImage.src = `../heroes/${encodeURIComponent(heroFile)}`;
-      heroImage.alt = heroFile.replace(/\\.png$/i, "");
+      heroImage.alt = heroFile.replace(/\.png$/i, "");
       heroArt.hidden = false;
     } else {
       heroArt.hidden = true;
