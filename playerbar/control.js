@@ -2,6 +2,7 @@ import { db, doc, setDoc, onSnapshot } from "../firebase.js";
 const idInput=document.getElementById("player-id");
 const pseudo=document.getElementById("pseudo");
 const role=document.getElementById("role");
+const hero=document.getElementById("hero");
 const design=document.getElementById("design");
 const status=document.getElementById("status");
 const params=new URLSearchParams(location.search);
@@ -19,6 +20,7 @@ function listen(){
     const data=snap.exists()?snap.data():{};
     pseudo.value=data.pseudo||"";
     role.value=data.role||"TANK";
+    hero.value=data.hero||"";
     design.value=data.design||"broadcast";
     visible=!!data.visible;
     ready=true;
@@ -31,7 +33,7 @@ async function save(show){
   if(show&&!name){status.textContent="Renseigne ton pseudo avant l'affichage.";return;}
   ready=false;
   try{
-    await setDoc(doc(db,"playerbar",id),{playerId:id,pseudo:name,role:role.value,design:design.value,visible:show,updatedAt:Date.now()});
+    await setDoc(doc(db,"playerbar",id),{playerId:id,pseudo:name,role:role.value,design:design.value,hero:hero.value,visible:show,updatedAt:Date.now()});
     visible=show;ready=true;
     status.textContent=show?"Ton bandeau est affiché en direct !":"Ton bandeau est masqué.";
     const url=new URL(location.href);url.searchParams.set("id",id);history.replaceState({}, "",url);
@@ -41,6 +43,7 @@ idInput.addEventListener("change",listen);
 idInput.addEventListener("input",()=>{ready=false;status.textContent="Valide ton identifiant en quittant le champ.";});
 pseudo.addEventListener("input",()=>{if(visible){clearTimeout(saveTimer);saveTimer=setTimeout(()=>save(true),350);}});
 role.addEventListener("change",()=>{if(visible)save(true);});
+hero.addEventListener("change",()=>save(visible));
 design.addEventListener("change",()=>save(visible));
 document.getElementById("show").addEventListener("click",()=>save(true));
 document.getElementById("hide").addEventListener("click",()=>save(false));
