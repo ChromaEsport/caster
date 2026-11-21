@@ -775,3 +775,10 @@ body{font-family:Inter,Arial,sans-serif}
     width:60px !important;height:60px !important;
   }
 }
+
+
+/* Suppression du séparateur décoratif après le bloc brand */
+#banner .brand:after{
+  content:none !important;
+  display:none !important;
+}
