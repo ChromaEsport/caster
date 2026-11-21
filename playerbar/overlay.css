@@ -1088,7 +1088,22 @@ body{font-family:Inter,Arial,sans-serif}
 #playerBanner.design-neon > .hero-art{
   position:absolute !important;
 }
-#playerBanner.design-neon > .brand{left:28px !important;top:0 !important;height:100% !important;width:250px !important}
-#playerBanner.design-neon > .role-zone{left:50% !important;top:50% !important;transform:translate(-50%,-50%) !important}
-#playerBanner.design-neon > .identity{right:245px !important;top:50% !important;left:auto !important;transform:translateY(-50%) !important}
-#playerBanner.design-neon > .hero-art{right:3% !important;bottom:-18% !important}
+/* Bandeau Néon : suppression du bloc de marque et contenu abaissé dans la zone utile */
+#playerBanner.design-neon > .brand{
+  display:none !important;
+}
+#playerBanner.design-neon > .role-zone{
+  left:50% !important;
+  top:62% !important;
+  transform:translate(-50%,-50%) !important;
+}
+#playerBanner.design-neon > .identity{
+  right:245px !important;
+  top:62% !important;
+  left:auto !important;
+  transform:translateY(-50%) !important;
+}
+#playerBanner.design-neon > .hero-art{
+  right:3% !important;
+  bottom:-18% !important;
+}
