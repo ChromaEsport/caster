@@ -1058,6 +1058,8 @@ body{font-family:Inter,Arial,sans-serif}
   clip-path:none !important;
   filter:none !important;
   overflow:visible !important;
+  height:auto !important;
+  aspect-ratio:2172 / 725 !important;
 }
 #playerBanner.design-neon > .banner-image{
   display:block !important;
@@ -1066,7 +1068,8 @@ body{font-family:Inter,Arial,sans-serif}
   inset:0 !important;
   width:100% !important;
   height:100% !important;
-  object-fit:fill !important;
+  object-fit:contain !important;
+  object-position:center center !important;
   pointer-events:none !important;
 }
 #playerBanner.design-neon > .frame,
