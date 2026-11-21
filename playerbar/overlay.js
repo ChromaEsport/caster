@@ -3,7 +3,7 @@ import { db, doc, onSnapshot } from "../firebase.js";
 const params = new URLSearchParams(location.search);
 const playerId = (params.get("id") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 24);
 
-const banner = document.getElementById("banner");
+const banner = document.getElementById("playerBanner");
 const nameEl = document.getElementById("playerName");
 const roleIcon = document.getElementById("roleIcon");
 const roleLabel = document.getElementById("roleLabel");
