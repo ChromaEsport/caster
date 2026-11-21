@@ -5,44 +5,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CHROMA · Overwatch HUD</title>
 <style>
-:root{
-  --navy:#010c2c;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d;
-  --line:rgba(143,236,201,.88);--glow:rgba(60,145,149,.42);
-}
+:root{--navy:#010c2c;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
 #hud{position:relative;width:1920px;height:1080px;transform-origin:top left;overflow:hidden;pointer-events:none}
-.frame{position:absolute;border:1.5px solid var(--line);background:linear-gradient(135deg,rgba(1,12,44,.12),rgba(1,12,44,.025));filter:drop-shadow(0 0 5px var(--glow));}
-.frame:before,.frame:after{content:"";position:absolute;pointer-events:none}
-.frame:before{inset:5px;border:1px solid rgba(143,236,201,.22)}
-.frame:after{width:28px;height:3px;left:12px;top:-2px;background:var(--mint);box-shadow:0 0 9px var(--teal)}
-/* Portrait: frame remains outside the game's native portrait */
-.portrait{left:27px;bottom:24px;width:145px;height:145px;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,14% 100%,0 86%)}
-.portrait:after{left:14px;top:-2px;width:42px}
-/* Health: long, low frame to trace the native health display */
-.health{left:181px;bottom:35px;width:420px;height:82px;clip-path:polygon(0 0,96% 0,100% 22%,100% 100%,4% 100%,0 78%)}
-.health:after{left:22px;width:64px}
-/* Ability cluster */
-.abilities{left:718px;bottom:24px;width:390px;height:106px;clip-path:polygon(0 17%,8% 0,92% 0,100% 17%,100% 100%,0 100%)}
-.abilities:after{left:50%;transform:translateX(-50%);width:56px}
-/* Ultimate */
-.ultimate{left:1122px;bottom:28px;width:154px;height:112px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%)}
-.ultimate:after{left:50%;transform:translateX(-50%);width:44px;background:var(--gold);box-shadow:0 0 10px rgba(200,156,77,.6)}
-/* Ammunition / weapon info */
-.ammo{right:31px;bottom:30px;width:205px;height:92px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%)}
-.ammo:after{left:auto;right:16px;width:46px;background:var(--gold);box-shadow:0 0 10px rgba(200,156,77,.6)}
-/* restrained corner ticks */
-.tick{position:absolute;height:2px;background:var(--teal);opacity:.85;box-shadow:0 0 8px var(--glow)}
-.portrait .tick{width:22px;right:10px;bottom:10px}
-.health .tick{width:36px;right:12px;bottom:10px}
-.abilities .tick{width:24px;right:12px;bottom:10px}
-.ultimate .tick{width:18px;right:10px;bottom:10px;background:var(--gold)}
-.ammo .tick{width:24px;left:12px;bottom:10px;background:var(--gold)}
-/* Optional guide labels: enable with ?guide=1 */
-.guide{display:none;position:absolute;color:rgba(143,236,201,.9);font:700 10px/1 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
-body.show-guide .guide{display:block}
+.frame{
+ position:absolute;isolation:isolate;
+ background:linear-gradient(145deg,rgba(1,12,44,.58),rgba(1,12,44,.16) 48%,rgba(1,12,44,.48));
+ border:1px solid rgba(143,236,201,.76);
+ filter:drop-shadow(0 0 5px rgba(60,145,149,.48)) drop-shadow(0 0 15px rgba(1,12,44,.55));
+}
+.frame:before{content:"";position:absolute;inset:4px;border:1px solid rgba(143,236,201,.25);pointer-events:none}
+.frame:after{content:"";position:absolute;top:-1px;left:15px;width:48px;height:3px;background:var(--mint);box-shadow:0 0 7px var(--mint),0 0 16px rgba(60,145,149,.8)}
+.frame .tick{position:absolute;height:2px;background:var(--mint);opacity:.9;box-shadow:0 0 8px rgba(143,236,201,.8)}
+.frame .guide{display:none;position:absolute;z-index:5;color:var(--mint);font:800 10px/1 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;text-shadow:0 2px 5px #010c2c}
 .guide b{display:block;font-size:12px;color:white;margin-top:5px;letter-spacing:1px}
-
+body.show-guide .guide{display:block}
+/* HERO PORTRAIT — layered shield with a bright upper edge */
+.portrait{left:25px;bottom:22px;width:151px;height:151px;clip-path:polygon(0 0,82% 0,100% 18%,100% 100%,16% 100%,0 84%);background:linear-gradient(135deg,rgba(143,236,201,.9),rgba(60,145,149,.32) 24%,rgba(1,12,44,.88) 70%)}
+.portrait:before{inset:2px;background:linear-gradient(145deg,rgba(1,12,44,.88),rgba(1,12,44,.35));border:1px solid rgba(143,236,201,.35)}
+.portrait:after{left:12px;top:0;width:55px;height:3px}
+.portrait .tick{width:34px;right:10px;bottom:11px}
+/* HEALTH — long aerodynamic rail, chamfered right edge */
+.health{left:184px;bottom:31px;width:426px;height:91px;clip-path:polygon(0 0,94% 0,100% 23%,100% 100%,5% 100%,0 78%);background:linear-gradient(100deg,rgba(60,145,149,.5),rgba(1,12,44,.82) 23%,rgba(1,12,44,.52))}
+.health:before{inset:4px;clip-path:polygon(0 0,94% 0,100% 23%,100% 100%,5% 100%,0 78%);border:1px solid rgba(143,236,201,.34)}
+.health:after{left:20px;width:80px}
+.health .tick{width:42px;right:17px;bottom:11px}
+/* ABILITIES — segmented broadcast plate */
+.abilities{left:700px;bottom:21px;width:408px;height:112px;clip-path:polygon(0 16%,7% 0,93% 0,100% 16%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(60,145,149,.4),rgba(1,12,44,.78) 30%,rgba(1,12,44,.58))}
+.abilities:before{inset:4px;clip-path:polygon(0 16%,7% 0,93% 0,100% 16%,100% 100%,0 100%);border:1px solid rgba(143,236,201,.3)}
+.abilities:after{left:50%;transform:translateX(-50%);width:70px}
+.abilities .tick{width:32px;right:15px;bottom:11px}
+/* ULTIMATE — gold-highlighted focal module */
+.ultimate{left:1120px;bottom:24px;width:164px;height:118px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(200,156,77,.32),rgba(1,12,44,.86) 38%,rgba(1,12,44,.62))}
+.ultimate:before{inset:4px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%);border:1px solid rgba(200,156,77,.48)}
+.ultimate:after{left:50%;transform:translateX(-50%);width:52px;background:var(--gold);box-shadow:0 0 8px var(--gold),0 0 18px rgba(200,156,77,.5)}
+.ultimate .tick{width:22px;right:12px;bottom:11px;background:var(--gold);box-shadow:0 0 8px rgba(200,156,77,.8)}
+/* AMMO — mirrored plate with gold micro accent */
+.ammo{right:27px;bottom:27px;width:213px;height:96px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%);background:linear-gradient(225deg,rgba(200,156,77,.22),rgba(1,12,44,.82) 35%,rgba(1,12,44,.55))}
+.ammo:before{inset:4px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%);border:1px solid rgba(143,236,201,.3)}
+.ammo:after{left:auto;right:15px;width:52px;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.ammo .tick{width:30px;left:13px;bottom:11px;background:var(--gold);box-shadow:0 0 8px rgba(200,156,77,.75)}
+/* Fine broadcast details: small edge cuts, notches and light rails */
+.portrait:after,.health:after,.abilities:after,.ultimate:after,.ammo:after{height:3px}
+.health{border-right:2px solid rgba(143,236,201,.8)}
+.abilities{border-top:2px solid rgba(143,236,201,.72)}
+.portrait{border-left:2px solid rgba(143,236,201,.92)}
+.ultimate{border-top:2px solid rgba(200,156,77,.88)}
+.ammo{border-right:2px solid rgba(200,156,77,.8)}
+@media(prefers-reduced-motion:no-preference){
+ .frame{animation:frameIn .7s ease-out both}
+ @keyframes frameIn{from{opacity:0;filter:brightness(1.8) drop-shadow(0 0 18px rgba(143,236,201,.7))}to{opacity:1}}
+}
 </style>
 </head>
 <body>
