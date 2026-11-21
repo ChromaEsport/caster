@@ -22,27 +22,27 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent
 .guide b{display:block;font-size:12px;color:white;margin-top:5px;letter-spacing:1px}
 body.show-guide .guide{display:block}
 /* HERO PORTRAIT — layered shield with a bright upper edge */
-.portrait{left:48px;bottom:30px;width:128px;height:128px;clip-path:polygon(0 0,82% 0,100% 18%,100% 100%,16% 100%,0 84%);background:linear-gradient(135deg,rgba(143,236,201,.9),rgba(60,145,149,.32) 24%,rgba(1,12,44,.88) 70%)}
+.portrait{left:34px;bottom:34px;width:116px;height:116px;clip-path:polygon(0 0,82% 0,100% 18%,100% 100%,16% 100%,0 84%);background:linear-gradient(135deg,rgba(143,236,201,.9),rgba(60,145,149,.32) 24%,rgba(1,12,44,.88) 70%)}
 .portrait:before{inset:2px;background:linear-gradient(145deg,rgba(1,12,44,.88),rgba(1,12,44,.35));border:1px solid rgba(143,236,201,.35)}
 .portrait:after{left:12px;top:0;width:55px;height:3px}
 .portrait .tick{width:34px;right:10px;bottom:11px}
 /* HEALTH — long aerodynamic rail, chamfered right edge */
-.health{left:190px;bottom:42px;width:292px;height:76px;clip-path:polygon(0 0,94% 0,100% 23%,100% 100%,5% 100%,0 78%);background:linear-gradient(100deg,rgba(60,145,149,.5),rgba(1,12,44,.82) 23%,rgba(1,12,44,.52))}
+.health{left:158px;bottom:43px;width:330px;height:78px;clip-path:polygon(0 0,94% 0,100% 23%,100% 100%,5% 100%,0 78%);background:linear-gradient(100deg,rgba(60,145,149,.5),rgba(1,12,44,.82) 23%,rgba(1,12,44,.52))}
 .health:before{inset:4px;clip-path:polygon(0 0,94% 0,100% 23%,100% 100%,5% 100%,0 78%);border:1px solid rgba(143,236,201,.34)}
 .health:after{left:20px;width:80px}
 .health .tick{width:42px;right:17px;bottom:11px}
 /* ABILITIES — segmented broadcast plate */
-.abilities{left:1450px;bottom:27px;width:270px;height:104px;clip-path:polygon(0 16%,7% 0,93% 0,100% 16%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(60,145,149,.4),rgba(1,12,44,.78) 30%,rgba(1,12,44,.58))}
+.abilities{left:1320px;bottom:34px;width:250px;height:88px;clip-path:polygon(0 16%,7% 0,93% 0,100% 16%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(60,145,149,.4),rgba(1,12,44,.78) 30%,rgba(1,12,44,.58))}
 .abilities:before{inset:4px;clip-path:polygon(0 16%,7% 0,93% 0,100% 16%,100% 100%,0 100%);border:1px solid rgba(143,236,201,.3)}
 .abilities:after{left:50%;transform:translateX(-50%);width:70px}
 .abilities .tick{width:32px;right:15px;bottom:11px}
 /* ULTIMATE — gold-highlighted focal module */
-.ultimate{left:850px;bottom:25px;width:220px;height:118px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%);background:linear-gradient(180deg,rgba(200,156,77,.32),rgba(1,12,44,.86) 38%,rgba(1,12,44,.62))}
-.ultimate:before{inset:4px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%);border:1px solid rgba(200,156,77,.48)}
+.ultimate{left:901px;bottom:28px;width:118px;height:118px;border-radius:50%;clip-path:none;background:linear-gradient(180deg,rgba(200,156,77,.32),rgba(1,12,44,.86) 38%,rgba(1,12,44,.62))}
+.ultimate:before{inset:5px;border-radius:50%;clip-path:none;border:1px solid rgba(200,156,77,.58)}
 .ultimate:after{left:50%;transform:translateX(-50%);width:52px;background:var(--gold);box-shadow:0 0 8px var(--gold),0 0 18px rgba(200,156,77,.5)}
 .ultimate .tick{width:22px;right:12px;bottom:11px;background:var(--gold);box-shadow:0 0 8px rgba(200,156,77,.8)}
 /* AMMO — mirrored plate with gold micro accent */
-.ammo{right:32px;bottom:38px;width:158px;height:82px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%);background:linear-gradient(225deg,rgba(200,156,77,.22),rgba(1,12,44,.82) 35%,rgba(1,12,44,.55))}
+.ammo{right:30px;bottom:39px;width:280px;height:82px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%);background:linear-gradient(225deg,rgba(200,156,77,.22),rgba(1,12,44,.82) 35%,rgba(1,12,44,.55))}
 .ammo:before{inset:4px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%);border:1px solid rgba(143,236,201,.3)}
 .ammo:after{left:auto;right:15px;width:52px;background:var(--gold);box-shadow:0 0 8px var(--gold)}
 .ammo .tick{width:30px;left:13px;bottom:11px;background:var(--gold);box-shadow:0 0 8px rgba(200,156,77,.75)}
@@ -51,7 +51,7 @@ body.show-guide .guide{display:block}
 .health{border-right:2px solid rgba(143,236,201,.8)}
 .abilities{border-top:2px solid rgba(143,236,201,.72)}
 .portrait{border-left:2px solid rgba(143,236,201,.92)}
-.ultimate{border-top:2px solid rgba(200,156,77,.88)}
+.ultimate{border:2px solid rgba(200,156,77,.88);box-shadow:0 0 0 5px rgba(200,156,77,.10),0 0 18px rgba(200,156,77,.35)}
 .ammo{border-right:2px solid rgba(200,156,77,.8)}
 @media(prefers-reduced-motion:no-preference){
  .frame{animation:frameIn .7s ease-out both}
