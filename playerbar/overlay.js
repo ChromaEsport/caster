@@ -10,7 +10,7 @@ const roleLabel = document.getElementById("roleLabel");
 const heroArt = document.getElementById("heroArt");
 const heroImage = document.getElementById("heroImage");
 const heroName = document.getElementById("heroName");
-const designs = ["broadcast", "strike", "minimal"];
+const designs = ["broadcast", "strike", "minimal", "neon"];
 
 const roles = {
   TANK: { label: "TANK", icon: "../roles/tank.png", alt: "Icône Tank" },
@@ -41,7 +41,7 @@ if (!playerId) {
     const pseudo = String(player.pseudo || "").trim();
     const role = roles[player.role] || roles.DPS;
     const design = designs.includes(player.design) ? player.design : "broadcast";
-    banner.classList.remove("design-broadcast", "design-strike", "design-minimal");
+    banner.classList.remove("design-broadcast", "design-strike", "design-minimal", "design-neon");
     banner.classList.add(`design-${design}`);
     if (!player.visible || !pseudo) {
       hideBanner();
