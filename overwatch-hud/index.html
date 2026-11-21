@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CHROMA · Overwatch HUD</title>
+<style>
+:root{
+  --navy:#010c2c;--teal:#3c9195;--mint:#8fecc9;--gold:#c89c4d;
+  --line:rgba(143,236,201,.88);--glow:rgba(60,145,149,.42);
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#hud{position:relative;width:1920px;height:1080px;transform-origin:top left;overflow:hidden;pointer-events:none}
+.frame{position:absolute;border:1.5px solid var(--line);background:linear-gradient(135deg,rgba(1,12,44,.12),rgba(1,12,44,.025));filter:drop-shadow(0 0 5px var(--glow));}
+.frame:before,.frame:after{content:"";position:absolute;pointer-events:none}
+.frame:before{inset:5px;border:1px solid rgba(143,236,201,.22)}
+.frame:after{width:28px;height:3px;left:12px;top:-2px;background:var(--mint);box-shadow:0 0 9px var(--teal)}
+/* Portrait: frame remains outside the game's native portrait */
+.portrait{left:27px;bottom:24px;width:145px;height:145px;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,14% 100%,0 86%)}
+.portrait:after{left:14px;top:-2px;width:42px}
+/* Health: long, low frame to trace the native health display */
+.health{left:181px;bottom:35px;width:420px;height:82px;clip-path:polygon(0 0,96% 0,100% 22%,100% 100%,4% 100%,0 78%)}
+.health:after{left:22px;width:64px}
+/* Ability cluster */
+.abilities{left:718px;bottom:24px;width:390px;height:106px;clip-path:polygon(0 17%,8% 0,92% 0,100% 17%,100% 100%,0 100%)}
+.abilities:after{left:50%;transform:translateX(-50%);width:56px}
+/* Ultimate */
+.ultimate{left:1122px;bottom:28px;width:154px;height:112px;clip-path:polygon(0 18%,18% 0,82% 0,100% 18%,100% 100%,0 100%)}
+.ultimate:after{left:50%;transform:translateX(-50%);width:44px;background:var(--gold);box-shadow:0 0 10px rgba(200,156,77,.6)}
+/* Ammunition / weapon info */
+.ammo{right:31px;bottom:30px;width:205px;height:92px;clip-path:polygon(0 0,88% 0,100% 18%,100% 100%,0 100%)}
+.ammo:after{left:auto;right:16px;width:46px;background:var(--gold);box-shadow:0 0 10px rgba(200,156,77,.6)}
+/* restrained corner ticks */
+.tick{position:absolute;height:2px;background:var(--teal);opacity:.85;box-shadow:0 0 8px var(--glow)}
+.portrait .tick{width:22px;right:10px;bottom:10px}
+.health .tick{width:36px;right:12px;bottom:10px}
+.abilities .tick{width:24px;right:12px;bottom:10px}
+.ultimate .tick{width:18px;right:10px;bottom:10px;background:var(--gold)}
+.ammo .tick{width:24px;left:12px;bottom:10px;background:var(--gold)}
+/* Optional guide labels: enable with ?guide=1 */
+.guide{display:none;position:absolute;color:rgba(143,236,201,.9);font:700 10px/1 Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+body.show-guide .guide{display:block}
+.guide b{display:block;font-size:12px;color:white;margin-top:5px;letter-spacing:1px}
+@media(max-aspect-ratio:16/9){#hud{transform:scale(calc(100vw / 1920))}}
+@media(min-aspect-ratio:16/9){#hud{transform:scale(calc(100vh / 1080))}}
+</style>
+</head>
+<body>
+<main id="hud" aria-label="Habillage HUD Overwatch Chroma">
+  <section class="frame portrait"><i class="tick"></i><span class="guide">Héros<b>Portrait</b></span></section>
+  <section class="frame health"><i class="tick"></i><span class="guide">Vitalité<b>Vie / armure</b></span></section>
+  <section class="frame abilities"><i class="tick"></i><span class="guide">Actions<b>Compétences</b></span></section>
+  <section class="frame ultimate"><i class="tick"></i><span class="guide">Ultime<b>Charge</b></span></section>
+  <section class="frame ammo"><i class="tick"></i><span class="guide">Arme<b>Munitions</b></span></section>
+</main>
+<script>
+if(new URLSearchParams(location.search).has('guide'))document.body.classList.add('show-guide');
+</script>
+</body>
+</html>
