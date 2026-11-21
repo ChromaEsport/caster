@@ -383,60 +383,60 @@ body{font-family:Inter,Arial,sans-serif}
 }
 
 /* Styles de variantes — règles finales prioritaires pour garantir le changement visuel */
-#banner.design-strike{
+#playerBanner.design-strike{
   background:linear-gradient(108deg,#050b20 0%,#17233a 48%,#50351b 100%) !important;
   clip-path:polygon(0 0,91% 0,100% 50%,91% 100%,0 100%,5% 50%) !important;
 }
-#banner.design-strike:before{
+#playerBanner.design-strike:before{
   width:12px !important;
   background:linear-gradient(180deg,#fff0c7,#c89c4d,#8a541b) !important;
 }
-#banner.design-strike:after{
+#playerBanner.design-strike:after{
   height:5px !important;
   background:linear-gradient(90deg,#f4d79b,#c89c4d 55%,transparent) !important;
 }
-#banner.design-strike .brand-copy strong,
-#banner.design-strike .role-label{color:#f4c76f !important}
-#banner.design-strike .role-orbit{
+#playerBanner.design-strike .brand-copy strong,
+#playerBanner.design-strike .role-label{color:#f4c76f !important}
+#playerBanner.design-strike .role-orbit{
   border:2px solid #c89c4d !important;
   border-radius:12px !important;
   background:linear-gradient(145deg,rgba(200,156,77,.32),rgba(1,12,44,.55)) !important;
   box-shadow:0 0 24px rgba(200,156,77,.48) !important;
 }
-#banner.design-strike .role-zone:before{border:2px dashed rgba(200,156,77,.4) !important}
-#banner.design-strike .swoosh{border-color:rgba(200,156,77,.35) !important}
-#banner.design-strike .identity:before{background:linear-gradient(180deg,transparent,#c89c4d,#f4d79b,transparent) !important}
-#banner.design-strike .identity-kicker{color:#f4c76f !important}
+#playerBanner.design-strike .role-zone:before{border:2px dashed rgba(200,156,77,.4) !important}
+#playerBanner.design-strike .swoosh{border-color:rgba(200,156,77,.35) !important}
+#playerBanner.design-strike .identity:before{background:linear-gradient(180deg,transparent,#c89c4d,#f4d79b,transparent) !important}
+#playerBanner.design-strike .identity-kicker{color:#f4c76f !important}
 
-#banner.design-minimal{
+#playerBanner.design-minimal{
   height:104px !important;
   background:linear-gradient(90deg,#010c2c 0%,#092a3b 100%) !important;
   clip-path:polygon(0 0,99% 0,100% 16%,100% 100%,0 100%) !important;
 }
-#banner.design-minimal:before{width:3px !important;background:#8fecc9 !important}
-#banner.design-minimal:after{height:1px !important;background:linear-gradient(90deg,#8fecc9,transparent 80%) !important}
-#banner.design-minimal .role-zone:before,
-#banner.design-minimal .role-orbit:before,
-#banner.design-minimal .role-orbit:after,
-#banner.design-minimal .orbit-dot,
-#banner.design-minimal .swoosh,
-#banner.design-minimal .end-cap{display:none !important}
-#banner.design-minimal .role-zone{flex-direction:row !important;gap:10px !important}
-#banner.design-minimal .role-orbit{
+#playerBanner.design-minimal:before{width:3px !important;background:#8fecc9 !important}
+#playerBanner.design-minimal:after{height:1px !important;background:linear-gradient(90deg,#8fecc9,transparent 80%) !important}
+#playerBanner.design-minimal .role-zone:before,
+#playerBanner.design-minimal .role-orbit:before,
+#playerBanner.design-minimal .role-orbit:after,
+#playerBanner.design-minimal .orbit-dot,
+#playerBanner.design-minimal .swoosh,
+#playerBanner.design-minimal .end-cap{display:none !important}
+#playerBanner.design-minimal .role-zone{flex-direction:row !important;gap:10px !important}
+#playerBanner.design-minimal .role-orbit{
   width:42px !important;height:42px !important;border-radius:8px !important;
   background:rgba(60,145,149,.13) !important;border:1px solid rgba(143,236,201,.25) !important;
   box-shadow:none !important;
 }
-#banner.design-minimal .role-label{font-size:8px !important;letter-spacing:1.5px !important}
-#banner.design-minimal .identity{align-items:flex-start !important}
-#banner.design-minimal .identity:before{width:2px !important}
-#banner.design-minimal .identity-kicker{font-size:7px !important;letter-spacing:2px !important}
-#banner.design-minimal .identity-kicker i{display:none !important}
-#banner.design-minimal .player-name{font-size:clamp(30px,3.5vw,46px) !important;letter-spacing:1px !important}
+#playerBanner.design-minimal .role-label{font-size:8px !important;letter-spacing:1.5px !important}
+#playerBanner.design-minimal .identity{align-items:flex-start !important}
+#playerBanner.design-minimal .identity:before{width:2px !important}
+#playerBanner.design-minimal .identity-kicker{font-size:7px !important;letter-spacing:2px !important}
+#playerBanner.design-minimal .identity-kicker i{display:none !important}
+#playerBanner.design-minimal .player-name{font-size:clamp(30px,3.5vw,46px) !important;letter-spacing:1px !important}
 
 
 /* Illustration du héros choisi — intégrée aux trois compositions */
-#banner .hero-art{
+#playerBanner .hero-art{
   position:absolute;
   z-index:1;
   right:4.2%;
@@ -452,8 +452,8 @@ body{font-family:Inter,Arial,sans-serif}
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%);
   mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 100%);
 }
-#banner .hero-art[hidden]{display:none}
-#banner .hero-art img{
+#playerBanner .hero-art[hidden]{display:none}
+#playerBanner .hero-art img{
   display:block;
   max-width:100%;
   max-height:100%;
@@ -463,26 +463,26 @@ body{font-family:Inter,Arial,sans-serif}
   object-position:center bottom;
   filter:drop-shadow(0 5px 18px rgba(0,0,0,.62));
 }
-#banner .identity{padding-right:220px}
-#banner.design-minimal .identity{padding-right:205px}
-#banner.design-strike .hero-art{right:5%;width:245px}
-#banner.design-strike .hero-art img{filter:drop-shadow(0 5px 20px rgba(200,156,77,.22)) drop-shadow(0 5px 14px rgba(0,0,0,.7))}
-#banner.design-minimal .hero-art{right:3%;width:190px;height:145%;opacity:.82}
+#playerBanner .identity{padding-right:220px}
+#playerBanner.design-minimal .identity{padding-right:205px}
+#playerBanner.design-strike .hero-art{right:5%;width:245px}
+#playerBanner.design-strike .hero-art img{filter:drop-shadow(0 5px 20px rgba(200,156,77,.22)) drop-shadow(0 5px 14px rgba(0,0,0,.7))}
+#playerBanner.design-minimal .hero-art{right:3%;width:190px;height:145%;opacity:.82}
 @media(max-width:1100px){
-  #banner .hero-art{right:3%;width:175px;height:150%}
-  #banner .identity{padding-right:165px}
-  #banner.design-minimal .identity{padding-right:150px}
+  #playerBanner .hero-art{right:3%;width:175px;height:150%}
+  #playerBanner .identity{padding-right:165px}
+  #playerBanner.design-minimal .identity{padding-right:150px}
 }
 @media(max-width:700px){
-  #banner .hero-art{right:2%;width:105px;height:135%;bottom:-12%;opacity:.72}
-  #banner .identity{padding-right:92px}
-  #banner.design-minimal .identity{padding-right:88px}
-  #banner .identity-kicker{max-width:100%;white-space:nowrap}
+  #playerBanner .hero-art{right:2%;width:105px;height:135%;bottom:-12%;opacity:.72}
+  #playerBanner .identity{padding-right:92px}
+  #playerBanner.design-minimal .identity{padding-right:88px}
+  #playerBanner .identity-kicker{max-width:100%;white-space:nowrap}
 }
 
 
 /* Nom du héros — intégré à l'identité, juste sous le pseudo du joueur */
-#banner .identity .hero-name{
+#playerBanner .identity .hero-name{
   position:relative;
   z-index:6;
   display:block;
@@ -502,12 +502,12 @@ body{font-family:Inter,Arial,sans-serif}
   white-space:nowrap;
   pointer-events:none;
 }
-#banner.design-strike .identity .hero-name{
+#playerBanner.design-strike .identity .hero-name{
   color:#f4d79b;
   border-right-color:var(--gold);
   background:linear-gradient(90deg,transparent,rgba(20,15,10,.82));
 }
-#banner.design-minimal .identity .hero-name{
+#playerBanner.design-minimal .identity .hero-name{
   align-self:flex-start;
   text-align:left;
   border-right:0;
@@ -518,15 +518,15 @@ body{font-family:Inter,Arial,sans-serif}
   letter-spacing:1.5px;
 }
 @media(max-width:1100px){
-  #banner .identity .hero-name{font-size:12px;letter-spacing:1.4px}
+  #playerBanner .identity .hero-name{font-size:12px;letter-spacing:1.4px}
 }
 @media(max-width:700px){
-  #banner .identity .hero-name{font-size:9px;letter-spacing:.8px;padding:3px 6px 2px}
+  #playerBanner .identity .hero-name{font-size:9px;letter-spacing:.8px;padding:3px 6px 2px}
 }
 
 
 /* STRIKE — rôle centré dans le bandeau, icône et intitulé agrandis */
-#banner.design-strike .role-zone{
+#playerBanner.design-strike .role-zone{
   position:absolute;
   z-index:3;
   left:50%;
@@ -539,7 +539,7 @@ body{font-family:Inter,Arial,sans-serif}
   justify-content:center;
   gap:18px;
 }
-#banner.design-strike .role-zone:before{
+#playerBanner.design-strike .role-zone:before{
   width:178px;
   height:88px;
   border:1px solid rgba(200,156,77,.32);
@@ -547,118 +547,118 @@ body{font-family:Inter,Arial,sans-serif}
   transform:skewX(-12deg);
   box-shadow:0 0 0 7px rgba(200,156,77,.045),inset 0 0 25px rgba(200,156,77,.10);
 }
-#banner.design-strike .role-orbit{
+#playerBanner.design-strike .role-orbit{
   width:70px;
   height:70px;
   flex:0 0 70px;
   border-radius:13px !important;
 }
-#banner.design-strike .role-icon{
+#playerBanner.design-strike .role-icon{
   width:48px;
   height:48px;
 }
-#banner.design-strike .role-label{
+#playerBanner.design-strike .role-label{
   font-size:15px;
   letter-spacing:2.5px;
   min-width:104px;
   text-align:left;
 }
-#banner.design-strike .identity{
+#playerBanner.design-strike .identity{
   padding-left:300px;
 }
 @media(max-width:1100px){
-  #banner.design-strike .role-zone{gap:12px}
-  #banner.design-strike .role-zone:before{width:150px;height:76px}
-  #banner.design-strike .role-orbit{width:60px;height:60px;flex-basis:60px}
-  #banner.design-strike .role-icon{width:42px;height:42px}
-  #banner.design-strike .role-label{font-size:13px;min-width:88px}
-  #banner.design-strike .identity{padding-left:250px}
+  #playerBanner.design-strike .role-zone{gap:12px}
+  #playerBanner.design-strike .role-zone:before{width:150px;height:76px}
+  #playerBanner.design-strike .role-orbit{width:60px;height:60px;flex-basis:60px}
+  #playerBanner.design-strike .role-icon{width:42px;height:42px}
+  #playerBanner.design-strike .role-label{font-size:13px;min-width:88px}
+  #playerBanner.design-strike .identity{padding-left:250px}
 }
 @media(max-width:700px){
-  #banner.design-strike .role-zone{gap:7px}
-  #banner.design-strike .role-zone:before{width:104px;height:58px}
-  #banner.design-strike .role-orbit{width:43px;height:43px;flex-basis:43px}
-  #banner.design-strike .role-icon{width:30px;height:30px}
-  #banner.design-strike .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
-  #banner.design-strike .identity{padding-left:155px}
+  #playerBanner.design-strike .role-zone{gap:7px}
+  #playerBanner.design-strike .role-zone:before{width:104px;height:58px}
+  #playerBanner.design-strike .role-orbit{width:43px;height:43px;flex-basis:43px}
+  #playerBanner.design-strike .role-icon{width:30px;height:30px}
+  #playerBanner.design-strike .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
+  #playerBanner.design-strike .identity{padding-left:155px}
 }
 
 
 
 
 /* BROADCAST ANGULAIRE — logo Chroma agrandi et rôle centré dans le bandeau */
-#banner.design-broadcast .brand{align-items:center}
-#banner.design-broadcast .brand-mark{
+#playerBanner.design-broadcast .brand{align-items:center}
+#playerBanner.design-broadcast .brand-mark{
   width:100px;height:100px;flex:0 0 100px;
   display:grid;place-items:center;overflow:visible;
 }
-#banner.design-broadcast .brand-mark:before{display:none !important;content:none !important}
-#banner.design-broadcast .brand-mark img{
+#playerBanner.design-broadcast .brand-mark:before{display:none !important;content:none !important}
+#playerBanner.design-broadcast .brand-mark img{
   width:88px;height:88px;max-width:none;max-height:none;object-fit:contain;
   filter:drop-shadow(0 0 12px rgba(143,236,201,.48)) drop-shadow(0 4px 8px rgba(0,0,0,.65));
 }
-#banner.design-broadcast .role-zone{
+#playerBanner.design-broadcast .role-zone{
   position:absolute;z-index:3;left:50%;top:50%;width:max-content;height:auto;
   transform:translate(-50%,-50%);flex-direction:row;align-items:center;
   justify-content:center;gap:18px;
 }
-#banner.design-broadcast .role-zone:before{
+#playerBanner.design-broadcast .role-zone:before{
   width:178px;height:88px;border:1px solid rgba(143,236,201,.32);
   border-radius:12px;transform:skewX(-12deg);
   box-shadow:0 0 0 7px rgba(143,236,201,.045),inset 0 0 25px rgba(60,145,149,.12);
 }
-#banner.design-broadcast .role-orbit{
+#playerBanner.design-broadcast .role-orbit{
   width:70px;height:70px;flex:0 0 70px;border-radius:13px;
 }
-#banner.design-broadcast .role-icon{width:48px;height:48px}
-#banner.design-broadcast .role-label{font-size:15px;letter-spacing:2.5px;min-width:104px;text-align:left}
-#banner.design-broadcast .identity{padding-left:300px}
+#playerBanner.design-broadcast .role-icon{width:48px;height:48px}
+#playerBanner.design-broadcast .role-label{font-size:15px;letter-spacing:2.5px;min-width:104px;text-align:left}
+#playerBanner.design-broadcast .identity{padding-left:300px}
 @media(max-width:1100px){
-  #banner.design-broadcast .brand-mark{width:86px;height:86px;flex-basis:86px}
-  #banner.design-broadcast .brand-mark img{width:76px;height:76px}
-  #banner.design-broadcast .role-zone{gap:12px}
-  #banner.design-broadcast .role-zone:before{width:150px;height:76px}
-  #banner.design-broadcast .role-orbit{width:60px;height:60px;flex-basis:60px}
-  #banner.design-broadcast .role-icon{width:42px;height:42px}
-  #banner.design-broadcast .role-label{font-size:13px;min-width:88px}
-  #banner.design-broadcast .identity{padding-left:250px}
+  #playerBanner.design-broadcast .brand-mark{width:86px;height:86px;flex-basis:86px}
+  #playerBanner.design-broadcast .brand-mark img{width:76px;height:76px}
+  #playerBanner.design-broadcast .role-zone{gap:12px}
+  #playerBanner.design-broadcast .role-zone:before{width:150px;height:76px}
+  #playerBanner.design-broadcast .role-orbit{width:60px;height:60px;flex-basis:60px}
+  #playerBanner.design-broadcast .role-icon{width:42px;height:42px}
+  #playerBanner.design-broadcast .role-label{font-size:13px;min-width:88px}
+  #playerBanner.design-broadcast .identity{padding-left:250px}
 }
 @media(max-width:700px){
-  #banner.design-broadcast .brand-mark{width:58px;height:58px;flex-basis:58px}
-  #banner.design-broadcast .brand-mark img{width:52px;height:52px}
-  #banner.design-broadcast .role-zone{gap:7px}
-  #banner.design-broadcast .role-zone:before{width:104px;height:58px}
-  #banner.design-broadcast .role-orbit{width:43px;height:43px;flex-basis:43px}
-  #banner.design-broadcast .role-icon{width:30px;height:30px}
-  #banner.design-broadcast .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
-  #banner.design-broadcast .identity{padding-left:155px}
+  #playerBanner.design-broadcast .brand-mark{width:58px;height:58px;flex-basis:58px}
+  #playerBanner.design-broadcast .brand-mark img{width:52px;height:52px}
+  #playerBanner.design-broadcast .role-zone{gap:7px}
+  #playerBanner.design-broadcast .role-zone:before{width:104px;height:58px}
+  #playerBanner.design-broadcast .role-orbit{width:43px;height:43px;flex-basis:43px}
+  #playerBanner.design-broadcast .role-icon{width:30px;height:30px}
+  #playerBanner.design-broadcast .role-label{font-size:9px;letter-spacing:1px;min-width:58px}
+  #playerBanner.design-broadcast .identity{padding-left:155px}
 }
 
 
 /* BROADCAST ANGULAIRE — restaurer la zone d'identité à droite */
-#banner.design-broadcast .identity{
+#playerBanner.design-broadcast .identity{
   padding-left:15px !important;
   padding-right:220px !important;
   align-items:flex-end !important;
   justify-self:stretch;
   min-width:0;
 }
-#banner.design-broadcast .identity-kicker,
-#banner.design-broadcast .player-name,
-#banner.design-broadcast .hero-name{
+#playerBanner.design-broadcast .identity-kicker,
+#playerBanner.design-broadcast .player-name,
+#playerBanner.design-broadcast .hero-name{
   position:relative;
   z-index:6;
 }
 @media(max-width:1100px){
-  #banner.design-broadcast .identity{padding-left:12px !important;padding-right:165px !important}
+  #playerBanner.design-broadcast .identity{padding-left:12px !important;padding-right:165px !important}
 }
 @media(max-width:700px){
-  #banner.design-broadcast .identity{padding-left:8px !important;padding-right:92px !important}
+  #playerBanner.design-broadcast .identity{padding-left:8px !important;padding-right:92px !important}
 }
 
 
 /* BROADCAST — identité ancrée à droite, indépendante de la grille centrale */
-#banner.design-broadcast > .identity{
+#playerBanner.design-broadcast > .identity{
   position:absolute !important; z-index:6 !important;
   left:auto !important; right:250px !important; top:50% !important; bottom:auto !important;
   width:430px !important; max-width:calc(100% - 760px) !important;
@@ -668,44 +668,44 @@ body{font-family:Inter,Arial,sans-serif}
   align-items:flex-end !important; justify-content:center !important;
   gap:4px !important; text-align:right !important;
 }
-#banner.design-broadcast > .identity:before{display:none !important}
-#banner.design-broadcast .identity-kicker{
+#playerBanner.design-broadcast > .identity:before{display:none !important}
+#playerBanner.design-broadcast .identity-kicker{
   display:flex !important; width:100% !important; justify-content:flex-end !important;
   align-items:center !important; white-space:nowrap !important; text-align:right !important;
   font-size:8px !important; letter-spacing:2px !important;
 }
-#banner.design-broadcast .player-name{
+#playerBanner.design-broadcast .player-name{
   display:block !important; width:100% !important; max-width:100% !important;
   text-align:right !important; white-space:nowrap !important; overflow:hidden !important;
   text-overflow:ellipsis !important; line-height:.95 !important;
   font-size:clamp(30px,3.1vw,48px) !important;
 }
-#banner.design-broadcast .identity .hero-name{
+#playerBanner.design-broadcast .identity .hero-name{
   display:block !important; align-self:flex-end !important; width:auto !important;
   max-width:100% !important; text-align:right !important; white-space:nowrap !important;
   overflow:hidden !important; text-overflow:ellipsis !important; margin-top:2px !important;
 }
 @media(max-width:1100px){
-  #banner.design-broadcast > .identity{right:180px !important;width:360px !important;max-width:calc(100% - 590px) !important}
-  #banner.design-broadcast .identity-kicker{font-size:7px !important;letter-spacing:1.4px !important}
-  #banner.design-broadcast .player-name{font-size:clamp(26px,3.5vw,40px) !important}
+  #playerBanner.design-broadcast > .identity{right:180px !important;width:360px !important;max-width:calc(100% - 590px) !important}
+  #playerBanner.design-broadcast .identity-kicker{font-size:7px !important;letter-spacing:1.4px !important}
+  #playerBanner.design-broadcast .player-name{font-size:clamp(26px,3.5vw,40px) !important}
 }
 @media(max-width:700px){
-  #banner.design-broadcast > .identity{right:108px !important;width:230px !important;max-width:calc(100% - 330px) !important}
-  #banner.design-broadcast .identity-kicker{font-size:6px !important;letter-spacing:.7px !important}
-  #banner.design-broadcast .identity-kicker i{width:9px !important}
-  #banner.design-broadcast .player-name{font-size:clamp(20px,4vw,28px) !important;letter-spacing:.7px !important}
+  #playerBanner.design-broadcast > .identity{right:108px !important;width:230px !important;max-width:calc(100% - 330px) !important}
+  #playerBanner.design-broadcast .identity-kicker{font-size:6px !important;letter-spacing:.7px !important}
+  #playerBanner.design-broadcast .identity-kicker i{width:9px !important}
+  #playerBanner.design-broadcast .player-name{font-size:clamp(20px,4vw,28px) !important;letter-spacing:.7px !important}
 }
 
 
 /* Rôle — suppression des ornements et du cadre autour de l'icône */
-#banner .role-zone:before,
-#banner .role-orbit:before,
-#banner .role-orbit:after{
+#playerBanner .role-zone:before,
+#playerBanner .role-orbit:before,
+#playerBanner .role-orbit:after{
   content:none !important;
   display:none !important;
 }
-#banner .role-orbit{
+#playerBanner .role-orbit{
   border:0 !important;
   outline:0 !important;
   background:transparent !important;
@@ -714,22 +714,22 @@ body{font-family:Inter,Arial,sans-serif}
 
 
 /* BROADCAST ANGULAIRE — icône au-dessus du libellé, ensemble agrandi */
-#banner.design-broadcast .role-zone{
+#playerBanner.design-broadcast .role-zone{
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
   gap:2px !important;
 }
-#banner.design-broadcast .role-orbit{
+#playerBanner.design-broadcast .role-orbit{
   width:82px !important;
   height:82px !important;
   flex:0 0 82px !important;
 }
-#banner.design-broadcast .role-icon{
+#playerBanner.design-broadcast .role-icon{
   width:62px !important;
   height:62px !important;
 }
-#banner.design-broadcast .role-label{
+#playerBanner.design-broadcast .role-label{
   font-size:16px !important;
   line-height:1 !important;
   letter-spacing:2.2px !important;
@@ -737,55 +737,55 @@ body{font-family:Inter,Arial,sans-serif}
   text-align:center !important;
 }
 @media(max-width:1100px){
-  #banner.design-broadcast .role-orbit{width:72px !important;height:72px !important;flex-basis:72px !important}
-  #banner.design-broadcast .role-icon{width:54px !important;height:54px !important}
-  #banner.design-broadcast .role-label{font-size:14px !important;letter-spacing:1.8px !important}
+  #playerBanner.design-broadcast .role-orbit{width:72px !important;height:72px !important;flex-basis:72px !important}
+  #playerBanner.design-broadcast .role-icon{width:54px !important;height:54px !important}
+  #playerBanner.design-broadcast .role-label{font-size:14px !important;letter-spacing:1.8px !important}
 }
 @media(max-width:700px){
-  #banner.design-broadcast .role-zone{gap:1px !important}
-  #banner.design-broadcast .role-orbit{width:52px !important;height:52px !important;flex-basis:52px !important}
-  #banner.design-broadcast .role-icon{width:40px !important;height:40px !important}
-  #banner.design-broadcast .role-label{font-size:9px !important;letter-spacing:1px !important}
+  #playerBanner.design-broadcast .role-zone{gap:1px !important}
+  #playerBanner.design-broadcast .role-orbit{width:52px !important;height:52px !important;flex-basis:52px !important}
+  #playerBanner.design-broadcast .role-icon{width:40px !important;height:40px !important}
+  #playerBanner.design-broadcast .role-label{font-size:9px !important;letter-spacing:1px !important}
 }
 
 
 /* BROADCAST ANGULAIRE — logo Chroma encore agrandi */
-#banner.design-broadcast .brand-mark{
+#playerBanner.design-broadcast .brand-mark{
   width:116px !important;
   height:116px !important;
   flex:0 0 116px !important;
 }
-#banner.design-broadcast .brand-mark img{
+#playerBanner.design-broadcast .brand-mark img{
   width:106px !important;
   height:106px !important;
 }
 @media(max-width:1100px){
-  #banner.design-broadcast .brand-mark{
+  #playerBanner.design-broadcast .brand-mark{
     width:96px !important;height:96px !important;flex-basis:96px !important;
   }
-  #banner.design-broadcast .brand-mark img{
+  #playerBanner.design-broadcast .brand-mark img{
     width:88px !important;height:88px !important;
   }
 }
 @media(max-width:700px){
-  #banner.design-broadcast .brand-mark{
+  #playerBanner.design-broadcast .brand-mark{
     width:66px !important;height:66px !important;flex-basis:66px !important;
   }
-  #banner.design-broadcast .brand-mark img{
+  #playerBanner.design-broadcast .brand-mark img{
     width:60px !important;height:60px !important;
   }
 }
 
 
 /* Suppression du séparateur décoratif après le bloc brand */
-#banner .brand:after{
+#playerBanner .brand:after{
   content:none !important;
   display:none !important;
 }
 
 
 /* NEON FUTURISTE — visuel fourni, avec les ajustements du Broadcast */
-#banner.design-neon{
+#playerBanner.design-neon{
   height:126px !important;
   grid-template-columns:220px 170px minmax(0,1fr) !important;
   padding:0 34px 0 28px !important;
@@ -798,43 +798,43 @@ body{font-family:Inter,Arial,sans-serif}
   clip-path:none !important;
   filter:drop-shadow(0 15px 24px rgba(0,0,0,.48));
 }
-#banner.design-neon:before,
-#banner.design-neon:after,
-#banner.design-neon .frame,
-#banner.design-neon .ambient,
-#banner.design-neon .swoosh,
-#banner.design-neon .light-pass,
-#banner.design-neon .end-cap{
+#playerBanner.design-neon:before,
+#playerBanner.design-neon:after,
+#playerBanner.design-neon .frame,
+#playerBanner.design-neon .ambient,
+#playerBanner.design-neon .swoosh,
+#playerBanner.design-neon .light-pass,
+#playerBanner.design-neon .end-cap{
   display:none !important;
 }
-#banner.design-neon .brand{
+#playerBanner.design-neon .brand{
   align-items:center !important;
   gap:13px !important;
 }
-#banner.design-neon .brand:after{
+#playerBanner.design-neon .brand:after{
   content:none !important;
   display:none !important;
 }
-#banner.design-neon .brand-mark{
+#playerBanner.design-neon .brand-mark{
   width:116px !important;height:116px !important;flex:0 0 116px !important;
 }
-#banner.design-neon .brand-mark:before{
+#playerBanner.design-neon .brand-mark:before{
   content:none !important;display:none !important;
 }
-#banner.design-neon .brand-mark img{
+#playerBanner.design-neon .brand-mark img{
   width:106px !important;height:106px !important;max-width:none !important;max-height:none !important;
   object-fit:contain !important;
   filter:drop-shadow(0 0 12px rgba(143,236,201,.48)) drop-shadow(0 4px 8px rgba(0,0,0,.65));
 }
-#banner.design-neon .brand-copy{
+#playerBanner.design-neon .brand-copy{
   color:#fff !important;
   text-shadow:0 2px 12px rgba(0,0,0,.9) !important;
 }
-#banner.design-neon .brand-copy strong{color:var(--mint) !important}
-#banner.design-neon .brand-copy small{color:rgba(255,255,255,.82) !important}
+#playerBanner.design-neon .brand-copy strong{color:var(--mint) !important}
+#playerBanner.design-neon .brand-copy small{color:rgba(255,255,255,.82) !important}
 
 /* Icône du rôle au-dessus du nom, tous deux agrandis */
-#banner.design-neon .role-zone{
+#playerBanner.design-neon .role-zone{
   position:absolute !important;
   z-index:3 !important;
   left:50% !important;top:50% !important;
@@ -844,18 +844,18 @@ body{font-family:Inter,Arial,sans-serif}
   align-items:center !important;justify-content:center !important;
   gap:2px !important;
 }
-#banner.design-neon .role-zone:before{content:none !important;display:none !important}
-#banner.design-neon .role-orbit{
+#playerBanner.design-neon .role-zone:before{content:none !important;display:none !important}
+#playerBanner.design-neon .role-orbit{
   width:82px !important;height:82px !important;flex:0 0 82px !important;
   border:0 !important;outline:0 !important;background:transparent !important;box-shadow:none !important;
 }
-#banner.design-neon .role-orbit:before,
-#banner.design-neon .role-orbit:after{content:none !important;display:none !important}
-#banner.design-neon .role-icon{
+#playerBanner.design-neon .role-orbit:before,
+#playerBanner.design-neon .role-orbit:after{content:none !important;display:none !important}
+#playerBanner.design-neon .role-icon{
   width:62px !important;height:62px !important;
   filter:drop-shadow(0 2px 8px rgba(0,0,0,.9)) !important;
 }
-#banner.design-neon .role-label{
+#playerBanner.design-neon .role-label{
   min-width:0 !important;
   color:#fff !important;
   font-size:16px !important;line-height:1 !important;
@@ -864,7 +864,7 @@ body{font-family:Inter,Arial,sans-serif}
 }
 
 /* Identité à droite : PLAYER PROFILE, pseudo et héros */
-#banner.design-neon > .identity{
+#playerBanner.design-neon > .identity{
   position:absolute !important;z-index:6 !important;
   left:auto !important;right:250px !important;top:50% !important;bottom:auto !important;
   width:430px !important;max-width:calc(100% - 760px) !important;
@@ -874,22 +874,22 @@ body{font-family:Inter,Arial,sans-serif}
   align-items:flex-end !important;justify-content:center !important;
   gap:4px !important;text-align:right !important;
 }
-#banner.design-neon > .identity:before{content:none !important;display:none !important}
-#banner.design-neon .identity-kicker{
+#playerBanner.design-neon > .identity:before{content:none !important;display:none !important}
+#playerBanner.design-neon .identity-kicker{
   display:block !important;width:100% !important;
   color:rgba(255,255,255,.9) !important;
   font:800 8px Inter,sans-serif !important;letter-spacing:2px !important;
   text-align:right !important;text-shadow:0 2px 7px rgba(0,0,0,.95) !important;
   white-space:nowrap !important;
 }
-#banner.design-neon .player-name{
+#playerBanner.design-neon .player-name{
   display:block !important;width:100% !important;max-width:100% !important;
   color:#fff !important;text-align:right !important;
   white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important;
   line-height:.95 !important;font-size:clamp(30px,3.1vw,48px) !important;
   text-shadow:0 3px 14px rgba(0,0,0,.95) !important;
 }
-#banner.design-neon .identity .hero-name{
+#playerBanner.design-neon .identity .hero-name{
   display:block !important;align-self:flex-end !important;width:auto !important;max-width:100% !important;
   color:#fff !important;text-align:right !important;white-space:nowrap !important;
   overflow:hidden !important;text-overflow:ellipsis !important;margin-top:2px !important;
@@ -897,35 +897,35 @@ body{font-family:Inter,Arial,sans-serif}
   text-shadow:0 2px 8px rgba(0,0,0,.95) !important;
 }
 @media(max-width:1100px){
-  #banner.design-neon{height:112px !important;grid-template-columns:185px 135px minmax(0,1fr) !important;padding:0 24px 0 22px !important}
-  #banner.design-neon .brand-mark{width:96px !important;height:96px !important;flex-basis:96px !important}
-  #banner.design-neon .brand-mark img{width:88px !important;height:88px !important}
-  #banner.design-neon .role-orbit{width:72px !important;height:72px !important;flex-basis:72px !important}
-  #banner.design-neon .role-icon{width:54px !important;height:54px !important}
-  #banner.design-neon .role-label{font-size:14px !important;letter-spacing:1.8px !important}
-  #banner.design-neon > .identity{right:180px !important;width:360px !important;max-width:calc(100% - 590px) !important}
-  #banner.design-neon .identity-kicker{font-size:7px !important;letter-spacing:1.4px !important}
-  #banner.design-neon .player-name{font-size:clamp(26px,3.5vw,40px) !important}
+  #playerBanner.design-neon{height:112px !important;grid-template-columns:185px 135px minmax(0,1fr) !important;padding:0 24px 0 22px !important}
+  #playerBanner.design-neon .brand-mark{width:96px !important;height:96px !important;flex-basis:96px !important}
+  #playerBanner.design-neon .brand-mark img{width:88px !important;height:88px !important}
+  #playerBanner.design-neon .role-orbit{width:72px !important;height:72px !important;flex-basis:72px !important}
+  #playerBanner.design-neon .role-icon{width:54px !important;height:54px !important}
+  #playerBanner.design-neon .role-label{font-size:14px !important;letter-spacing:1.8px !important}
+  #playerBanner.design-neon > .identity{right:180px !important;width:360px !important;max-width:calc(100% - 590px) !important}
+  #playerBanner.design-neon .identity-kicker{font-size:7px !important;letter-spacing:1.4px !important}
+  #playerBanner.design-neon .player-name{font-size:clamp(26px,3.5vw,40px) !important}
 }
 @media(max-width:700px){
-  #banner.design-neon{height:90px !important;grid-template-columns:120px 88px minmax(0,1fr) !important;padding:0 13px !important}
-  #banner.design-neon .brand{gap:6px !important}
-  #banner.design-neon .brand-mark{width:66px !important;height:66px !important;flex-basis:66px !important}
-  #banner.design-neon .brand-mark img{width:60px !important;height:60px !important}
-  #banner.design-neon .brand-copy{font-size:14px !important;letter-spacing:.8px !important}
-  #banner.design-neon .brand-copy small{font-size:6px !important;letter-spacing:1.7px !important;margin-top:6px !important}
-  #banner.design-neon .role-zone{gap:1px !important}
-  #banner.design-neon .role-orbit{width:52px !important;height:52px !important;flex-basis:52px !important}
-  #banner.design-neon .role-icon{width:40px !important;height:40px !important}
-  #banner.design-neon .role-label{font-size:9px !important;letter-spacing:1px !important}
-  #banner.design-neon > .identity{right:108px !important;width:230px !important;max-width:calc(100% - 330px) !important}
-  #banner.design-neon .identity-kicker{font-size:6px !important;letter-spacing:.7px !important}
-  #banner.design-neon .player-name{font-size:clamp(20px,4vw,28px) !important;letter-spacing:.7px !important}
+  #playerBanner.design-neon{height:90px !important;grid-template-columns:120px 88px minmax(0,1fr) !important;padding:0 13px !important}
+  #playerBanner.design-neon .brand{gap:6px !important}
+  #playerBanner.design-neon .brand-mark{width:66px !important;height:66px !important;flex-basis:66px !important}
+  #playerBanner.design-neon .brand-mark img{width:60px !important;height:60px !important}
+  #playerBanner.design-neon .brand-copy{font-size:14px !important;letter-spacing:.8px !important}
+  #playerBanner.design-neon .brand-copy small{font-size:6px !important;letter-spacing:1.7px !important;margin-top:6px !important}
+  #playerBanner.design-neon .role-zone{gap:1px !important}
+  #playerBanner.design-neon .role-orbit{width:52px !important;height:52px !important;flex-basis:52px !important}
+  #playerBanner.design-neon .role-icon{width:40px !important;height:40px !important}
+  #playerBanner.design-neon .role-label{font-size:9px !important;letter-spacing:1px !important}
+  #playerBanner.design-neon > .identity{right:108px !important;width:230px !important;max-width:calc(100% - 330px) !important}
+  #playerBanner.design-neon .identity-kicker{font-size:6px !important;letter-spacing:.7px !important}
+  #playerBanner.design-neon .player-name{font-size:clamp(20px,4vw,28px) !important;letter-spacing:.7px !important}
 }
 
 
 /* NEON FUTURISTE — composition autonome : aucun élément du Broadcast en doublon */
-#banner.design-neon{
+#playerBanner.design-neon{
   left:10% !important;
   right:auto !important;
   bottom:2.2% !important;
@@ -941,17 +941,17 @@ body{font-family:Inter,Arial,sans-serif}
   clip-path:none !important;
   filter:drop-shadow(0 12px 22px rgba(0,0,0,.5)) !important;
 }
-#banner.design-neon:before,
-#banner.design-neon:after,
-#banner.design-neon > .frame,
-#banner.design-neon > .ambient,
-#banner.design-neon > .swoosh,
-#banner.design-neon > .light-pass,
-#banner.design-neon > .end-cap{
+#playerBanner.design-neon:before,
+#playerBanner.design-neon:after,
+#playerBanner.design-neon > .frame,
+#playerBanner.design-neon > .ambient,
+#playerBanner.design-neon > .swoosh,
+#playerBanner.design-neon > .light-pass,
+#playerBanner.design-neon > .end-cap{
   content:none !important;
   display:none !important;
 }
-#banner.design-neon > .brand{
+#playerBanner.design-neon > .brand{
   position:relative !important;
   z-index:5 !important;
   grid-column:1 !important;
@@ -964,14 +964,14 @@ body{font-family:Inter,Arial,sans-serif}
   gap:10px !important;
   margin:0 !important;
 }
-#banner.design-neon .brand-mark{
+#playerBanner.design-neon .brand-mark{
   width:94px !important;height:94px !important;flex:0 0 94px !important;
 }
-#banner.design-neon .brand-mark img{
+#playerBanner.design-neon .brand-mark img{
   width:88px !important;height:88px !important;max-width:88px !important;max-height:88px !important;
 }
-#banner.design-neon .brand-copy{font-size:21px !important}
-#banner.design-neon > .role-zone{
+#playerBanner.design-neon .brand-copy{font-size:21px !important}
+#playerBanner.design-neon > .role-zone{
   position:absolute !important;
   z-index:5 !important;
   left:50% !important;top:50% !important;
@@ -981,16 +981,16 @@ body{font-family:Inter,Arial,sans-serif}
   align-items:center !important;justify-content:center !important;
   gap:2px !important;
 }
-#banner.design-neon .role-orbit{
+#playerBanner.design-neon .role-orbit{
   width:78px !important;height:78px !important;flex:0 0 78px !important;
   border:0 !important;outline:0 !important;background:transparent !important;box-shadow:none !important;
 }
-#banner.design-neon .role-icon{width:62px !important;height:62px !important}
-#banner.design-neon .role-label{
+#playerBanner.design-neon .role-icon{width:62px !important;height:62px !important}
+#playerBanner.design-neon .role-label{
   font-size:15px !important;line-height:1 !important;letter-spacing:2px !important;
   color:#fff !important;text-align:center !important;
 }
-#banner.design-neon > .identity{
+#playerBanner.design-neon > .identity{
   position:absolute !important;z-index:6 !important;
   left:auto !important;right:245px !important;top:50% !important;bottom:auto !important;
   width:min(420px,calc(100% - 760px)) !important;max-width:none !important;
@@ -1000,52 +1000,92 @@ body{font-family:Inter,Arial,sans-serif}
   align-items:flex-end !important;justify-content:center !important;
   gap:4px !important;text-align:right !important;
 }
-#banner.design-neon > .identity:before{content:none !important;display:none !important}
-#banner.design-neon .identity-kicker{
+#playerBanner.design-neon > .identity:before{content:none !important;display:none !important}
+#playerBanner.design-neon .identity-kicker{
   display:block !important;width:100% !important;
   color:#fff !important;font-size:8px !important;letter-spacing:2px !important;
   text-align:right !important;white-space:nowrap !important;
 }
-#banner.design-neon .player-name{
+#playerBanner.design-neon .player-name{
   display:block !important;width:100% !important;max-width:100% !important;
   color:#fff !important;text-align:right !important;
   font-size:clamp(30px,3.1vw,48px) !important;line-height:.95 !important;
   white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis !important;
 }
-#banner.design-neon .identity .hero-name{
+#playerBanner.design-neon .identity .hero-name{
   display:block !important;align-self:flex-end !important;max-width:100% !important;
   margin-top:2px !important;color:#fff !important;
 }
-#banner.design-neon > .hero-art{
+#playerBanner.design-neon > .hero-art{
   z-index:2 !important;right:3% !important;bottom:-18% !important;
   width:205px !important;height:155% !important;
 }
 @media(max-width:1100px){
-  #banner.design-neon{left:5% !important;width:90% !important;height:126px !important;grid-template-columns:205px 155px minmax(0,1fr) !important;padding:0 20px !important}
-  #banner.design-neon .brand-mark{width:78px !important;height:78px !important;flex-basis:78px !important}
-  #banner.design-neon .brand-mark img{width:72px !important;height:72px !important;max-width:72px !important;max-height:72px !important}
-  #banner.design-neon .brand-copy{font-size:18px !important}
-  #banner.design-neon > .role-zone{width:155px !important}
-  #banner.design-neon .role-orbit{width:68px !important;height:68px !important;flex-basis:68px !important}
-  #banner.design-neon .role-icon{width:54px !important;height:54px !important}
-  #banner.design-neon .role-label{font-size:13px !important}
-  #banner.design-neon > .identity{right:180px !important;width:min(350px,calc(100% - 590px)) !important}
-  #banner.design-neon > .hero-art{width:160px !important}
+  #playerBanner.design-neon{left:5% !important;width:90% !important;height:126px !important;grid-template-columns:205px 155px minmax(0,1fr) !important;padding:0 20px !important}
+  #playerBanner.design-neon .brand-mark{width:78px !important;height:78px !important;flex-basis:78px !important}
+  #playerBanner.design-neon .brand-mark img{width:72px !important;height:72px !important;max-width:72px !important;max-height:72px !important}
+  #playerBanner.design-neon .brand-copy{font-size:18px !important}
+  #playerBanner.design-neon > .role-zone{width:155px !important}
+  #playerBanner.design-neon .role-orbit{width:68px !important;height:68px !important;flex-basis:68px !important}
+  #playerBanner.design-neon .role-icon{width:54px !important;height:54px !important}
+  #playerBanner.design-neon .role-label{font-size:13px !important}
+  #playerBanner.design-neon > .identity{right:180px !important;width:min(350px,calc(100% - 590px)) !important}
+  #playerBanner.design-neon > .hero-art{width:160px !important}
 }
 @media(max-width:700px){
-  #banner.design-neon{left:3% !important;width:94% !important;height:96px !important;bottom:1% !important;grid-template-columns:125px 90px minmax(0,1fr) !important;padding:0 12px !important}
-  #banner.design-neon .brand{gap:5px !important}
-  #banner.design-neon .brand-mark{width:48px !important;height:48px !important;flex-basis:48px !important}
-  #banner.design-neon .brand-mark img{width:44px !important;height:44px !important;max-width:44px !important;max-height:44px !important}
-  #banner.design-neon .brand-copy{font-size:13px !important;letter-spacing:.6px !important}
-  #banner.design-neon .brand-copy small{font-size:5px !important;letter-spacing:1px !important}
-  #banner.design-neon > .role-zone{width:90px !important}
-  #banner.design-neon .role-orbit{width:48px !important;height:48px !important;flex-basis:48px !important}
-  #banner.design-neon .role-icon{width:38px !important;height:38px !important}
-  #banner.design-neon .role-label{font-size:8px !important;letter-spacing:.8px !important}
-  #banner.design-neon > .identity{right:100px !important;width:calc(100% - 245px) !important;max-width:none !important}
-  #banner.design-neon .identity-kicker{font-size:6px !important;letter-spacing:.6px !important}
-  #banner.design-neon .player-name{font-size:clamp(19px,4vw,27px) !important;letter-spacing:.5px !important}
-  #banner.design-neon .identity .hero-name{font-size:10px !important;padding:2px 5px !important}
-  #banner.design-neon > .hero-art{right:1% !important;width:92px !important;height:130% !important;bottom:-10% !important;opacity:.72 !important}
+  #playerBanner.design-neon{left:3% !important;width:94% !important;height:96px !important;bottom:1% !important;grid-template-columns:125px 90px minmax(0,1fr) !important;padding:0 12px !important}
+  #playerBanner.design-neon .brand{gap:5px !important}
+  #playerBanner.design-neon .brand-mark{width:48px !important;height:48px !important;flex-basis:48px !important}
+  #playerBanner.design-neon .brand-mark img{width:44px !important;height:44px !important;max-width:44px !important;max-height:44px !important}
+  #playerBanner.design-neon .brand-copy{font-size:13px !important;letter-spacing:.6px !important}
+  #playerBanner.design-neon .brand-copy small{font-size:5px !important;letter-spacing:1px !important}
+  #playerBanner.design-neon > .role-zone{width:90px !important}
+  #playerBanner.design-neon .role-orbit{width:48px !important;height:48px !important;flex-basis:48px !important}
+  #playerBanner.design-neon .role-icon{width:38px !important;height:38px !important}
+  #playerBanner.design-neon .role-label{font-size:8px !important;letter-spacing:.8px !important}
+  #playerBanner.design-neon > .identity{right:100px !important;width:calc(100% - 245px) !important;max-width:none !important}
+  #playerBanner.design-neon .identity-kicker{font-size:6px !important;letter-spacing:.6px !important}
+  #playerBanner.design-neon .player-name{font-size:clamp(19px,4vw,27px) !important;letter-spacing:.5px !important}
+  #playerBanner.design-neon .identity .hero-name{font-size:10px !important;padding:2px 5px !important}
+  #playerBanner.design-neon > .hero-art{right:1% !important;width:92px !important;height:130% !important;bottom:-10% !important;opacity:.72 !important}
 }
+
+
+/* Nouvelle structure : le visuel Néon est une image unique, les éléments joueur sont posés dessus */
+#playerBanner.design-neon{
+  background:transparent !important;
+  background-image:none !important;
+  clip-path:none !important;
+  filter:none !important;
+  overflow:visible !important;
+}
+#playerBanner.design-neon > .banner-image{
+  display:block !important;
+  position:absolute !important;
+  z-index:0 !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:fill !important;
+  pointer-events:none !important;
+}
+#playerBanner.design-neon > .frame,
+#playerBanner.design-neon > .ambient,
+#playerBanner.design-neon > .swoosh,
+#playerBanner.design-neon > .light-pass,
+#playerBanner.design-neon > .end-cap,
+#playerBanner.design-neon:before,
+#playerBanner.design-neon:after{
+  display:none !important;
+  content:none !important;
+}
+#playerBanner.design-neon > .brand,
+#playerBanner.design-neon > .role-zone,
+#playerBanner.design-neon > .identity,
+#playerBanner.design-neon > .hero-art{
+  position:absolute !important;
+}
+#playerBanner.design-neon > .brand{left:28px !important;top:0 !important;height:100% !important;width:250px !important}
+#playerBanner.design-neon > .role-zone{left:50% !important;top:50% !important;transform:translate(-50%,-50%) !important}
+#playerBanner.design-neon > .identity{right:245px !important;top:50% !important;left:auto !important;transform:translateY(-50%) !important}
+#playerBanner.design-neon > .hero-art{right:3% !important;bottom:-18% !important}
