@@ -696,3 +696,18 @@ body{font-family:Inter,Arial,sans-serif}
   #banner.design-broadcast .identity-kicker i{width:9px !important}
   #banner.design-broadcast .player-name{font-size:clamp(20px,4vw,28px) !important;letter-spacing:.7px !important}
 }
+
+
+/* Rôle — suppression des ornements et du cadre autour de l'icône */
+#banner .role-zone:before,
+#banner .role-orbit:before,
+#banner .role-orbit:after{
+  content:none !important;
+  display:none !important;
+}
+#banner .role-orbit{
+  border:0 !important;
+  outline:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
