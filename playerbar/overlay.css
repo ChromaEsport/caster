@@ -711,3 +711,39 @@ body{font-family:Inter,Arial,sans-serif}
   background:transparent !important;
   box-shadow:none !important;
 }
+
+
+/* BROADCAST ANGULAIRE — icône au-dessus du libellé, ensemble agrandi */
+#banner.design-broadcast .role-zone{
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:2px !important;
+}
+#banner.design-broadcast .role-orbit{
+  width:82px !important;
+  height:82px !important;
+  flex:0 0 82px !important;
+}
+#banner.design-broadcast .role-icon{
+  width:62px !important;
+  height:62px !important;
+}
+#banner.design-broadcast .role-label{
+  font-size:16px !important;
+  line-height:1 !important;
+  letter-spacing:2.2px !important;
+  min-width:0 !important;
+  text-align:center !important;
+}
+@media(max-width:1100px){
+  #banner.design-broadcast .role-orbit{width:72px !important;height:72px !important;flex-basis:72px !important}
+  #banner.design-broadcast .role-icon{width:54px !important;height:54px !important}
+  #banner.design-broadcast .role-label{font-size:14px !important;letter-spacing:1.8px !important}
+}
+@media(max-width:700px){
+  #banner.design-broadcast .role-zone{gap:1px !important}
+  #banner.design-broadcast .role-orbit{width:52px !important;height:52px !important;flex-basis:52px !important}
+  #banner.design-broadcast .role-icon{width:40px !important;height:40px !important}
+  #banner.design-broadcast .role-label{font-size:9px !important;letter-spacing:1px !important}
+}
